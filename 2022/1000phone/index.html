@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang=zh-CN>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        千锋——网络安全基础 - Kmoon_Hs
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+    <link href="//at.alicdn.com/t/font_620856_28hi1hpxx24.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 6.2.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+<script type="text/javascript" src="https://cdn.lanluo.cn/js/canvas-nest.min.js"></script>
+<body>
+    <script type="text/javascript" src="https://cdn.lanluo.cn/js/canvas-nest.min.js"></script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?cb7a49e4f6a740b15e6fd25de2803712";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 千山同一月,万物皆清明 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar radius">
+            <img src="/img/avatar.png" />
+        </div>
+        <div class="name">
+            <i>Kmoon</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E6%9C%BAVMware-Workstation"><span class="toc-text">虚拟机VMware Workstation</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E3%80%81%E5%AE%89%E8%A3%85"><span class="toc-text">1、安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E3%80%81FTP%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-text">2、FTP服务器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B1%80%E5%9F%9F%E7%BD%91%EF%BC%9A%E4%B8%80%E8%88%AC%E7%A7%B0%E4%B8%BA%E5%86%85%E7%BD%91"><span class="toc-text">局域网：一般称为内网</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IP%E5%9C%B0%E5%9D%80%EF%BC%9A"><span class="toc-text">IP地址：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%90%E7%BD%91%E6%8E%A9%E7%A0%81%EF%BC%9A"><span class="toc-text">子网掩码：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E5%85%B3%EF%BC%9A"><span class="toc-text">网关：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DNS%EF%BC%9A"><span class="toc-text">DNS：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ping-%E5%91%BD%E4%BB%A4%EF%BC%9A"><span class="toc-text">ping 命令：</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-bg" id="search-bg"></div>
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> 千山同一月,万物皆清明 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        千锋——网络安全基础
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2022-09-12 19:20:22</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#Sec" title="Sec">Sec</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <h3 id="虚拟机VMware-Workstation"><a href="#虚拟机VMware-Workstation" class="headerlink" title="虚拟机VMware Workstation"></a>虚拟机VMware Workstation</h3><h4 id="1、安装"><a href="#1、安装" class="headerlink" title="1、安装"></a>1、安装</h4><h4 id="2、FTP服务器"><a href="#2、FTP服务器" class="headerlink" title="2、FTP服务器"></a>2、FTP服务器</h4><p>文件共享服务</p>
+<p>打开我的电脑，地址栏上输入ftp://+IP地址</p>
+<p>部署FTP服务器（虚拟机windows server 2012）</p>
+<h4 id="局域网：一般称为内网"><a href="#局域网：一般称为内网" class="headerlink" title="局域网：一般称为内网"></a>局域网：一般称为内网</h4><p>简单局域网：交换机、网线、PC（其他IT终端）</p>
+<p>交换机：用来组建内网的局域网的设备</p>
+<h3 id="IP地址："><a href="#IP地址：" class="headerlink" title="IP地址："></a>IP地址：</h3><p>唯一的标识，一段网络编码，由32位组成，范围0-255，点分十进制</p>
+<h3 id="子网掩码："><a href="#子网掩码：" class="headerlink" title="子网掩码："></a>子网掩码：</h3><p>局域网通信规则：在同一个局域网中，所有的IP必须在同一网段中才可以互相通信</p>
+<p>IP地址构成：网络位+主机位（网路位相同的IP地址为同一网段）</p>
+<p>子网掩码：用来确定IP地址的网路位</p>
+<p>子网掩码如何确定网络位：与255对应的数字为网络位，与0对应的数字为主机位</p>
+<p>255.0.0.0	255.255.0.0	255.255.255.0</p>
+<p>一个IP地址必须配套一个子网掩码</p>
+<p>当主机位全部置0代表网段，主机位全部置255代表该网段的广播地址</p>
+<p>127.0.0.1 回环地址 代表本机地址 localhost</p>
+<h3 id="网关："><a href="#网关：" class="headerlink" title="网关："></a>网关：</h3><p>一个网络的出口，Gateway=GW，一般网关在路由器上</p>
+<p>路由器：可用连接内外网的设备</p>
+<p>通信时若不在同一网段，需要发送给网关</p>
+<h3 id="DNS："><a href="#DNS：" class="headerlink" title="DNS："></a>DNS：</h3><p>域名服务 Domain Name Service</p>
+<p>DNS缓存</p>
+<p>nslookup 命令：手工解析域名</p>
+<h3 id="ping-命令："><a href="#ping-命令：" class="headerlink" title="ping 命令："></a>ping 命令：</h3><p>-t 一直ping</p>
+<p>-n 数字 修改ping包的数量</p>
+<p>-l 数字 修改ping包的大小</p>
+<p>ipconfig 查看ip地址</p>
+<p>ipconfig /all 查看DNS</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="lv-container"></div>
+        <div class="giscus"></div>
+    </div>
+</div>
+<script type="text/javascript" src="https://cdn.lanluo.cn/js/canvas-nest.min.js"></script>
+    </div>
+</div>
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+        <li>
+            <a target="_blank" href="http://weibo.com/2438257908">
+                            <span class="fa-stack fa-lg">
+                                  <i class="iconfont icon-weibo"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/kmoonn">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+    </p>
+</footer>
+<script type="text/javascript" src="https://cdn.lanluo.cn/js/canvas-nest.min.js"></script>
+<script type="text/javascript" src="https://cdn.lanluo.cn/js/canvas-nest.min.js"></script>
+<script type="text/javascript" src="https://cdn.lanluo.cn/js/canvas-nest.min.js"></script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":250,"height":350},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+    <style>
+        #taboola-livere { display: none;}
+    </style>
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC81NzAwOS8zMzQ3Mw==');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>请激活JavaScript</noscript>
+    </div>
+
+</html>

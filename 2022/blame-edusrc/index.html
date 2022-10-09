@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang=zh-CN>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        渗透测试——Blame_edusrc - Kmoon_Hs
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+    <link href="//at.alicdn.com/t/font_620856_28hi1hpxx24.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 6.2.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+<script type="text/javascript" src="https://cdn.lanluo.cn/js/canvas-nest.min.js"></script>
+<body>
+    <script type="text/javascript" src="https://cdn.lanluo.cn/js/canvas-nest.min.js"></script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?cb7a49e4f6a740b15e6fd25de2803712";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 千山同一月,万物皆清明 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar radius">
+            <img src="/img/avatar.png" />
+        </div>
+        <div class="name">
+            <i>Kmoon</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-bg" id="search-bg"></div>
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> 千山同一月,万物皆清明 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        渗透测试——Blame_edusrc
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2022-09-26 12:53:03</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#SRC" title="SRC">SRC</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <p>Blame</p>
+<p>2022年8月21日</p>
+<p>10:41</p>
+<ul>
+<li>信息收集</li>
+</ul>
+<ol>
+<li>身份证</li>
+</ol>
+<p>site:xxx.edu.cn intext:”身份证” filetype:pdf/docx/pptx/xls+身份证号</p>
+<p>技巧：”身份证”替换为证件号</p>
+<p>多加一些其他关键词 比如”公示””名单””发展对象””入党”泄露比较多</p>
+<p>“拟”</p>
+<p>edu大部分账号都是与身份证相关的，一个信息泄露1rank，能够为后续的渗透打基础。</p>
+<p>搜素语法、更换搜索引擎（针对单独学校去找）</p>
+<p>Googel 必应</p>
+<p><img src="https://img.gejiba.com/images/2af86dba3d486f228762f03a4a1c1ef4.png" alt="2af86dba3d486f228762f03a4a1c1ef4.png"></p>
+<p>批量去找：site：edu.cn</p>
+<p>更换关键词：职业技术学院、航天大学、财经大学、第一中学、理工大学、市中学、省重点中学等等</p>
+<p>一般职业技术学院泄露比较多</p>
+<p>重复率过高的问题：避免热词（奖学金、采购、合同、专家、审计、单一来源采购）</p>
+<p>edu院校榜漏洞较少的学校  推荐教育厅下面的域名网站去找</p>
+<p>其他技巧：找图片</p>
+<p>组合拳语法：</p>
+<p>姓名  学号 身份证号 联系电话 filetype:xlsx inurl:edu.cn</p>
+<p>密码  filetype:txt inurl:新建文本文档</p>
+<p>inurl:phpinfo.php  intitle:phpinfo()</p>
+<ol>
+<li>找账号</li>
+</ol>
+<p>1.了解密码规则：身份证后6位、12-17位（默认密码）</p>
+<p>2.找到身份证 最好要有对应的名字然后去找这个学校下面这个人的学号，（可以尝试其他关联网站 比如gov等信息网站）</p>
+<p>3.进系统 找资产的方法</p>
+<p>4.github的信息收集 账号密码</p>
+<ol>
+<li>找资产</li>
+</ol>
+<p>1.只要变更语法就可以找到</p>
+<p>site:xxx.edu.cn  intext:”xxx”</p>
+<p>inurl:edu.cn</p>
+<p>登录、注册、忘记密码、统一支付、后台管理、教务、教育平台</p>
+<p>2.fofa走一波</p>
+<p>根据上述关键词去对比不同会有收获</p>
+<p>“后勤管理系统”</p>
+<p>3.公众号、小程序</p>
+<p>4.一些厂商下面的域名也有学校的资产</p>
+<p>site:某开发商域名  “大学”</p>
+<p>子域名：在线子域名工具 <a href="https://phpinfo.me/domain/">https://phpinfo.me/domain/</a></p>
+<ul>
+<li>Sql注入</li>
+</ul>
+<p>字段：id、tid、keyword</p>
+<p>数字型注入</p>
+<p>‘ and  1=1 –+</p>
+<p>‘ and  1=2 –+</p>
+<p>测字段N order by N –+</p>
+<p>sqlmap –batch 默认yes执行</p>
+<p>sql注入可能出现的地方：</p>
+<p>1.登录</p>
+<p>2.表单–&gt;提交</p>
+<p>3.url 参数</p>
+<p>4.cookie</p>
+<p>5.header</p>
+<p>6.搜索</p>
+<p>7.注册</p>
+<p>8.修改密码</p>
+<p>9.文章列表</p>
+<p>10.订单信息</p>
+<p>11.新增文章</p>
+<p>任何输入参数与后端数据库交互的地方</p>
+<p>1.GET/POST/PUT/DELETE 参数</p>
+<p>2.数据包内我们可控的参数 例如xff头</p>
+<p>3.搜索处、更新个人资料、页面靠莫i个参数来回显 例如id、pid参数</p>
+<p>常用检测语句：</p>
+<p>‘or  1=1%23</p>
+<p>“or</p>
+<p>“)</p>
+<p><img src="https://img.gejiba.com/images/76b5c3ff8248556fe61f85d2de3a06aa.png" alt="76b5c3ff8248556fe61f85d2de3a06aa.png"></p>
+<p>判读数据库类型：</p>
+<p>exp()函数</p>
+<p>exp(710)+exp(710) Mysql</p>
+<p>exp(210)+exp(209)  oracle</p>
+<p>.net  mssql/sqlserver</p>
+<p>页面反应的分析逻辑：</p>
+<p>1.有回显的</p>
+<p>直接出现sql语句 ——&gt;报错注入  updatexml(1,concat(‘~’,(select+database()),1))%23</p>
+<p>2.无回显的 sleep(2) exp(210)判断 ——&gt;dnslog （理解一个true false的概念）</p>
+<p>3.搜索框注入方式——&gt;猜测sql语句 </p>
+<p>找到闭合的规则</p>
+<ul>
+<li>越权（逻辑）</li>
+</ul>
+<p>敏感参数水平越权：userKey、value、personId、</p>
+<p>垂直越权:修改用户属性对应type参数值 student、teacher、admin</p>
+<p>验证码越权使用、验证码复用</p>
+<p>越权下载 修改参数id</p>
+<p>任意密码重置：修改请求中id，name，data这种类似的参数越权修改其他用户密码</p>
+<ul>
+<li>文件上传</li>
+</ul>
+<p>修改头像处</p>
+<p>白名单限制、只下载不解析</p>
+<p>jsp文件、html文件构造xss</p>
+<p>上传文件名目录穿越</p>
+<ul>
+<li>Gethell </li>
+<li>内网的简单操作 </li>
+<li>XSS、文件读取、下载、弱口令、RCE</li>
+</ul>
+<p>注册登录 修改个人信息 输入框 XSS  <script>alert(/xss/)<script></p>
+<ul>
+<li>统一认证的挖掘思路 </li>
+<li>swagger的未授权（接口文档的利用） </li>
+<li>edu通用漏洞批量打 </li>
+<li>通杀挖掘思路 </li>
+<li>证书站外围资产</li>
+</ul>
+<p><strong>难度由简到难</strong></p>
+<p>交大</p>
+<p>电子科大</p>
+<p>同济</p>
+<p>上理</p>
+<p>常熟</p>
+<p>广工</p>
+<p>兰州</p>
+<p>上外</p>
+<p>南开</p>
+<p>东林</p>
+<p>长春</p>
+<p>上音</p>
+<p>1.没有VPN的思路 外围网站收集</p>
+<ul>
+<li>注册点 </li>
+<li>边缘登录 </li>
+<li>老破小 </li>
+<li>小程序 </li>
+<li>公众号 </li>
+<li>院校类内部的小众系统</li>
+</ul>
+<p>Step 1：</p>
+<p>Googel语法： 更换与学校相关的关键词 </p>
+<p>site:xxx.edu.cn "登录"  "注册" "验证码" "忘记密码" "管理"</p>
+<p>"xx大学" "后台管理" "管理系统" "登录"--->找边缘资产</p>
+<p>可能会找到只有ip的系统 没有域名归属</p>
+<p>学报、平台指南、教学辅助系统</p>
+<p>Step 2：</p>
+<p>Fofa、zoomeye、bing走一波</p>
+<p>不同搜索引擎的关键字获得的信息不同</p>
+<p>Step 3：</p>
+<p>去找小程序、公众号</p>
+<p>公众号抓包比较容易 小程序抓包需要配置</p>
+<p>文章类的忽略</p>
+<p>xx查询一般可能存在sql注入</p>
+<p>pc端 小程序端的接口一般是分开来写的 一部分是公共调用的</p>
+<p>真正系统的薄弱点，存在于公众号+小程序</p>
+<p>我们可以通过获取小程序，公众号的域名来反推PC端可能存在的系统</p>
+<p>域名后面加个admin、main、home、system常见系统主页界面路径</p>
+<p>Step 4：钓鱼、社工、搞密码</p>
+<ul>
+<li>EDU常见思路与系统挖掘测试</li>
+</ul>
+<ol>
+<li>挖洞当中要进行学习，每天留半个小时看看文章  觉得不错试试总结一下 </li>
+<li>看到空白页——>找找js  可能是api服务器 盲猜一下接口 或者fuzz </li>
+<li>外网的一般系统：</li>
+</ol>
+<p>3.1 登录注册 忘记密码：（越权 注入一般很少 未授权从js当中看）</p>
+<p>有些部分接口是可以通过改包越过的 但是并不是所有</p>
+<p>进入系统后：</p>
+<p>3.2 找我的账号信息 我的roleid 我的名字</p>
+<p>我的信息是通过接口返回的</p>
+<p>还是页面直接写上去</p>
+<p>或者写入到js里面</p>
+<p>第一层：就是看看是否能越权</p>
+<p>第二层：理解每一个接口都干了什么事情</p>
+<p>api/menu/init</p>
+<p>api/menu/userInfo json数据 html页面</p>
+<p>做对比：</p>
+<p>正常情况下的页面是什么样子</p>
+<p>改完之后页面是什么样子</p>
+<p>3.3理解接口含义</p>
+<p>根据返回的参数 来确定是否存在利用价值</p>
+<p>3.4 利用整个系统的权限规则</p>
+<p>3.5 文件上传</p>
+<p>从js里面去找upload相关词的接口</p>
+<p>找业务上传点</p>
+<p>判断是否黑白名单</p>
+<p>3.6 基于内部系统中可能存在不同与外部的js文件 接口其他的东西</p>
+<p>RCE 版本框架漏洞 cms 这种类型的百度就可以</p>
+<p>构造报错——>获取版本信息</p>
+<p>已使用  OneNote 创建。</p>
+</script></p>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="lv-container"></div>
+        <div class="giscus"></div>
+    </div>
+</div>
+<script type="text/javascript" src="https://cdn.lanluo.cn/js/canvas-nest.min.js"></script>
+    </div>
+</div>
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+        <li>
+            <a target="_blank" href="http://weibo.com/2438257908">
+                            <span class="fa-stack fa-lg">
+                                  <i class="iconfont icon-weibo"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/kmoonn">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+    </p>
+</footer>
+<script type="text/javascript" src="https://cdn.lanluo.cn/js/canvas-nest.min.js"></script>
+<script type="text/javascript" src="https://cdn.lanluo.cn/js/canvas-nest.min.js"></script>
+<script type="text/javascript" src="https://cdn.lanluo.cn/js/canvas-nest.min.js"></script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":250,"height":350},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+    <style>
+        #taboola-livere { display: none;}
+    </style>
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC81NzAwOS8zMzQ3Mw==');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>请激活JavaScript</noscript>
+    </div>
+
+</html>

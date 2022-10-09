@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang=zh-CN>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        渗透测试——Nmap - Kmoon_Hs
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+    <link href="//at.alicdn.com/t/font_620856_28hi1hpxx24.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 6.2.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+<script type="text/javascript" src="https://cdn.lanluo.cn/js/canvas-nest.min.js"></script>
+<body>
+    <script type="text/javascript" src="https://cdn.lanluo.cn/js/canvas-nest.min.js"></script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?cb7a49e4f6a740b15e6fd25de2803712";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 千山同一月,万物皆清明 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar radius">
+            <img src="/img/avatar.png" />
+        </div>
+        <div class="name">
+            <i>Kmoon</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-bg" id="search-bg"></div>
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> 千山同一月,万物皆清明 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        渗透测试——Nmap
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2022-09-26 13:02:24</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#Tools" title="Tools">Tools</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <p>Nmap</p>
+<p>2022年7月16日</p>
+<ul>
+<li><ul>
+<li><p><strong>Nmap简介</strong></p>
+</li>
+<li><p><strong>常用命令</strong> </p>
+</li>
+<li><p>常用扫描类型</p>
+<ul>
+<li><strong>基本扫描</strong> </li>
+<li><strong>隐蔽扫描</strong> </li>
+<li><strong>SYN扫描</strong> </li>
+<li><strong>NULL扫描</strong> </li>
+<li><strong>ACK扫描</strong> </li>
+<li>空闲扫描<ul>
+<li><strong>寻找僵尸主机</strong> </li>
+<li><strong>idle扫描应用</strong></li>
+</ul>
+</li>
+<li><strong>常用命令组合</strong></li>
+</ul>
+</li>
+<li><p><strong>NSE脚本引擎</strong> </p>
+</li>
+<li><p><strong>版本侦测用法</strong> </p>
+</li>
+<li><p>OS</p>
+<p>侦测</p>
+<ul>
+<li><strong>OS侦测原理</strong> </li>
+<li><strong>操作指令：</strong></li>
+</ul>
+</li>
+<li><p><strong>输出格式</strong></p>
+</li>
+</ul>
+</li>
+<li><p><strong>Nmap简介</strong></p>
+</li>
+<li><p>Nmap是一款网络扫描和主机检测的非常有用的工具。可以用于收集信息和枚举，同时可以用来作为一个漏洞探测器或安全扫描器。</p>
+</li>
+<li><p>主要功能有：</p>
+</li>
+<li><ol>
+<li>检测活在网络上的主机（主机发现） </li>
+<li>检测主机上开放的端口（端口发现或枚举） </li>
+<li>检测到相应的端口（服务发现）的软件和版本 </li>
+<li>检测操作系统，硬件地址，以及软件版本 </li>
+<li>检测脆弱性的漏洞（Nmap的脚本）</li>
+</ol>
+</li>
+<li><ul>
+<li>下载地址：<a href="https://nmap.org/download.html">https://nmap.org/download.html</a> </li>
+<li>环境：Windows、Linux、Mac OS</li>
+</ul>
+</li>
+<li><p><strong>常用命令</strong></p>
+</li>
+<li><p>-A  ：综合性扫描</p>
+</li>
+<li><p>-T4： 指定扫描过程使用的时序，总有6个级别（0-5），级别越高，扫描速度越快，但也容易被防火墙或IDS检测并屏蔽掉，在网络通讯状况较好的情况下推荐使用T4</p>
+</li>
+<li><p>-O :  指定Nmap进行系统版本扫描</p>
+</li>
+<li><p>-sV:  指定让Nmap进行服务版本扫描</p>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token list punctuation">-</span> -p  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>port</span> <span class="token attr-name">ranges</span><span class="token punctuation">&gt;</span></span>: 扫描指定的端口
+<span class="token list punctuation">-</span> -script <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">name</span><span class="token punctuation">&gt;</span></span> : 指定扫描脚本<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+<li><p>-Pn  ： 不进行ping扫描</p>
+</li>
+<li><p>-iL  1.txt : 批量扫描1.txt中的目标地址</p>
+</li>
+<li><p>-PO :  使用IP协议包探测对方主机是否开启</p>
+</li>
+<li><p>-PE/PP/PM : 使用ICMP echo、 ICMP timestamp、ICMP netmask 请求包发现主机</p>
+</li>
+<li><p>-PS/PA/PU/PY : 使用TCP SYN/TCP ACK或SCTP INIT/ECHO方式进行发现</p>
+</li>
+<li><p>-e  eth0：指定使用eth0网卡进行探测</p>
+</li>
+<li><p>-f :  —mtu <val>: 指定使用分片、指定数据包的 MTU.</val></p>
+</li>
+<li><p>-b  <ftp relay="" host="">: 使用FTP bounce scan扫描方式</ftp></p>
+</li>
+<li><p>-g： 指定发送的端口号</p>
+</li>
+<li><p>-r:  不进行端口随机打乱的操作（如无该参数，nmap会将要扫描的端口以随机顺序方式扫描，以让nmap的扫描不易被对方防火墙检测到）</p>
+</li>
+<li><p>-v  表示显示冗余信息，在扫描过程中显示扫描的细节，从而让用户了解当前的扫描状态</p>
+</li>
+<li><p>-n :  表示不进行DNS解析；</p>
+</li>
+<li><p>-D  &lt;decoy1,decoy2[,ME],…&gt;: 用一组 IP 地址掩盖真实地址，其中 ME 填入自己的 IP 地址</p>
+</li>
+<li><p>-R  ：表示总是进行DNS解析。</p>
+</li>
+<li><p>-F :  快速模式，仅扫描TOP 100的端口</p>
+</li>
+<li><p>-S  <ip_address>: 伪装成其他 IP 地址</ip_address></p>
+</li>
+<li><p>—ttl  <val>: 设置 time-to-live 时间</val></p>
+</li>
+<li><p>—badsum: 使用错误的 checksum 来发送数据包（正常情况下，该类数据包被抛弃，如果收到回复，说明回复来自防火墙或 IDS/IPS）</p>
+</li>
+<li><p>—dns-servers : 指定DNS服务器</p>
+</li>
+<li><p>—system-dns : 指定使用系统的DNS服务器</p>
+</li>
+<li><p>—traceroute : 追踪每个路由节点</p>
+</li>
+<li><p>—scanflags <flags>: 定制TCP包的flags</flags></p>
+</li>
+<li><p>—top-ports <number> :扫描开放概率最高的number个端口</number></p>
+</li>
+<li><p>—port-ratio <ratio>: 扫描指定频率以上的端口。与上述—top-ports类似，这里以概率作为参数</ratio></p>
+</li>
+<li><p>—version-trace: 显示出详细的版本侦测过程信息</p>
+</li>
+<li><p>—osscan-limit: 限制Nmap只对确定的主机的进行OS探测（至少需确知该主机分别有一个open和closed的端口）</p>
+</li>
+<li><p>—osscan-guess: 大胆猜测对方的主机的系统类型。由此准确性会下降不少，但会尽可能多为用户提供潜在的操作系统</p>
+</li>
+<li><p>—data-length <num>: 填充随机数据让数据包长度达到 Num</num></p>
+</li>
+<li><p>—ip-options <options>: 使用指定的 IP 选项来发送数据包</options></p>
+</li>
+<li><p>—spoof-mac &lt;mac address/prefix/vendor name&gt; :  伪装 MAC 地址</p>
+</li>
+<li><p>—version-intensity <level>: 指定版本侦测强度（0-9），默认为7。数值越高，探测出的服务越准确，但是运行时间会比较长。</level></p>
+</li>
+<li><p>—version-light: 指定使用轻量侦测方式 (intensity 2)</p>
+</li>
+<li><p>—version-all: 尝试使用所有的probes进行侦测 (intensity 9)</p>
+</li>
+<li><p>—version-trace: 显示出详细的版本侦测过程信息</p>
+</li>
+<li><p><strong>常用扫描类型</strong></p>
+</li>
+<li><p>-sn :  只进行主机发现，不进行端口扫描</p>
+</li>
+<li><p>-sL:  List Scan 列表扫描，仅将指定的目标的IP列举出来，不进行主机发现</p>
+</li>
+<li><p>-sY/sZ: 使用SCTP INIT/COOKIE-ECHO来扫描SCTP协议端口的开放的情况</p>
+</li>
+<li><p>-sO:  使用IP protocol 扫描确定目标机支持的协议类型</p>
+</li>
+<li><p>-sN/sF/sX: 指定使用TCP Null, FIN, and Xmas scans秘密扫描方式来协助探测对方的TCP端口状态</p>
+</li>
+<li><p>-sS/sT/sA/sW/sM:指定使用 TCP SYN/Connect()/ACK/Window/Maimon  scans的方式来对目标主机进行扫描</p>
+</li>
+<li><p>-sU:  指定使用UDP扫描方式确定目标主机的UDP端口状况</p>
+</li>
+<li><p>-sP:  Ping扫描 快速发现网络</p>
+</li>
+<li><p>-sR： PRC扫描 定位PRC，对成功扫描的机器记录</p>
+</li>
+<li><p>-sI:  闲置扫描 僵尸主机扫描，非常隐蔽</p>
+</li>
+<li><p><strong>基本扫描</strong></p>
+</li>
+<li><p>我们先尝试扫描一下社区，只进行简单的扫描，确定社区开放了哪些端口，使用-A进行扫描</p>
+</li>
+<li><p>nmap -A  bbs.zkaq.cn</p>
+</li>
+<li><p><img src="/Nmap.files/image001.png" alt="img"></p>
+</li>
+<li><p>可以发现，社区开放了TCP的80端口，以及443端口。</p>
+</li>
+<li><p><strong>隐蔽扫描</strong></p>
+</li>
+<li><p>网络扫描的过程包括发送特殊够早的数据包给目标主机和对返回的结果进行基于某种标准的检查。从扫描结果中，我们可以知道那些主机在线，运行了哪些服务以及这些服务的版本信息等。</p>
+</li>
+<li><p>在一个安全的网络中，我们有可能根据需要来对抗IDS的异常行为捕捉。发送数据包的数量和速度，流量是否异常等，防火墙一般都会标记。为减少被检测到的概率，我们可以采取一些措施。</p>
+</li>
+<li><p>控制时间。</p>
+</li>
+<li><p>nmap控制扫描时间选项： </p>
+</li>
+<li></li>
+<li><ol>
+<li>-T（0~5）：  控制扫描进度，避免被检测的最简单形式。0是最温和的，5是最激进的，只能在局域网中使用。 </li>
+<li>–max_hostgroup：  将扫描的主机数量限制在每次一个。 </li>
+<li>–max_retries：  一般不需要修改此选项，如果是紧急情况且不在意扫描过程中可能错过一个包含潜在漏洞的主机，可以将这个选项设为0. </li>
+<li>max_parallelism 10： 一次仅允许10个探测请求。 </li>
+<li>scan_delay 两次探测之间停顿。</li>
+</ol>
+</li>
+<li><p><strong>SYN****扫描</strong></p>
+</li>
+<li><p>使用-sS选项对我们的社区发起一个完全开发的扫描。结果如下：</p>
+</li>
+<li><p><img src="/Nmap.files/image002.png" alt="img"></p>
+</li>
+<li><p>从结果来看，社区仍然只开放两个端口，我们实战时要确保使用不同类型的扫描对目标网络扫描，否则可能错失一些重要信息。</p>
+</li>
+<li><p><strong>NULL****扫描</strong></p>
+</li>
+<li><p>使用NULL扫描，对社区进行扫描，再来看看结果：</p>
+</li>
+<li><p><img src="/Nmap.files/image003.png" alt="img"></p>
+</li>
+<li><p>很遗憾，没有得到有效信息，我们可以猜测社区应该是安装了防火墙。</p>
+</li>
+<li><p><strong>ACK****扫描</strong></p>
+</li>
+<li><p>在有防火墙的情况下，如果没从NULL扫描获取到什么信息的话，现在进行ACK扫描</p>
+</li>
+<li><p><img src="/Nmap.files/image004.png" alt="img"></p>
+</li>
+<li><p>很遗憾，仍然没有扫描到什么有效信息。看来社区防护还是做得很不错。</p>
+</li>
+<li><p><strong>空闲扫描</strong></p>
+</li>
+<li><p>为了降低被检测到的机率，我们通常需要转嫁责任，这时可以使用空闲扫描（idle scan），让一个僵尸主机承担扫描任务。</p>
+</li>
+<li></li>
+<li><ol>
+<li>nmap.org官网上详细讲述了空闲扫描的原理，可以在<a href="http://nmap.org/book/idlescan.html">http://nmap.org/book/idlescan.html</a>  了解空闲扫描的所有信息。</li>
+</ol>
+</li>
+<li><p>使用空闲扫描（-sI）需要注意一个问题，就是要找一台TCP序列预测成功率高的僵尸主机，这个僵尸主机必须尽可能的空闲，比如说网络打印机就是一个很好地选择，因为网络打印机不仅存在着恒定的网络资源，而且很难预测它们的TCP序列。</p>
+</li>
+<li><p>空闲扫描的原理： </p>
+</li>
+<li></li>
+<li><ol>
+<li>向僵尸主机放松SYN/ACK数据包，获得带有分片ID（IPID）的RST报文。 </li>
+<li>发送使用僵尸主机IP地址的伪数据包给目标主机。 </li>
+<li>如果目标主机端口关闭，就会向僵尸主机响应RST报文。如果目标端口开放，目标主机向僵尸主机响应SYN/ACK报文，僵尸主机发现这个非法连接响应，并向目标主机发送RST报文，此时IPID号开始增长。 </li>
+<li>通过向僵尸主机发送另一个SYN/ACK报文已退出上述循环并检查将是主机RST报文中的IPID是否每次增长2，同时目标主机的RST每次增长1。 </li>
+<li>重复上述步骤直到检测完所有的端口。</li>
+</ol>
+</li>
+<li><p><strong>寻找僵尸主机</strong></p>
+</li>
+<li><p>空闲扫描的第一步就是寻找僵尸主机，我们可以通过下面这条命令（-v 详细信息，-O 系统检测，-Pn 无ping，-n 无域名解析）来获得主机的TCP序列预测率。</p>
+</li>
+<li><p># nmap -v -O -Pn  -n <em><strong>.</strong></em>.<em><strong>.</strong></em></p>
+</li>
+<li><p><strong>idle****扫描应用</strong></p>
+</li>
+<li><p>使用以下命令扫描，并启动wireshark抓包。</p>
+</li>
+<li><p>#  nmap -p 22,23,53,80,443,8888,3960 -Pn -sI <em><strong>.</strong></em>.<em><strong>.</strong></em>(僵尸主机IP） <em><strong>.</strong></em>.<em><strong>.</strong></em>(目标主机IP)</p>
+</li>
+<li><p>使用-p启动已知TCP端口的扫描，节省时间；通过-Pn强调不适用ping（默认是使用的），-sI启动空闲扫描，后面依次是僵尸主机和目标主机的ip地址。 </p>
+</li>
+<li><p><strong>常用命令组合</strong></p>
+</li>
+<li><ul>
+<li>扫描一个小范围<br>nmap  192.168.230.120-128</li>
+</ul>
+</li>
+<li></li>
+<li><ol>
+<li>root@kali:~#  nmap 192.168.230.120-128 </li>
+<li>Starting Nmap 7.80 ( <a href="https://nmap.org/">https://nmap.org</a> ) at 2021-08-26 15:33 CST </li>
+<li>Nmap scan report for  192.168.230.128 </li>
+<li>Host is up (0.0019s  latency). </li>
+<li>Not shown: 988 closed ports </li>
+<li>PORT   STATE SERVICE </li>
+<li>80/tcp  open  http </li>
+<li>135/tcp  open  msrpc </li>
+<li>139/tcp  open  netbios-ssn </li>
+<li>445/tcp  open  microsoft-ds </li>
+<li>3306/tcp open  mysql </li>
+<li>3389/tcp open  ms-wbt-server </li>
+<li>49152/tcp open unknown </li>
+<li>49153/tcp open unknown </li>
+<li>49154/tcp open unknown </li>
+<li>49155/tcp open unknown </li>
+<li>49156/tcp open unknown </li>
+<li>49157/tcp open unknown </li>
+<li>MAC Address: 00:0C:29:6C:5A:C6  (VMware) </li>
+<li>Nmap done: 9 IP addresses (1 host  up) scanned in 1.77 seconds</li>
+</ol>
+</li>
+<li><p>这里扫描到了我的另一台虚拟机 192.168.230.128</p>
+</li>
+<li><ul>
+<li>初步扫描端口信息<br>我们扫描一下这个虚拟机的 80,443,3306,3389,6379端口<br>nmap -T4 -A -v -Pn  192.168.230.128 -p 80,443,3306,3389,6379</li>
+</ul>
+</li>
+<li></li>
+<li><ol>
+<li>root@kali:~#  nmap -T4 -A -v -Pn 192.168.230.128 -p 80,443,3306,3389,6379 </li>
+<li>Starting Nmap 7.80 ( <a href="https://nmap.org/">https://nmap.org</a> ) at 2021-08-26 15:43 CST </li>
+<li>NSE: Loaded 151 scripts for  scanning. </li>
+<li>NSE: Script Pre-scanning. </li>
+<li>Initiating NSE at 15:43 </li>
+<li>Completed NSE at 15:43, 0.00s  elapsed </li>
+<li>Initiating NSE at 15:43 </li>
+<li>Completed NSE at 15:43, 0.00s  elapsed </li>
+<li>Initiating NSE at 15:43 </li>
+<li>Completed NSE at 15:43, 0.00s  elapsed </li>
+<li>Initiating ARP Ping Scan at  15:43 </li>
+<li>Scanning 192.168.230.128 [1  port] </li>
+<li>Completed ARP Ping Scan at 15:43,  0.00s elapsed (1 total hosts) </li>
+<li>Initiating Parallel DNS resolution  of 1 host. at 15:43 </li>
+<li>Completed Parallel DNS resolution  of 1 host. at 15:43, 0.00s elapsed </li>
+<li>Initiating SYN Stealth Scan at  15:43 </li>
+<li>Scanning 192.168.230.128 [5  ports] </li>
+<li>Discovered open port 3306/tcp on  192.168.230.128 </li>
+<li>Discovered open port 3389/tcp on  192.168.230.128 </li>
+<li>Discovered open port 80/tcp on  192.168.230.128 </li>
+<li>Completed SYN Stealth Scan at  15:43, 1.10s elapsed (5 total ports) </li>
+<li>Initiating Service scan at  15:43 </li>
+<li>Scanning 3 services on  192.168.230.128 </li>
+<li>Completed Service scan at 15:43,  6.01s elapsed (3 services on 1 host) </li>
+<li>Initiating OS detection (try #1)  against 192.168.230.128 </li>
+<li>NSE: Script scanning  192.168.230.128. </li>
+<li>Initiating NSE at 15:43 </li>
+<li>Completed NSE at 15:43, 5.02s  elapsed </li>
+<li>Initiating NSE at 15:43 </li>
+<li>Completed NSE at 15:43, 0.03s  elapsed </li>
+<li>Initiating NSE at 15:43 </li>
+<li>Completed NSE at 15:43, 0.00s  elapsed </li>
+<li>Nmap scan report for  192.168.230.128 </li>
+<li>Host is up (0.00029s  latency). </li>
+<li>PORT   STATE  SERVICE  VERSION </li>
+<li>80/tcp  open   http    Apache httpd 2.4.23  ((Win32) OpenSSL/1.0.2j PHP/5.2.17) </li>
+<li>| http-methods: </li>
+<li>|  Supported Methods: GET HEAD POST OPTIONS  TRACE </li>
+<li>|_ Potentially risky methods: TRACE </li>
+<li>|_http-server-header:  Apache/2.4.23 (Win32) OpenSSL/1.0.2j PHP/5.2.17 </li>
+<li>|_http-title: Index of / </li>
+<li>443/tcp closed https </li>
+<li>3306/tcp open  mysql    MySQL (unauthorized) </li>
+<li>3389/tcp open  tcpwrapped </li>
+<li>6379/tcp closed redis </li>
+<li>MAC Address: 00:0C:29:6C:5A:C6  (VMware) </li>
+<li>Device type: general  purpose </li>
+<li>Running: Microsoft Windows  7|2008|8.1 </li>
+<li>OS CPE:  cpe:/o:microsoft:windows_7::- cpe:/o:microsoft:windows_7::sp1  cpe:/o:microsoft:windows_server_2008::sp1  cpe:/o:microsoft:windows_server_2008:r2 cpe:/o:microsoft:windows_8  cpe:/o:microsoft:windows_8.1 </li>
+<li>OS details: Microsoft Windows 7  SP0 - SP1, Windows Server 2008 SP1, Windows Server 2008 R2, Windows 8, or  Windows 8.1 Update 1 </li>
+<li>Uptime guess: 0.196 days (since  Thu Aug 26 11:00:47 2021) </li>
+<li>Network Distance: 1 hop </li>
+<li>TCP Sequence Prediction:  Difficulty=259 (Good luck!) </li>
+<li>IP ID Sequence Generation:  Incremental </li>
+<li>TRACEROUTE </li>
+<li>HOP RTT   ADDRESS </li>
+<li>1  0.29 ms 192.168.230.128 </li>
+<li>NSE: Script Post-scanning. </li>
+<li>Initiating NSE at 15:43 </li>
+<li>Completed NSE at 15:43, 0.00s  elapsed </li>
+<li>Initiating NSE at 15:43 </li>
+<li>Completed NSE at 15:43, 0.00s  elapsed </li>
+<li>Initiating NSE at 15:43 </li>
+<li>Completed NSE at 15:43, 0.00s  elapsed </li>
+<li>Read data files from:  /usr/bin/../share/nmap </li>
+<li>OS and Service detection  performed. Please report any incorrect results at <a href="https://nmap.org/submit/">https://nmap.org/submit/</a> . </li>
+<li>Nmap done: 1 IP address (1 host  up) scanned in 13.65 seconds </li>
+<li>​      Raw packets sent: 26 (1.842KB) |  Rcvd: 22 (1.570KB)</li>
+</ol>
+</li>
+<li><p>从扫描结果来看，该虚拟机80,3306,3389端口开放，443,6379端口关闭</p>
+</li>
+<li><ul>
+<li>判断常见的漏洞并扫描端口</li>
+</ul>
+</li>
+<li><p>–script指定常见漏洞 nmap 192.168.230.128 –script=auth,vuln</p>
+</li>
+<li><p>扫描信息如下：</p>
+</li>
+<li></li>
+<li><ol>
+<li>root@kali:~#  nmap 192.168.230.128 –script=auth,vuln </li>
+<li>Starting Nmap 7.80 ( <a href="https://nmap.org/">https://nmap.org</a> ) at 2021-08-26 15:50 CST                                                  </li>
+<li>Nmap scan report for  192.168.230.128                                                                </li>
+<li>Host is up (0.00065s  latency).                                                                   </li>
+<li>Not shown: 988 closed ports                                                                    </li>
+<li>PORT   STATE SERVICE                                                                      </li>
+<li>80/tcp  open  http                                                                        </li>
+<li>|_clamav-exec: ERROR: Script  execution failed (use -d to debug)                                                  </li>
+<li>| http-csrf:                                                                            </li>
+<li>| Spidering limited to:  maxdepth=3; maxpagecount=20; withinhost=192.168.230.128                                          </li>
+<li>|  Found the following possible CSRF  vulnerabilities:                                                       </li>
+<li>|                                                                                 </li>
+<li>|   Path: <a href="http://192.168.230.128/2.php">http://192.168.230.128:80/2.php</a>                                                            </li>
+<li>|   Form id:                                                                           </li>
+<li>|_  Form action: 2.php </li>
+<li>|_http-dombased-xss: Couldn’t find  any DOM based XSS. </li>
+<li>| http-enum: </li>
+<li>|  /: Root directory w/ directory  listing </li>
+<li>|_ /uploads/: Potentially interesting  folder </li>
+<li>| http-slowloris-check: </li>
+<li>|  VULNERABLE: </li>
+<li>|  Slowloris DOS attack </li>
+<li>|   State: LIKELY VULNERABLE </li>
+<li>|   IDs:  CVE:CVE-2007-6750 </li>
+<li>|    Slowloris tries to keep many connections  to the target web server open and hold </li>
+<li>|    them open as long as possible. It accomplishes this by opening connections  to </li>
+<li>|    the target web server and sending a  partial request. By doing so, it starves </li>
+<li>|    the http server’s resources causing  Denial Of Service. </li>
+<li>|    </li>
+<li>|   Disclosure date: 2009-09-17 </li>
+<li>|   References: </li>
+<li>|    <a href="http://ha.ckers.org/slowloris/">http://ha.ckers.org/slowloris/</a> </li>
+<li>|_   <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6750">https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6750</a> </li>
+<li>| http-sql-injection: </li>
+<li>|  Possible sqli for forms: </li>
+<li>|   Form at path: /2.php, form’s action:  2.php. Fields that might be vulnerable: </li>
+<li>|_   username </li>
+<li>|_http-stored-xss: Couldn’t find  any stored XSS vulnerabilities. </li>
+<li>|_http-trace: TRACE is  enabled </li>
+<li>135/tcp  open  msrpc </li>
+<li>|_clamav-exec: ERROR: Script  execution failed (use -d to debug) </li>
+<li>139/tcp  open  netbios-ssn </li>
+<li>|_clamav-exec: ERROR: Script  execution failed (use -d to debug) </li>
+<li>445/tcp  open  microsoft-ds </li>
+<li>|_clamav-exec: ERROR: Script  execution failed (use -d to debug) </li>
+<li>3306/tcp open  mysql </li>
+<li>|_clamav-exec: ERROR: Script  execution failed (use -d to debug) </li>
+<li>|_mysql-empty-password: Host  ‘192.168.230.129’ is not allowed to connect to this MySQL server </li>
+<li>|_mysql-vuln-cve2012-2122: ERROR:  Script execution failed (use -d to debug) </li>
+<li>3389/tcp open  ms-wbt-server </li>
+<li>|_clamav-exec: ERROR: Script  execution failed (use -d to debug) </li>
+<li>|_sslv2-drown: </li>
+<li>49152/tcp open unknown </li>
+<li>|_clamav-exec: ERROR: Script  execution failed (use -d to debug) </li>
+<li>49153/tcp open unknown </li>
+<li>|_clamav-exec: ERROR: Script  execution failed (use -d to debug) </li>
+<li>49154/tcp open unknown </li>
+<li>|_clamav-exec: ERROR: Script  execution failed (use -d to debug) </li>
+<li>49155/tcp open unknown </li>
+<li>|_clamav-exec: ERROR: Script  execution failed (use -d to debug) </li>
+<li>49156/tcp open unknown </li>
+<li>|_clamav-exec: ERROR: Script  execution failed (use -d to debug) </li>
+<li>49157/tcp open unknown </li>
+<li>|_clamav-exec: ERROR: Script  execution failed (use -d to debug) </li>
+<li>MAC Address: 00:0C:29:6C:5A:C6  (VMware) </li>
+<li>Host script results: </li>
+<li>|_samba-vuln-cve-2012-1182:  NT_STATUS_ACCESS_DENIED </li>
+<li>|_smb-vuln-ms10-054: false </li>
+<li>|_smb-vuln-ms10-061:  NT_STATUS_ACCESS_DENIED </li>
+<li>| smb-vuln-ms17-010: </li>
+<li>|  VULNERABLE: </li>
+<li>|  Remote Code Execution vulnerability in  Microsoft SMBv1 servers (ms17-010) </li>
+<li>|   State: VULNERABLE </li>
+<li>|   IDs:  CVE:CVE-2017-0143 </li>
+<li>|   Risk factor: HIGH </li>
+<li>|    A critical remote code execution  vulnerability exists in Microsoft SMBv1 </li>
+<li>|    servers (ms17-010). </li>
+<li>|      </li>
+<li>|   Disclosure date: 2017-03-14 </li>
+<li>|   References: </li>
+<li>|    <a href="https://technet.microsoft.com/en-us/library/security/ms17-010.aspx">https://technet.microsoft.com/en-us/library/security/ms17-010.aspx</a> </li>
+<li>|    <a href="https://blogs.technet.microsoft.com/msrc/2017/05/12/customer-guidance-for-wannacrypt-attacks/">https://blogs.technet.microsoft.com/msrc/2017/05/12/customer-guidance-for-wannacrypt-attacks/</a> </li>
+<li>|_   <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-0143">https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-0143</a> </li>
+<li>Nmap done: 1 IP address (1 host  up) scanned in 118.86 seconds</li>
+</ol>
+</li>
+<li><ul>
+<li>典型的 nmap 扫描<br>nmap -A -T4<br>扫描信息如下：</li>
+</ul>
+</li>
+<li></li>
+<li><ol>
+<li>root@kali:~#  nmap -A -T4 192.168.230.128 </li>
+<li>Starting Nmap 7.80 ( <a href="https://nmap.org/">https://nmap.org</a> ) at 2021-08-26 16:07 CST </li>
+<li>Nmap scan report for  192.168.230.128 </li>
+<li>Host is up (0.00099s  latency). </li>
+<li>Not shown: 988 closed ports </li>
+<li>PORT   STATE SERVICE   VERSION </li>
+<li>80/tcp  open  http     Apache httpd 2.4.23  ((Win32) OpenSSL/1.0.2j PHP/5.2.17) </li>
+<li>| http-methods: </li>
+<li>|_ Potentially risky methods: TRACE </li>
+<li>|_http-server-header:  Apache/2.4.23 (Win32) OpenSSL/1.0.2j PHP/5.2.17 </li>
+<li>|_http-title: Index of / </li>
+<li>135/tcp  open  msrpc    Microsoft Windows  RPC </li>
+<li>139/tcp  open  netbios-ssn Microsoft Windows  netbios-ssn </li>
+<li>445/tcp  open  microsoft-ds Windows Server 2008 HPC Edition 7601 Service Pack 1  microsoft-ds </li>
+<li>3306/tcp open  mysql    MySQL  (unauthorized) </li>
+<li>3389/tcp open  tcpwrapped </li>
+<li>|_ssl-date:  2021-08-26T08:08:29+00:00; 0s from scanner time. </li>
+<li>49152/tcp open msrpc     Microsoft Windows RPC </li>
+<li>49153/tcp open msrpc     Microsoft Windows RPC </li>
+<li>49154/tcp open msrpc     Microsoft Windows RPC </li>
+<li>49155/tcp open msrpc     Microsoft Windows RPC </li>
+<li>49156/tcp open msrpc     Microsoft Windows RPC </li>
+<li>49157/tcp open msrpc     Microsoft Windows RPC </li>
+<li>MAC Address: 00:0C:29:6C:5A:C6  (VMware) </li>
+<li>Device type: general  purpose </li>
+<li>Running: Microsoft Windows  7|2008|8.1 </li>
+<li>OS CPE:  cpe:/o:microsoft:windows_7::- cpe:/o:microsoft:windows_7::sp1  cpe:/o:microsoft:windows_server_2008::sp1  cpe:/o:microsoft:windows_server_2008:r2 cpe:/o:microsoft:windows_8  cpe:/o:microsoft:windows_8.1 </li>
+<li>OS details: Microsoft Windows 7  SP0 - SP1, Windows Server 2008 SP1, Windows Server 2008 R2, Windows 8, or  Windows 8.1 Update 1 </li>
+<li>Network Distance: 1 hop </li>
+<li>Service Info: OSs: Windows,  Windows Server 2008 R2 - 2012; CPE: cpe:/o:microsoft:windows </li>
+<li>Host script results: </li>
+<li>|_clock-skew: mean: -1h59m59s,  deviation: 3h59m59s, median: 0s </li>
+<li>|_nbstat: NetBIOS name:  WIN-5QVLF6I9FUL, NetBIOS user: <unknown>, NetBIOS MAC: 00:0c:29:6c:5a:c6  (VMware) </unknown></li>
+<li>| smb-os-discovery: </li>
+<li>|  OS: Windows Server 2008 HPC Edition 7601  Service Pack 1 (Windows Server 2008 HPC Edition 6.1) </li>
+<li>|  OS CPE:  cpe:/o:microsoft:windows_server_2008::sp1 </li>
+<li>|  Computer name: WIN-5QVLF6I9FUL </li>
+<li>|  NetBIOS computer name:  WIN-5QVLF6I9FUL\x00 </li>
+<li>|  Workgroup: WORKGROUP\x00 </li>
+<li>|_ System time: 2021-08-26T16:08:14+08:00 </li>
+<li>| smb-security-mode: </li>
+<li>|  account_used: guest </li>
+<li>|  authentication_level: user </li>
+<li>|  challenge_response: supported </li>
+<li>|_ message_signing: disabled (dangerous, but  default) </li>
+<li>| smb2-security-mode: </li>
+<li>|  2.02: </li>
+<li>|_  Message signing enabled but not  required </li>
+<li>| smb2-time: </li>
+<li>|  date: 2021-08-26T08:08:14 </li>
+<li>|_ start_date: 2021-07-30T07:34:36 </li>
+<li>TRACEROUTE </li>
+<li>HOP RTT   ADDRESS </li>
+<li>1  0.99 ms 192.168.230.128 </li>
+<li>OS and Service detection  performed. Please report any incorrect results at <a href="https://nmap.org/submit/">https://nmap.org/submit/</a> . </li>
+<li>Nmap done: 1 IP address (1 host  up) scanned in 136.80 seconds</li>
+</ol>
+</li>
+<li><ul>
+<li>nmap 基本使用方法小结</li>
+</ul>
+</li>
+<li></li>
+<li><ol>
+<li>nmap  -sT ip_address #TCP contect()端口扫描 </li>
+<li>nmap -p 1-65535 -T4 -A -v ip  #扫描1-65535（基本覆盖所有端口） </li>
+<li>nmap -sU ip_address  #UDP端口扫描</li>
+</ol>
+</li>
+<li><p><strong>NSE****脚本引擎</strong></p>
+</li>
+<li><p>NSE脚本引擎(Nmap Scripting Engine)是nmap最强大，最灵活的功能之一，允许用户自己编写脚本来执行自动化的操作或者扩展nmap的功能。</p>
+</li>
+<li><p>nmap的脚本库的路径：/usr/share/nmap/scripts ，该目录下的文件都是nse脚本</p>
+</li>
+<li><p>NSE使用Lua脚本语言，并且默认提供了丰富的脚本库，目前已经包含了14个类别的350多个脚本。NSE的设计初衷主要考虑以下几个方面</p>
+</li>
+<li><p>网络发现（Network Discovery）</p>
+</li>
+<li><p>更加复杂的版本侦测（例如 skype 软件）</p>
+</li>
+<li><p>漏洞侦测(Vulnerability Detection)</p>
+</li>
+<li><p>后门侦测(Backdoor Detection)</p>
+</li>
+<li><p>漏洞利用(Vulnerability Exploitation) </p>
+</li>
+<li><p>例如：</p>
+</li>
+<li><ul>
+<li>nmap -script smb-vuln-ms17-010  192.168.230.128 可以探测该主机是否存在ms17_010漏洞 </li>
+<li>nmap -p 80 —script  http-iis-short-name-brute +ip(192.168.1.1)[验证iis短文件名泄露] </li>
+<li>nmap -sV -p 11211 -script  memcached-info +ip[验证Memcached未授权访问漏洞] </li>
+<li>nmap -sV -（-）script http-vuln-cve2015-1635  +ip[验证http.sys远程代码执行漏洞] </li>
+<li>nmap -sV —script=ssl-heartbleed  +ip[验证心脏出血漏洞] </li>
+<li>nmap -p 27017 —script mongodb-info  +ip[验证Mongodb未授权访问漏洞] </li>
+<li>nmap  —script=http-vuln-cve2015-1427 —script-args command=‘ls’ +ip[验证Elasticsearch未授权访问漏洞] </li>
+<li>nmap -p 873 —script rsync-brute  —script-args ‘rsync-brute.module=www’ [验证Rsync未授权访问漏洞] </li>
+<li>nmap -p 6379 —script redis-info  192.168.230.128 可以探测该主机是否存在Redis未授权访问<br>这里我给这台虚拟机安装一下Redis环境，用nmap来测试一下<br>nmap -p 6379 –script  redis-info 192.168.230.128<br>扫描信息如下：</li>
+</ul>
+</li>
+<li><p><img src="/Nmap.files/image005.png" alt="img"></p>
+</li>
+<li><p>当然nmap能扫描的漏洞还有很多，有兴趣的可以查阅相关文章，比如：</p>
+</li>
+<li><ul>
+<li><a href="https://blog.csdn.net/jiangliuzheng/article/details/51992220">https://blog.csdn.net/jiangliuzheng/article/details/51992220</a></li>
+</ul>
+</li>
+<li><p><strong>版本侦测用法</strong></p>
+</li>
+<li><p>比如目标主机把SSH的22号端口改成了2222端口，那么如果使用普通扫描只会发现2222端口是开启的，并不能知道2222号端口上运行的程序，通过加参数 -sV 进行版本扫描，可以探测到目标主机上2222端口运行的是SSH服务</p>
+</li>
+<li><p>V:  指定让Nmap进行版本侦测</p>
+</li>
+<li><p>—version-intensity <level>: 指定版本侦测强度（0-9），默认为7。数值越高，探测出的服务越准确，但是运行时间会比较长。</level></p>
+</li>
+<li><p>—version-light: 指定使用轻量侦测方式 (intensity 2)</p>
+</li>
+<li><p>—version-all: 尝试使用所有的probes进行侦测 (intensity 9)</p>
+</li>
+<li><p>—version-trace: 显示出详细的版本侦测过程信息</p>
+</li>
+<li><p><strong>OS****侦测</strong></p>
+</li>
+<li><p>操作系统侦测用于检测目标主机运行的操作系统类型及设备类型等信息。</p>
+</li>
+<li><p>Nmap拥有丰富的系统数据库nmap-os-db，目前可以识别2600多种操作系统与设备类型。</p>
+</li>
+<li><p><strong>OS****侦测原理</strong></p>
+</li>
+<li><p>Nmap使用TCP/IP协议栈指纹来识别不同的操作系统和设备。在RFC规范中，有些地方对TCP/IP的实现并没有强制规定，由此不同的TCP/IP方案中可能都有自己的特定方式。Nmap主要是根据这些细节上的差异来判断操作系统的类型的。</p>
+</li>
+<li><p><strong>操作指令：</strong></p>
+</li>
+<li><p>Nmap内部包含了2600多已知系统的指纹特征（在文件nmap-os-db文件中）。将此指纹数据库作为进行指纹对比的样本库。</p>
+</li>
+<li><p>分别挑选一个open和closed的端口，向其发送经过精心设计的TCP/UDP/ICMP数据包，根据返回的数据包生成一份系统指纹。</p>
+</li>
+<li><p>将探测生成的指纹与nmap-os-db中指纹进行对比，查找匹配的系统。如果无法匹配，以概率形式列举出可能的系统。</p>
+</li>
+<li><p>OS侦测用法#</p>
+</li>
+<li><p>-O:  指定Nmap进行OS侦测。</p>
+</li>
+<li><p>—osscan-limit: 限制Nmap只对确定的主机的进行OS探测（至少需确知该主机分别有一个open和closed的端口）。</p>
+</li>
+<li><p>—osscan-guess: 大胆猜测对方的主机的系统类型。由此准确性会下降不少，但会尽可能多为用户提供潜在的操作系统</p>
+</li>
+<li><p><strong>输出格式</strong></p>
+</li>
+<li><ul>
+<li>-oX XML：XML格式<br>nmap -A 192.168.230.128 -oX  “/1.xml”</li>
+</ul>
+</li>
+<li><p><img src="/Nmap.files/image006.png" alt="img"></p>
+</li>
+<li><ul>
+<li>-oG 可检索的: 可检索格式</li>
+</ul>
+</li>
+<li><p><img src="/Nmap.files/image007.png" alt="img"></p>
+</li>
+<li><ul>
+<li>-oA: 所有: 可检索的、常规的和XML文件<br>nmap -A 192.168.230.128 -oA  “/test”</li>
+</ul>
+</li>
+<li><p><img src="/Nmap.files/image008.png" alt="img"></p>
+</li>
+<li><p>使用该命令会同时生成三个文件指定名称的文件</p>
+</li>
+<li><ul>
+<li>-oN: 常规: 常规格式，适合人阅读<br>nmap -A 192.168.230.128 -oN  “/1.txt”</li>
+</ul>
+</li>
+<li><p><img src="/Nmap.files/image009.png" alt="img"></p>
+</li>
+<li><p>来自  <a href="https://bbs.zkaq.cn/t/5725.html">https://bbs.zkaq.cn/t/5725.html</a></p>
+</li>
+</ul>
+<p>已使用  OneNote 创建。</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="lv-container"></div>
+        <div class="giscus"></div>
+    </div>
+</div>
+<script type="text/javascript" src="https://cdn.lanluo.cn/js/canvas-nest.min.js"></script>
+    </div>
+</div>
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+        <li>
+            <a target="_blank" href="http://weibo.com/2438257908">
+                            <span class="fa-stack fa-lg">
+                                  <i class="iconfont icon-weibo"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/kmoonn">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+    </p>
+</footer>
+<script type="text/javascript" src="https://cdn.lanluo.cn/js/canvas-nest.min.js"></script>
+<script type="text/javascript" src="https://cdn.lanluo.cn/js/canvas-nest.min.js"></script>
+<script type="text/javascript" src="https://cdn.lanluo.cn/js/canvas-nest.min.js"></script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":250,"height":350},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+    <style>
+        #taboola-livere { display: none;}
+    </style>
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC81NzAwOS8zMzQ3Mw==');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>请激活JavaScript</noscript>
+    </div>
+
+</html>

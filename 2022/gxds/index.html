@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang=zh-CN>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        数据库-关系代数语言 - Kmoon_Hs
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+    <link href="//at.alicdn.com/t/font_620856_28hi1hpxx24.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 6.2.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+<script type="text/javascript" src="https://cdn.lanluo.cn/js/canvas-nest.min.js"></script>
+<body>
+    <script type="text/javascript" src="https://cdn.lanluo.cn/js/canvas-nest.min.js"></script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?cb7a49e4f6a740b15e6fd25de2803712";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 千山同一月,万物皆清明 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar radius">
+            <img src="/img/avatar.png" />
+        </div>
+        <div class="name">
+            <i>Kmoon</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-bg" id="search-bg"></div>
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> 千山同一月,万物皆清明 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        数据库-关系代数语言
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2022-08-11 15:43:35</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#数据库" title="数据库">数据库</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <p>关系代数是一种抽象的查询语言，用对关系的运算来表达查询，关系代数是关系数据库系统查询语言的理论基础。</p>
+<p><strong>一、集合运算</strong></p>
+<p><strong>1.并∪</strong></p>
+<p>结果为二者元组之和去除重复行</p>
+<p><strong>2.交∩</strong></p>
+<p>结果为二者重复行</p>
+<p><strong>3.差➖</strong></p>
+<p>前者去除二者重复行</p>
+<p><strong>4.笛卡儿积 ✖</strong></p>
+<p>从数学角度理解，就是将集合A和集合B中所有有序对元素集合。在数据库系统中，表示得是对两个关系R和S进行操作，产生的关系中元组个数为两个关系中元组个数之积。</p>
+<p>结果列数为二者属性列数之和,行数为二者元素数乘积。</p>
+<p><strong>二、关系运算</strong></p>
+<p><strong>1.投影</strong> <strong>π</strong></p>
+<p>关系R上的投影是从R中选择出若干属性列组成新的关系（<strong>竖直切割</strong>）</p>
+<p>投影后不仅取消了原关系中的某些列，还有可能因为取消列后出现重复行，这些重复行也应该取消掉。</p>
+<p><strong>2.选择 σ</strong></p>
+<p>在关系R中选择满足给定条件的诸元组，根据某些条件对关系做<strong>水平切割</strong></p>
+<p><strong>选择投影组合运算：<strong><strong>π</strong></strong>A( σF( R ) )</strong></p>
+<p>可以从特定元组中投影出特定列</p>
+<p>从R关系中选出符合F条件的元组，在从这些元组内投影出特定的A列</p>
+<p><strong>3.连接</strong></p>
+<p><strong>① 等值连接</strong> </p>
+<p>θ称为比值符，也就是&gt;、&lt;、=号；</p>
+<p>当θ两边的属性相等时，等值S连接成立；</p>
+<p><strong>② 自然连接</strong> <strong>⋈</strong></p>
+<p><strong>R ⋈S = { t****r</strong> <strong>⌒ t****s</strong> <strong>| t****r</strong> <strong>∈ R ∧ t****s</strong> <strong>∈ S ∧ t**<strong>r</strong></strong>[A] = t<strong><strong>s</strong></strong>[A] }**</p>
+<p>特殊的等值连接</p>
+<p>结果列数为二者属性列数之和減去重复列,行数为二者冋名属性列其值相冋的结果元组。</p>
+<p>笛卡尔积、选择、投影的组合表示可以与自然连接等价</p>
+<p><strong>扩展：自然连接和等值连接的联系和区别</strong></p>
+<p>⊙自然连接要求同名同域的属性组才可连接，而等值连接仅要求域相同；</p>
+<p>⊙自然连接是去掉重复列的等值连接；</p>
+<p>⊙自然连接一定是等值连接，而等值连接不一定是自然连接；</p>
+<p>⊙自然连接后列的数量小于等于等值连接后列的数量。</p>
+<p><strong>4.除 ÷</strong></p>
+<p>除运算核心步骤：设R、S为关系，X、Y、Z为属性集</p>
+<p>\1. 分出X、Y、Z三个属性集</p>
+<p>\2. 列出S对Y属性集的投影</p>
+<p>\3. 找出R中满足x值对应的象集包含了关系S对Y属性集的x值</p>
+<p><strong>运用技巧</strong></p>
+<p>1.首先看查询条件和结果中涉及到的属性列来自哪些表，将其归置到最少的表中进行查询。若涉及多个表则需要将表进行连接操作。</p>
+<p>2.对于只涉及到选择、投影、连接的查询可用下列表达式表示：</p>
+<p><strong>π…****( σ…( R×S ) )  或者</strong> <strong>π…****( σ…( R  S ) )</strong></p>
+<p>3.对于否定的操作，一般采用差操作表示</p>
+<p>4.对于查询具有“全部”特征的操作，一般采用除法操作表示</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="lv-container"></div>
+        <div class="giscus"></div>
+    </div>
+</div>
+<script type="text/javascript" src="https://cdn.lanluo.cn/js/canvas-nest.min.js"></script>
+    </div>
+</div>
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+        <li>
+            <a target="_blank" href="http://weibo.com/2438257908">
+                            <span class="fa-stack fa-lg">
+                                  <i class="iconfont icon-weibo"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/kmoonn">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+    </p>
+</footer>
+<script type="text/javascript" src="https://cdn.lanluo.cn/js/canvas-nest.min.js"></script>
+<script type="text/javascript" src="https://cdn.lanluo.cn/js/canvas-nest.min.js"></script>
+<script type="text/javascript" src="https://cdn.lanluo.cn/js/canvas-nest.min.js"></script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":250,"height":350},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+    <style>
+        #taboola-livere { display: none;}
+    </style>
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC81NzAwOS8zMzQ3Mw==');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>请激活JavaScript</noscript>
+    </div>
+
+</html>

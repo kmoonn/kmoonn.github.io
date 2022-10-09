@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang=zh-CN>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        数据库-数据库系统原理 - Kmoon_Hs
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+    <link href="//at.alicdn.com/t/font_620856_28hi1hpxx24.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 6.2.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+<script type="text/javascript" src="https://cdn.lanluo.cn/js/canvas-nest.min.js"></script>
+<body>
+    <script type="text/javascript" src="https://cdn.lanluo.cn/js/canvas-nest.min.js"></script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?cb7a49e4f6a740b15e6fd25de2803712";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 千山同一月,万物皆清明 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar radius">
+            <img src="/img/avatar.png" />
+        </div>
+        <div class="name">
+            <i>Kmoon</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-bg" id="search-bg"></div>
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> 千山同一月,万物皆清明 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        数据库-数据库系统原理
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2022-08-11 15:43:04</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#数据库" title="数据库">数据库</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <p><strong>数据库基本概念</strong></p>
+<p><strong>数据DATA</strong></p>
+<p><strong>数据库DB</strong></p>
+<p><strong>数据库管理系统DBMS</strong></p>
+<p><strong>数据库系统DBS</strong></p>
+<p><strong>数据库系统与发展</strong></p>
+<p><strong>数据库系统结构</strong></p>
+<p><strong>数据模型概述</strong></p>
+<p><strong>概念模型</strong></p>
+<p><strong>数据模型</strong></p>
+<p><strong>关系模型及其三要素</strong></p>
+<p><strong>传统集合运算</strong></p>
+<p><strong>专门关系运算</strong></p>
+<p><strong>用关系代数实现检索</strong></p>
+<p><strong>SQL Server数据库管理系统</strong></p>
+<p><strong>数据库的定义与维护</strong></p>
+<p><strong>基本表的定义与维护</strong></p>
+<p><strong>数据维护操作</strong></p>
+<p><strong>数据查询操作</strong></p>
+<p><strong>简单查询操作</strong></p>
+<p><strong>嵌套查询操作</strong></p>
+<p><strong>附加语句</strong>	</p>
+<p><strong>视图的建立与维护</strong>	</p>
+<p><strong>触发器的创建与维护</strong></p>
+<p><strong>关系模式规范化理论概述</strong>	</p>
+<p><strong>函数依赖</strong>	</p>
+<p><strong>基本范式</strong>	</p>
+<p><strong>数据库系统设计概述</strong></p>
+<p><strong>数据库系统设计6阶段</strong></p>
+<ol>
+<li><strong>需求分析</strong></li>
+</ol>
+<p>任务</p>
+<p>内容</p>
+<p>步骤</p>
+<p>需求调查的方法</p>
+<p>需求分析的方法</p>
+<p>系统流程图</p>
+<p>数据流图</p>
+<p>数据字典</p>
+<ol>
+<li><strong>概念结构设计</strong></li>
+</ol>
+<p>概念结构的特点</p>
+<p>方法</p>
+<ol>
+<li>自底向上</li>
+<li>自顶向下</li>
+<li>逐步扩张</li>
+<li>混合策略</li>
+</ol>
+<p>步骤</p>
+<p>三种数据抽象方法</p>
+<ol>
+<li>分类</li>
+<li>聚集</li>
+<li>概括</li>
+</ol>
+<p>局部E-R图设计</p>
+<p>合并局部E-R图</p>
+<ol>
+<li><strong>逻辑结构设计</strong></li>
+<li><strong>物理结构设计</strong></li>
+<li><strong>数据库应用与实施</strong></li>
+<li><strong>数据库运行与维护</strong></li>
+</ol>
+<p><strong>结构特性设计</strong></p>
+<p>概念结构</p>
+<p>逻辑结构</p>
+<p><strong>行为特性设计</strong></p>
+<p>数据流程图DFD</p>
+<p>数据字典DD</p>
+<p><strong>物理模式设计</strong></p>
+<p>存储模式</p>
+<p>存取方法</p>
+<p>数据库设计的基本步骤</p>
+<p>按照规范设计的方法，考虑数据库及其应用系统开发全过程，将数据库设计分为以下阶段</p>
+<p>  需求分析 概念结构设计 逻辑结构设计 物理结构设计</p>
+<p>  数据库实施 数据库的运行和维护</p>
+<p> 需求分析 ：分析用户的需求，包括数据、功能和性能需求</p>
+<p> 概念结构设计：主要采用 E-R模型 进行设计，包括画 E-R图</p>
+<p> 逻辑结构设计 ：通过将 E-R图 转换成表，实现从 E-R模型 到 关系模型 的转换</p>
+<p> 数据库物理设计 ：主要是为所设计的数据库选择合适的 存储结构 和存取路径</p>
+<p> 数据库的实施：包括编程、测试和试运行</p>
+<p> 数据库运行与维护：系统的运行与数据库的日常维护</p>
+<p>在数据库设计过程中，需求分析和概念设计可以独立于任何数据库管理系统进行，逻辑设计和物理设计与选用的DAMS密切相关。</p>
+<p>①需求分析阶段（常用自顶向下）</p>
+<p> 进行数据库设计首先必须准确了解和分析用户需求（包括数据与处理）。需求分析是整个设计过程的基础，也是最困难，最耗时的一步。需求分析是否做得充分和准确，决定了在其上构建数据库大厦的速度与质量。需求分析做的不好，会导致整个数据库设计返工重做。</p>
+<p> 需求分析的任务，是通过详细调查现实世界要处理的对象，充分了解原系统工作概况，明确用户的各种需求，然后在此基础上确定新的系统功能，新系统还得充分考虑今后可能的扩充与改变，不仅仅能够按当前应用需求来设计。</p>
+<p>②概念结构设计阶段（E-R图）</p>
+<p> 概念结构设计是整个数据库设计的关键，它通过对用户需求进行综合，归纳与抽象，形成了一个独立于具体DBMS的概念模型。</p>
+<p> 将用户需求抽象为信息结构 —— E-R图</p>
+<p>③逻辑结构设计阶段</p>
+<p> 逻辑结构设计是将概念结构转换为某个DBMS所支持的数据模型，并将进行优化，即把基本E-R图转换为与选用数据库管理系统产品所支持的数据模型相符合的逻辑结构。</p>
+<p> E-R图向关系模型的转换，要解决的问题是如何将实体性和实体间的联系转换为关系模式，如何确定这些关系模式的属性和码。</p>
+<p>④物理设计阶段</p>
+<p> 物理设计是为逻辑数据结构模型选取一个最适合应用环境的物理结构（包括存储结构和存取方法）。首先要对运行的事务详细分析，获得选择物理数据库设计所需要的参数，其次，要充分了解所用的RDBMS的内部特征，特别是系统提供的存取方法和存储结构。</p>
+<p>常用的存取方法有三类：1.索引方法，目前主要是B+树索引方法。2.聚簇方法（Clustering）方法。3.是HASH方法。</p>
+<p>⑤数据库实施阶段</p>
+<p> 数据库实施阶段，设计人员运营DBMS提供的数据库语言（如sql）及其宿主语言，根据逻辑设计和物理设计的结果建立数据库，编制和调试应用程序，组织数据入库，并进行试运行。</p>
+<p>⑥数据库运行和维护阶段</p>
+<p> 数据库应用系统经过试运行后，即可投入正式运行，在数据库系统运行过程中必须不断地对其进行评价，调整，修改。</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="lv-container"></div>
+        <div class="giscus"></div>
+    </div>
+</div>
+<script type="text/javascript" src="https://cdn.lanluo.cn/js/canvas-nest.min.js"></script>
+    </div>
+</div>
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+        <li>
+            <a target="_blank" href="http://weibo.com/2438257908">
+                            <span class="fa-stack fa-lg">
+                                  <i class="iconfont icon-weibo"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/kmoonn">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+    </p>
+</footer>
+<script type="text/javascript" src="https://cdn.lanluo.cn/js/canvas-nest.min.js"></script>
+<script type="text/javascript" src="https://cdn.lanluo.cn/js/canvas-nest.min.js"></script>
+<script type="text/javascript" src="https://cdn.lanluo.cn/js/canvas-nest.min.js"></script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":250,"height":350},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+    <style>
+        #taboola-livere { display: none;}
+    </style>
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC81NzAwOS8zMzQ3Mw==');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>请激活JavaScript</noscript>
+    </div>
+
+</html>

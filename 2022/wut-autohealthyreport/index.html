@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang=zh-CN>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        懒人必备—WUT-AutoHealthyReport - Kmoon_Hs
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+    <link href="//at.alicdn.com/t/font_620856_28hi1hpxx24.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 6.2.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+<script type="text/javascript" src="https://cdn.lanluo.cn/js/canvas-nest.min.js"></script>
+<body>
+    <script type="text/javascript" src="https://cdn.lanluo.cn/js/canvas-nest.min.js"></script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?cb7a49e4f6a740b15e6fd25de2803712";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 千山同一月,万物皆清明 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar radius">
+            <img src="/img/avatar.png" />
+        </div>
+        <div class="name">
+            <i>Kmoon</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E"><span class="toc-text">免责声明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B"><span class="toc-text">快速开始</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E8%AF%A6%E8%A7%A3"><span class="toc-text">代码详解</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%97%A5%E5%BF%97%E8%AE%B0%E5%BD%95"><span class="toc-text">日志记录</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AF%B7%E6%B1%82%E6%95%B0%E6%8D%AE%E5%8C%85%E9%9A%8F%E6%9C%BAUser-Agent"><span class="toc-text">请求数据包随机User-Agent</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#HTTP%E8%AF%B7%E6%B1%82%E5%A4%B4"><span class="toc-text">HTTP请求头</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96SessionID%E5%87%AD%E8%AF%81"><span class="toc-text">获取SessionID凭证</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BB%91%E5%AE%9A%E8%BA%AB%E4%BB%BD"><span class="toc-text">绑定身份</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%81%A5%E5%BA%B7%E5%A1%AB%E6%8A%A5"><span class="toc-text">健康填报</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A7%A3%E7%BB%91%E8%B4%A6%E5%8F%B7"><span class="toc-text">解绑账号</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%8C%85%E5%8A%A0%E8%A7%A3%E5%AF%86"><span class="toc-text">数据包加解密</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A1%AB%E6%8A%A5%E7%A8%8B%E5%BA%8F"><span class="toc-text">填报程序</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#go-cqhttp%E9%85%8D%E7%BD%AE"><span class="toc-text">go-cqhttp配置</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A1%AB%E6%8A%A5%E7%A8%8B%E5%BA%8F%E5%85%A5%E5%8F%A3"><span class="toc-text">填报程序入口</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BA%90%E4%BB%A3%E7%A0%81"><span class="toc-text">源代码</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#whut-py"><span class="toc-text">whut.py</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#idnex-py"><span class="toc-text">idnex.py</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E6%97%B6%E6%8A%A5%E9%80%81"><span class="toc-text">定时报送</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%8A%A8%E5%8F%8D%E9%A6%88"><span class="toc-text">自动反馈</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%88%E6%9E%9C%E6%BC%94%E7%A4%BA"><span class="toc-text">效果演示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E5%8F%8D%E9%A6%88"><span class="toc-text">问题反馈</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5"><span class="toc-text">相关链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E5%88%AB%E9%B8%A3%E8%B0%A2"><span class="toc-text">特别鸣谢</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-bg" id="search-bg"></div>
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> 千山同一月,万物皆清明 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        懒人必备—WUT-AutoHealthyReport
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2022-08-30 17:09:47</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#Python" title="Python">Python</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <p>Talk is cheap,Show me the code.</p>
+<p>通过访问学校健康填报接口，模拟本科生健康填报过程。</p>
+<p>并且通过cqhttp发送结果到QQ(群)号。（支持多用户批量填报）</p>
+<p>通过部署到Linux云服务器，通过crontab设置定时任务，实现每天定时填报。</p>
+<h3 id="免责声明"><a href="#免责声明" class="headerlink" title="免责声明"></a>免责声明</h3><p>该自动填报程序仅为了方便每日填报过程，<strong>严禁</strong>通过该程序伪造填报地址、瞒报健康状态。</p>
+<p>若身体不适请及时报告并就医，<strong>严格遵守疫情防控相关规定</strong>！</p>
+<p><strong>若使用该程序导致不良后果，本文作者不承担任何责任，使用者需承担所有责任！</strong></p>
+<p>若没有python编程基础，请勿贸然使用程序，可能导致账号绑定在别处自己无法登录无法登录。</p>
+<p>打包版程序可以参考GitHub作者ChrisKimZHT部署使用。</p>
+<h3 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h3><ol>
+<li><p>确保系统有 <code>Python3</code> 环境。</p>
+<p>python安装、环境变量配置自行百度。</p>
+<p>参考链接：<a href="https://www.runoob.com/python/python-install.html">https://www.runoob.com/python/python-install.html</a></p>
+</li>
+<li><p>安装模块：<code>pip install 库名</code></p>
+<p>或者pip install -r requirements.txt</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">//</span>需要用到的python库：
+time
+logging
+json
+base64
+random
+requests<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>首次运行 <code>whut.py</code>，需要提前填写相关信息。<strong>请注意地址和在校情况的填写，尤其是假期。</strong></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">//</span>data_student数组，存放学生基本信息和填报信息
+data_student<span class="token operator">=</span><span class="token punctuation">[</span>
+<span class="token punctuation">{</span><span class="token string">'account'</span><span class="token punctuation">:</span> <span class="token string">'0122xxxxxxxxx'</span><span class="token punctuation">,</span>	<span class="token operator">//</span>学号
+ <span class="token string">'password'</span><span class="token punctuation">:</span> <span class="token string">'xxxxxx'</span><span class="token punctuation">,</span>	  <span class="token operator">//</span>密码，一般为身份证后六位
+ <span class="token string">'province'</span><span class="token punctuation">:</span> <span class="token string">'湖北省'</span><span class="token punctuation">,</span>
+ <span class="token string">'city'</span><span class="token punctuation">:</span> <span class="token string">'武汉市'</span><span class="token punctuation">,</span>
+ <span class="token string">'county'</span><span class="token punctuation">:</span> <span class="token string">'洪山区'</span><span class="token punctuation">,</span>
+ <span class="token string">'street'</span><span class="token punctuation">:</span> <span class="token string">'岭南路'</span><span class="token punctuation">,</span>		<span class="token operator">//</span>example
+ <span class="token string">'is_inschool'</span><span class="token punctuation">:</span> <span class="token boolean">True</span><span class="token punctuation">,</span>	<span class="token operator">//</span>是否在校
+ <span class="token string">'is_leacecity'</span><span class="token punctuation">:</span> <span class="token boolean">False</span><span class="token punctuation">,</span>	<span class="token operator">//</span>是否离汉
+ <span class="token string">'temperature'</span><span class="token punctuation">:</span> <span class="token string">'36.5°C~36.9°C'</span><span class="token punctuation">}</span>
+<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>在 <code>whut.py</code> 目录下，在cmd中执行 <code>python whut.py</code> 即可运行程序。</p>
+</li>
+<li><p>定时运行 <code>whut.py</code> 即可自动填报（Linux服务器 可用 <code>Crontab</code> 定时执行, Windows 参考相关链接）</p>
+</li>
+</ol>
+<h3 id="代码详解"><a href="#代码详解" class="headerlink" title="代码详解"></a>代码详解</h3><h5 id="日志记录"><a href="#日志记录" class="headerlink" title="日志记录"></a>日志记录</h5><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 创建log日志</span>
+log <span class="token operator">=</span> logging<span class="token punctuation">.</span>getLogger<span class="token punctuation">(</span><span class="token string">"log.txt"</span><span class="token punctuation">)</span>
+log<span class="token punctuation">.</span>setLevel<span class="token punctuation">(</span>logging<span class="token punctuation">.</span>DEBUG<span class="token punctuation">)</span>
+<span class="token comment"># 控制台输出Handler</span>
+shandler <span class="token operator">=</span> logging<span class="token punctuation">.</span>StreamHandler<span class="token punctuation">(</span><span class="token punctuation">)</span>
+shandler<span class="token punctuation">.</span>setFormatter<span class="token punctuation">(</span>logging<span class="token punctuation">.</span>Formatter<span class="token punctuation">(</span><span class="token string">"[%(levelname)s] %(message)s"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+shandler<span class="token punctuation">.</span>setLevel<span class="token punctuation">(</span>logging<span class="token punctuation">.</span>INFO<span class="token punctuation">)</span>
+<span class="token comment"># 文件输出Handler</span>
+fhandler <span class="token operator">=</span> logging<span class="token punctuation">.</span>FileHandler<span class="token punctuation">(</span>filename<span class="token operator">=</span><span class="token string">"log.txt"</span><span class="token punctuation">,</span> mode<span class="token operator">=</span><span class="token string">"w"</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span>
+fhandler<span class="token punctuation">.</span>setFormatter<span class="token punctuation">(</span>logging<span class="token punctuation">.</span>Formatter<span class="token punctuation">(</span><span class="token string">"&lt;%(asctime)s&gt; [%(levelname)s] %(message)s"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+fhandler<span class="token punctuation">.</span>setLevel<span class="token punctuation">(</span>logging<span class="token punctuation">.</span>DEBUG<span class="token punctuation">)</span>
+<span class="token comment"># 添加Handler</span>
+log<span class="token punctuation">.</span>addHandler<span class="token punctuation">(</span>shandler<span class="token punctuation">)</span>
+log<span class="token punctuation">.</span>addHandler<span class="token punctuation">(</span>fhandler<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="请求数据包随机User-Agent"><a href="#请求数据包随机User-Agent" class="headerlink" title="请求数据包随机User-Agent"></a>请求数据包随机User-Agent</h5><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">//</span>分别为Android、iPhone、Windows
+ua_list <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token string">"Mozilla/5.0 (Linux; Android 8.0.0; BKL-AL00 Build/HUAWEIBKL-AL00; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/76.0.3809.89 Mobile Safari/537.36 T7/11.19 SP-engine/2.15.0 baiduboxapp/11.19.5.10 (Baidu; P1 8.0.0)"</span><span class="token punctuation">,</span>
+    <span class="token string">"Mozilla/5.0 (Linux; Android 8.1.0; vivo X20 Build/OPM1.171019.011; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/76.0.3809.89 Mobile Safari/537.36 T7/11.19 SP-engine/2.15.0 baiduboxapp/11.19.5.10 (Baidu; P1 8.1.0)"</span><span class="token punctuation">,</span>
+    <span class="token string">"Mozilla/5.0 (Linux; Android 9; DUK-AL20 Build/HUAWEIDUK-AL20; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/76.0.3809.89 Mobile Safari/537.36 T7/11.19 SP-engine/2.15.0 baiduboxapp/11.19.5.10 (Baidu; P1 9)"</span><span class="token punctuation">,</span>
+    <span class="token string">"Mozilla/5.0 (Linux; Android 11; POCO F2 Pro Build/RKQ1.200826.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/74.0.3729.136 Mobile Safari/537.36 MMWEBID/1230 MicroMessenger/8.0.17.2040(0x28001133) Process/toolsmp WeChat/arm64 Weixin NetType/WIFI Language/zh_CN ABI/arm64"</span><span class="token punctuation">,</span>
+    <span class="token string">"Mozilla/5.0 (iPhone; CPU iPhone OS 15_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.20(0x1800142f) NetType/WIFI Language/zh_CN"</span><span class="token punctuation">,</span>
+    <span class="token string">"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36 MicroMessenger/7.0.9.501 NetType/WIFI MiniProgramEnv/Windows WindowsWechat"</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="HTTP请求头"><a href="#HTTP请求头" class="headerlink" title="HTTP请求头"></a>HTTP请求头</h5><pre class="line-numbers language-python" data-language="python"><code class="language-python">headers <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">"Host"</span><span class="token punctuation">:</span> <span class="token string">"zhxg.whut.edu.cn"</span><span class="token punctuation">,</span>		<span class="token operator">//</span>主机域名
+    <span class="token string">"Connection"</span><span class="token punctuation">:</span> <span class="token string">"keep-alive"</span><span class="token punctuation">,</span>
+    <span class="token comment"># "Content-Length": "",</span>
+    <span class="token comment"># "User-Agent": "",</span>
+    <span class="token string">"X-Tag"</span><span class="token punctuation">:</span> <span class="token string">"flyio"</span><span class="token punctuation">,</span>
+    <span class="token string">"content-type"</span><span class="token punctuation">:</span> <span class="token string">"application/json"</span><span class="token punctuation">,</span>
+    <span class="token string">"encode"</span><span class="token punctuation">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
+    <span class="token string">"Referer"</span><span class="token punctuation">:</span> <span class="token string">"https://servicewechat.com/wxa0738e54aae84423/21/page-frame.html"</span><span class="token punctuation">,</span>
+    <span class="token string">"Accept-Encoding"</span><span class="token punctuation">:</span> <span class="token string">"gzip, deflate, br"</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="获取SessionID凭证"><a href="#获取SessionID凭证" class="headerlink" title="获取SessionID凭证"></a>获取SessionID凭证</h5><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">check_bind</span><span class="token punctuation">(</span>is_graduate<span class="token punctuation">:</span> <span class="token builtin">bool</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">bool</span><span class="token punctuation">:</span>
+    <span class="token keyword">global</span> error_log
+    log<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string">"[1] 正在创建会话"</span><span class="token punctuation">)</span>
+    <span class="token comment"># 设置header</span>
+	url <span class="token operator">=</span> <span class="token string">"https://zhxg.whut.edu.cn/yqtjwx/api/login/checkBind"</span>
+    headers<span class="token punctuation">[</span><span class="token string">"User-Agent"</span><span class="token punctuation">]</span> <span class="token operator">=</span> random<span class="token punctuation">.</span>choice<span class="token punctuation">(</span>ua_list<span class="token punctuation">)</span>
+    log<span class="token punctuation">.</span>debug<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"设置header完成: </span><span class="token interpolation"><span class="token punctuation">{</span>headers<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+    data <span class="token operator">=</span> dict_to_base64_bin<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">"sn"</span><span class="token punctuation">:</span> <span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token string">"idCard"</span><span class="token punctuation">:</span> <span class="token boolean">None</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+    respounce <span class="token operator">=</span> requests<span class="token punctuation">.</span>post<span class="token punctuation">(</span>url<span class="token operator">=</span>url<span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">,</span> data<span class="token operator">=</span>data<span class="token punctuation">)</span><span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    log<span class="token punctuation">.</span>debug<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"请求发送完成，收到响应: </span><span class="token interpolation"><span class="token punctuation">{</span>respounce<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> respounce<span class="token punctuation">[</span><span class="token string">"status"</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+        resp_data <span class="token operator">=</span> base64_str_to_dict<span class="token punctuation">(</span>respounce<span class="token punctuation">[</span><span class="token string">"data"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        log<span class="token punctuation">.</span>debug<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"响应data解码: </span><span class="token interpolation"><span class="token punctuation">{</span>resp_data<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+        headers<span class="token punctuation">[</span><span class="token string">"Cookie"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string-interpolation"><span class="token string">f"JSESSIONID=</span><span class="token interpolation"><span class="token punctuation">{</span>resp_data<span class="token punctuation">[</span><span class="token string">'sessionId'</span><span class="token punctuation">]</span><span class="token punctuation">}</span></span><span class="token string">"</span></span>  <span class="token comment"># 写入Cookie</span>
+        <span class="token keyword">return</span> <span class="token boolean">True</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        error_log <span class="token operator">+=</span> <span class="token builtin">str</span><span class="token punctuation">(</span>respounce<span class="token punctuation">)</span>
+        log<span class="token punctuation">.</span>error<span class="token punctuation">(</span><span class="token string">"[X] 创建会话出现错误，详情见log.txt"</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token boolean">False</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="绑定身份"><a href="#绑定身份" class="headerlink" title="绑定身份"></a>绑定身份</h5><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">bind_user_info</span><span class="token punctuation">(</span>account<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">,</span> password<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">,</span> is_graduate<span class="token punctuation">:</span> <span class="token builtin">bool</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">bool</span><span class="token punctuation">:</span>
+    <span class="token keyword">global</span> error_log
+    log<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string">"[2] 正在绑定身份"</span><span class="token punctuation">)</span>
+	url <span class="token operator">=</span> <span class="token string">"https://zhxg.whut.edu.cn/yqtjwx/api/login/bindUserInfo"</span>
+    data <span class="token operator">=</span> dict_to_base64_bin<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">"sn"</span><span class="token punctuation">:</span> account<span class="token punctuation">,</span> <span class="token string">"idCard"</span><span class="token punctuation">:</span> password<span class="token punctuation">}</span><span class="token punctuation">)</span>
+    respounce <span class="token operator">=</span> requests<span class="token punctuation">.</span>post<span class="token punctuation">(</span>url<span class="token operator">=</span>url<span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">,</span> data<span class="token operator">=</span>data<span class="token punctuation">)</span><span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    log<span class="token punctuation">.</span>debug<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"请求发送完成，收到响应: </span><span class="token interpolation"><span class="token punctuation">{</span>respounce<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> respounce<span class="token punctuation">[</span><span class="token string">"status"</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+        resp_data <span class="token operator">=</span> base64_str_to_dict<span class="token punctuation">(</span>respounce<span class="token punctuation">[</span><span class="token string">"data"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        log<span class="token punctuation">.</span>debug<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"响应data解码: </span><span class="token interpolation"><span class="token punctuation">{</span>resp_data<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token boolean">True</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        error_log <span class="token operator">+=</span> <span class="token builtin">str</span><span class="token punctuation">(</span>respounce<span class="token punctuation">)</span>
+        log<span class="token punctuation">.</span>error<span class="token punctuation">(</span><span class="token string">"[X] 绑定身份出现错误，详情见log.txt"</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token boolean">False</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="健康填报"><a href="#健康填报" class="headerlink" title="健康填报"></a>健康填报</h5><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">monitor_register</span><span class="token punctuation">(</span>is_graduate<span class="token punctuation">:</span> <span class="token builtin">bool</span><span class="token punctuation">,</span> province<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">,</span> city<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">,</span> county<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">,</span> street<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">,</span>is_inschool<span class="token punctuation">:</span> <span class="token builtin">bool</span><span class="token punctuation">,</span> is_leavecity<span class="token punctuation">:</span> <span class="token builtin">bool</span><span class="token punctuation">,</span> temperature<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">bool</span><span class="token punctuation">:</span>
+    <span class="token keyword">global</span> error_log
+    log<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string">"[3] 正在填报操作"</span><span class="token punctuation">)</span>
+    address <span class="token operator">=</span> province <span class="token operator">+</span> city <span class="token operator">+</span> county <span class="token operator">+</span> street
+	url <span class="token operator">=</span> <span class="token string">"https://zhxg.whut.edu.cn/yqtjwx/./monitorRegister"</span>
+    dict_data <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token string">"diagnosisName"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+        <span class="token string">"relationWithOwn"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+        <span class="token string">"currentAddress"</span><span class="token punctuation">:</span> address<span class="token punctuation">,</span>
+        <span class="token string">"remark"</span><span class="token punctuation">:</span> <span class="token string">"无"</span><span class="token punctuation">,</span>
+        <span class="token string">"healthInfo"</span><span class="token punctuation">:</span> <span class="token string">"正常"</span><span class="token punctuation">,</span>
+        <span class="token string">"isDiagnosis"</span><span class="token punctuation">:</span> <span class="token string">"0"</span><span class="token punctuation">,</span>
+        <span class="token string">"isFever"</span><span class="token punctuation">:</span> <span class="token string">"0"</span><span class="token punctuation">,</span>
+        <span class="token string">"isInSchool"</span><span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">(</span>is_inschool<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token string">"isLeaveChengdu"</span><span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">(</span>is_leavecity<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token string">"isSymptom"</span><span class="token punctuation">:</span> <span class="token string">"0"</span><span class="token punctuation">,</span>
+        <span class="token string">"temperature"</span><span class="token punctuation">:</span> temperature<span class="token punctuation">,</span>
+        <span class="token string">"province"</span><span class="token punctuation">:</span> province<span class="token punctuation">,</span>
+        <span class="token string">"city"</span><span class="token punctuation">:</span> city<span class="token punctuation">,</span>
+        <span class="token string">"county"</span><span class="token punctuation">:</span> county
+    <span class="token punctuation">}</span>
+    log<span class="token punctuation">.</span>debug<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"填报数据生成完成: </span><span class="token interpolation"><span class="token punctuation">{</span>dict_data<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+    data <span class="token operator">=</span> dict_to_base64_bin<span class="token punctuation">(</span>dict_data<span class="token punctuation">)</span>
+    respounce <span class="token operator">=</span> requests<span class="token punctuation">.</span>post<span class="token punctuation">(</span>url<span class="token operator">=</span>url<span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">,</span> data<span class="token operator">=</span>data<span class="token punctuation">)</span><span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    log<span class="token punctuation">.</span>debug<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"请求发送完成，收到响应: </span><span class="token interpolation"><span class="token punctuation">{</span>respounce<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> respounce<span class="token punctuation">[</span><span class="token string">"status"</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+        resp_data <span class="token operator">=</span> base64_str_to_dict<span class="token punctuation">(</span>respounce<span class="token punctuation">[</span><span class="token string">"data"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        log<span class="token punctuation">.</span>debug<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"响应data解码: </span><span class="token interpolation"><span class="token punctuation">{</span>resp_data<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token boolean">True</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> respounce<span class="token punctuation">[</span><span class="token string">"message"</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'今日已填报'</span><span class="token punctuation">:</span>
+            <span class="token keyword">global</span> reported
+            reported<span class="token operator">=</span> <span class="token boolean">True</span>
+            <span class="token keyword">return</span> <span class="token boolean">True</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            error_log <span class="token operator">+=</span> <span class="token builtin">str</span><span class="token punctuation">(</span>respounce<span class="token punctuation">)</span>
+            log<span class="token punctuation">.</span>error<span class="token punctuation">(</span><span class="token string">"[X] 填报操作出现错误，详情见log.txt"</span><span class="token punctuation">)</span>
+            <span class="token keyword">return</span> <span class="token boolean">False</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="解绑账号"><a href="#解绑账号" class="headerlink" title="解绑账号"></a>解绑账号</h5><p>若不解绑，下次填报将无法成功绑定。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">cancel_bind</span><span class="token punctuation">(</span>is_graduate<span class="token punctuation">:</span> <span class="token builtin">bool</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">bool</span><span class="token punctuation">:</span>
+    <span class="token keyword">global</span> error_log
+    log<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string">"[4] 正在解绑身份"</span><span class="token punctuation">)</span>
+    url <span class="token operator">=</span> <span class="token string">"https://zhxg.whut.edu.cn/yqtjwx/api/login/cancelBind"</span>
+    respounce <span class="token operator">=</span> requests<span class="token punctuation">.</span>post<span class="token punctuation">(</span>url<span class="token operator">=</span>url<span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">)</span><span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    log<span class="token punctuation">.</span>debug<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"请求发送完成，收到响应: </span><span class="token interpolation"><span class="token punctuation">{</span>respounce<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> respounce<span class="token punctuation">[</span><span class="token string">"status"</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+        resp_data <span class="token operator">=</span> base64_str_to_dict<span class="token punctuation">(</span>respounce<span class="token punctuation">[</span><span class="token string">"data"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        log<span class="token punctuation">.</span>debug<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"响应data解码: </span><span class="token interpolation"><span class="token punctuation">{</span>resp_data<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token boolean">True</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        error_log <span class="token operator">+=</span> <span class="token builtin">str</span><span class="token punctuation">(</span>respounce<span class="token punctuation">)</span>
+        log<span class="token punctuation">.</span>error<span class="token punctuation">(</span><span class="token string">"[X] 解绑身份出现错误，详情见log.txt"</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token boolean">False</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="数据包加解密"><a href="#数据包加解密" class="headerlink" title="数据包加解密"></a>数据包加解密</h5><p>数据包post提交的json格式的数据，经base64加密传输，所以我们发送数据需要加密，接受数据需要解密。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">//</span>加密
+<span class="token keyword">def</span> <span class="token function">dict_to_base64_bin</span><span class="token punctuation">(</span>data<span class="token punctuation">:</span> <span class="token builtin">dict</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">bin</span><span class="token punctuation">:</span>
+    string <span class="token operator">=</span> json<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+    binary <span class="token operator">=</span> string<span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    base64_binary <span class="token operator">=</span> base64<span class="token punctuation">.</span>b64encode<span class="token punctuation">(</span>binary<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> base64_binary
+<span class="token operator">//</span>解密
+<span class="token keyword">def</span> <span class="token function">base64_str_to_dict</span><span class="token punctuation">(</span>data<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">dict</span><span class="token punctuation">:</span>
+    string_binary <span class="token operator">=</span> base64<span class="token punctuation">.</span>b64decode<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+    string <span class="token operator">=</span> string_binary<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    dictionary <span class="token operator">=</span> json<span class="token punctuation">.</span>loads<span class="token punctuation">(</span>string<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> dictionary<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="填报程序"><a href="#填报程序" class="headerlink" title="填报程序"></a>填报程序</h5><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">//</span>单次填报
+<span class="token keyword">def</span> <span class="token function">report</span><span class="token punctuation">(</span>account<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">,</span> password<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">,</span> is_graduate<span class="token punctuation">:</span> <span class="token builtin">bool</span><span class="token punctuation">,</span>
+           province<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">,</span> city<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">,</span> county<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">,</span> street<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">,</span>
+           is_inschool<span class="token punctuation">:</span> <span class="token builtin">bool</span><span class="token punctuation">,</span> is_leacecity<span class="token punctuation">:</span> <span class="token builtin">bool</span><span class="token punctuation">,</span> temperature<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">tuple</span><span class="token punctuation">:</span>
+    <span class="token keyword">global</span> error_log
+    log<span class="token punctuation">.</span>debug<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"开始填报: </span><span class="token interpolation"><span class="token punctuation">{</span>account<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+    status <span class="token operator">=</span> <span class="token boolean">True</span>  <span class="token comment"># 填报状态</span>
+    headers<span class="token punctuation">[</span><span class="token string">"Cookie"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">""</span>  <span class="token comment"># 重置headers</span>
+    error_log <span class="token operator">=</span> <span class="token string">""</span>  <span class="token comment"># 重置错误日志</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> <span class="token keyword">not</span> <span class="token punctuation">(</span>check_bind<span class="token punctuation">(</span>is_graduate<span class="token punctuation">)</span> <span class="token keyword">and</span>
+                bind_user_info<span class="token punctuation">(</span>account<span class="token punctuation">,</span> password<span class="token punctuation">,</span> is_graduate<span class="token punctuation">)</span> <span class="token keyword">and</span>
+                monitor_register<span class="token punctuation">(</span>is_graduate<span class="token punctuation">,</span> province<span class="token punctuation">,</span> city<span class="token punctuation">,</span> county<span class="token punctuation">,</span> street<span class="token punctuation">,</span> is_inschool<span class="token punctuation">,</span> is_leacecity<span class="token punctuation">,</span> temperature<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            status <span class="token operator">=</span> <span class="token boolean">False</span>
+    <span class="token keyword">finally</span><span class="token punctuation">:</span>
+        status <span class="token operator">&amp;</span><span class="token operator">=</span> cancel_bind<span class="token punctuation">(</span>is_graduate<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> status<span class="token punctuation">:</span>
+        <span class="token keyword">if</span> reported<span class="token punctuation">:</span>
+            log<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string">"------今日已填报，别操心啦------"</span><span class="token punctuation">)</span>
+            <span class="token keyword">return</span> <span class="token boolean">True</span><span class="token punctuation">,</span> <span class="token string-interpolation"><span class="token string">f" </span><span class="token interpolation"><span class="token punctuation">{</span>account<span class="token punctuation">}</span></span><span class="token string"> 今日已填报！"</span></span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            log<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"</span><span class="token interpolation"><span class="token punctuation">{</span>account<span class="token punctuation">}</span></span><span class="token string">填报成功"</span></span><span class="token punctuation">)</span>
+            <span class="token keyword">return</span> <span class="token boolean">True</span><span class="token punctuation">,</span> <span class="token string-interpolation"><span class="token string">f" </span><span class="token interpolation"><span class="token punctuation">{</span>account<span class="token punctuation">}</span></span><span class="token string"> 填报成功！"</span></span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        log<span class="token punctuation">.</span>error<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"</span><span class="token interpolation"><span class="token punctuation">{</span>account<span class="token punctuation">}</span></span><span class="token string">填报失败"</span></span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token boolean">False</span><span class="token punctuation">,</span> <span class="token string-interpolation"><span class="token string">f" </span><span class="token interpolation"><span class="token punctuation">{</span>account<span class="token punctuation">}</span></span><span class="token string"> 填报失败！\n"</span></span> <span class="token operator">+</span> error_log
+
+<span class="token operator">//</span>批量填报
+<span class="token keyword">def</span> <span class="token function">report_by_dict</span><span class="token punctuation">(</span>user<span class="token punctuation">:</span> <span class="token builtin">dict</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">tuple</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> report<span class="token punctuation">(</span>user<span class="token punctuation">[</span><span class="token string">"account"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> user<span class="token punctuation">[</span><span class="token string">"password"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> user<span class="token punctuation">[</span><span class="token string">"is_graduate"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                  user<span class="token punctuation">[</span><span class="token string">"province"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> user<span class="token punctuation">[</span><span class="token string">"city"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> user<span class="token punctuation">[</span><span class="token string">"county"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> user<span class="token punctuation">[</span><span class="token string">"street"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                  user<span class="token punctuation">[</span><span class="token string">"is_inschool"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> user<span class="token punctuation">[</span><span class="token string">"is_leacecity"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> user<span class="token punctuation">[</span><span class="token string">"temperature"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="go-cqhttp配置"><a href="#go-cqhttp配置" class="headerlink" title="go-cqhttp配置"></a>go-cqhttp配置</h5><p>这部分只是进行信息反馈的作用，告知你每天是否成功填报。</p>
+<p>若你不知道go-cqhttp或不想启用它可以跳过。</p>
+<p>参考文档：<a href="https://github.com/Mrs4s/go-cqhttp">https://github.com/Mrs4s/go-cqhttp</a></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 正确配置并启用后，每次填报后程序会发送QQ消息到对应收信QQ号或QQ群。</span>
+cqhttp <span class="token operator">=</span> conf_notification<span class="token punctuation">[</span><span class="token string">"cqhttp"</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"enable"</span><span class="token punctuation">]</span>  <span class="token comment"># 是否启用go-cqhttp发信</span>
+api <span class="token operator">=</span> conf_notification<span class="token punctuation">[</span><span class="token string">"cqhttp"</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"api"</span><span class="token punctuation">]</span>  <span class="token comment"># cqhttp http API 地址</span>
+uid <span class="token operator">=</span> conf_notification<span class="token punctuation">[</span><span class="token string">"cqhttp"</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"uid"</span><span class="token punctuation">]</span>  <span class="token comment"># 收信QQ号，不填则不发送</span>
+gid <span class="token operator">=</span> conf_notification<span class="token punctuation">[</span><span class="token string">"cqhttp"</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"gid"</span><span class="token punctuation">]</span>  <span class="token comment"># 收信群号，不填则不发送</span>
+
+<span class="token keyword">def</span> <span class="token function">msg</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> cqhttp<span class="token punctuation">:</span>
+        <span class="token keyword">try</span><span class="token punctuation">:</span>
+            send_cqhttp<span class="token punctuation">(</span>text<span class="token punctuation">)</span>
+            log<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string">"成功发送cqhttp消息"</span><span class="token punctuation">)</span>
+        <span class="token keyword">except</span><span class="token punctuation">:</span>
+            log<span class="token punctuation">.</span>error<span class="token punctuation">(</span><span class="token string">"发送cqhttp消息失败"</span><span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        log<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string">"未启用cqhttp推送"</span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">def</span> <span class="token function">send_cqhttp</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    data_user <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token string">"user_id"</span><span class="token punctuation">:</span> uid<span class="token punctuation">,</span>		<span class="token operator">//</span>QQ号
+        <span class="token string">"message"</span><span class="token punctuation">:</span> text
+    <span class="token punctuation">}</span>
+    data_group <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token string">"group_id"</span><span class="token punctuation">:</span> xxxxxxx<span class="token punctuation">,</span>	<span class="token operator">//</span>QQ群号
+        <span class="token string">"message"</span><span class="token punctuation">:</span> text
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> data_user<span class="token punctuation">[</span><span class="token string">"user_id"</span><span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token string">""</span><span class="token punctuation">:</span>
+        requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>api<span class="token punctuation">,</span> params<span class="token operator">=</span>data_user<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> data_group<span class="token punctuation">[</span><span class="token string">"group_id"</span><span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token string">""</span><span class="token punctuation">:</span>
+        requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'http://youripaddres:5700/send_group_msg'</span><span class="token punctuation">,</span> params<span class="token operator">=</span>data_group<span class="token punctuation">)</span>
+        <span class="token operator">//</span>注意API地址填写正确<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="填报程序入口"><a href="#填报程序入口" class="headerlink" title="填报程序入口"></a>填报程序入口</h5><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">//</span>whut<span class="token punctuation">.</span>py
+
+data_student<span class="token operator">=</span><span class="token punctuation">[</span>
+<span class="token punctuation">{</span><span class="token string">'account'</span><span class="token punctuation">:</span> <span class="token string">'0122xxxxxxxx'</span><span class="token punctuation">,</span>
+ <span class="token string">'password'</span><span class="token punctuation">:</span> <span class="token string">'xxxxxx'</span><span class="token punctuation">,</span>
+ <span class="token string">'province'</span><span class="token punctuation">:</span> <span class="token string">'湖北省'</span><span class="token punctuation">,</span>
+ <span class="token string">'city'</span><span class="token punctuation">:</span> <span class="token string">'武汉市'</span><span class="token punctuation">,</span>
+ <span class="token string">'county'</span><span class="token punctuation">:</span> <span class="token string">'洪山区'</span><span class="token punctuation">,</span>
+ <span class="token string">'street'</span><span class="token punctuation">:</span> <span class="token string">'岭南路'</span><span class="token punctuation">,</span>
+ <span class="token string">'is_inschool'</span><span class="token punctuation">:</span> <span class="token boolean">True</span><span class="token punctuation">,</span>
+ <span class="token string">'is_leacecity'</span><span class="token punctuation">:</span> <span class="token boolean">False</span><span class="token punctuation">,</span>
+ <span class="token string">'temperature'</span><span class="token punctuation">:</span> <span class="token string">'36.5°C~36.9°C'</span><span class="token punctuation">}</span>
+<span class="token punctuation">]</span>
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">"__main__"</span><span class="token punctuation">:</span>
+    log<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string">"======程序启动======="</span><span class="token punctuation">)</span>
+    message <span class="token operator">=</span> <span class="token string">"[健康填报-自动反馈]\n"</span>
+    <span class="token keyword">for</span> user <span class="token keyword">in</span> data_student<span class="token punctuation">:</span>
+        text <span class="token operator">=</span> <span class="token string">""</span>
+        log<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"===</span><span class="token interpolation"><span class="token punctuation">{</span>user<span class="token punctuation">[</span><span class="token string">'account'</span><span class="token punctuation">]</span><span class="token punctuation">}</span></span><span class="token string">==="</span></span><span class="token punctuation">)</span>
+        <span class="token keyword">for</span> retry <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment"># 重试三次</span>
+            time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
+            log<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"---第</span><span class="token interpolation"><span class="token punctuation">{</span>retry<span class="token punctuation">}</span></span><span class="token string">次尝试---"</span></span><span class="token punctuation">)</span>
+            status<span class="token punctuation">,</span> text <span class="token operator">=</span> report_by_dict<span class="token punctuation">(</span>user<span class="token punctuation">)</span>
+            <span class="token keyword">if</span> status<span class="token punctuation">:</span>
+                message <span class="token operator">+=</span> text <span class="token operator">+</span> <span class="token string">"\n"</span>
+                <span class="token keyword">break</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>  <span class="token comment"># 若三次都失败</span>
+            message <span class="token operator">+=</span> text <span class="token operator">+</span> <span class="token string">"\n"</span>
+    log<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string">"=======消息推送======="</span><span class="token punctuation">)</span>
+    log<span class="token punctuation">.</span>debug<span class="token punctuation">(</span><span class="token string">"待推送消息:\n"</span> <span class="token operator">+</span> message<span class="token punctuation">)</span>
+    msg<span class="token punctuation">(</span>message<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h3><h5 id="whut-py"><a href="#whut-py" class="headerlink" title="whut.py"></a>whut.py</h5><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> index <span class="token keyword">import</span> msg<span class="token punctuation">,</span> report_by_dict
+<span class="token keyword">from</span> index <span class="token keyword">import</span> log
+<span class="token keyword">import</span> time
+
+data_student<span class="token operator">=</span><span class="token punctuation">[</span>
+<span class="token punctuation">{</span><span class="token string">'account'</span><span class="token punctuation">:</span> <span class="token string">'01220xxxxx'</span><span class="token punctuation">,</span>
+ <span class="token string">'password'</span><span class="token punctuation">:</span> <span class="token string">'xxxxxx'</span><span class="token punctuation">,</span>
+ <span class="token string">'province'</span><span class="token punctuation">:</span> <span class="token string">'湖北省'</span><span class="token punctuation">,</span>
+ <span class="token string">'city'</span><span class="token punctuation">:</span> <span class="token string">'武汉市'</span><span class="token punctuation">,</span>
+ <span class="token string">'county'</span><span class="token punctuation">:</span> <span class="token string">'洪山区'</span><span class="token punctuation">,</span>
+ <span class="token string">'street'</span><span class="token punctuation">:</span> <span class="token string">'岭南路'</span><span class="token punctuation">,</span>
+ <span class="token string">'is_inschool'</span><span class="token punctuation">:</span> <span class="token boolean">True</span><span class="token punctuation">,</span>
+ <span class="token string">'is_leacecity'</span><span class="token punctuation">:</span> <span class="token boolean">False</span><span class="token punctuation">,</span>
+ <span class="token string">'temperature'</span><span class="token punctuation">:</span> <span class="token string">'36.5°C~36.9°C'</span><span class="token punctuation">}</span>
+<span class="token punctuation">]</span>
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">"__main__"</span><span class="token punctuation">:</span>
+    log<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string">"======程序启动======="</span><span class="token punctuation">)</span>
+    message <span class="token operator">=</span> <span class="token string">"[健康填报-自动反馈]\n"</span>
+    <span class="token keyword">for</span> user <span class="token keyword">in</span> data_student<span class="token punctuation">:</span>
+        text <span class="token operator">=</span> <span class="token string">""</span>
+        log<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"===</span><span class="token interpolation"><span class="token punctuation">{</span>user<span class="token punctuation">[</span><span class="token string">'account'</span><span class="token punctuation">]</span><span class="token punctuation">}</span></span><span class="token string">==="</span></span><span class="token punctuation">)</span>
+        <span class="token keyword">for</span> retry <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment"># 重试三次</span>
+            time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
+            log<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"---第</span><span class="token interpolation"><span class="token punctuation">{</span>retry<span class="token punctuation">}</span></span><span class="token string">次尝试---"</span></span><span class="token punctuation">)</span>
+            status<span class="token punctuation">,</span> text <span class="token operator">=</span> report_by_dict<span class="token punctuation">(</span>user<span class="token punctuation">)</span>
+            <span class="token keyword">if</span> status<span class="token punctuation">:</span>
+                message <span class="token operator">+=</span> text <span class="token operator">+</span> <span class="token string">"\n"</span>
+                <span class="token keyword">break</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>  <span class="token comment"># 若三次都失败</span>
+            message <span class="token operator">+=</span> text <span class="token operator">+</span> <span class="token string">"\n"</span>
+    log<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string">"=======消息推送======="</span><span class="token punctuation">)</span>
+    log<span class="token punctuation">.</span>debug<span class="token punctuation">(</span><span class="token string">"待推送消息:\n"</span> <span class="token operator">+</span> message<span class="token punctuation">)</span>
+    msg<span class="token punctuation">(</span>message<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="idnex-py"><a href="#idnex-py" class="headerlink" title="idnex.py"></a>idnex.py</h5><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> logging
+<span class="token keyword">import</span> json
+<span class="token keyword">import</span> base64
+<span class="token keyword">import</span> random
+<span class="token keyword">import</span> requests
+
+reported<span class="token operator">=</span><span class="token boolean">False</span>	<span class="token comment">#全局变量，防止重复报送</span>
+
+log <span class="token operator">=</span> logging<span class="token punctuation">.</span>getLogger<span class="token punctuation">(</span><span class="token string">"log.txt"</span><span class="token punctuation">)</span>
+log<span class="token punctuation">.</span>setLevel<span class="token punctuation">(</span>logging<span class="token punctuation">.</span>DEBUG<span class="token punctuation">)</span>
+shandler <span class="token operator">=</span> logging<span class="token punctuation">.</span>StreamHandler<span class="token punctuation">(</span><span class="token punctuation">)</span>
+shandler<span class="token punctuation">.</span>setFormatter<span class="token punctuation">(</span>logging<span class="token punctuation">.</span>Formatter<span class="token punctuation">(</span><span class="token string">"[%(levelname)s] %(message)s"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+shandler<span class="token punctuation">.</span>setLevel<span class="token punctuation">(</span>logging<span class="token punctuation">.</span>INFO<span class="token punctuation">)</span>
+fhandler <span class="token operator">=</span> logging<span class="token punctuation">.</span>FileHandler<span class="token punctuation">(</span>filename<span class="token operator">=</span><span class="token string">"log.txt"</span><span class="token punctuation">,</span> mode<span class="token operator">=</span><span class="token string">"w"</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span>
+fhandler<span class="token punctuation">.</span>setFormatter<span class="token punctuation">(</span>logging<span class="token punctuation">.</span>Formatter<span class="token punctuation">(</span><span class="token string">"&lt;%(asctime)s&gt; [%(levelname)s] %(message)s"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+fhandler<span class="token punctuation">.</span>setLevel<span class="token punctuation">(</span>logging<span class="token punctuation">.</span>DEBUG<span class="token punctuation">)</span>
+log<span class="token punctuation">.</span>addHandler<span class="token punctuation">(</span>shandler<span class="token punctuation">)</span>
+log<span class="token punctuation">.</span>addHandler<span class="token punctuation">(</span>fhandler<span class="token punctuation">)</span>
+
+conf_notification <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">"cqhttp"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token string">"enable"</span><span class="token punctuation">:</span> <span class="token boolean">True</span><span class="token punctuation">,</span>
+        <span class="token string">"api"</span><span class="token punctuation">:</span> <span class="token string">"http://youripaddress:5700/send_group_msg"</span><span class="token punctuation">,</span>
+        <span class="token string">"uid"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+        <span class="token string">"gid"</span><span class="token punctuation">:</span> <span class="token string">"xxxxxxx"</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+ua_list <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token string">"Mozilla/5.0 (Linux; U; Android 7.1.2; zh-cn; MI 6 Build/NXTHUAWEI) AppleWebKit/537.36 (KHTML, like Gecko)Version/4.0 MQQBrowser/9.9 Mobile Safari/537.36"</span><span class="token punctuation">,</span>
+    <span class="token string">"Mozilla/5.0 (iPhone; CPU iPhone OS 9_3_5 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13G36 baiduboxapp/0_01.5.2.8_enohpi_6311_046/5.3.9_1C2%8enohPi/1099a/7D4BD508A31C4692ACC31489A6AA6FAA3D5694CC7OCARCEMSHG/1"</span><span class="token punctuation">,</span>
+    <span class="token string">"Mozilla/5.0 (Linux; U; Android 4.4.4; en-us; vivo X5Max Build/KTU84P) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 UCBrowser/1.0.0.100 U3/0.8.0 Mobile Safari/534.30 AliApp(TB/6.5.0) WindVane/8.0.0 1080X1920 GCanvas/1.4.2.21"</span><span class="token punctuation">,</span>
+    <span class="token string">"Mozilla/5.0 (iPhone; CPU iPhone OS 10_2 like Mac OS X) AppleWebKit/602.3.12 (KHTML, like Gecko) Mobile/14C92 baiduboxapp/0_01.5.2.8_enohpi_8022_2421/2.01_2C2%8enohPi/1099a/05D5623EBB692D46C9C9659B23D68FBD5C7FEB228ORMNJBQOHM/1"</span><span class="token punctuation">,</span>
+    <span class="token string">"Mozilla/5.0 (Linux; Android 8.0.0; BKL-AL00 Build/HUAWEIBKL-AL00; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/76.0.3809.89 Mobile Safari/537.36 T7/11.19 SP-engine/2.15.0 baiduboxapp/11.19.5.10 (Baidu; P1 8.0.0)"</span>
+<span class="token punctuation">]</span>
+
+headers <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">"Host"</span><span class="token punctuation">:</span> <span class="token string">"zhxg.whut.edu.cn"</span><span class="token punctuation">,</span>
+    <span class="token string">"Connection"</span><span class="token punctuation">:</span> <span class="token string">"keep-alive"</span><span class="token punctuation">,</span>
+    <span class="token comment"># "Content-Length": "",</span>
+    <span class="token comment"># "User-Agent": "",</span>
+    <span class="token string">"X-Tag"</span><span class="token punctuation">:</span> <span class="token string">"flyio"</span><span class="token punctuation">,</span>
+    <span class="token string">"content-type"</span><span class="token punctuation">:</span> <span class="token string">"application/json"</span><span class="token punctuation">,</span>
+    <span class="token string">"encode"</span><span class="token punctuation">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span>
+    <span class="token string">"Referer"</span><span class="token punctuation">:</span> <span class="token string">"https://servicewechat.com/wxa0738e54aae84423/21/page-frame.html"</span><span class="token punctuation">,</span>
+    <span class="token string">"Accept-Encoding"</span><span class="token punctuation">:</span> <span class="token string">"gzip, deflate, br"</span>
+<span class="token punctuation">}</span>
+
+error_log <span class="token operator">=</span> <span class="token string">""</span>
+
+<span class="token keyword">def</span> <span class="token function">check_bind</span><span class="token punctuation">(</span>is_graduate<span class="token punctuation">:</span> <span class="token builtin">bool</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">bool</span><span class="token punctuation">:</span>
+    <span class="token keyword">global</span> error_log
+    log<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string">"[1] 正在创建会话"</span><span class="token punctuation">)</span>
+    <span class="token comment"># 设置header</span>
+	url <span class="token operator">=</span> <span class="token string">"https://zhxg.whut.edu.cn/yqtjwx/api/login/checkBind"</span>
+    headers<span class="token punctuation">[</span><span class="token string">"User-Agent"</span><span class="token punctuation">]</span> <span class="token operator">=</span> random<span class="token punctuation">.</span>choice<span class="token punctuation">(</span>ua_list<span class="token punctuation">)</span>
+    log<span class="token punctuation">.</span>debug<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"设置header完成: </span><span class="token interpolation"><span class="token punctuation">{</span>headers<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+    data <span class="token operator">=</span> dict_to_base64_bin<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">"sn"</span><span class="token punctuation">:</span> <span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token string">"idCard"</span><span class="token punctuation">:</span> <span class="token boolean">None</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+    respounce <span class="token operator">=</span> requests<span class="token punctuation">.</span>post<span class="token punctuation">(</span>url<span class="token operator">=</span>url<span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">,</span> data<span class="token operator">=</span>data<span class="token punctuation">)</span><span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    log<span class="token punctuation">.</span>debug<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"请求发送完成，收到响应: </span><span class="token interpolation"><span class="token punctuation">{</span>respounce<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> respounce<span class="token punctuation">[</span><span class="token string">"status"</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+        resp_data <span class="token operator">=</span> base64_str_to_dict<span class="token punctuation">(</span>respounce<span class="token punctuation">[</span><span class="token string">"data"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        log<span class="token punctuation">.</span>debug<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"响应data解码: </span><span class="token interpolation"><span class="token punctuation">{</span>resp_data<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+        headers<span class="token punctuation">[</span><span class="token string">"Cookie"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string-interpolation"><span class="token string">f"JSESSIONID=</span><span class="token interpolation"><span class="token punctuation">{</span>resp_data<span class="token punctuation">[</span><span class="token string">'sessionId'</span><span class="token punctuation">]</span><span class="token punctuation">}</span></span><span class="token string">"</span></span>  <span class="token comment"># 写入Cookie</span>
+        <span class="token keyword">return</span> <span class="token boolean">True</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        error_log <span class="token operator">+=</span> <span class="token builtin">str</span><span class="token punctuation">(</span>respounce<span class="token punctuation">)</span>
+        log<span class="token punctuation">.</span>error<span class="token punctuation">(</span><span class="token string">"[X] 创建会话出现错误，详情见log.txt"</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token boolean">False</span>
+
+<span class="token keyword">def</span> <span class="token function">bind_user_info</span><span class="token punctuation">(</span>account<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">,</span> password<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">,</span> is_graduate<span class="token punctuation">:</span> <span class="token builtin">bool</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">bool</span><span class="token punctuation">:</span>
+    <span class="token keyword">global</span> error_log
+    log<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string">"[2] 正在绑定身份"</span><span class="token punctuation">)</span>
+	url <span class="token operator">=</span> <span class="token string">"https://zhxg.whut.edu.cn/yqtjwx/api/login/bindUserInfo"</span>
+    data <span class="token operator">=</span> dict_to_base64_bin<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">"sn"</span><span class="token punctuation">:</span> account<span class="token punctuation">,</span> <span class="token string">"idCard"</span><span class="token punctuation">:</span> password<span class="token punctuation">}</span><span class="token punctuation">)</span>
+    respounce <span class="token operator">=</span> requests<span class="token punctuation">.</span>post<span class="token punctuation">(</span>url<span class="token operator">=</span>url<span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">,</span> data<span class="token operator">=</span>data<span class="token punctuation">)</span><span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    log<span class="token punctuation">.</span>debug<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"请求发送完成，收到响应: </span><span class="token interpolation"><span class="token punctuation">{</span>respounce<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> respounce<span class="token punctuation">[</span><span class="token string">"status"</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+        resp_data <span class="token operator">=</span> base64_str_to_dict<span class="token punctuation">(</span>respounce<span class="token punctuation">[</span><span class="token string">"data"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        log<span class="token punctuation">.</span>debug<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"响应data解码: </span><span class="token interpolation"><span class="token punctuation">{</span>resp_data<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token boolean">True</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        error_log <span class="token operator">+=</span> <span class="token builtin">str</span><span class="token punctuation">(</span>respounce<span class="token punctuation">)</span>
+        log<span class="token punctuation">.</span>error<span class="token punctuation">(</span><span class="token string">"[X] 绑定身份出现错误，详情见log.txt"</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token boolean">False</span>
+
+    
+<span class="token keyword">def</span> <span class="token function">monitor_register</span><span class="token punctuation">(</span>is_graduate<span class="token punctuation">:</span> <span class="token builtin">bool</span><span class="token punctuation">,</span> province<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">,</span> city<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">,</span> county<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">,</span> street<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">,</span>is_inschool<span class="token punctuation">:</span> <span class="token builtin">bool</span><span class="token punctuation">,</span> is_leavecity<span class="token punctuation">:</span> <span class="token builtin">bool</span><span class="token punctuation">,</span> temperature<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">bool</span><span class="token punctuation">:</span>
+    <span class="token keyword">global</span> error_log
+    log<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string">"[3] 正在填报操作"</span><span class="token punctuation">)</span>
+    address <span class="token operator">=</span> province <span class="token operator">+</span> city <span class="token operator">+</span> county <span class="token operator">+</span> street
+	url <span class="token operator">=</span> <span class="token string">"https://zhxg.whut.edu.cn/yqtjwx/./monitorRegister"</span>
+    dict_data <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token string">"diagnosisName"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+        <span class="token string">"relationWithOwn"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+        <span class="token string">"currentAddress"</span><span class="token punctuation">:</span> address<span class="token punctuation">,</span>
+        <span class="token string">"remark"</span><span class="token punctuation">:</span> <span class="token string">"无"</span><span class="token punctuation">,</span>
+        <span class="token string">"healthInfo"</span><span class="token punctuation">:</span> <span class="token string">"正常"</span><span class="token punctuation">,</span>
+        <span class="token string">"isDiagnosis"</span><span class="token punctuation">:</span> <span class="token string">"0"</span><span class="token punctuation">,</span>
+        <span class="token string">"isFever"</span><span class="token punctuation">:</span> <span class="token string">"0"</span><span class="token punctuation">,</span>
+        <span class="token string">"isInSchool"</span><span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">(</span>is_inschool<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token string">"isLeaveChengdu"</span><span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">(</span>is_leavecity<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token string">"isSymptom"</span><span class="token punctuation">:</span> <span class="token string">"0"</span><span class="token punctuation">,</span>
+        <span class="token string">"temperature"</span><span class="token punctuation">:</span> temperature<span class="token punctuation">,</span>
+        <span class="token string">"province"</span><span class="token punctuation">:</span> province<span class="token punctuation">,</span>
+        <span class="token string">"city"</span><span class="token punctuation">:</span> city<span class="token punctuation">,</span>
+        <span class="token string">"county"</span><span class="token punctuation">:</span> county
+    <span class="token punctuation">}</span>
+    log<span class="token punctuation">.</span>debug<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"填报数据生成完成: </span><span class="token interpolation"><span class="token punctuation">{</span>dict_data<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+    data <span class="token operator">=</span> dict_to_base64_bin<span class="token punctuation">(</span>dict_data<span class="token punctuation">)</span>
+    respounce <span class="token operator">=</span> requests<span class="token punctuation">.</span>post<span class="token punctuation">(</span>url<span class="token operator">=</span>url<span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">,</span> data<span class="token operator">=</span>data<span class="token punctuation">)</span><span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    log<span class="token punctuation">.</span>debug<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"请求发送完成，收到响应: </span><span class="token interpolation"><span class="token punctuation">{</span>respounce<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> respounce<span class="token punctuation">[</span><span class="token string">"status"</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+        resp_data <span class="token operator">=</span> base64_str_to_dict<span class="token punctuation">(</span>respounce<span class="token punctuation">[</span><span class="token string">"data"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        log<span class="token punctuation">.</span>debug<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"响应data解码: </span><span class="token interpolation"><span class="token punctuation">{</span>resp_data<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token boolean">True</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> respounce<span class="token punctuation">[</span><span class="token string">"message"</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'今日已填报'</span><span class="token punctuation">:</span>
+            <span class="token keyword">global</span> reported
+            reported<span class="token operator">=</span> <span class="token boolean">True</span>
+            <span class="token keyword">return</span> <span class="token boolean">True</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            error_log <span class="token operator">+=</span> <span class="token builtin">str</span><span class="token punctuation">(</span>respounce<span class="token punctuation">)</span>
+            log<span class="token punctuation">.</span>error<span class="token punctuation">(</span><span class="token string">"[X] 填报操作出现错误，详情见log.txt"</span><span class="token punctuation">)</span>
+            <span class="token keyword">return</span> <span class="token boolean">False</span>
+
+
+<span class="token keyword">def</span> <span class="token function">cancel_bind</span><span class="token punctuation">(</span>is_graduate<span class="token punctuation">:</span> <span class="token builtin">bool</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">bool</span><span class="token punctuation">:</span>
+    <span class="token keyword">global</span> error_log
+    log<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string">"[4] 正在解绑身份"</span><span class="token punctuation">)</span>
+	url <span class="token operator">=</span> <span class="token string">"https://zhxg.whut.edu.cn/yqtjwx/api/login/cancelBind"</span>
+    respounce <span class="token operator">=</span> requests<span class="token punctuation">.</span>post<span class="token punctuation">(</span>url<span class="token operator">=</span>url<span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">)</span><span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    log<span class="token punctuation">.</span>debug<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"请求发送完成，收到响应: </span><span class="token interpolation"><span class="token punctuation">{</span>respounce<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> respounce<span class="token punctuation">[</span><span class="token string">"status"</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+        resp_data <span class="token operator">=</span> base64_str_to_dict<span class="token punctuation">(</span>respounce<span class="token punctuation">[</span><span class="token string">"data"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        log<span class="token punctuation">.</span>debug<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"响应data解码: </span><span class="token interpolation"><span class="token punctuation">{</span>resp_data<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token boolean">True</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        error_log <span class="token operator">+=</span> <span class="token builtin">str</span><span class="token punctuation">(</span>respounce<span class="token punctuation">)</span>
+        log<span class="token punctuation">.</span>error<span class="token punctuation">(</span><span class="token string">"[X] 解绑身份出现错误，详情见log.txt"</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token boolean">False</span>
+
+<span class="token keyword">def</span> <span class="token function">dict_to_base64_bin</span><span class="token punctuation">(</span>data<span class="token punctuation">:</span> <span class="token builtin">dict</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">bin</span><span class="token punctuation">:</span>
+    string <span class="token operator">=</span> json<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+    binary <span class="token operator">=</span> string<span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    base64_binary <span class="token operator">=</span> base64<span class="token punctuation">.</span>b64encode<span class="token punctuation">(</span>binary<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> base64_binary
+
+<span class="token keyword">def</span> <span class="token function">base64_str_to_dict</span><span class="token punctuation">(</span>data<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">dict</span><span class="token punctuation">:</span>
+    string_binary <span class="token operator">=</span> base64<span class="token punctuation">.</span>b64decode<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+    string <span class="token operator">=</span> string_binary<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    dictionary <span class="token operator">=</span> json<span class="token punctuation">.</span>loads<span class="token punctuation">(</span>string<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> dictionary
+
+<span class="token keyword">def</span> <span class="token function">report</span><span class="token punctuation">(</span>account<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">,</span> password<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">,</span> is_graduate<span class="token punctuation">:</span> <span class="token builtin">bool</span><span class="token punctuation">,</span>
+           province<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">,</span> city<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">,</span> county<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">,</span> street<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">,</span>
+           is_inschool<span class="token punctuation">:</span> <span class="token builtin">bool</span><span class="token punctuation">,</span> is_leacecity<span class="token punctuation">:</span> <span class="token builtin">bool</span><span class="token punctuation">,</span> temperature<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">tuple</span><span class="token punctuation">:</span>
+    <span class="token keyword">global</span> error_log
+    log<span class="token punctuation">.</span>debug<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"开始填报: </span><span class="token interpolation"><span class="token punctuation">{</span>account<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+    status <span class="token operator">=</span> <span class="token boolean">True</span>  <span class="token comment"># 填报状态</span>
+    headers<span class="token punctuation">[</span><span class="token string">"Cookie"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">""</span>  <span class="token comment"># 重置headers</span>
+    error_log <span class="token operator">=</span> <span class="token string">""</span>  <span class="token comment"># 重置错误日志</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> <span class="token keyword">not</span> <span class="token punctuation">(</span>check_bind<span class="token punctuation">(</span>is_graduate<span class="token punctuation">)</span> <span class="token keyword">and</span>
+                bind_user_info<span class="token punctuation">(</span>account<span class="token punctuation">,</span> password<span class="token punctuation">,</span> is_graduate<span class="token punctuation">)</span> <span class="token keyword">and</span>
+                monitor_register<span class="token punctuation">(</span>is_graduate<span class="token punctuation">,</span> province<span class="token punctuation">,</span> city<span class="token punctuation">,</span> county<span class="token punctuation">,</span> street<span class="token punctuation">,</span> is_inschool<span class="token punctuation">,</span> is_leacecity<span class="token punctuation">,</span> temperature<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            status <span class="token operator">=</span> <span class="token boolean">False</span>
+    <span class="token keyword">finally</span><span class="token punctuation">:</span>
+        status <span class="token operator">&amp;</span><span class="token operator">=</span> cancel_bind<span class="token punctuation">(</span>is_graduate<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> status<span class="token punctuation">:</span>
+        <span class="token keyword">if</span> reported<span class="token punctuation">:</span>
+            log<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string">"------今日已填报，别操心了------"</span><span class="token punctuation">)</span>
+            <span class="token keyword">return</span> <span class="token boolean">True</span><span class="token punctuation">,</span> <span class="token string-interpolation"><span class="token string">f" </span><span class="token interpolation"><span class="token punctuation">{</span>account<span class="token punctuation">}</span></span><span class="token string"> 今日已填报！"</span></span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            log<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"</span><span class="token interpolation"><span class="token punctuation">{</span>account<span class="token punctuation">}</span></span><span class="token string">填报成功"</span></span><span class="token punctuation">)</span>
+            <span class="token keyword">return</span> <span class="token boolean">True</span><span class="token punctuation">,</span> <span class="token string-interpolation"><span class="token string">f" </span><span class="token interpolation"><span class="token punctuation">{</span>account<span class="token punctuation">}</span></span><span class="token string"> 填报成功！"</span></span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        log<span class="token punctuation">.</span>error<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"</span><span class="token interpolation"><span class="token punctuation">{</span>account<span class="token punctuation">}</span></span><span class="token string">填报失败"</span></span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token boolean">False</span><span class="token punctuation">,</span> <span class="token string-interpolation"><span class="token string">f" </span><span class="token interpolation"><span class="token punctuation">{</span>account<span class="token punctuation">}</span></span><span class="token string"> 填报失败！\n"</span></span> <span class="token operator">+</span> error_log
+
+
+<span class="token keyword">def</span> <span class="token function">report_by_dict</span><span class="token punctuation">(</span>user<span class="token punctuation">:</span> <span class="token builtin">dict</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">tuple</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> report<span class="token punctuation">(</span>user<span class="token punctuation">[</span><span class="token string">"account"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> user<span class="token punctuation">[</span><span class="token string">"password"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> user<span class="token punctuation">[</span><span class="token string">"is_graduate"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                  user<span class="token punctuation">[</span><span class="token string">"province"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> user<span class="token punctuation">[</span><span class="token string">"city"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> user<span class="token punctuation">[</span><span class="token string">"county"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> user<span class="token punctuation">[</span><span class="token string">"street"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                  user<span class="token punctuation">[</span><span class="token string">"is_inschool"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> user<span class="token punctuation">[</span><span class="token string">"is_leacecity"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> user<span class="token punctuation">[</span><span class="token string">"temperature"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+api <span class="token operator">=</span> conf_notification<span class="token punctuation">[</span><span class="token string">"cqhttp"</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"api"</span><span class="token punctuation">]</span>  <span class="token comment"># cqhttp http API 地址</span>
+uid <span class="token operator">=</span> conf_notification<span class="token punctuation">[</span><span class="token string">"cqhttp"</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"uid"</span><span class="token punctuation">]</span>  <span class="token comment"># 收信QQ号，不填则不发送</span>
+gid <span class="token operator">=</span> conf_notification<span class="token punctuation">[</span><span class="token string">"cqhttp"</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"gid"</span><span class="token punctuation">]</span>  <span class="token comment"># 收信群号，不填则不发送</span>
+
+
+<span class="token keyword">def</span> <span class="token function">msg</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        send_cqhttp<span class="token punctuation">(</span>text<span class="token punctuation">)</span>
+        log<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string">"成功发送cqhttp消息"</span><span class="token punctuation">)</span>
+    <span class="token keyword">except</span><span class="token punctuation">:</span>
+        log<span class="token punctuation">.</span>error<span class="token punctuation">(</span><span class="token string">"发送cqhttp消息失败"</span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">def</span> <span class="token function">send_cqhttp</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    data_user <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token string">"user_id"</span><span class="token punctuation">:</span> uid<span class="token punctuation">,</span>
+        <span class="token string">"message"</span><span class="token punctuation">:</span> text
+    <span class="token punctuation">}</span>
+    data_group <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token string">"group_id"</span><span class="token punctuation">:</span> gid<span class="token punctuation">,</span>
+        <span class="token string">"message"</span><span class="token punctuation">:</span> text
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> data_user<span class="token punctuation">[</span><span class="token string">"user_id"</span><span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token string">""</span><span class="token punctuation">:</span>
+        requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>api<span class="token punctuation">,</span> params<span class="token operator">=</span>data_user<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> data_group<span class="token punctuation">[</span><span class="token string">"group_id"</span><span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token string">""</span><span class="token punctuation">:</span>
+        requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'http://127.0.0.1:5700/send_group_msg'</span><span class="token punctuation">,</span> params<span class="token operator">=</span>data_group<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h3 id="定时报送"><a href="#定时报送" class="headerlink" title="定时报送"></a>定时报送</h3><p>如果你没有云服务器，也可以部署到本地（即自己的电脑）。</p>
+<p>需要保证在你设定的报送时间内电脑处于开机状态。</p>
+<p>部署教程自行百度或者参考底部相关链接，以下以自己Linux云服务器为例进行演示：</p>
+<p>1.首先通过Xftp上传python文件到服务器</p>
+<p>2.通过Xshell远程连接服务器</p>
+<p>su 输入密码 进入root用户</p>
+<p>创建 screen 终端，执行screen -S whut，防止ssh连接断开后定时任务无法执行</p>
+<pre class="line-numbers language-none"><code class="language-none">#  新建screen
+screen -S your_screen_name
+# 进入screen
+screen -r your_screen_name
+Ctrl+D  # 在当前screen下，输入Ctrl+D，删除该screen
+Ctrl+A，Ctrl+D  # 在当前screen下，输入先后Ctrl+A，Ctrl+D，退出该screen
+#  显示screen list
+screen -ls
+# 连接状态为【Attached】的screen
+screen -D  -r your_screen_name  # 解释：-D -r 先踢掉前一用户，再登陆
+# 判断当前是否在screen中断下,Ubuntu系统,可以这样:
+sudo vim /etc/screenrc
+# 文件末尾追加一行即可允许设置screen标题
+caption always "%{.bW}%-w%{.rW}%n %t%{-}%+w %=%H %Y/%m/%d "
+# 删除指定screen, your_screen_name为待删除的screen name
+screen -S your_screen_name -X quit<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>创建定时任务</p>
+<p>执行crontab -e进入定时任务编写界面，按i进入输入状态</p>
+<p>输入下面代码后，按Esc输入：wq回车保存退出</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token number">30</span> <span class="token number">7</span> <span class="token operator">*</span> <span class="token operator">*</span> <span class="token operator">*</span> python3 <span class="token operator">/</span>home<span class="token operator">/</span>liux1<span class="token operator">/</span>wut<span class="token operator">/</span>whut<span class="token punctuation">.</span>py<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>crontab时间计算表：<a href="https://tool.lu/crontab/">https://tool.lu/crontab/</a></p>
+<p>crontab参考：<a href="https://www.runoob.com/linux/linux-comm-crontab.html">https://www.runoob.com/linux/linux-comm-crontab.html</a></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">例子：
+    <span class="token comment"># 每月的最后1天</span>
+    <span class="token number">0</span> <span class="token number">0</span> L <span class="token operator">*</span> <span class="token operator">*</span> <span class="token operator">*</span>
+
+    说明：
+    Linux
+    <span class="token operator">*</span>    <span class="token operator">*</span>    <span class="token operator">*</span>    <span class="token operator">*</span>    <span class="token operator">*</span>
+    <span class="token operator">-</span>    <span class="token operator">-</span>    <span class="token operator">-</span>    <span class="token operator">-</span>    <span class="token operator">-</span>
+    <span class="token operator">|</span>    <span class="token operator">|</span>    <span class="token operator">|</span>    <span class="token operator">|</span>    <span class="token operator">|</span>
+    <span class="token operator">|</span>    <span class="token operator">|</span>    <span class="token operator">|</span>    <span class="token operator">|</span>    <span class="token operator">+</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span> day of week <span class="token punctuation">(</span><span class="token number">0</span> <span class="token operator">-</span> <span class="token number">7</span><span class="token punctuation">)</span> <span class="token punctuation">(</span>Sunday<span class="token operator">=</span><span class="token number">0</span> <span class="token keyword">or</span> <span class="token number">7</span><span class="token punctuation">)</span> OR sun<span class="token punctuation">,</span>mon<span class="token punctuation">,</span>tue<span class="token punctuation">,</span>wed<span class="token punctuation">,</span>thu<span class="token punctuation">,</span>fri<span class="token punctuation">,</span>sat
+    <span class="token operator">|</span>    <span class="token operator">|</span>    <span class="token operator">|</span>    <span class="token operator">+</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span> month <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">-</span> <span class="token number">12</span><span class="token punctuation">)</span> OR jan<span class="token punctuation">,</span>feb<span class="token punctuation">,</span>mar<span class="token punctuation">,</span>apr <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    <span class="token operator">|</span>    <span class="token operator">|</span>    <span class="token operator">+</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span> day of month <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">-</span> <span class="token number">31</span><span class="token punctuation">)</span>
+    <span class="token operator">|</span>    <span class="token operator">+</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span> hour <span class="token punctuation">(</span><span class="token number">0</span> <span class="token operator">-</span> <span class="token number">23</span><span class="token punctuation">)</span>
+    <span class="token operator">+</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span> minute <span class="token punctuation">(</span><span class="token number">0</span> <span class="token operator">-</span> <span class="token number">59</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h3 id="自动反馈"><a href="#自动反馈" class="headerlink" title="自动反馈"></a>自动反馈</h3><p>参考<a href="https://docs.go-cqhttp.org/">https://docs.go-cqhttp.org/</a></p>
+<h3 id="效果演示"><a href="#效果演示" class="headerlink" title="效果演示"></a>效果演示</h3><p><img src="https://img.gejiba.com/images/bfc0e451f54c95f97a344476be619782.png" alt="bfc0e451f54c95f97a344476be619782.png"></p>
+<h3 id="问题反馈"><a href="#问题反馈" class="headerlink" title="问题反馈"></a>问题反馈</h3><p>如果你使用的时候出现了异常情况，欢迎在下方评论并附上错误详情，或发邮件联系我。</p>
+<p>程序日志为同目录的 <code>log.txt</code> 文件。注意，日志中含有敏感隐私信息，不建议直接公开。</p>
+<p>详细日志中的 <code>message</code> 条目和 <code>Python Traceback</code> 信息可公开分享。</p>
+<h3 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h3><p><a href="https://docs.go-cqhttp.org/">https://docs.go-cqhttp.org/</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/430602325">https://zhuanlan.zhihu.com/p/430602325</a></p>
+<h3 id="特别鸣谢"><a href="#特别鸣谢" class="headerlink" title="特别鸣谢"></a>特别鸣谢</h3><p>本文参考github等博客论坛多个项目，感谢ChrisKimZHT大佬的开源精神！</p>
+<p>感谢Linux one IBM云服务器4月免费体验，感谢cqhttp开发者！</p>
+<p>over.</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="lv-container"></div>
+        <div class="giscus"></div>
+    </div>
+</div>
+<script type="text/javascript" src="https://cdn.lanluo.cn/js/canvas-nest.min.js"></script>
+    </div>
+</div>
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+        <li>
+            <a target="_blank" href="http://weibo.com/2438257908">
+                            <span class="fa-stack fa-lg">
+                                  <i class="iconfont icon-weibo"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/kmoonn">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+    </p>
+</footer>
+<script type="text/javascript" src="https://cdn.lanluo.cn/js/canvas-nest.min.js"></script>
+<script type="text/javascript" src="https://cdn.lanluo.cn/js/canvas-nest.min.js"></script>
+<script type="text/javascript" src="https://cdn.lanluo.cn/js/canvas-nest.min.js"></script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":250,"height":350},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+    <style>
+        #taboola-livere { display: none;}
+    </style>
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC81NzAwOS8zMzQ3Mw==');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>请激活JavaScript</noscript>
+    </div>
+
+</html>

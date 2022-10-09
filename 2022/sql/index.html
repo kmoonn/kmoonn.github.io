@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html lang=zh-CN>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        学习札记-SQL语言 - Kmoon_Hs
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+    <link href="//at.alicdn.com/t/font_620856_28hi1hpxx24.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 6.2.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+<script type="text/javascript" src="https://cdn.lanluo.cn/js/canvas-nest.min.js"></script>
+<body>
+    <script type="text/javascript" src="https://cdn.lanluo.cn/js/canvas-nest.min.js"></script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?cb7a49e4f6a740b15e6fd25de2803712";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 千山同一月,万物皆清明 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar radius">
+            <img src="/img/avatar.png" />
+        </div>
+        <div class="name">
+            <i>Kmoon</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-bg" id="search-bg"></div>
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> 千山同一月,万物皆清明 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        学习札记-SQL语言
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2022-08-11 15:34:20</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#数据库" title="数据库">数据库</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <p><strong>SQL 简介</strong></p>
+<p><strong>Structured Query Language</strong>:<strong>结构化查询语言</strong></p>
+<p><strong>SQL是用于访问和处理数据库的标准的计算机语言</strong></p>
+<p>用于管理<strong>关系数据库管理系统</strong>（RDBMS）</p>
+<p>SQL 的范围包括数据<strong>插入、查询、更新和删除</strong>，数据库<strong>模式创建和修改</strong>，数据访问和控制</p>
+<p><strong>RDBMS</strong></p>
+<p>关系型数据库管理系统</p>
+<p>Relational database management system</p>
+<p>SQL的基础</p>
+<p>RDBMS中的数据存储在被称为表的数据库对象中</p>
+<p>表是相关的数据项的集合，由列和行组成</p>
+<p><strong>DML DDL</strong></p>
+<p>数据操作语言DML</p>
+<ul>
+<li>SELECT</li>
+<li>UPDATE</li>
+<li>DELETE</li>
+<li>INSERT INTO</li>
+</ul>
+<p>数据定义语言DDL</p>
+<ul>
+<li>CREATE DATABASE</li>
+<li>ALTER DATABASE</li>
+<li>CREATE TABLE</li>
+<li>ALTER TABLE</li>
+<li>DROP TABLE</li>
+<li>CREATE INDEX</li>
+<li>DROP INDEX</li>
+</ul>
+<p><strong>SQL 语法</strong></p>
+<p>（大小写不敏感）</p>
+<p>SELECT - 查找提取数据</p>
+<p>UPDATE - 更新数据</p>
+<p>DELETE - 删除数据</p>
+<p>INSERT INTO - 插入新数据</p>
+<p>CREATE DATABASE - 创建新数据库</p>
+<p>ALTER DATABASE - 修改数据库</p>
+<p>CREATE TABLE - 创建新表</p>
+<p>ALTER TABLE - 变更表</p>
+<p>DROP TABLE - 删除表</p>
+<p>CREATE INDEX - 创建索引（<strong>搜索键</strong>）</p>
+<p>DROP INDEX - 删除索引</p>
+<p>use database_name 选择数据库</p>
+<p>set column utf8 设置使用的字符集</p>
+<p>每条SQL语句的末端使用分号;</p>
+<p><strong>SELECT</strong></p>
+<p>select语句用于从数据库中选取数据</p>
+<p>结果被存储在一个结果表中，称为结果集。</p>
+<p>结果集中的导航：ADO教程 PHP教程   <a href="https://www.runoob.com/sql/sql-select.html">待学习</a></p>
+<p>SELECT column_name,column_name  FROM table_name;     //提取指定column列 SELECT *  FROM table_name;    //提取全部列</p>
+<p><strong>TOP NUMBER</strong></p>
+<p>规定要返回的记录的<strong>数目</strong></p>
+<p><em>并非所有的数据库系统都支持 SELECT TOP 语句。</em> </p>
+<p><em>MySQL 支持 LIMIT 语句来选取指定的条数数据， Oracle 可以使用 ROWNUM 来选取</em></p>
+<p><strong>TOP number放在查询列（*）前面</strong></p>
+<p>SELECT TOP number|percent column_name(s) FROM table_name;</p>
+<p>变相返回后N行:</p>
+<p>SELECT TOP 5 * FROM table ORDER BY id DESC;</p>
+<p><strong>TOP NUMBER PERCENT</strong></p>
+<p>使用百分比作为参数，选取前百分之多少的记录</p>
+<p>SELECT TOP 50 PERCENT *  FROM Websites;</p>
+<p><strong>DISTINCT</strong></p>
+<p><strong>DISTINCT</strong> 关键词用于返回唯一不同的值（<strong>去重</strong>）</p>
+<p>SELECT DISTINCT column_name,column_name  FROM table_name;    //提取指定列不同值</p>
+<p><strong>SELECT INTO</strong></p>
+<p>从一个表复制数据，然后把数据插入到另一个<strong>新表</strong>中</p>
+<p>SELECT * INTO newtable [IN externaldb] FROM table1; SELECT column_name(s) INTO newtable [IN externaldb] FROM table1;</p>
+<p><strong>SELECT WHERE</strong></p>
+<p>where子句用于过滤记录</p>
+<p>文本字段 vs. 数值字段</p>
+<p>SQL使用单引号来环绕文本值</p>
+<p>如果是数值字段，请不要使用引号</p>
+<p><strong>WHERE</strong></p>
+<p>where+逻辑值（0/1）</p>
+<p><strong>条件判断（筛选）</strong></p>
+<p>SELECT column_name,column_name FROM table_name WHERE column_name operator value;</p>
+<p><strong>operator 运算符:</strong></p>
+<table>
+<thead>
+<tr>
+<th>=</th>
+<th>等于</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&lt;&gt; 或 !=</td>
+<td>不等于</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>大于</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>小于</td>
+</tr>
+<tr>
+<td>&gt;=</td>
+<td>大于等于</td>
+</tr>
+<tr>
+<td>&lt;=</td>
+<td>小于等于</td>
+</tr>
+<tr>
+<td>BETWEEN AND</td>
+<td><strong>在某个范围</strong>内,查询的范围包涵有上下限的值</td>
+</tr>
+<tr>
+<td>LIKE</td>
+<td><strong>模糊查询</strong>  <strong>%表示多个字符，_表示一个字符</strong></td>
+</tr>
+<tr>
+<td>IN</td>
+<td>多个可能值，指定针对某个列的多个可能值,后接元组</td>
+</tr>
+<tr>
+<td>IS NULL</td>
+<td>空值判断</td>
+</tr>
+</tbody></table>
+<p><strong>引号的使用</strong></p>
+<p>SQL 使用单引号来环绕<strong>文本值</strong>（大部分数据库系统也接受双引号）。</p>
+<p>如果是<strong>数值</strong>，请不要使用引号。</p>
+<p><strong>AND &amp; OR &amp; NOT</strong></p>
+<p>多条件判断过滤</p>
+<p><strong>逻辑运算符的优先级：（）&gt;NOT&gt;AND&gt;OR</strong></p>
+<p>可以把 AND 和 OR 结合起来（使用圆括号来组成复杂的表达式）:</p>
+<p><strong>ORDER BY</strong></p>
+<p>对结果集按照一个列或者多个列进行<strong>排序</strong></p>
+<p>默认<strong>升序 ASC，降序声明 DESC</strong></p>
+<p><strong>文本默认字典序 数值默认数字顺序</strong></p>
+<p>SELECT column_name,column_name FROM table_name ORDER BY column_name,column_name ASC|DESC;</p>
+<p>多列先按照第一个column name排序，在按照第二个column name排序</p>
+<p><strong>desc</strong> 或者 <strong>asc</strong> <strong>只对它紧跟着的第一个列名有效</strong>，其他不受影响，仍然是默认的升序。</p>
+<p>ORDER BY 除了可以对指定的字段进行排序，还可以使用函数进行排序:</p>
+<p>order by abs(a);</p>
+<p>Mysql分页 <a href="https://www.runoob.com/sql/sql-orderby.html">LIMIT</a></p>
+<p><strong>DROP</strong></p>
+<p>DROP TABLE table_name    //删除表 DROP DATABASE database_name     //删除数据库 DROP INDEX     //删除表中的索引 TRUNCATE TABLE table_name    //删除表内的数据，但并不删除表本身</p>
+<p><strong>ALTER</strong></p>
+<p>用于在已有的表中添加、删除或修改列</p>
+<p>如需在表中<strong>添加列</strong></p>
+<p>ALTER TABLE table_name ADD column_name datatype</p>
+<p>如需<strong>删除表中的列</strong></p>
+<p>ALTER TABLE table_name DROP COLUMN column_name</p>
+<p>要<strong>改变表中列的数据类型</strong></p>
+<p>ALTER TABLE table_name ALTER COLUMN column_name datatype</p>
+<p>要<strong>改变表中列的数据类型</strong></p>
+<p>ALTER TABLE table_name ALTER COLUMN column_name datatype</p>
+<p><strong>Auto Increment</strong></p>
+<p>在新纪录插入表中时生成一个唯一的数字</p>
+<p>MS SQL Server 使用 <strong>IDENTITY</strong> 关键字来执行 auto-increment 任务</p>
+<p>CREATE TABLE Persons ( ID int IDENTITY(1,1) PRIMARY KEY,     //IDENTITY 的开始值是 1，每条新记录递增 1。 LastName varchar(255) NOT NULL, FirstName varchar(255), Address varchar(255), City varchar(255) )</p>
+<p><strong>INSERT INTO VALUES</strong></p>
+<p><strong>插入新数据</strong></p>
+<p>INSERT INTO 语句可以有两种编写形式</p>
+<p>id 列是自动更新的，表中的每条记录都有一个唯一的数字。</p>
+<p>第一种形式无需指定要插入数据的列名，只需提供被插入的值： 没有指定要插入数据的列名的形式需要列出插入行的每一列数据     INSERT INTO table_name VALUES (value1,value2,value3,…); 第二种形式需要指定列名及被插入的值： INSERT INTO table_name (column1,column2,column3,…)    //指定列名 VALUES (value1,value2,value3,…);</p>
+<p><strong>INSERT INTO SELECT</strong></p>
+<p>从一个表复制数据，然后把数据插入到一个<strong>已存在</strong>的表中</p>
+<p>目标表中任何已存在的行都不会受影响</p>
+<p>INSERT INTO table2    //复制所有的列插入到另一个已存在的表中 SELECT * FROM table1; INSERT INTO table2 (column_name(s))    //复制希望的列插入到另一个已存在的表中 SELECT column_name(s) FROM table1;</p>
+<p><strong>insert into select 和select into from 的区别：</strong></p>
+<p>insert into scorebak select * from socre where neza=’neza’    –插入一行,要求表scorebak 必须存在 select *  into scorebak from score  where neza=’neza’   –也是插入一行,要求表scorebak 不存在</p>
+<p><strong>UPDATE SET</strong></p>
+<p><strong>更新表</strong>中已存在的记录</p>
+<p>UPDATE SET</p>
+<p>UPDATE table_name SET column1=value1,column2=value2,… WHERE some_column=some_value;</p>
+<p>如果省略了 WHERE 子句，所有的记录都将被更新！</p>
+<p>执行没有 WHERE 子句的 UPDATE 要慎重，再慎重。</p>
+<p>在 MySQL 中可以通过设置 <strong>sql_safe_updates</strong> 这个自带的参数来解决</p>
+<p>当该参数开启的情况下，你必须在update 语句后携带 where 条件，否则就会报错。</p>
+<p><strong>set sql_safe_updates=1;</strong> 表示开启该参数</p>
+<p><strong>DELETE</strong></p>
+<p><strong>删除表中的行</strong></p>
+<p>DELETE FROM table_name WHERE some_column=some_value;</p>
+<p>可以在不删除表的情况下，删除表中所有的行。</p>
+<p>这意味着表结构、属性、索引将保持不变，仅删除表的内容，不释放空间：</p>
+<p>DELETE FROM table_name; 或 DELETE * FROM table_name;</p>
+<p>相同点：drop、delete、truncate 都是删除表的内容。</p>
+<p>不同点：</p>
+<p> delete：<strong>删除表的内容</strong>，表的结构还存在，不释放空间，可以回滚恢复；</p>
+<p> drop：<strong>删除表内容和结构</strong>，释放空间，没有备份表之前要慎用；</p>
+<p> truncate：<strong>删除表的内容</strong>，表的结构存在，可以释放空间,没有备份表之前要慎用；</p>
+<p><strong>delete</strong> 命令删除的数据将存储在系统回滚段中，需要的时候，数据可以回滚恢复，</p>
+<p><strong>truncate</strong> 命令删除的数据是不可以恢复的</p>
+<p><strong>LIKE</strong></p>
+<p>用于在 WHERE 子句中搜索列中的指定模式	<strong>模糊查找</strong></p>
+<p>SELECT column_name(s) FROM table_name WHERE column_name LIKE pattern;</p>
+<p><strong>通配符</strong></p>
+<p>通配符可用于<strong>替代</strong>字符串中的任何其他字符</p>
+<table>
+<thead>
+<tr>
+<th>%</th>
+<th>替代 0 个或多个字符</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>_</td>
+<td>替代一个字符</td>
+</tr>
+<tr>
+<td>[charlist]</td>
+<td>字符列中的任何单一字符</td>
+</tr>
+<tr>
+<td>[^charlist] 或 [!charlist]</td>
+<td>不在字符列中的任何单一字符</td>
+</tr>
+</tbody></table>
+<p>[SQL <a href="https://www.runoob.com/sql/sql-wildcards.html">charlist]通配符</a></p>
+<p><strong>IN</strong></p>
+<p>IN 操作符允许在 WHERE 子句中规定多个值</p>
+<p>SELECT column_name(s) FROM table_name WHERE column_name IN (value1,value2,…);</p>
+<p><strong>BETWEEN AND</strong></p>
+<p>BETWEEN 操作符选取介于<strong>两个值之间</strong>的数据<strong>范围</strong>内的值</p>
+<p><strong>可以是****数值、文本（26个字母）或者日期</strong></p>
+<p>SELECT column_name(s) FROM table_name WHERE column_name （NOT）BETWEEN value1 AND value2;</p>
+<p><strong>AS</strong></p>
+<p><strong>取别名</strong></p>
+<p><strong>可以为表名称或列名称指定别名</strong></p>
+<p>列的别名、多列结合为一列</p>
+<p><strong>CONCAT AS</strong></p>
+<p>SELECT name, CONCAT(url, ‘, ‘, alexa, ‘, ‘, country)  AS site_info FROM Websites;</p>
+<p>表的别名</p>
+<p>如果列名称包含空格，要求使用双引号或方括号</p>
+<p><strong>列的 SQL 别名语法：</strong></p>
+<p>SELECT column_name AS alias_name FROM table_name;</p>
+<p><strong>表的 SQL 别名语法：</strong></p>
+<p>SELECT column_name(s) FROM table_name AS alias_name;</p>
+<p>在下面的情况下，使用别名很有用：</p>
+<ul>
+<li>在查询中涉及超过一个表</li>
+<li>在查询中使用了函数</li>
+<li>列名称很长或者可读性差</li>
+<li>需要把两个列或者多个列结合在一起</li>
+</ul>
+<p><strong>GROUP BY</strong></p>
+<p>用于结合聚合函数，根据一个或多个列对结果集进行<strong>分组</strong></p>
+<p>SELECT column_name, aggregate_function(column_name) FROM table_name WHERE column_name operator value GROUP BY column_name;</p>
+<p><strong>HAVING</strong></p>
+<p>增加 HAVING 子句原因是，<strong>WHERE关键字无法与聚合函数一起使用</strong></p>
+<p>HAVING 子句可以让我们筛选分组后的各组数据。</p>
+<p>SELECT column_name, aggregate_function(column_name) FROM table_name WHERE column_name operator value GROUP BY column_name HAVING aggregate_function(column_name) operator value;</p>
+<p><strong>辨析：</strong></p>
+<p>where 和having之后都是筛选条件：</p>
+<p>1.where在group by前， having在group by 之后</p>
+<p>2.聚合函数（avg、sum、max、min、count）不能作为条件放在where之后，但可以放在having之后</p>
+<p><strong>EXISTS</strong></p>
+<p>用于判断查询子句是否有记录</p>
+<p>如果有一条或多条记录<strong>存在返回 True，否则返回 False</strong></p>
+<p>SELECT column_name(s) FROM table_name WHERE EXISTS (SELECT column_name FROM table_name WHERE condition);</p>
+<p>用于把来自两个或多个<strong>表</strong>的行<strong>连接</strong>起来，基于这些表之间的共同字段</p>
+<p><strong>JOIN ON</strong></p>
+<p>​    <img src="https://note.youdao.com/yws/res/c/WEBRESOURCEe935777972a462c52abd05cff5eb1a7c" alt="0"></p>
+<p><strong>INNER JOIN</strong></p>
+<p>​    <img src="https://note.youdao.com/yws/res/4/WEBRESOURCE8b8452738d1377310c3d5ff5db2b5944" alt="0"></p>
+<p><strong>如果表中有至少一个匹配，则返回行</strong></p>
+<p><strong>INNER JOIN 与 JOIN 是相同的</strong></p>
+<p>SELECT column_name(s) FROM table1 (INNER) JOIN table2 ON table1.column_name=table2.column_name;</p>
+<p><strong>LEFT JOIN</strong></p>
+<p>即使右表中没有匹配，也从左表返回所有的行，如果右表中没有匹配，则结果为 NULL</p>
+<p><strong>RIGHT JOIN</strong></p>
+<p>即使左表中没有匹配，也从右表返回所有的行，如果左表中没有匹配，则结果为 NULL</p>
+<p><strong>FULL JOIN</strong></p>
+<p>只要其中一个表中存在匹配，则返回行</p>
+<p><strong>辨析：</strong></p>
+<p><strong>A inner join B 取****交集</strong></p>
+<p><strong>A left join B</strong> <strong>取 A 全部****，B 没有对应的值为 null</strong></p>
+<p><strong>A right join B</strong> <strong>取 B 全部</strong> <strong>，A 没有对应的值为 null</strong></p>
+<p><strong>A full join B 取<strong><strong>并集</strong></strong>，彼此没有对应的值为 null</strong></p>
+<p><strong>对应条件在 on 后面填写</strong></p>
+<p>左连接与右连接的左右指的是以两张表中的哪一张为基准，它们都是外连接。</p>
+<p>外连接就好像是为非基准表添加了一行全为空值的万能行，用来与基准表中找不到匹配的行进行匹配</p>
+<p><a href="https://www.runoob.com/w3cnote/sql-join-the-different-of-on-and-where.html">JOIN中ON和WHERE的区别</a></p>
+<p><strong>UNION ALL</strong></p>
+<p>用于<strong>合并</strong>两个或多个 <strong>SELECT 语句</strong>的<strong>结果集</strong></p>
+<p>每个 SELECT 语句必须有相同<strong>数量</strong>的列，列也必须拥有相似的<strong>数据类型，查询语句中列的顺序</strong>必须相同</p>
+<p>SELECT column_name(s) FROM table1 UNION （ALL） SELECT column_name(s) FROM table2;</p>
+<p>UNION 默认去重，如果允许重复的值，请使用 <strong>UNION ALL</strong></p>
+<p>UNION 结果集中的列名总是等于 UNION 中第一个 SELECT 语句中的列名</p>
+<p><strong>辨析：</strong></p>
+<p>select into from 和 insert into select 都是用来<strong>复制表</strong></p>
+<p>两者的主要区别为：</p>
+<p>select into from 要求目标表不存在，因为在插入时会自动创建</p>
+<p>insert into select from 要求目标表存在</p>
+<p><strong>CREATE DATABASE</strong></p>
+<p>创建数据库</p>
+<p>CREATE DATABASE dbname;</p>
+<p><strong>CREATE TABLE</strong></p>
+<p>用于创建表</p>
+<p>表由行和列组成，每个表都必须有个表名</p>
+<p>CREATE TABLE table_name ( column_name1 data_type(size), column_name2 data_type(size), column_name3 data_type(size), …. );</p>
+<p>column_name 列的名称</p>
+<p>data_type 列的数据类型</p>
+<p>size 列的最大长度</p>
+<p><strong>SQL 数据类型</strong></p>
+<p><strong>String</strong></p>
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>描述</th>
+<th>存储</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>char(n)</strong></td>
+<td><strong>固定长度</strong>的字符串。最多 8,000 个字符。</td>
+<td>Defined width</td>
+</tr>
+<tr>
+<td><strong>varchar(n)</strong></td>
+<td><strong>可变长度</strong>的字符串。最多 8,000 个字符。</td>
+<td>2 bytes + number of chars</td>
+</tr>
+<tr>
+<td><strong>varchar(max)</strong></td>
+<td>可变长度的字符串。最多 1,073,741,824 个字符。</td>
+<td>2 bytes + number of chars</td>
+</tr>
+<tr>
+<td>text</td>
+<td>可变长度的字符串。最多 2GB 文本数据。</td>
+<td>4 bytes + number of chars</td>
+</tr>
+<tr>
+<td>nchar</td>
+<td>固定长度的 Unicode 字符串。最多 4,000 个字符。</td>
+<td>Defined width x 2</td>
+</tr>
+<tr>
+<td>nvarchar</td>
+<td>可变长度的 Unicode 字符串。最多 4,000 个字符。</td>
+<td></td>
+</tr>
+<tr>
+<td>nvarchar(max)</td>
+<td>可变长度的 Unicode 字符串。最多 536,870,912 个字符。</td>
+<td></td>
+</tr>
+<tr>
+<td>ntext</td>
+<td>可变长度的 Unicode 字符串。最多 2GB 文本数据。</td>
+<td></td>
+</tr>
+<tr>
+<td>bit</td>
+<td>允许 0、1 或 NULL</td>
+<td></td>
+</tr>
+<tr>
+<td>binary(n)</td>
+<td>固定长度的二进制字符串。最多 8,000 字节。</td>
+<td></td>
+</tr>
+<tr>
+<td>varbinary</td>
+<td>可变长度的二进制字符串。最多 8,000 字节。</td>
+<td></td>
+</tr>
+<tr>
+<td>varbinary(max)</td>
+<td>可变长度的二进制字符串。最多 2GB。</td>
+<td></td>
+</tr>
+<tr>
+<td>image</td>
+<td>可变长度的二进制字符串。最多 2GB。</td>
+<td></td>
+</tr>
+</tbody></table>
+<p><strong>Number</strong></p>
+<table>
+<thead>
+<tr>
+<th>tinyint</th>
+<th>允许从 0 到 255 的所有数字。</th>
+<th>1 字节</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>smallint</td>
+<td>允许介于 -32,768 与 32,767 的所有数字。</td>
+<td>2 字节</td>
+</tr>
+<tr>
+<td><strong>int</strong></td>
+<td>允许介于 -2,147,483,648 与 2,147,483,647 的所有数字。</td>
+<td>4 字节</td>
+</tr>
+<tr>
+<td>bigint</td>
+<td>允许介于 -9,223,372,036,854,775,808 与 9,223,372,036,854,775,807 之间的所有数字。</td>
+<td>8 字节</td>
+</tr>
+<tr>
+<td>decimal(p,s)</td>
+<td>固定精度和比例的数字。允许从 -10^38 +1 到 10^38 -1 之间的数字。p 参数指示可以存储的最大位数（小数点左侧和右侧）。p 必须是 1 到 38 之间的值。默认是 18。s 参数指示小数点右侧存储的最大位数。s 必须是 0 到 p 之间的值。默认是 0。</td>
+<td>5-17 字节</td>
+</tr>
+<tr>
+<td>numeric(p,s)</td>
+<td>固定精度和比例的数字。允许从 -10^38 +1 到 10^38 -1 之间的数字。p 参数指示可以存储的最大位数（小数点左侧和右侧）。p 必须是 1 到 38 之间的值。默认是 18。s 参数指示小数点右侧存储的最大位数。s 必须是 0 到 p 之间的值。默认是 0。</td>
+<td>5-17 字节</td>
+</tr>
+<tr>
+<td>smallmoney</td>
+<td>介于 -214,748.3648 与 214,748.3647 之间的货币数据。</td>
+<td>4 字节</td>
+</tr>
+<tr>
+<td>money</td>
+<td>介于 -922,337,203,685,477.5808 与 922,337,203,685,477.5807 之间的货币数据。</td>
+<td>8 字节</td>
+</tr>
+<tr>
+<td><strong>float(n)</strong></td>
+<td>从 -1.79E + 308 到 1.79E + 308 的浮动精度数字数据。n 参数指示该字段保存 4 字节还是 8 字节。float(24) 保存 4 字节，而 float(53) 保存 8 字节。n 的默认值是 53。</td>
+<td>4 或 8 字节</td>
+</tr>
+<tr>
+<td>real</td>
+<td>从 -3.40E + 38 到 3.40E + 38 的浮动精度数字数据。</td>
+<td>4 字节</td>
+</tr>
+</tbody></table>
+<p><strong>Date</strong> </p>
+<table>
+<thead>
+<tr>
+<th>datetime</th>
+<th>从 1753 年 1 月 1 日 到 9999 年 12 月 31 日，精度为 3.33 毫秒。</th>
+<th>8 字节</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>datetime2</td>
+<td>从 1753 年 1 月 1 日 到 9999 年 12 月 31 日，精度为 100 纳秒。</td>
+<td>6-8 字节</td>
+</tr>
+<tr>
+<td>smalldatetime</td>
+<td>从 1900 年 1 月 1 日 到 2079 年 6 月 6 日，精度为 1 分钟。</td>
+<td>4 字节</td>
+</tr>
+<tr>
+<td><strong>date</strong></td>
+<td>仅存储日期。从 0001 年 1 月 1 日 到 9999 年 12 月 31 日。</td>
+<td>3 bytes</td>
+</tr>
+<tr>
+<td><strong>time</strong></td>
+<td>仅存储时间。精度为 100 纳秒。</td>
+<td>3-5 字节</td>
+</tr>
+<tr>
+<td>datetimeoffset</td>
+<td>与 datetime2 相同，外加时区偏移。</td>
+<td>8-10 字节</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>存储唯一的数字，每当创建或修改某行时，该数字会更新。timestamp 值基于内部时钟，不对应真实时间。每个表只能有一个 timestamp 变量。</td>
+<td></td>
+</tr>
+</tbody></table>
+<p><strong>其他</strong></p>
+<table>
+<thead>
+<tr>
+<th>sql_variant</th>
+<th>存储最多 8,000 字节不同数据类型的数据，除了 text、ntext 以及 timestamp。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>uniqueidentifier</td>
+<td>存储全局唯一标识符 (GUID)。</td>
+</tr>
+<tr>
+<td>xml</td>
+<td>存储 XML 格式化数据。最多 2GB。</td>
+</tr>
+<tr>
+<td>cursor</td>
+<td>存储对用于数据库操作的指针的引用。</td>
+</tr>
+<tr>
+<td>table</td>
+<td>存储结果集，供稍后处理。</td>
+</tr>
+</tbody></table>
+<p><strong>通用数据类型</strong></p>
+<table>
+<thead>
+<tr>
+<th>CHARACTER(n)</th>
+<th>字符/字符串。固定长度 n。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>VARCHAR(n) 或CHARACTER VARYING(n)</td>
+<td>字符/字符串。可变长度。最大长度 n。</td>
+</tr>
+<tr>
+<td>BINARY(n)</td>
+<td>二进制串。固定长度 n。</td>
+</tr>
+<tr>
+<td>BOOLEAN</td>
+<td>存储 TRUE 或 FALSE 值</td>
+</tr>
+<tr>
+<td>VARBINARY(n) 或BINARY VARYING(n)</td>
+<td>二进制串。可变长度。最大长度 n。</td>
+</tr>
+<tr>
+<td>INTEGER(p)</td>
+<td>整数值（没有小数点）。精度 p。</td>
+</tr>
+<tr>
+<td>SMALLINT</td>
+<td>整数值（没有小数点）。精度 5。</td>
+</tr>
+<tr>
+<td>INTEGER</td>
+<td>整数值（没有小数点）。精度 10。</td>
+</tr>
+<tr>
+<td>BIGINT</td>
+<td>整数值（没有小数点）。精度 19。</td>
+</tr>
+<tr>
+<td>DECIMAL(p,s)</td>
+<td>精确数值，精度 p，小数点后位数 s。例如：decimal(5,2) 是一个小数点前有 3 位数，小数点后有 2 位数的数字。</td>
+</tr>
+<tr>
+<td>NUMERIC(p,s)</td>
+<td>精确数值，精度 p，小数点后位数 s。（与 DECIMAL 相同）</td>
+</tr>
+<tr>
+<td>FLOAT(p)</td>
+<td>近似数值，尾数精度 p。一个采用以 10 为基数的指数计数法的浮点数。该类型的 size 参数由一个指定最小精度的单一数字组成。</td>
+</tr>
+<tr>
+<td>REAL</td>
+<td>近似数值，尾数精度 7。</td>
+</tr>
+<tr>
+<td>FLOAT</td>
+<td>近似数值，尾数精度 16。</td>
+</tr>
+<tr>
+<td>DOUBLE PRECISION</td>
+<td>近似数值，尾数精度 16。</td>
+</tr>
+<tr>
+<td>DATE</td>
+<td>存储年、月、日的值。</td>
+</tr>
+<tr>
+<td>TIME</td>
+<td>存储小时、分、秒的值。</td>
+</tr>
+<tr>
+<td>TIMESTAMP</td>
+<td>存储年、月、日、小时、分、秒的值。</td>
+</tr>
+<tr>
+<td>INTERVAL</td>
+<td>由一些整数字段组成，代表一段时间，取决于区间的类型。</td>
+</tr>
+<tr>
+<td>ARRAY</td>
+<td>元素的固定长度的有序集合</td>
+</tr>
+<tr>
+<td>MULTISET</td>
+<td>元素的可变长度的无序集合</td>
+</tr>
+<tr>
+<td>XML</td>
+<td>存储 XML 数据</td>
+</tr>
+</tbody></table>
+<p><strong>约束</strong></p>
+<p>用于<strong>规定表中的数据规则</strong></p>
+<p>如果存在违反约束的数据行为，行为会被约束终止</p>
+<p><strong>两种写法：</strong></p>
+<p>约束可以在创建表时规定（通过 <strong>CREATE TABLE</strong> 语句）</p>
+<p>或者在表创建之后规定（通过 <strong>ALTER TABLE</strong> 语句）</p>
+<p><strong>NOT NULL</strong> </p>
+<p>指示某列不能存储 NULL 值</p>
+<p>ALTER TABLE Persons    //添加NOT NULL约束： MODIFY Age int NOT NULL; ALTER TABLE Persons    //删除NOT NULL约束： MODIFY Age int NULL;</p>
+<p><strong>UNIQUE</strong> </p>
+<p>保证某列的每行必须有唯一的值</p>
+<p>当表已被创建时，如需在 “P_Id” 列<strong>创建 UNIQUE 约束</strong></p>
+<p>ALTER TABLE Persons ADD UNIQUE (P_Id)</p>
+<p>如需<strong>命名 UNIQUE 约束，并定义多个列的 UNIQUE 约束</strong></p>
+<p>ALTER TABLE Persons ADD CONSTRAINT uc_PersonID UNIQUE (P_Id,LastName)</p>
+<p>如需撤销 UNIQUE 约束</p>
+<p>ALTER TABLE Persons DROP CONSTRAINT uc_PersonID</p>
+<p>实例：</p>
+<p>CREATE TABLE Persons ( P_Id int NOT NULL UNIQUE, LastName varchar(255) NOT NULL, FirstName varchar(255), Address varchar(255), City varchar(255) )</p>
+<p><strong>PRIMARY KEY</strong> </p>
+<p>NOT NULL 和 UNIQUE的结合</p>
+<p>约束<strong>唯一标识</strong>数据库表中的每条记录</p>
+<p><strong>主键</strong>必须包含唯一的值</p>
+<p>主键列不能包含 NULL 值</p>
+<p><strong>每个表都应该有一个主键，并且每个表只能有一个主键</strong></p>
+<p>一个表中的 FOREIGN KEY 指向另一个表中的 UNIQUE KEY(唯一约束的键)</p>
+<p>PRIMARY KEY 约束的实例：</p>
+<p>CREATE TABLE Persons (   Id_P int NOT NULL,   LastName varchar(255) NOT NULL,   FirstName varchar(255),   Address varchar(255),   City varchar(255),   PRIMARY KEY (Id_P)  //PRIMARY KEY约束 ) CREATE TABLE Persons (   Id_P int NOT NULL PRIMARY KEY,   //PRIMARY KEY约束   LastName varchar(255) NOT NULL,   FirstName varchar(255),   Address varchar(255),   City varchar(255) )</p>
+<p><strong>FOREIGN KEY</strong> </p>
+<p>一个表中的 FOREIGN KEY 指向另一个表中的 UNIQUE KEY(唯一约束的键)。</p>
+<p>保证一个表中的数据匹配另一个表中的值的参照完整性</p>
+<p><strong>REFERENCES关键字</strong></p>
+<p>create table if not exists per(  id bigint auto_increment comment ‘主键’,  name varchar(20) not null comment ‘人员姓名’,  work_id bigint not null comment ‘工作id’,  create_time date default ‘2021-04-02’,  primary key(id),//主键  foreign key(work_id) references work(id)    //外键参照 ) create table if not exists work(  id bigint auto_increment comment ‘主键’,  name varchar(20) not null comment ‘工作名称’,  create_time date default ‘2021-04-02’,  primary key(id) )</p>
+<p><strong>CHECK</strong> </p>
+<p>保证列中的值符合指定的条件</p>
+<p>CHECK 约束用于<strong>限制列中的值的范围</strong>。</p>
+<p>CREATE TABLE Persons ( P_Id int NOT NULL CHECK (P_Id&gt;0), LastName varchar(255) NOT NULL, FirstName varchar(255), Address varchar(255), City varchar(255) )</p>
+<p><strong>DEFAULT</strong> </p>
+<p>DEFAULT 约束用于向列中插入<strong>默认值</strong></p>
+<p>如果没有规定其他的值，那么会将默认值添加到所有的新记录。</p>
+<p>CREATE TABLE Persons (   P_Id int NOT NULL,   LastName varchar(255) NOT NULL,   FirstName varchar(255),   Address varchar(255),   City varchar(255) DEFAULT ‘Sandnes’ ) //通过使用类似 GETDATE() 这样的函数， //DEFAULT 约束也可以用于插入系统值 CREATE TABLE Orders (   O_Id int NOT NULL,   OrderNo int NOT NULL,   P_Id int,   OrderDate date DEFAULT GETDATE() )  ALTER TABLE Persons ADD CONSTRAINT ab_c DEFAULT ‘SANDNES’ for City ALTER TABLE Persons ALTER COLUMN City DROP DEFAULT</p>
+<p><strong>每个表可以有多个 UNIQUE 约束，每个表只能有一个 PRIMARY KEY 约束。</strong></p>
+<p>UNIQUE 约束唯一标识数据库表中的每条记录。</p>
+<p>UNIQUE 和 PRIMARY KEY 约束均为列或列集合提供了唯一性的保证。</p>
+<p>PRIMARY KEY 约束拥有自动定义的 UNIQUE 约束。</p>
+<p><strong>索引 INDEX</strong></p>
+<p>CREATE INDEX</p>
+<p>可以在表中创建索引，以便更加快速高效地查询数据。</p>
+<p>用户无法看到索引，它们只能被用来加速搜索/查询。</p>
+<p>更新一个包含索引的表需要比更新一个没有索引的表花费更多的时间，这是由于索引本身也需要更新。</p>
+<p>因此，理想的做法是仅仅在常常被搜索的列（以及表）上面创建索引。</p>
+<p>在表上创建一个简单的索引。</p>
+<p>允许使用重复的值：</p>
+<p>CREATE INDEX index_name ON table_name (column_name)</p>
+<p>在表上创建一个唯一的索引。</p>
+<p>不允许使用重复的值：</p>
+<p>唯一的索引意味着两个行不能拥有相同的索引值。</p>
+<p>CREATE UNIQUE INDEX index_name ON table_name (column_name)</p>
+<p>删除索引</p>
+<p>DROP INDEX table_name.index_name</p>
+<p>DROP TABLE table_name    //删除表 DROP DATABASE database_name     //删除数据库 DROP INDEX     //删除表中的索引 TRUNCATE TABLE table_name    //删除表内的数据，但并不删除表本身</p>
+<p>用于在已有的表中添加、删除或修改列</p>
+<p>如需在表中<strong>添加列</strong></p>
+<p>ALTER TABLE table_name ADD column_name datatype</p>
+<p>如需<strong>删除表中的列</strong></p>
+<p>ALTER TABLE table_name DROP COLUMN column_name</p>
+<p>要<strong>改变表中列的数据类型</strong></p>
+<p>ALTER TABLE table_name ALTER COLUMN column_name datatype</p>
+<p><strong>IDENTITY</strong></p>
+<p>下面的 SQL 语句把 “Persons” 表中的 “ID” 列定义为 auto-increment 主键字段：</p>
+<p>CREATE TABLE Persons ( ID int IDENTITY(1,1) PRIMARY KEY, LastName varchar(255) NOT NULL, FirstName varchar(255), Address varchar(255), City varchar(255) );</p>
+<p>在上面的实例中，IDENTITY 的开始值是 1，每条新记录递增 1</p>
+<p>要在 “Persons” 表中插入新记录，我们不必为 “ID” 列规定值（会自动添加一个唯一的值）</p>
+<p>INSERT INTO Persons (FirstName,LastName) VALUES (‘Lars’,’Monsen’)</p>
+<p>上面的 SQL 语句会在 “Persons” 表中插入一条新记录。”ID” 列会被赋予一个唯一的值。”FirstName” 列会被设置为 “Lars”，”LastName” 列会被设置为 “Monsen”。</p>
+<p><strong>触发器</strong></p>
+<p><strong>前触发器 OF</strong></p>
+<p>INSTEAD或者OF定义</p>
+<p>指定执行触发器而不是执行引发触发器执行的SQL语句，从而替代触发的操作</p>
+<p><strong>后触发器 FOR</strong></p>
+<p>FOR或者AFTER定义</p>
+<p>只有在引发触发器执行的语句中的操作都已成功执行，并且所有的约束检查也成功完成后，才执行该触发器</p>
+<p>建立触发器</p>
+<p>CREATE TRIGGER trigger_name; BEFORE|AFTER 触发事件  ON table_name REFERENCING NEW|OLD ROW AS 变量 FOR EACH ROW|STATEMENT WHEN 触发条件 触发动作体</p>
+<p>触发事件</p>
+<p>INSERT DELETE UPDATE</p>
+<p>触发器类型</p>
+<p>行级触发器 FOR EACH ROW</p>
+<p>语句级触发器 FOR EACH STATEMENT 默认</p>
+<p>删除触发器</p>
+<p>DROP TRIGGER 触发器名 ON 表名</p>
+<p><strong>视图 VIEW</strong></p>
+<p>视图是<strong>可视化的表 类似窗口</strong></p>
+<p>CREATE VIEW view_name AS SELECT column_name(s) FROM table_name WHERE condition</p>
+<p>更新视图：</p>
+<p>CREATE OR REPLACE VIEW view_name AS SELECT column_name(s) FROM table_name WHERE condition</p>
+<p>通过 DROP VIEW 命令来删除视图</p>
+<p>DROP VIEW view_name</p>
+<p>物化视图：一种包含查询结果的数据库对象，其数据是预先计算好的。</p>
+<p><strong>DATE</strong></p>
+<p>SQL Server 使用下列数据类型在数据库中存储<strong>日期或日期/时间值</strong>：</p>
+<p>DATE - 格式：YYYY-MM-DD</p>
+<p>DATETIME - 格式：YYYY-MM-DD HH:MM:SS</p>
+<p>SMALLDATETIME - 格式：YYYY-MM-DD HH:MM:SS</p>
+<p>TIMESTAMP - 格式：唯一的数字</p>
+<p>内建日期函数：</p>
+<table>
+<thead>
+<tr>
+<th><a href="https://www.runoob.com/sql/func-getdate.html">GETDATE()</a></th>
+<th>返回当前的日期和时间</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://www.runoob.com/sql/func-datepart.html">DATEPART()</a></td>
+<td>返回日期/时间的单独部分</td>
+</tr>
+<tr>
+<td><a href="https://www.runoob.com/sql/func-dateadd.html">DATEADD()</a></td>
+<td>在日期中添加或减去指定的时间间隔</td>
+</tr>
+<tr>
+<td><a href="https://www.runoob.com/sql/func-datediff.html">DATEDIFF()</a></td>
+<td>返回两个日期之间的时间</td>
+</tr>
+<tr>
+<td><a href="https://www.runoob.com/sql/func-convert.html">CONVERT()</a></td>
+<td>用不同的格式显示日期/时间</td>
+</tr>
+</tbody></table>
+<p>DATEADD() 函数在日期中添加或减去指定的时间间隔。</p>
+<p>DATEADD(<em>datepart</em>,<em>number</em>,<em>date</em>)</p>
+<p><em>date</em> 参数是合法的日期表达式。<em>number</em> 是您希望添加的间隔数；对于未来的时间，此数是正数，对于过去的时间，此数是负数。</p>
+<p><em>datepart</em> 参数可以是下列的值：</p>
+<table>
+<thead>
+<tr>
+<th>datepart</th>
+<th>缩写</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>年</td>
+<td>yy, yyyy</td>
+</tr>
+<tr>
+<td>季度</td>
+<td>qq, q</td>
+</tr>
+<tr>
+<td>月</td>
+<td>mm, m</td>
+</tr>
+<tr>
+<td>年中的日</td>
+<td>dy, y</td>
+</tr>
+<tr>
+<td>日</td>
+<td>dd, d</td>
+</tr>
+<tr>
+<td>周</td>
+<td>wk, ww</td>
+</tr>
+<tr>
+<td>星期</td>
+<td>dw, w</td>
+</tr>
+<tr>
+<td>小时</td>
+<td>hh</td>
+</tr>
+<tr>
+<td>分钟</td>
+<td>mi, n</td>
+</tr>
+<tr>
+<td>秒</td>
+<td>ss, s</td>
+</tr>
+<tr>
+<td>毫秒</td>
+<td>ms</td>
+</tr>
+<tr>
+<td>微妙</td>
+<td>mcs</td>
+</tr>
+<tr>
+<td>纳秒</td>
+<td>ns</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>CHARACTER(n)</th>
+<th>字符/字符串。固定长度 n。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>VARCHAR(n) 或CHARACTER VARYING(n)</td>
+<td>字符/字符串。可变长度。最大长度 n。</td>
+</tr>
+<tr>
+<td>BINARY(n)</td>
+<td>二进制串。固定长度 n。</td>
+</tr>
+<tr>
+<td>BOOLEAN</td>
+<td>存储 TRUE 或 FALSE 值</td>
+</tr>
+<tr>
+<td>VARBINARY(n) 或BINARY VARYING(n)</td>
+<td>二进制串。可变长度。最大长度 n。</td>
+</tr>
+<tr>
+<td>INTEGER(p)</td>
+<td>整数值（没有小数点）。精度 p。</td>
+</tr>
+<tr>
+<td>SMALLINT</td>
+<td>整数值（没有小数点）。精度 5。</td>
+</tr>
+<tr>
+<td>INTEGER</td>
+<td>整数值（没有小数点）。精度 10。</td>
+</tr>
+<tr>
+<td>BIGINT</td>
+<td>整数值（没有小数点）。精度 19。</td>
+</tr>
+<tr>
+<td>DECIMAL(p,s)</td>
+<td>精确数值，精度 p，小数点后位数 s。例如：decimal(5,2) 是一个小数点前有 3 位数，小数点后有 2 位数的数字。</td>
+</tr>
+<tr>
+<td>NUMERIC(p,s)</td>
+<td>精确数值，精度 p，小数点后位数 s。（与 DECIMAL 相同）</td>
+</tr>
+<tr>
+<td>FLOAT(p)</td>
+<td>近似数值，尾数精度 p。一个采用以 10 为基数的指数计数法的浮点数。该类型的 size 参数由一个指定最小精度的单一数字组成。</td>
+</tr>
+<tr>
+<td>REAL</td>
+<td>近似数值，尾数精度 7。</td>
+</tr>
+<tr>
+<td>FLOAT</td>
+<td>近似数值，尾数精度 16。</td>
+</tr>
+<tr>
+<td>DOUBLE PRECISION</td>
+<td>近似数值，尾数精度 16。</td>
+</tr>
+<tr>
+<td>DATE</td>
+<td>存储年、月、日的值。</td>
+</tr>
+<tr>
+<td>TIME</td>
+<td>存储小时、分、秒的值。</td>
+</tr>
+<tr>
+<td>TIMESTAMP</td>
+<td>存储年、月、日、小时、分、秒的值。</td>
+</tr>
+<tr>
+<td>INTERVAL</td>
+<td>由一些整数字段组成，代表一段时间，取决于区间的类型。</td>
+</tr>
+<tr>
+<td>ARRAY</td>
+<td>元素的固定长度的有序集合</td>
+</tr>
+<tr>
+<td>MULTISET</td>
+<td>元素的可变长度的无序集合</td>
+</tr>
+<tr>
+<td>XML</td>
+<td>存储 XML 数据</td>
+</tr>
+</tbody></table>
+<p><strong>函数</strong></p>
+<p><strong>AVG()</strong> </p>
+<p>返回数值列的平均值</p>
+<p>SELECT AVG(column_name)  FROM table_name</p>
+<p><strong>COUNT()</strong> </p>
+<p>返回匹配指定条件的行数</p>
+<p>COUNT(column_name) 函数返回指定列的值的数目（NULL 不计入）：</p>
+<p>SELECT COUNT(column_name)  FROM table_name; //COUNT(<em>) 函数返回表中的记录的条数： SELECT COUNT(</em>)  FROM table_name; //COUNT(DISTINCT column_name) 函数返回指定列的不同值的数目： SELECT COUNT(DISTINCT column_name)  FROM table_name;</p>
+<p><strong>FIRST()</strong> </p>
+<p>返回指定列中第一个记录的值</p>
+<p>SELECT FIRST(column_name) FROM table_name;</p>
+<p>SQL Server 语法</p>
+<p>SELECT TOP 1 column_name </p>
+<p>FROM table_name</p>
+<p>ORDER BY column_name ASC;</p>
+<p><strong>LAST()</strong> </p>
+<p>返回指定列最后一个记录的值</p>
+<p>SELECT TOP 1 column_name FROM table_name ORDER BY column_name DESC;</p>
+<p><strong>MAX()</strong> </p>
+<p>返回最大值</p>
+<p>SELECT MAX(column_name)  FROM table_name;</p>
+<p><strong>MIN()</strong></p>
+<p>返回最小值</p>
+<p>SELECT MIN(column_name)  FROM table_name;</p>
+<p><strong>SUM()</strong> </p>
+<p>返回总和</p>
+<p>SELECT SUM(column_name)  FROM table_name;</p>
+<p><strong>UCASE()</strong> </p>
+<p>将某个字段转换为大写</p>
+<p><strong>LCASE()</strong> </p>
+<p>将某个字段转换为小写</p>
+<p><strong>MID()</strong> </p>
+<p>从某个文本字段<strong>提取字符</strong></p>
+<p><strong>LEN()</strong> </p>
+<p>返回某个文本字段的<strong>长度</strong></p>
+<p><strong>ROUND()</strong> </p>
+<p>对某个数值字段进行指定小数位数的<strong>四舍五入</strong></p>
+<p><strong>NOW()</strong></p>
+<p>返回<strong>当前的系统日期和时间</strong></p>
+<p>FORMAT() - 格式化某个字段的显示方式</p>
+<p><strong>MID()函数</strong></p>
+<p>MID() 函数用于从文本字段中提取字符。</p>
+<p>SELECT MID(column_name,start[,length]) </p>
+<p>FROM table_name;</p>
+<table>
+<thead>
+<tr>
+<th>column_name</th>
+<th>必需。要提取字符的字段。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>start</td>
+<td>必需。规定开始位置（起始值是 1）。</td>
+</tr>
+<tr>
+<td>length</td>
+<td>可选。要返回的字符数。如果省略，则 MID() 函数返回剩余文本。</td>
+</tr>
+</tbody></table>
+<p>LEN()函数</p>
+<p>LEN() 函数返回文本字段中值的长度</p>
+<p>SELECT LEN(column_name)  FROM table_name;</p>
+<p><strong>ROUND()函数</strong></p>
+<p>ROUND() 函数用于把数值字段舍入为指定的小数位数。</p>
+<p>ROUND 返回值被变换为一个BIGINT!</p>
+<p>SELECT ROUND(column_name,decimals) FROM TABLE_NAME;</p>
+<table>
+<thead>
+<tr>
+<th>column_name</th>
+<th>必需。要舍入的字段。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>decimals</td>
+<td>可选。规定要返回的小数位数。</td>
+</tr>
+</tbody></table>
+<p><strong>NOW()函数</strong></p>
+<p>NOW() 函数返回当前系统的日期和时间。</p>
+<p>SELECT NOW() </p>
+<p>FROM table_name;</p>
+<p>FORMAT()函数</p>
+<p>FORMAT() 函数用于对字段的显示进行格式化。’%Y-%m-%d’</p>
+<p>SELECT FORMAT(column_name,format) FROM table_name;</p>
+<table>
+<thead>
+<tr>
+<th>column_name</th>
+<th>必需。要格式化的字段。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>format</td>
+<td>必需。规定格式。</td>
+</tr>
+</tbody></table>
+<p><strong>UPPER()</strong> </p>
+<p><strong>LOWER()</strong></p>
+<p>大写：</p>
+<p>SELECT UPPER(name) AS site_title, url  FROM Websites;</p>
+<p>小写：</p>
+<p>SELECT LOWER (name) AS site_title, url  FROM Websites;</p>
+<p><strong>快速参考</strong></p>
+<table>
+<thead>
+<tr>
+<th>SQL 语句</th>
+<th>语法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>AND / OR</td>
+<td>SELECT column_name(s)FROM table_nameWHERE conditionAND|OR condition</td>
+</tr>
+<tr>
+<td>ALTER TABLE</td>
+<td>ALTER TABLE table_nameADD column_name datatype或ALTER TABLE table_nameDROP COLUMN column_name</td>
+</tr>
+<tr>
+<td>AS</td>
+<td>SELECT column_name AS column_aliasFROM table_name或SELECT column_nameFROM table_name AS table_alias</td>
+</tr>
+<tr>
+<td>BETWEEN</td>
+<td>SELECT column_name(s)FROM table_nameWHERE column_nameBETWEEN value1 AND value2</td>
+</tr>
+<tr>
+<td>CREATE DATABASE</td>
+<td>CREATE DATABASE database_name</td>
+</tr>
+<tr>
+<td>CREATE TABLE</td>
+<td>CREATE TABLE table_name(column_name1 data_type,column_name2 data_type,column_name2 data_type,…)</td>
+</tr>
+<tr>
+<td>CREATE INDEX</td>
+<td>CREATE INDEX index_nameON table_name (column_name)orCREATE UNIQUE INDEX index_nameON table_name (column_name)</td>
+</tr>
+<tr>
+<td>CREATE VIEW</td>
+<td>CREATE VIEW view_name ASSELECT column_name(s)FROM table_nameWHERE condition</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>DELETE FROM table_nameWHERE some_column=some_valueorDELETE FROM table_name(Note: Deletes the entire table!!)DELETE * FROM table_name(Note: Deletes the entire table!!)</td>
+</tr>
+<tr>
+<td>DROP DATABASE</td>
+<td>DROP DATABASE database_name</td>
+</tr>
+<tr>
+<td>DROP INDEX</td>
+<td>DROP INDEX table_name.index_name (SQL Server)DROP INDEX index_name ON table_name (MS Access)DROP INDEX index_name (DB2/Oracle)ALTER TABLE table_nameDROP INDEX index_name (MySQL)</td>
+</tr>
+<tr>
+<td>DROP TABLE</td>
+<td>DROP TABLE table_name</td>
+</tr>
+<tr>
+<td>GROUP BY</td>
+<td>SELECT column_name, aggregate_function(column_name)FROM table_nameWHERE column_name operator valueGROUP BY column_name</td>
+</tr>
+<tr>
+<td>HAVING</td>
+<td>SELECT column_name, aggregate_function(column_name)FROM table_nameWHERE column_name operator valueGROUP BY column_nameHAVING aggregate_function(column_name) operator value</td>
+</tr>
+<tr>
+<td>IN</td>
+<td>SELECT column_name(s)FROM table_nameWHERE column_nameIN (value1,value2,..)</td>
+</tr>
+<tr>
+<td>INSERT INTO</td>
+<td>INSERT INTO table_nameVALUES (value1, value2, value3,….)orINSERT INTO table_name(column1, column2, column3,…)VALUES (value1, value2, value3,….)</td>
+</tr>
+<tr>
+<td>INNER JOIN</td>
+<td>SELECT column_name(s)FROM table_name1INNER JOIN table_name2ON table_name1.column_name=table_name2.column_name</td>
+</tr>
+<tr>
+<td>LEFT JOIN</td>
+<td>SELECT column_name(s)FROM table_name1LEFT JOIN table_name2ON table_name1.column_name=table_name2.column_name</td>
+</tr>
+<tr>
+<td>RIGHT JOIN</td>
+<td>SELECT column_name(s)FROM table_name1RIGHT JOIN table_name2ON table_name1.column_name=table_name2.column_name</td>
+</tr>
+<tr>
+<td>FULL JOIN</td>
+<td>SELECT column_name(s)FROM table_name1FULL JOIN table_name2ON table_name1.column_name=table_name2.column_name</td>
+</tr>
+<tr>
+<td>LIKE</td>
+<td>SELECT column_name(s)FROM table_nameWHERE column_name LIKE pattern</td>
+</tr>
+<tr>
+<td>ORDER BY</td>
+<td>SELECT column_name(s)FROM table_nameORDER BY column_name [ASC|DESC]</td>
+</tr>
+<tr>
+<td>SELECT</td>
+<td>SELECT column_name(s)FROM table_name</td>
+</tr>
+<tr>
+<td>SELECT *</td>
+<td>SELECT *FROM table_name</td>
+</tr>
+<tr>
+<td>SELECT DISTINCT</td>
+<td>SELECT DISTINCT column_name(s)FROM table_name</td>
+</tr>
+<tr>
+<td>SELECT INTO</td>
+<td>SELECT *INTO new_table_name [IN externaldatabase]FROM old_table_nameorSELECT column_name(s)INTO new_table_name [IN externaldatabase]FROM old_table_name</td>
+</tr>
+<tr>
+<td>SELECT TOP</td>
+<td>SELECT TOP number|percent column_name(s)FROM table_name</td>
+</tr>
+<tr>
+<td>TRUNCATE TABLE</td>
+<td>TRUNCATE TABLE table_name</td>
+</tr>
+<tr>
+<td>UNION</td>
+<td>SELECT column_name(s) FROM table_name1UNIONSELECT column_name(s) FROM table_name2</td>
+</tr>
+<tr>
+<td>UNION ALL</td>
+<td>SELECT column_name(s) FROM table_name1UNION ALLSELECT column_name(s) FROM table_name2</td>
+</tr>
+<tr>
+<td>UPDATE</td>
+<td>UPDATE table_nameSET column1=value, column2=value,…WHERE some_column=some_value</td>
+</tr>
+<tr>
+<td>WHERE</td>
+<td>SELECT column_name(s)FROM table_nameWHERE column_name operator value</td>
+</tr>
+</tbody></table>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="lv-container"></div>
+        <div class="giscus"></div>
+    </div>
+</div>
+<script type="text/javascript" src="https://cdn.lanluo.cn/js/canvas-nest.min.js"></script>
+    </div>
+</div>
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+        <li>
+            <a target="_blank" href="http://weibo.com/2438257908">
+                            <span class="fa-stack fa-lg">
+                                  <i class="iconfont icon-weibo"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/kmoonn">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+    </p>
+</footer>
+<script type="text/javascript" src="https://cdn.lanluo.cn/js/canvas-nest.min.js"></script>
+<script type="text/javascript" src="https://cdn.lanluo.cn/js/canvas-nest.min.js"></script>
+<script type="text/javascript" src="https://cdn.lanluo.cn/js/canvas-nest.min.js"></script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":250,"height":350},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+    <style>
+        #taboola-livere { display: none;}
+    </style>
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC81NzAwOS8zMzQ3Mw==');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>请激活JavaScript</noscript>
+    </div>
+
+</html>
