@@ -1,158 +1,151 @@
-<!DOCTYPE html>
-<html lang=zh-CN>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:description" content="">
-    <meta property="og:type" content="website">
-    <meta name="description" content="">
-    <meta name="keyword"  content="">
-    <link rel="shortcut icon" href="/img/favicon.ico">
+<!DOCTYPE html><html lang="zh" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>靶场日记-Uploadlabs | Kmoon_Hs</title><meta name="keywords" content="upload"><meta name="author" content="Kmoon,3453863492@qq.com"><meta name="copyright" content="Kmoon"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Pass-01 JS前端验证漏洞描述：利用前端js对上传文件后缀进行校验，后端没有进行检测 利用方法： 1.浏览器F12-&gt;F1 禁用js 2.bp抓包 先上传白名单后缀文件 修改后缀后放包 Pass-02 MIME验证漏洞描述：只检测数据包中Content-Type字段导致的漏洞 后端利用PHP的全局数组$_FILES()获取上传文件类型Type 利用方法： 修改content-type字">
+<meta property="og:type" content="article">
+<meta property="og:title" content="靶场日记-Uploadlabs">
+<meta property="og:url" content="http://www.kmoon.fun/2022/uploadlabs/">
+<meta property="og:site_name" content="Kmoon_Hs">
+<meta property="og:description" content="Pass-01 JS前端验证漏洞描述：利用前端js对上传文件后缀进行校验，后端没有进行检测 利用方法： 1.浏览器F12-&gt;F1 禁用js 2.bp抓包 先上传白名单后缀文件 修改后缀后放包 Pass-02 MIME验证漏洞描述：只检测数据包中Content-Type字段导致的漏洞 后端利用PHP的全局数组$_FILES()获取上传文件类型Type 利用方法： 修改content-type字">
+<meta property="og:locale">
+<meta property="og:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+<meta property="article:published_time" content="2022-08-24T03:20:37.000Z">
+<meta property="article:modified_time" content="2022-10-09T05:43:03.510Z">
+<meta property="article:author" content="Kmoon">
+<meta property="article:tag" content="upload">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://www.kmoon.fun/2022/uploadlabs/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: [object Object]
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '靶场日记-Uploadlabs',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-10-09 13:43:03'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
 
-    <title>
-        
-        靶场日记-Uploadlabs - Kmoon_Hs
-        
-    </title>
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
 
-    <!-- Custom CSS -->
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
     
-<link rel="stylesheet" href="/css/aircloud.css">
-
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
     
-<link rel="stylesheet" href="/css/gitment.css">
-
-    <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-    <link href="//at.alicdn.com/t/font_620856_28hi1hpxx24.css" rel="stylesheet" type="text/css">
-    <!-- ga & ba script hoook -->
-    <script></script>
-<meta name="generator" content="Hexo 6.2.0">
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-</head>
-<script type="text/javascript" src="https://cdn.lanluo.cn/js/canvas-nest.min.js"></script>
-<body>
-    <script type="text/javascript" src="https://cdn.lanluo.cn/js/canvas-nest.min.js"></script>
-<script>
-    var _hmt = _hmt || [];
-    (function() {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?cb7a49e4f6a740b15e6fd25de2803712";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-    })();
-</script>
-<div class="site-nav-toggle" id="site-nav-toggle">
-    <button>
-        <span class="btn-bar"></span>
-        <span class="btn-bar"></span>
-        <span class="btn-bar"></span>
-    </button>
-</div>
-
-<div class="index-about">
-    <i> 千山同一月,万物皆清明 </i>
-</div>
-
-<div class="index-container">
-    
-    <div class="index-left">
-        
-<div class="nav" id="nav">
-    <div class="avatar-name">
-        <div class="avatar radius">
-            <img src="/img/avatar.png" />
-        </div>
-        <div class="name">
-            <i>Kmoon</i>
-        </div>
-    </div>
-    <div class="contents" id="nav-content">
-        <ul>
-            <li >
-                <a href="/">
-                    <i class="iconfont icon-shouye1"></i>
-                    <span>主页</span>
-                </a>
-            </li>
-            <li >
-                <a href="/tags">
-                    <i class="iconfont icon-biaoqian1"></i>
-                    <span>标签</span>
-                </a>
-            </li>
-            <li >
-                <a href="/archives">
-                    <i class="iconfont icon-guidang2"></i>
-                    <span>存档</span>
-                </a>
-            </li>
-            <li >
-                <a href="/about/">
-                    <i class="iconfont icon-guanyu2"></i>
-                    <span>关于</span>
-                </a>
-            </li>
-            
-            <li>
-                <a id="search">
-                    <i class="iconfont icon-sousuo1"></i>
-                    <span>搜索</span>
-                </a>
-            </li>
-            
-        </ul>
-    </div>
-    
-        <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Pass-01-JS%E5%89%8D%E7%AB%AF%E9%AA%8C%E8%AF%81"><span class="toc-text">Pass-01 JS前端验证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pass-02-MIME%E9%AA%8C%E8%AF%81"><span class="toc-text">Pass-02 MIME验证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pass-03-%E6%96%87%E4%BB%B6%E5%90%8D%E5%90%8E%E7%BC%80%E6%A0%A1%E9%AA%8C%EF%BC%88%E9%BB%91%E5%90%8D%E5%8D%95%E7%BB%95%E8%BF%87%EF%BC%89"><span class="toc-text">Pass-03 文件名后缀校验（黑名单绕过）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pass-04-%E6%96%87%E4%BB%B6%E5%90%8D%E5%90%8E%E7%BC%80%E6%A0%A1%E9%AA%8C%EF%BC%88%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%A7%A3%E6%9E%90%E6%8E%A7%E5%88%B6%EF%BC%89"><span class="toc-text">Pass-04 文件名后缀校验（配置文件解析控制）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pass-05-%E6%96%87%E4%BB%B6%E5%90%8D%E5%90%8E%E7%BC%80%E6%A0%A1%E9%AA%8C%EF%BC%88%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%A7%A3%E6%9E%90%E6%8E%A7%E5%88%B6%EF%BC%89"><span class="toc-text">Pass-05 文件名后缀校验（配置文件解析控制）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pass-06-%E6%96%87%E4%BB%B6%E5%90%8D%E5%90%8E%E7%BC%80%E6%A0%A1%E9%AA%8C%EF%BC%88%E5%A4%A7%E5%B0%8F%E5%86%99%E7%BB%95%E8%BF%87%EF%BC%89"><span class="toc-text">Pass-06 文件名后缀校验（大小写绕过）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pass-07-%E6%96%87%E4%BB%B6%E5%90%8D%E5%90%8E%E7%BC%80%E6%A0%A1%E9%AA%8C%EF%BC%88%E7%A9%BA%E6%A0%BC%E7%BB%95%E8%BF%87%EF%BC%89"><span class="toc-text">Pass-07 文件名后缀校验（空格绕过）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pass-08-%E6%96%87%E4%BB%B6%E5%90%8D%E5%90%8E%E7%BC%80%E6%A0%A1%E9%AA%8C%EF%BC%88%E7%82%B9%E5%8F%B7%E7%BB%95%E8%BF%87%EF%BC%89"><span class="toc-text">Pass-08 文件名后缀校验（点号绕过）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pass-09-%E6%96%87%E4%BB%B6%E5%90%8D%E5%90%8E%E7%BC%80%E6%A0%A1%E9%AA%8C%EF%BC%88-DATA%E7%BB%95%E8%BF%87%EF%BC%89"><span class="toc-text">Pass-09 文件名后缀校验（::$DATA绕过）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pass-10-%E6%96%87%E4%BB%B6%E5%90%8D%E5%90%8E%E7%BC%80%E6%A0%A1%E9%AA%8C%EF%BC%88%E6%8B%BC%E6%8E%A5%E7%BB%95%E8%BF%87%EF%BC%89"><span class="toc-text">Pass-10 文件名后缀校验（拼接绕过）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pass-11-%E6%96%87%E4%BB%B6%E5%90%8D%E5%90%8E%E7%BC%80%E6%A0%A1%E9%AA%8C%EF%BC%88%E5%8F%8C%E5%86%99%E7%BB%95%E8%BF%87%EF%BC%89"><span class="toc-text">Pass-11 文件名后缀校验（双写绕过）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pass-12-%E7%99%BD%E5%90%8D%E5%8D%95%E6%A0%A1%E9%AA%8C%EF%BC%88GET%E5%9E%8B0x00%E6%88%AA%E6%96%AD%EF%BC%89"><span class="toc-text">Pass-12 白名单校验（GET型0x00截断）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pass-13-%E7%99%BD%E5%90%8D%E5%8D%95%E6%A0%A1%E9%AA%8C%EF%BC%88POST%E5%9E%8B0x00%E6%88%AA%E6%96%AD%EF%BC%89"><span class="toc-text">Pass-13 白名单校验（POST型0x00截断）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pass-14-%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E6%A3%80%E6%B5%8B%EF%BC%88%E6%96%87%E4%BB%B6%E5%A4%B4%E6%A0%A1%E9%AA%8C%EF%BC%89"><span class="toc-text">Pass-14 文件内容检测（文件头校验）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pass-15-%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E6%A3%80%E6%B5%8B-%EF%BC%88getimagesize-%E6%A0%A1%E9%AA%8C%EF%BC%89"><span class="toc-text">Pass-15 文件内容检测 （getimagesize()校验）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pass-16-%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E6%A3%80%E6%B5%8B%EF%BC%88exif-imagetype-%E7%BB%95%E8%BF%87%EF%BC%89"><span class="toc-text">Pass-16 文件内容检测（exif_imagetype()绕过）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pass-17-%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E6%A3%80%E6%B5%8B%EF%BC%88%E4%BA%8C%E6%AC%A1%E6%B8%B2%E6%9F%93%EF%BC%89"><span class="toc-text">Pass-17 文件内容检测（二次渲染）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pass-18-%E9%80%BB%E8%BE%91%E6%BC%8F%E6%B4%9E%EF%BC%88%E6%9D%A1%E4%BB%B6%E7%AB%9E%E4%BA%89%EF%BC%89"><span class="toc-text">Pass-18 逻辑漏洞（条件竞争）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Pass-19-%E9%80%BB%E8%BE%91%E6%BC%8F%E6%B4%9E%EF%BC%88%E6%9D%A1%E4%BB%B6%E7%AB%9E%E4%BA%89-%E5%9B%BE%E7%89%87%E9%A9%AC%EF%BC%89"><span class="toc-text">Pass-19 逻辑漏洞（条件竞争-图片马）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Pass-21-%E9%80%BB%E8%BE%91%E6%BC%8F%E6%B4%9E%EF%BC%88%E6%95%B0%E7%BB%84%E7%BB%95%E8%BF%87%EF%BC%89"><span class="toc-text">Pass-21 逻辑漏洞（数组绕过）</span></a>
-</div>
-    
-</div>
-
-
-<div class="search-field" id="search-field">
-    <div class="search-bg" id="search-bg"></div>
-    <div class="search-container">
-        <div class="search-input">
-            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
-            <input id="search-input"/>
-            <span id="begin-search">搜索</span>
-        </div>
-        <div class="search-result-container" id="search-result-container">
-
-        </div>
-    </div>
-</div>
-
-        <div class="index-about-mobile">
-            <i> 千山同一月,万物皆清明 </i>
-        </div>
-    </div>
-    
-    <div class="index-middle">
-        <!-- Main Content -->
-        <div class="post-container">
-    <div class="post-title">
-        靶场日记-Uploadlabs
-    </div>
-
-    <div class="post-meta">
-        <span class="attr">发布于：<span>2022-08-24 11:20:37</span></span>
-        
-        <span class="attr">标签：/
-        
-        <a class="tag" href="/tags/#upload" title="upload">upload</a>
-        <span>/</span>
-        
-        
-        </span>
-        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
-</span>
-</span>
-    </div>
-    <div class="post-content no-indent">
-        <h3 id="Pass-01-JS前端验证"><a href="#Pass-01-JS前端验证" class="headerlink" title="Pass-01 JS前端验证"></a>Pass-01 JS前端验证</h3><p>漏洞描述：利用前端js对上传文件后缀进行校验，后端没有进行检测</p>
+<link rel="alternate" href="/atom.xml" title="Kmoon_Hs" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">Loading...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">43</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">19</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">15</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Kmoon_Hs</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">靶场日记-Uploadlabs</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-08-24T03:20:37.000Z" title="Created 2022-08-24 11:20:37">2022-08-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-10-09T05:43:03.510Z" title="Updated 2022-10-09 13:43:03">2022-10-09</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E9%9D%B6%E5%9C%BA%E6%97%A5%E8%AE%B0/">靶场日记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="靶场日记-Uploadlabs"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h3 id="Pass-01-JS前端验证"><a href="#Pass-01-JS前端验证" class="headerlink" title="Pass-01 JS前端验证"></a>Pass-01 JS前端验证</h3><p>漏洞描述：利用前端js对上传文件后缀进行校验，后端没有进行检测</p>
 <p>利用方法：</p>
 <p>1.浏览器F12-&gt;F1 禁用js</p>
 <p>2.bp抓包 先上传白名单后缀文件 修改后缀后放包</p>
@@ -317,103 +310,15 @@ Linux系统下，对于文件名中的大小写敏感。例如：test.php和 Tes
 
 5.上传的文件重命名，把文件地址隐藏了
 </code></pre>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="http://www.kmoon.fun">Kmoon</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://www.kmoon.fun/2022/uploadlabs/">http://www.kmoon.fun/2022/uploadlabs/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/upload/">upload</a></div><div class="post_share"><div class="social-share" data-image="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/wut-autohealthyreport/"><img class="prev-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">懒人必备—WUT-AutoHealthyReport</div></div></a></div><div class="next-post pull-right"><a href="/2022/fxt/"><img class="next-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">数据库-期末复习题</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Kmoon</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">43</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">19</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">15</div></a></div><a id="card-info-btn" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Pass-01-JS%E5%89%8D%E7%AB%AF%E9%AA%8C%E8%AF%81"><span class="toc-number">1.</span> <span class="toc-text">Pass-01 JS前端验证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pass-02-MIME%E9%AA%8C%E8%AF%81"><span class="toc-number">2.</span> <span class="toc-text">Pass-02 MIME验证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pass-03-%E6%96%87%E4%BB%B6%E5%90%8D%E5%90%8E%E7%BC%80%E6%A0%A1%E9%AA%8C%EF%BC%88%E9%BB%91%E5%90%8D%E5%8D%95%E7%BB%95%E8%BF%87%EF%BC%89"><span class="toc-number">3.</span> <span class="toc-text">Pass-03 文件名后缀校验（黑名单绕过）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pass-04-%E6%96%87%E4%BB%B6%E5%90%8D%E5%90%8E%E7%BC%80%E6%A0%A1%E9%AA%8C%EF%BC%88%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%A7%A3%E6%9E%90%E6%8E%A7%E5%88%B6%EF%BC%89"><span class="toc-number">4.</span> <span class="toc-text">Pass-04 文件名后缀校验（配置文件解析控制）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pass-05-%E6%96%87%E4%BB%B6%E5%90%8D%E5%90%8E%E7%BC%80%E6%A0%A1%E9%AA%8C%EF%BC%88%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%A7%A3%E6%9E%90%E6%8E%A7%E5%88%B6%EF%BC%89"><span class="toc-number">5.</span> <span class="toc-text">Pass-05 文件名后缀校验（配置文件解析控制）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pass-06-%E6%96%87%E4%BB%B6%E5%90%8D%E5%90%8E%E7%BC%80%E6%A0%A1%E9%AA%8C%EF%BC%88%E5%A4%A7%E5%B0%8F%E5%86%99%E7%BB%95%E8%BF%87%EF%BC%89"><span class="toc-number">6.</span> <span class="toc-text">Pass-06 文件名后缀校验（大小写绕过）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pass-07-%E6%96%87%E4%BB%B6%E5%90%8D%E5%90%8E%E7%BC%80%E6%A0%A1%E9%AA%8C%EF%BC%88%E7%A9%BA%E6%A0%BC%E7%BB%95%E8%BF%87%EF%BC%89"><span class="toc-number">7.</span> <span class="toc-text">Pass-07 文件名后缀校验（空格绕过）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pass-08-%E6%96%87%E4%BB%B6%E5%90%8D%E5%90%8E%E7%BC%80%E6%A0%A1%E9%AA%8C%EF%BC%88%E7%82%B9%E5%8F%B7%E7%BB%95%E8%BF%87%EF%BC%89"><span class="toc-number">8.</span> <span class="toc-text">Pass-08 文件名后缀校验（点号绕过）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pass-09-%E6%96%87%E4%BB%B6%E5%90%8D%E5%90%8E%E7%BC%80%E6%A0%A1%E9%AA%8C%EF%BC%88-DATA%E7%BB%95%E8%BF%87%EF%BC%89"><span class="toc-number">9.</span> <span class="toc-text">Pass-09 文件名后缀校验（::$DATA绕过）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pass-10-%E6%96%87%E4%BB%B6%E5%90%8D%E5%90%8E%E7%BC%80%E6%A0%A1%E9%AA%8C%EF%BC%88%E6%8B%BC%E6%8E%A5%E7%BB%95%E8%BF%87%EF%BC%89"><span class="toc-number">10.</span> <span class="toc-text">Pass-10 文件名后缀校验（拼接绕过）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pass-11-%E6%96%87%E4%BB%B6%E5%90%8D%E5%90%8E%E7%BC%80%E6%A0%A1%E9%AA%8C%EF%BC%88%E5%8F%8C%E5%86%99%E7%BB%95%E8%BF%87%EF%BC%89"><span class="toc-number">11.</span> <span class="toc-text">Pass-11 文件名后缀校验（双写绕过）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pass-12-%E7%99%BD%E5%90%8D%E5%8D%95%E6%A0%A1%E9%AA%8C%EF%BC%88GET%E5%9E%8B0x00%E6%88%AA%E6%96%AD%EF%BC%89"><span class="toc-number">12.</span> <span class="toc-text">Pass-12 白名单校验（GET型0x00截断）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pass-13-%E7%99%BD%E5%90%8D%E5%8D%95%E6%A0%A1%E9%AA%8C%EF%BC%88POST%E5%9E%8B0x00%E6%88%AA%E6%96%AD%EF%BC%89"><span class="toc-number">13.</span> <span class="toc-text">Pass-13 白名单校验（POST型0x00截断）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pass-14-%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E6%A3%80%E6%B5%8B%EF%BC%88%E6%96%87%E4%BB%B6%E5%A4%B4%E6%A0%A1%E9%AA%8C%EF%BC%89"><span class="toc-number">14.</span> <span class="toc-text">Pass-14 文件内容检测（文件头校验）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pass-15-%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E6%A3%80%E6%B5%8B-%EF%BC%88getimagesize-%E6%A0%A1%E9%AA%8C%EF%BC%89"><span class="toc-number">15.</span> <span class="toc-text">Pass-15 文件内容检测 （getimagesize()校验）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pass-16-%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E6%A3%80%E6%B5%8B%EF%BC%88exif-imagetype-%E7%BB%95%E8%BF%87%EF%BC%89"><span class="toc-number">16.</span> <span class="toc-text">Pass-16 文件内容检测（exif_imagetype()绕过）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pass-17-%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E6%A3%80%E6%B5%8B%EF%BC%88%E4%BA%8C%E6%AC%A1%E6%B8%B2%E6%9F%93%EF%BC%89"><span class="toc-number">17.</span> <span class="toc-text">Pass-17 文件内容检测（二次渲染）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pass-18-%E9%80%BB%E8%BE%91%E6%BC%8F%E6%B4%9E%EF%BC%88%E6%9D%A1%E4%BB%B6%E7%AB%9E%E4%BA%89%EF%BC%89"><span class="toc-number">18.</span> <span class="toc-text">Pass-18 逻辑漏洞（条件竞争）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Pass-19-%E9%80%BB%E8%BE%91%E6%BC%8F%E6%B4%9E%EF%BC%88%E6%9D%A1%E4%BB%B6%E7%AB%9E%E4%BA%89-%E5%9B%BE%E7%89%87%E9%A9%AC%EF%BC%89"><span class="toc-number"></span> <span class="toc-text">Pass-19 逻辑漏洞（条件竞争-图片马）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Pass-21-%E9%80%BB%E8%BE%91%E6%BC%8F%E6%B4%9E%EF%BC%88%E6%95%B0%E7%BB%84%E7%BB%95%E8%BF%87%EF%BC%89"><span class="toc-number"></span> <span class="toc-text">Pass-21 逻辑漏洞（数组绕过）</span></a></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/jwtk/" title="WUT-计算机网络题库(86)"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="WUT-计算机网络题库(86)"/></a><div class="content"><a class="title" href="/2022/jwtk/" title="WUT-计算机网络题库(86)">WUT-计算机网络题库(86)</a><time datetime="2022-10-06T13:51:39.000Z" title="Created 2022-10-06 21:51:39">2022-10-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/software/" title="WUT-单片机EDA软件工具下载"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="WUT-单片机EDA软件工具下载"/></a><div class="content"><a class="title" href="/2022/software/" title="WUT-单片机EDA软件工具下载">WUT-单片机EDA软件工具下载</a><time datetime="2022-10-06T12:36:11.000Z" title="Created 2022-10-06 20:36:11">2022-10-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/networking/" title="WUT-组网技术实验报告"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="WUT-组网技术实验报告"/></a><div class="content"><a class="title" href="/2022/networking/" title="WUT-组网技术实验报告">WUT-组网技术实验报告</a><time datetime="2022-10-06T12:20:31.000Z" title="Created 2022-10-06 20:20:31">2022-10-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/xue-xi-zha-ji-linux-ji-chu-ru-men/" title="学习札记—Linux基础入门"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="学习札记—Linux基础入门"/></a><div class="content"><a class="title" href="/2022/xue-xi-zha-ji-linux-ji-chu-ru-men/" title="学习札记—Linux基础入门">学习札记—Linux基础入门</a><time datetime="2022-10-06T09:54:11.000Z" title="Created 2022-10-06 17:54:11">2022-10-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/51dpj/" title="学习札记——51单片机(C语言版)"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="学习札记——51单片机(C语言版)"/></a><div class="content"><a class="title" href="/2022/51dpj/" title="学习札记——51单片机(C语言版)">学习札记——51单片机(C语言版)</a><time datetime="2022-09-27T10:52:12.000Z" title="Created 2022-09-27 18:52:12">2022-09-27</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Kmoon</div><div class="framework-info"><span>Framework </span><a href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
 
-        
-        <br />
-        <div id="comment-container">
-        </div>
-        <div id="disqus_thread"></div>
-        <div id="lv-container"></div>
-        <div class="giscus"></div>
-    </div>
-</div>
-<script type="text/javascript" src="https://cdn.lanluo.cn/js/canvas-nest.min.js"></script>
-    </div>
-</div>
-
-<footer class="footer">
-    <ul class="list-inline text-center">
-        
-        
-
-        
-        <li>
-            <a target="_blank" href="http://weibo.com/2438257908">
-                            <span class="fa-stack fa-lg">
-                                  <i class="iconfont icon-weibo"></i>
-                            </span>
-            </a>
-        </li>
-        
-
-        
-
-        
-        <li>
-            <a target="_blank"  href="https://github.com/kmoonn">
-                            <span class="fa-stack fa-lg">
-                                <i class="iconfont icon-github"></i>
-                            </span>
-            </a>
-        </li>
-        
-
-        
-
-    </ul>
-    
-    <p>
-        <span id="busuanzi_container_site_pv">
-            <span id="busuanzi_value_site_pv"></span>PV
-        </span>
-        <span id="busuanzi_container_site_uv">
-            <span id="busuanzi_value_site_uv"></span>UV
-        </span>
-    </p>
-</footer>
-<script type="text/javascript" src="https://cdn.lanluo.cn/js/canvas-nest.min.js"></script>
-<script type="text/javascript" src="https://cdn.lanluo.cn/js/canvas-nest.min.js"></script>
-<script type="text/javascript" src="https://cdn.lanluo.cn/js/canvas-nest.min.js"></script>
-
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":250,"height":350},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
-
-<script>
-    // We expose some of the variables needed by the front end
-    window.hexo_search_path = "search.json"
-    window.hexo_root = "/"
-    window.isPost = true
-</script>
-<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-
-<script src="/js/index.js"></script>
-
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-
-
-
-
-
-    <style>
-        #taboola-livere { display: none;}
-    </style>
-    <script type="text/javascript">
-       (function() {
-           if (typeof LivereTower === 'function') { return; }
-
-           var j, d = document.getElementById('lv-container');
-
-           d.setAttribute('data-id','city');
-           d.setAttribute('data-uid' , 'MTAyMC81NzAwOS8zMzQ3Mw==');
-
-           j = document.createElement('script');
-           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-           j.async = true;
-
-           d.appendChild(j);
-       })();
-    </script>
-    <noscript>请激活JavaScript</noscript>
-    </div>
-
-</html>
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":250,"height":350},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body></html>
