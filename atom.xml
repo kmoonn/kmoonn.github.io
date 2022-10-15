@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Kmoon_Hs</title>
+  <title>Kmoon</title>
   <icon>https://www.gravatar.com/avatar/b44e96ffefad9d96e45f23234d4c7ac3</icon>
-  <subtitle>千山同一月,万物皆清明</subtitle>
+  <subtitle>千山同一月</subtitle>
   <link href="http://www.kmoon.fun/atom.xml" rel="self"/>
   
   <link href="http://www.kmoon.fun/"/>
