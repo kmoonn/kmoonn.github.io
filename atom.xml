@@ -6,7 +6,7 @@
   <link href="https://www.kmoon.fun/atom.xml" rel="self"/>
   
   <link href="https://www.kmoon.fun/"/>
-  <updated>2022-10-19T02:35:07.587Z</updated>
+  <updated>2022-10-20T15:33:57.383Z</updated>
   <id>https://www.kmoon.fun/</id>
   
   <author>
@@ -15,6 +15,48 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>项目计划-【推推】:小说更新就通知(测试)</title>
+    <link href="https://www.kmoon.fun/2022/xiang-mu-ji-hua-tui-tui-xiao-shuo-geng-xin-jiu-tong-zhi-ce-shi/"/>
+    <id>https://www.kmoon.fun/2022/xiang-mu-ji-hua-tui-tui-xiao-shuo-geng-xin-jiu-tong-zhi-ce-shi/</id>
+    <published>2022-10-20T14:51:03.000Z</published>
+    <updated>2022-10-20T15:33:57.383Z</updated>
+    
+    <content type="html"><![CDATA[<img src="https://img.gejiba.com/images/5c7159dff960fd2369da8ab5a90ea69f.png" alt="5c7159dff960fd2369da8ab5a90ea69f.png" style="zoom:67%;"><h3 id="项目背景"><a href="#项目背景" class="headerlink" title="项目背景"></a>项目背景</h3><p><strong>竞品分析</strong></p><p>1 起点等小说APP 原生通知<br>速度快。但是一般需要付费 且需要安装APP</p><p>2 其它盗版平台<br>更新通知不及时 且部分就算有更新也无法阅读最新（防盗）</p><p><strong>引出需求</strong><br>1 能不能有原生的更新通知速度 ，但是有到位的免费阅读源<br>2 提供多本图书的通知订阅服务，且通知不依赖APP<br>3 基于订阅的，青年人同好读书推荐<br>4 基于订阅的，推推阅读榜单<br>5 商品最低价定时、纪念日倒计时等</p><p><strong>商业目标</strong><br>1 用户量大了之后，按定时任务收费，如1元1月<br>2 与小说、游戏、电商合作，进行基于青年人的广告业务</p><p><strong>亮点难点</strong><br>1 热门书籍在更新点的访问压力<br>2 书籍更新通知的及时性和有效性<br>3 书荒：同好推荐的可能性<br>4 后期：定时任务的压力 ；任务的扩展</p><h3 id="项目时间"><a href="#项目时间" class="headerlink" title="项目时间"></a>项目时间</h3><p>2022年10月24日-11月18日</p><h3 id="项目介绍"><a href="#项目介绍" class="headerlink" title="项目介绍"></a>项目介绍</h3><p>喜欢看小说的同学心里肯定有一种痛——等待每天的更新，为了看最新的章节，有时候一天能刷新页面三四次甚至更多。</p><p>本项目就是解决这种小说更新通知的产品。只要小说一更新，第一时间推送微信消息给你，免去反复去刷新去等待的痛苦。</p><p>项目分为前台和后台两部分，前台提供给用户使用，是基于手机的网站嵌入到微信公众号内；后端是PC网站，是平台对小说书目、访问地址和刷新频率的配置和管理。</p><h3 id="主要模块"><a href="#主要模块" class="headerlink" title="主要模块"></a>主要模块</h3><ul><li>查询小说更新的定时器</li><li>手机端用户的使用流程和通知</li><li>后台的小说录入和管理 </li><li>微信JS-SDK的使用</li></ul><h3 id="项目框架"><a href="#项目框架" class="headerlink" title="项目框架"></a>项目框架</h3><p>基于java的开发体系</p><p>项目管理： git/svn</p><p>前端：css3\html5\vue.js</p><p>后台：spring\springboot\maven\mysql</p><h3 id="项目分工"><a href="#项目分工" class="headerlink" title="项目分工"></a>项目分工</h3><ul><li>产品</li><li>UI</li><li>前端</li><li>开发</li><li>测试</li></ul>]]></content>
+    
+    
+    <summary type="html">项目背景
+竞品分析
+
+1 起点等小说APP 原生通知
+速度快。但是一般需要付费 且需要安装APP
+
+2 其它盗版平台
+更新通知不及时 且部分就算有更新也无法阅读最新（防盗）
+
+引出需求
+1 能不能有原生的更新通知速度 ，但是有到位的免费阅读源
+2 提供多本图书的通知订阅服务，且通知不依赖APP
+3 基于订阅的，青年人同好读书推荐
+4 基于订阅的，推推阅读榜单
+5 商品最低价定时、纪念日倒计时等
+
+商业目标
+1 用户量大了之后，按定时任务收费，如1元1月
+2 与小说、游戏、电商合作，进行基于青年人的广告业务
+
+亮点难点
+1 热门书籍在更新点的访问压力
+2 书籍更新通知的及时性和有效性
+3 书荒：</summary>
+    
+    
+    
+    <category term="项目计划" scheme="https://www.kmoon.fun/categories/%E9%A1%B9%E7%9B%AE%E8%AE%A1%E5%88%92/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>WUT-计算机网络题库难点浅解</title>
@@ -797,55 +839,6 @@ def removeP</summary>
     
     
     <category term="数学建模" scheme="https://www.kmoon.fun/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数据库-关系代数语言</title>
-    <link href="https://www.kmoon.fun/2022/gxds/"/>
-    <id>https://www.kmoon.fun/2022/gxds/</id>
-    <published>2022-08-11T07:43:35.000Z</published>
-    <updated>2022-10-19T02:36:52.758Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>关系代数是一种抽象的查询语言，用对关系的运算来表达查询，关系代数是关系数据库系统查询语言的理论基础。</p></blockquote><span id="more"></span><p><strong>一、集合运算</strong></p><p><strong>1.并∪</strong></p><p>结果为二者元组之和去除重复行</p><p><strong>2.交∩</strong></p><p>结果为二者重复行</p><p><strong>3.差➖</strong></p><p>前者去除二者重复行</p><p><strong>4.笛卡儿积 ✖</strong></p><p>从数学角度理解，就是将集合A和集合B中所有有序对元素集合。在数据库系统中，表示得是对两个关系R和S进行操作，产生的关系中元组个数为两个关系中元组个数之积。</p><p>结果列数为二者属性列数之和,行数为二者元素数乘积。</p><p><strong>二、关系运算</strong></p><p><strong>1.投影</strong> <strong>π</strong></p><p>关系R上的投影是从R中选择出若干属性列组成新的关系（<strong>竖直切割</strong>）</p><p>投影后不仅取消了原关系中的某些列，还有可能因为取消列后出现重复行，这些重复行也应该取消掉。</p><p><strong>2.选择 σ</strong></p><p>在关系R中选择满足给定条件的诸元组，根据某些条件对关系做<strong>水平切割</strong></p><p><strong>选择投影组合运算：<strong><strong>π</strong></strong>A( σF( R ) )</strong></p><p>可以从特定元组中投影出特定列</p><p>从R关系中选出符合F条件的元组，在从这些元组内投影出特定的A列</p><p><strong>3.连接</strong></p><p><strong>① 等值连接</strong> </p><p>θ称为比值符，也就是&gt;、&lt;、=号；</p><p>当θ两边的属性相等时，等值S连接成立；</p><p><strong>② 自然连接</strong> <strong>⋈</strong></p><p><strong>R ⋈S = { t****r</strong> <strong>⌒ t****s</strong> <strong>| t****r</strong> <strong>∈ R ∧ t****s</strong> <strong>∈ S ∧ t**<strong>r</strong></strong>[A] = t<strong><strong>s</strong></strong>[A] }**</p><p>特殊的等值连接</p><p>结果列数为二者属性列数之和減去重复列,行数为二者冋名属性列其值相冋的结果元组。</p><p>笛卡尔积、选择、投影的组合表示可以与自然连接等价</p><p><strong>扩展：自然连接和等值连接的联系和区别</strong></p><p>⊙自然连接要求同名同域的属性组才可连接，而等值连接仅要求域相同；</p><p>⊙自然连接是去掉重复列的等值连接；</p><p>⊙自然连接一定是等值连接，而等值连接不一定是自然连接；</p><p>⊙自然连接后列的数量小于等于等值连接后列的数量。</p><p><strong>4.除 ÷</strong></p><p>除运算核心步骤：设R、S为关系，X、Y、Z为属性集</p><p>\1. 分出X、Y、Z三个属性集</p><p>\2. 列出S对Y属性集的投影</p><p>\3. 找出R中满足x值对应的象集包含了关系S对Y属性集的x值</p><p><strong>运用技巧</strong></p><p>1.首先看查询条件和结果中涉及到的属性列来自哪些表，将其归置到最少的表中进行查询。若涉及多个表则需要将表进行连接操作。</p><p>2.对于只涉及到选择、投影、连接的查询可用下列表达式表示：</p><p><strong>π…****( σ…( R×S ) )  或者</strong> <strong>π…****( σ…( R  S ) )</strong></p><p>3.对于否定的操作，一般采用差操作表示</p><p>4.对于查询具有“全部”特征的操作，一般采用除法操作表示</p>]]></content>
-    
-    
-    <summary type="html">关系代数是一种抽象的查询语言，用对关系的运算来表达查询，关系代数是关系数据库系统查询语言的理论基础。
-
-一、集合运算
-
-1.并∪
-
-结果为二者元组之和去除重复行
-
-2.交∩
-
-结果为二者重复行
-
-3.差➖
-
-前者去除二者重复行
-
-4.笛卡儿积 ✖
-
-从数学角度理解，就是将集合A和集合B中所有有序对元素集合。在数据库系统中，表示得是对两个关系R和S进行操作，产生的关系中元组个数为两个关系中元组个数之积。
-
-结果列数为二者属性列数之和,行数为二者元素数乘积。
-
-二、关系运算
-
-1.投影 π
-
-关系R上的投影是从R中选择出若干属性列组成新的关系（竖直切割）
-
-投影后不仅取消了原关系中的某些列，还有可</summary>
-    
-    
-    
-    <category term="DataBase" scheme="https://www.kmoon.fun/categories/DataBase/"/>
-    
-    
-    <category term="数据库" scheme="https://www.kmoon.fun/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
