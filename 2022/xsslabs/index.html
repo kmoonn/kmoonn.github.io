@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
     
-    <title>靶场日记-XSSlabs | Kmoon</title>
+    <title>靶场日记-跨站请求XSSlabs | Kmoon</title>
 
     <meta name="description" content="靶场日记-XSS跨站脚本漏洞
 
@@ -39,7 +39,7 @@ level2.php?keyword=11111&amp;amp;submit=%E6%90%9C%E7%B4%A2
 
     <meta property="og:locale" content="cn" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content= "靶场日记-XSSlabs | Kmoon"  />
+    <meta property="og:title" content= "靶场日记-跨站请求XSSlabs | Kmoon"  />
     <meta property="og:description" content= "靶场日记-XSS跨站脚本漏洞
 
 level 1
@@ -94,7 +94,7 @@ level2.php?keyword=11111&amp;amp;submit=%E6%90%9C%E7%B4%A2
 发现仍为get请求 keyword参数
 
 其中" />
-    <meta name="twitter:title" content="靶场日记-XSSlabs | Kmoon"/>
+    <meta name="twitter:title" content="靶场日记-跨站请求XSSlabs | Kmoon"/>
     <meta name="twitter:description" content="靶场日记-XSS跨站脚本漏洞
 
 level 1
@@ -158,7 +158,7 @@ level2.php?keyword=11111&amp;amp;submit=%E6%90%9C%E7%B4%A2
             },
             "name": "Kmoon"
             },
-            "headline": "靶场日记-XSSlabs | Kmoon",
+            "headline": "靶场日记-跨站请求XSSlabs | Kmoon",
             "datePublished": "2022-08-13T06:39:49.000Z",
             "mainEntityOfPage": {
                 "@type": "WebPage",
@@ -310,7 +310,7 @@ level2.php?keyword=11111&amp;amp;submit=%E6%90%9C%E7%B4%A2
             <section class="inner">
                 <section class="inner-main">
                     <div class="post">
-    <article id="post-cl9h84ng1005kowvm6fhq5j34" class="article article-type-post" itemscope
+    <article id="post-cl9illgx4005rqkvmdt0g3wip" class="article article-type-post" itemscope
     itemprop="blogPost">
 
     <div class="article-inner">
@@ -326,7 +326,7 @@ level2.php?keyword=11111&amp;amp;submit=%E6%90%9C%E7%B4%A2
             
   
     <h1 class="article-title" itemprop="name">
-      靶场日记-XSSlabs
+      靶场日记-跨站请求XSSlabs
     </h1>
   
 
@@ -370,7 +370,7 @@ level2.php?keyword=11111&amp;amp;submit=%E6%90%9C%E7%B4%A2
 
 <p>发现将name的参数值，插入到了<code>&lt;h2&gt;</code> <code>&lt;/h2&gt;</code>标签之间</p>
 <p>构造payload：</p>
-<pre class="line-numbers language-none"><code class="language-none">&lt;script&gt;alert('xss');&lt;/script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript"><span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'xss'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>弹窗通关！</p>
 <h3 id="level-2"><a href="#level-2" class="headerlink" title="level 2"></a>level 2</h3><p>level2.php?keyword=11111&amp;submit=%E6%90%9C%E7%B4%A2</p>
@@ -641,15 +641,15 @@ onerror&#x3D;alert(‘xss’)
     <section class="share">
         <div class="share-title">分享</div>
         <a class="share-item" target="_blank"
-            href="https://twitter.com/share?text=靶场日记-XSSlabs - Kmoon&url=https%3A%2F%2Fwww.kmoon.fun%2F2022%2Fxsslabs%2F">
+            href="https://twitter.com/share?text=靶场日记-跨站请求XSSlabs - Kmoon&url=https%3A%2F%2Fwww.kmoon.fun%2F2022%2Fxsslabs%2F">
             <ion-icon name="logo-twitter"></ion-icon>
         </a>
         <a class="share-item" target="_blank"
-            href="https://www.facebook.com/sharer.php?title=靶场日记-XSSlabs - Kmoon&u=https%3A%2F%2Fwww.kmoon.fun%2F2022%2Fxsslabs%2F">
+            href="https://www.facebook.com/sharer.php?title=靶场日记-跨站请求XSSlabs - Kmoon&u=https%3A%2F%2Fwww.kmoon.fun%2F2022%2Fxsslabs%2F">
             <ion-icon name="logo-facebook"></ion-icon>
         </a>
         <!-- <a class="share-item" target="_blank"
-            href="https://service.weibo.com/share/share.php?title=靶场日记-XSSlabs - Kmoon&url=https://www.kmoon.fun/2022/xsslabs/&pic=">
+            href="https://service.weibo.com/share/share.php?title=靶场日记-跨站请求XSSlabs - Kmoon&url=https://www.kmoon.fun/2022/xsslabs/&pic=">
             <div class="n-icon n-icon-weibo"></div>
         </a> -->
     </section>
@@ -711,7 +711,7 @@ onerror&#x3D;alert(‘xss’)
   <div class="widget-wrap widget-cate">
     <div class="widget-title"><span>Categories</span></div>
     <div class="widget-inner">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/DataBase/">DataBase</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Math/">Math</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/SRC/">SRC</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Sec/">Sec</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/SecTools/">SecTools</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/WebSec/">WebSec</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Whut/">Whut</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows/">Windows</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/XiaoHu-s-Daily/">XiaoHu's Daily</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/languages/">languages</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E6%9C%AD%E8%AE%B0/">学习札记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/">实验报告</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%87%92%E4%BA%BA%E5%BF%85%E5%A4%87/">懒人必备</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9D%B6%E5%9C%BA%E6%97%A5%E8%AE%B0/">靶场日记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%A1%B9%E7%9B%AE%E8%AE%A1%E5%88%92/">项目计划</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/DataBase/">DataBase</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Math/">Math</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/SRC/">SRC</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Sec/">Sec</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/SecTools/">SecTools</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/WebSec/">WebSec</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Whut/">Whut</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows/">Windows</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/XiaoHu-s-Daily/">XiaoHu's Daily</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/markdwon/">markdwon</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/me/">me</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E6%9C%AD%E8%AE%B0/">学习札记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/">实验报告</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%87%92%E4%BA%BA%E5%BF%85%E5%A4%87/">懒人必备</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9D%B6%E5%9C%BA%E6%97%A5%E8%AE%B0/">靶场日记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%A1%B9%E7%9B%AE%E8%AE%A1%E5%88%92/">项目计划</a></li></ul>
     </div>
   </div>
 
@@ -734,7 +734,15 @@ onerror&#x3D;alert(‘xss’)
       <ul>
         
           <li>
-            <a href="/2022/xiang-mu-ji-hua-tui-tui-xiao-shuo-geng-xin-jiu-tong-zhi-ce-shi/">项目计划-【推推】:小说更新就通知(测试)</a>
+            <a href="/2022/action/">开门见山-欢迎来到Kmoon的小世界</a>
+          </li>
+        
+          <li>
+            <a href="/2022/wut-c-cheng-xu-she-ji-shi-yan-bao-gao/">WUT-C++程序设计实验报告</a>
+          </li>
+        
+          <li>
+            <a href="/2022/xiang-mu-ji-hua-tui-tui-xiao-shuo-geng-xin-jiu-tong-zhi-ce-shi/">项目计划-[推推]:小说更新就通知(测试)</a>
           </li>
         
           <li>
@@ -743,14 +751,6 @@ onerror&#x3D;alert(‘xss’)
         
           <li>
             <a href="/2022/software/">WUT-单片机EDA软件工具下载</a>
-          </li>
-        
-          <li>
-            <a href="/2022/networking/">WUT-组网技术实验报告</a>
-          </li>
-        
-          <li>
-            <a href="/2022/xue-xi-zha-ji-linux-ji-chu-ru-men/">学习札记—Linux基础入门</a>
           </li>
         
       </ul>

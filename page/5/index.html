@@ -179,6 +179,170 @@
   
     
       <article
+id="post-靶场日记—XSSlabs"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+    <div class="article-feature">
+        <a href="/2022/xsslabs/">
+            <img
+                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3C/svg%3E"
+                data-src="https://img.gejiba.com/images/28b98c687eb497ed89966b20b1475e2e.jpg"
+                alt="item.title"
+                class="lazy"
+            />
+        </a>
+    </div>
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2022/xsslabs/">靶场日记-跨站请求XSSlabs</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        靶场日记-XSS跨站脚本漏洞
+
+level 1
+/level1.php?name=test
+
+发现get传参 参数为test 且输出原样显示在网页
+
+尝试输入特殊字符+唯一标识字符 查看网页源代码
+
+<h2 align="center">欢迎用户test</h2>
+
+发现将name的参数值，插入到了<h2> </h2>标签之间
+
+构造payload：
+
+<script>alert('xss');</script>
+
+弹窗通关！
+
+level 2
+level2.php?keyword=11111&amp;submit=%E6%90%9C%E7%B4%A2
+
+发现仍为get请求 keyword参数
+
+其中
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2022-08-13T06:39:49.000Z" itemprop="datePublished">2022-08-13</time>
+</div>
+    
+        <div class="article-category">
+        <a class="article-category-link" href="/categories/%E9%9D%B6%E5%9C%BA%E6%97%A5%E8%AE%B0/">靶场日记</a>
+        </div>
+    
+    
+        <div class="article-tag">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/XSS/" rel="tag">XSS</a></li></ul>
+        </div>
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
+id="post-数学建模-RNN卷积神经网络"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+    <div class="article-feature">
+        <a href="/2022/rnn/">
+            <img
+                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3C/svg%3E"
+                data-src="https://img.gejiba.com/images/501732d5a977b3c5b5df8701c1ba9f26.png"
+                alt="item.title"
+                class="lazy"
+            />
+        </a>
+    </div>
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2022/rnn/">数学建模-RNN卷积神经网络</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        基于RNN卷积神经网络的谣言检测系统
+
+### 导入必要的库
+import json
+import os
+import random
+import re
+from multiprocessing import cpu_count
+import numpy as np
+import paddle
+import paddle.fluid as fluid
+paddle.enable_static()
+import matplotlib.pyplot as plt
+
+### 去除字符串的标点符号
+r='[’!"\'()+,-./:;&lt;=&gt;?@[\\]`{|}~\n。！，]+'
+def removeP
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2022-08-11T07:46:47.000Z" itemprop="datePublished">2022-08-11</time>
+</div>
+    
+        <div class="article-category">
+        <a class="article-category-link" href="/categories/Math/">Math</a>
+        </div>
+    
+    
+        <div class="article-tag">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/" rel="tag">数学建模</a></li></ul>
+        </div>
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
 id="post-数据库-关系代数语言"
 class="article article-type-post"
 >
@@ -485,146 +649,6 @@ DML DDL
 
     
   
-    
-      <article
-id="post-入门行动—数据结构与算法"
-class="article article-type-post"
->
-
-
-
-<div class="article-inner">
-    
-    <div class="article-feature">
-        <a href="/2022/suanfa/">
-            <img
-                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3C/svg%3E"
-                data-src="https://img.gejiba.com/images/4d95025bf58d8f69253bd7e515b779ed.png"
-                alt="item.title"
-                class="lazy"
-            />
-        </a>
-    </div>
-    
-
-    <div class="article-body">
-    <header class="article-title">
-        <a href="/2022/suanfa/">入门行动-数据结构与算法</a>
-    </header>
-    <div class="article-entry post-inner-html">
-        
-        
-        
-    </div>
-    </div>
-
-    <div class="article-badge">
-        
-        
-    </div>
-
-</div>
-
-<footer class="article-footer">
-    <div class="article-more-info">
-    <div class="article-date">
-  <time datetime="2022-08-11T07:33:06.000Z" itemprop="datePublished">2022-08-11</time>
-</div>
-    
-        <div class="article-category">
-        <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
-        </div>
-    
-    
-        <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li></ul>
-        </div>
-    
-    </div>
-</footer>
-
-</article>
-
-    
-  
-    
-      <article
-id="post-知道创宇-技能树v3.1"
-class="article article-type-post"
->
-
-
-
-<div class="article-inner">
-    
-    <div class="article-feature">
-        <a href="/2022/zdcy/">
-            <img
-                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3C/svg%3E"
-                data-src="https://img.gejiba.com/images/6659d9b23d47f19cc410ed33528a1694.th.webp"
-                alt="item.title"
-                class="lazy"
-            />
-        </a>
-    </div>
-    
-
-    <div class="article-body">
-    <header class="article-title">
-        <a href="/2022/zdcy/">技能树</a>
-    </header>
-    <div class="article-entry post-inner-html">
-        
-        * 知道创宇研发技能表v3.12016/5/18 发布by @知道创宇(www.knownsec.com) @余弦
-
- *  * 说明
-      
-      
-    *  * 关于知道创宇
-         
-         
-       *  * 知行合一 | 守正出奇
-          * 知道创宇是一家黑客文化浓厚的安全公司，愿景是让互联网更好更安全
-         
-         
-       * 本技能表为知道创宇研发工程师的技能树集合，是的，很庞大
-         
-         
-       *  * 聪明的人，会根据每个tip自驱动扩展
-      
-        
-    </div>
-    </div>
-
-    <div class="article-badge">
-        
-        
-    </div>
-
-</div>
-
-<footer class="article-footer">
-    <div class="article-more-info">
-    <div class="article-date">
-  <time datetime="2022-08-11T07:30:35.000Z" itemprop="datePublished">2022-08-11</time>
-</div>
-    
-        <div class="article-category">
-        <a class="article-category-link" href="/categories/WebSec/">WebSec</a>
-        </div>
-    
-    
-        <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hacker/" rel="tag">hacker</a></li></ul>
-        </div>
-    
-    </div>
-</footer>
-
-</article>
-
-    
-  
 
   
     <nav class="pagination">
@@ -659,7 +683,7 @@ class="article article-type-post"
   <div class="widget-wrap widget-cate">
     <div class="widget-title"><span>Categories</span></div>
     <div class="widget-inner">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/DataBase/">DataBase</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Math/">Math</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/SRC/">SRC</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Sec/">Sec</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/SecTools/">SecTools</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/WebSec/">WebSec</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Whut/">Whut</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows/">Windows</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/XiaoHu-s-Daily/">XiaoHu's Daily</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/languages/">languages</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E6%9C%AD%E8%AE%B0/">学习札记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/">实验报告</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%87%92%E4%BA%BA%E5%BF%85%E5%A4%87/">懒人必备</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9D%B6%E5%9C%BA%E6%97%A5%E8%AE%B0/">靶场日记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%A1%B9%E7%9B%AE%E8%AE%A1%E5%88%92/">项目计划</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/DataBase/">DataBase</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Math/">Math</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/SRC/">SRC</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Sec/">Sec</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/SecTools/">SecTools</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/WebSec/">WebSec</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Whut/">Whut</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows/">Windows</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/XiaoHu-s-Daily/">XiaoHu's Daily</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/markdwon/">markdwon</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/me/">me</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E6%9C%AD%E8%AE%B0/">学习札记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/">实验报告</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%87%92%E4%BA%BA%E5%BF%85%E5%A4%87/">懒人必备</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9D%B6%E5%9C%BA%E6%97%A5%E8%AE%B0/">靶场日记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%A1%B9%E7%9B%AE%E8%AE%A1%E5%88%92/">项目计划</a></li></ul>
     </div>
   </div>
 
@@ -682,7 +706,15 @@ class="article article-type-post"
       <ul>
         
           <li>
-            <a href="/2022/xiang-mu-ji-hua-tui-tui-xiao-shuo-geng-xin-jiu-tong-zhi-ce-shi/">项目计划-【推推】:小说更新就通知(测试)</a>
+            <a href="/2022/action/">开门见山-欢迎来到Kmoon的小世界</a>
+          </li>
+        
+          <li>
+            <a href="/2022/wut-c-cheng-xu-she-ji-shi-yan-bao-gao/">WUT-C++程序设计实验报告</a>
+          </li>
+        
+          <li>
+            <a href="/2022/xiang-mu-ji-hua-tui-tui-xiao-shuo-geng-xin-jiu-tong-zhi-ce-shi/">项目计划-[推推]:小说更新就通知(测试)</a>
           </li>
         
           <li>
@@ -691,14 +723,6 @@ class="article article-type-post"
         
           <li>
             <a href="/2022/software/">WUT-单片机EDA软件工具下载</a>
-          </li>
-        
-          <li>
-            <a href="/2022/networking/">WUT-组网技术实验报告</a>
-          </li>
-        
-          <li>
-            <a href="/2022/xue-xi-zha-ji-linux-ji-chu-ru-men/">学习札记—Linux基础入门</a>
           </li>
         
       </ul>
