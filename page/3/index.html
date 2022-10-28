@@ -38,8 +38,6 @@
 
 
     
-    <meta name="google-site-verification" content="XXX" />
-    
 
     
     <meta property="algolia:search" data-application-id="8Z51BHYAUH" data-api-key="dbc9dafd607e95ea5aa312369120eabd" data-index-name="kmoon_blog">
@@ -72,8 +70,8 @@
             
             valine: {
                 enable: true,
-                appId: "jEGcWPtFOBkynV3AUJIKLr8T-gzGzoHsz",
-                appKey: "PM600NTeCMYW8HIwM4j0YzAM",
+                appId: "i7G1tHcsR13KVa00grUUf6mr-gzGzoHsz",
+                appKey: "94N35fphXFiN5BGMNS9V5mHe",
                 placeholder: "Hello World!",
                 avatar: "",
                 pageSize: "10",
@@ -126,6 +124,10 @@
                 
                 <a href="/archives">归档</a>
                 
+                <a href="/friends">友链</a>
+                
+                <a href="/photography">摄影</a>
+                
                 <a href="/2022/10/about/">关于</a>
                 
                 <a href="/shenyuan">深渊</a>
@@ -165,6 +167,10 @@
                     <a href="/">主页</a>
                     
                     <a href="/archives">归档</a>
+                    
+                    <a href="/friends">友链</a>
+                    
+                    <a href="/photography">摄影</a>
                     
                     <a href="/2022/10/about/">关于</a>
                     
@@ -213,35 +219,7 @@ class="article article-type-post"
     </header>
     <div class="article-entry post-inner-html">
         
-        *  * 网络相关指令
-   
-   
- * ipconfig
-   
- * 1.查看本机IP：ipconfig
-   
-   
- * 2.查看IP地址等网卡配置：ipcofig /all
-   
-   
- * 3.清除本地DNS缓存：ipconfig /flushdns
-   
-   
- * Ping
-   
- * 1.检测主机是否能通信：ping 目标ip地址
-   
-   
- * 2.查看访问该ip/域名的延迟和丢包率：ping ip/域名
-   
-   
- * 3.ping ip/域名m次：-n m
-   
-   
- * 4.一直ping一个ip/域名：-t
-   
-   
- * 5.
+        <p>计算机基础——Windows命令</p>
         
     </div>
     </div>
@@ -303,34 +281,8 @@ class="article article-type-post"
     </header>
     <div class="article-entry post-inner-html">
         
-        Nmap
-
-2022年7月16日
-
- *  * Nmap简介
-      
-      
-    * 常用命令 
-      
-      
-    * 常用扫描类型
-      
-       * 基本扫描 
-       * 隐蔽扫描 
-       * SYN扫描 
-       * NULL扫描 
-       * ACK扫描 
-       * 空闲扫描 * 寻找僵尸主机 
-          * idle扫描应用
-         
-         
-       * 常用命令组合
-      
-      
-    * NSE脚本引擎 
-      
-      
-    * 
+        <p>Nmap</p>
+<p>2022年7月16日</p>
         
     </div>
     </div>
@@ -392,27 +344,7 @@ class="article article-type-post"
     </header>
     <div class="article-entry post-inner-html">
         
-        信息收集
-
-2022年8月15日
-
-（1）学号、工号、电话、邮箱、默认密码、身份证信息等等。
-
-（2）子域名、旁站、C段、站点下的目录文件、JS接口等等。
-
-（3）每个子站的配置环境、用的系统或者是CMS、系统的默认密码等等。
-
-（4）有些学校的网站系统是外包给别的公司开发的，有时候可以从系统开发公司下手。
-
-fofa语句（查找edu里的管理系统）:
-
-“管理系统” &amp;&amp; org=”China Education and Research Network Center”
-
-使用Google语法进行收集：
-
-site:”edu.cn”
-
-inurl:login|admin|manage|memb
+        <p>信息收集</p>
         
     </div>
     </div>
@@ -474,35 +406,7 @@ class="article article-type-post"
     </header>
     <div class="article-entry post-inner-html">
         
-        Blame
-
-2022年8月21日
-
-10:41
-
- * 信息收集
-
- 1. 身份证
-
-site:xxx.edu.cn intext:”身份证” filetype:pdf/docx/pptx/xls+身份证号
-
-技巧：”身份证”替换为证件号
-
-多加一些其他关键词 比如”公示””名单””发展对象””入党”泄露比较多
-
-“拟”
-
-edu大部分账号都是与身份证相关的，一个信息泄露1rank，能够为后续的渗透打基础。
-
-搜素语法、更换搜索引擎（针对单独学校去找）
-
-Googel 必应
-
-
-
-批量去找：site：edu.cn
-
-更换关键词：职业技术学院、航天大学、财经大学、第一中学、理工大学、市中学、省
+        <p>Blame</p>
         
     </div>
     </div>
@@ -564,31 +468,7 @@ class="article article-type-post"
     </header>
     <div class="article-entry post-inner-html">
         
-        千峰网络安全基础学习笔记
-
-虚拟机VMware Workstation
-1、安装
-2、FTP服务器
-文件共享服务
-
-打开我的电脑，地址栏上输入ftp://+IP地址
-
-部署FTP服务器（虚拟机windows server 2012）
-
-局域网：一般称为内网
-简单局域网：交换机、网线、PC（其他IT终端）
-
-交换机：用来组建内网的局域网的设备
-
-IP地址：
-唯一的标识，一段网络编码，由32位组成，范围0-255，点分十进制
-
-子网掩码：
-局域网通信规则：在同一个局域网中，所有的IP必须在同一网段中才可以互相通信
-
-IP地址构成：网络位+主机位（网路位相同的IP地址为同一网段）
-
-子网掩码：用来确
+        <p>千峰网络安全基础学习笔记</p>
         
     </div>
     </div>
@@ -683,7 +563,7 @@ IP地址构成：网络位+主机位（网路位相同的IP地址为同一网段
           </li>
         
           <li>
-            <a href="/2022/wut-c-cheng-xu-she-ji-shi-yan-bao-gao/">WUT-C++程序设计实验报告</a>
+            <a href="/2022/c/">WUT-C++程序设计实验报告</a>
           </li>
         
           <li>
@@ -731,8 +611,7 @@ IP地址构成：网络位+主机位（网路位相同的IP地址为同一网段
     <div class="footer-wrap">
         <div class="footer-inner"> 
             Kmoon &copy; 2022<br>
-            Powered By Hexo · Theme By <a href="https://linhong.me/" target="_blank">Aomori</a>
-            <a href="https://beian.miit.gov.cn/shouye.html">渝ICP备2022011774号</a>
+            Powered By Hexo · Theme By <a href="https://linhong.me/" target="_blank">Aomori</a> · <a href="https://github.com/lh1me/hexo-theme-aomori" target="_blank">Github</a>
         </div>
     </div>
 
@@ -769,15 +648,6 @@ IP地址构成：网络位+主机位（网路位相同的IP地址为同一网段
 </script>
 
 
-
-<!-- Google Analytics-->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXX-X"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'UA-XXXXX-X');
-</script>
 
 
 

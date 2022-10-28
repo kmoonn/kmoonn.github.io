@@ -38,8 +38,6 @@
 
 
     
-    <meta name="google-site-verification" content="XXX" />
-    
 
     
     <meta property="algolia:search" data-application-id="8Z51BHYAUH" data-api-key="dbc9dafd607e95ea5aa312369120eabd" data-index-name="kmoon_blog">
@@ -72,8 +70,8 @@
             
             valine: {
                 enable: true,
-                appId: "jEGcWPtFOBkynV3AUJIKLr8T-gzGzoHsz",
-                appKey: "PM600NTeCMYW8HIwM4j0YzAM",
+                appId: "i7G1tHcsR13KVa00grUUf6mr-gzGzoHsz",
+                appKey: "94N35fphXFiN5BGMNS9V5mHe",
                 placeholder: "Hello World!",
                 avatar: "",
                 pageSize: "10",
@@ -126,6 +124,10 @@
                 
                 <a href="/archives">归档</a>
                 
+                <a href="/friends">友链</a>
+                
+                <a href="/photography">摄影</a>
+                
                 <a href="/2022/10/about/">关于</a>
                 
                 <a href="/shenyuan">深渊</a>
@@ -165,6 +167,10 @@
                     <a href="/">主页</a>
                     
                     <a href="/archives">归档</a>
+                    
+                    <a href="/friends">友链</a>
+                    
+                    <a href="/photography">摄影</a>
                     
                     <a href="/2022/10/about/">关于</a>
                     
@@ -213,31 +219,7 @@ class="article article-type-post"
     </header>
     <div class="article-entry post-inner-html">
         
-        靶场日记-XSS跨站脚本漏洞
-
-level 1
-/level1.php?name=test
-
-发现get传参 参数为test 且输出原样显示在网页
-
-尝试输入特殊字符+唯一标识字符 查看网页源代码
-
-<h2 align="center">欢迎用户test</h2>
-
-发现将name的参数值，插入到了<h2> </h2>标签之间
-
-构造payload：
-
-<script>alert('xss');</script>
-
-弹窗通关！
-
-level 2
-level2.php?keyword=11111&amp;submit=%E6%90%9C%E7%B4%A2
-
-发现仍为get请求 keyword参数
-
-其中
+        <p>靶场日记-XSS跨站脚本漏洞</p>
         
     </div>
     </div>
@@ -299,23 +281,7 @@ class="article article-type-post"
     </header>
     <div class="article-entry post-inner-html">
         
-        基于RNN卷积神经网络的谣言检测系统
-
-### 导入必要的库
-import json
-import os
-import random
-import re
-from multiprocessing import cpu_count
-import numpy as np
-import paddle
-import paddle.fluid as fluid
-paddle.enable_static()
-import matplotlib.pyplot as plt
-
-### 去除字符串的标点符号
-r='[’!"\'()+,-./:;&lt;=&gt;?@[\\]`{|}~\n。！，]+'
-def removeP
+        <p>基于RNN卷积神经网络的谣言检测系统</p>
         
     </div>
     </div>
@@ -377,35 +343,8 @@ class="article article-type-post"
     </header>
     <div class="article-entry post-inner-html">
         
-        关系代数是一种抽象的查询语言，用对关系的运算来表达查询，关系代数是关系数据库系统查询语言的理论基础。
-
-一、集合运算
-
-1.并∪
-
-结果为二者元组之和去除重复行
-
-2.交∩
-
-结果为二者重复行
-
-3.差➖
-
-前者去除二者重复行
-
-4.笛卡儿积 ✖
-
-从数学角度理解，就是将集合A和集合B中所有有序对元素集合。在数据库系统中，表示得是对两个关系R和S进行操作，产生的关系中元组个数为两个关系中元组个数之积。
-
-结果列数为二者属性列数之和,行数为二者元素数乘积。
-
-二、关系运算
-
-1.投影 π
-
-关系R上的投影是从R中选择出若干属性列组成新的关系（竖直切割）
-
-投影后不仅取消了原关系中的某些列，还有可
+        <p>关系代数是一种抽象的查询语言，用对关系的运算来表达查询，</p>
+<p>关系代数是关系数据库系统查询语言的理论基础。</p>
         
     </div>
     </div>
@@ -467,71 +406,7 @@ class="article article-type-post"
     </header>
     <div class="article-entry post-inner-html">
         
-        数据库系统基本原理学习
-
-数据库基本概念
-
-数据DATA
-
-数据库DB
-
-数据库管理系统DBMS
-
-数据库系统DBS
-
-数据库系统与发展
-
-数据库系统结构
-
-数据模型概述
-
-概念模型
-
-数据模型
-
-关系模型及其三要素
-
-传统集合运算
-
-专门关系运算
-
-用关系代数实现检索
-
-SQL Server数据库管理系统
-
-数据库的定义与维护
-
-基本表的定义与维护
-
-数据维护操作
-
-数据查询操作
-
-简单查询操作
-
-嵌套查询操作
-
-附加语句
-
-视图的建立与维护
-
-触发器的创建与维护
-
-关系模式规范化理论概述
-
-函数依赖
-
-基本范式
-
-数据库系统设计概述
-
-数据库系统设计6阶段
-
- 1. 需求分析
-
-任务
-
-内
+        <p>数据库系统基本原理学习</p>
         
     </div>
     </div>
@@ -593,37 +468,7 @@ class="article article-type-post"
     </header>
     <div class="article-entry post-inner-html">
         
-        数据库SQL语言基础内容
-
-SQL 简介
-
-Structured Query Language:结构化查询语言
-
-SQL是用于访问和处理数据库的标准的计算机语言
-
-用于管理关系数据库管理系统（RDBMS）
-
-SQL 的范围包括数据插入、查询、更新和删除，数据库模式创建和修改，数据访问和控制
-
-RDBMS
-
-关系型数据库管理系统
-
-Relational database management system
-
-SQL的基础
-
-RDBMS中的数据存储在被称为表的数据库对象中
-
-表是相关的数据项的集合，由列和行组成
-
-DML DDL
-
-数据操作语言DML
-
- * SELECT
- * UPDATE
- *
+        <p>数据库SQL语言基础内容</p>
         
     </div>
     </div>
@@ -718,7 +563,7 @@ DML DDL
           </li>
         
           <li>
-            <a href="/2022/wut-c-cheng-xu-she-ji-shi-yan-bao-gao/">WUT-C++程序设计实验报告</a>
+            <a href="/2022/c/">WUT-C++程序设计实验报告</a>
           </li>
         
           <li>
@@ -766,8 +611,7 @@ DML DDL
     <div class="footer-wrap">
         <div class="footer-inner"> 
             Kmoon &copy; 2022<br>
-            Powered By Hexo · Theme By <a href="https://linhong.me/" target="_blank">Aomori</a>
-            <a href="https://beian.miit.gov.cn/shouye.html">渝ICP备2022011774号</a>
+            Powered By Hexo · Theme By <a href="https://linhong.me/" target="_blank">Aomori</a> · <a href="https://github.com/lh1me/hexo-theme-aomori" target="_blank">Github</a>
         </div>
     </div>
 
@@ -804,15 +648,6 @@ DML DDL
 </script>
 
 
-
-<!-- Google Analytics-->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXX-X"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'UA-XXXXX-X');
-</script>
 
 
 
