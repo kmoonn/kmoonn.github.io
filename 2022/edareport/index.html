@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    
+    <title>WUT-电子线路EDA实验报告 | Kmoon</title>
+
+    <meta name="description" content="Kmoon">
+    <meta name="keywords" content="">
+
+    
+
+    <meta property="og:locale" content="cn" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content= "WUT-电子线路EDA实验报告 | Kmoon"  />
+    <meta property="og:description" content= "Kmoon" />
+    <meta property="og:url" content="https://www.kmoon.fun/2022/edareport/index.html" />
+    <meta property="og:site_name" content="" />
+    <meta property="article:author" content="Kmoon" />
+    <meta property="article:publisher" content="" />
+    <meta property="og:description" content="Kmoon" />
+    <meta name="twitter:title" content="WUT-电子线路EDA实验报告 | Kmoon"/>
+    <meta name="twitter:description" content="Kmoon"/>
+    <script type="application/ld+json">
+        {
+            "description": "Kmoon",
+            "author": { "@type": "Person", "name": "Kmoon" },
+            "@type": "BlogPosting",
+            "url": "https://www.kmoon.fun/2022/edareport/index.html",
+            "publisher": {
+            "@type": "Organization",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.kmoon.fun/image/avatar.png"
+            },
+            "name": "Kmoon"
+            },
+            "headline": "WUT-电子线路EDA实验报告 | Kmoon",
+            "datePublished": "2022-11-14T12:17:05.000Z",
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://www.kmoon.fun/2022/edareport/index.html"
+            },
+            "@context": "http://schema.org"
+        }
+    </script>
+
+
+
+
+    
+
+    
+    <meta property="algolia:search" data-application-id="8Z51BHYAUH" data-api-key="dbc9dafd607e95ea5aa312369120eabd" data-index-name="kmoon_blog">
+    
+
+    
+
+    
+
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌜️</text></svg>">
+    
+
+    
+
+    
+
+    
+<link rel="stylesheet" href="/dist/build.css?v=1654266144177.css">
+
+
+    
+<link rel="stylesheet" href="/dist/custom.css?v=1654266144177.css">
+
+
+    <script>
+        window.isPost = true
+        window.aomori = {
+            
+            
+            valine: {
+                enable: true,
+                appId: "i7G1tHcsR13KVa00grUUf6mr-gzGzoHsz",
+                appKey: "94N35fphXFiN5BGMNS9V5mHe",
+                placeholder: "Hello World!",
+                avatar: "",
+                pageSize: "10",
+                lang: "zh-CN",
+                visitor: false,
+                highlight: false,
+                recordIP: false,
+                emojiCDN: "",
+                enableQQ: false,
+                requiredFields: []
+            },
+            
+            
+        }
+        window.aomori_logo_typed_animated = true
+        window.aomori_search_algolia = true
+
+    </script>
+
+<meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Kmoon" type="application/atom+xml">
+</head>
+
+<body>
+
+    <div class="container">
+    <header class="header">
+        <div class="header-type">
+            
+            <div class="header-type-avatar avatar avatar-sm">
+                <img src="/image/avatar.png" alt="Kmoon">
+            </div>
+            
+            <div class="header-type-inner">
+                
+                    <div id="typed-strings" style="display:none">
+                        <p>Kmoon</p>
+                    </div>
+                    <a class="header-type-title" id="typed" href="/"></a>
+                
+    
+                
+            </div>
+        </div>
+        <div class="header-menu">
+            <div class="header-menu-inner">
+                
+                <a href="/">主页</a>
+                
+                <a href="/archives">归档</a>
+                
+                <a href="/2022/10/about/">关于</a>
+                
+                <a href="/friends">友链</a>
+                
+                <a href="/photography">摄影</a>
+                
+                <a href="/categories/%E6%B7%B1%E6%B8%8A/">深渊</a>
+                
+                <a href="/wiki/">Wiki</a>
+                
+            </div>
+            <div class="header-menu-social">
+                
+    <a class="social" target="_blank" href="https://github.com/kmoonn/">
+        <ion-icon name="logo-github"></ion-icon>
+    </a>
+
+    <a class="social" target="_blank" href="">
+        <ion-icon name="logo-wechat"></ion-icon>
+    </a>
+
+            </div>
+        </div>
+
+        <div class="header-menu-mobile">
+            <div class="header-menu-mobile-inner" id="mobile-menu-open">
+                <i class="icon icon-menu"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="header-menu-mobile-menu">
+        <div class="header-menu-mobile-menu-bg"></div>
+        <div class="header-menu-mobile-menu-wrap">
+            <div class="header-menu-mobile-menu-inner">
+                <div class="header-menu-mobile-menu-close" id="mobile-menu-close">
+                    <i class="icon icon-cross"></i>
+                </div>
+                <div class="header-menu-mobile-menu-list">
+                    
+                    <a href="/">主页</a>
+                    
+                    <a href="/archives">归档</a>
+                    
+                    <a href="/2022/10/about/">关于</a>
+                    
+                    <a href="/friends">友链</a>
+                    
+                    <a href="/photography">摄影</a>
+                    
+                    <a href="/categories/%E6%B7%B1%E6%B8%8A/">深渊</a>
+                    
+                    <a href="/wiki/">Wiki</a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <div class="container">
+        <div class="main">
+            <section class="inner">
+                <section class="inner-main">
+                    <div class="post">
+    <article id="post-clagsdbk1000dfsvm5drqedrh" class="article article-type-post" itemscope
+    itemprop="blogPost">
+
+    <div class="article-inner">
+
+        
+          
+        
+        
+        
+
+        
+        <header class="article-header">
+            
+  
+    <h1 class="article-title" itemprop="name">
+      WUT-电子线路EDA实验报告
+    </h1>
+  
+
+        </header>
+        
+
+        <div class="article-more-info article-more-info-post hairline">
+
+            <div class="article-date">
+  <time datetime="2022-11-14T12:17:05.000Z" itemprop="datePublished">2022-11-14</time>
+</div>
+
+            
+            <div class="article-category">
+                <a class="article-category-link" href="/categories/%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/">实验报告</a>
+            </div>
+            
+
+            
+            <div class="article-tag">
+                <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Whut/" rel="tag">Whut</a></li></ul>
+            </div>
+            
+
+            
+            <div class="article-busuanzi">
+                <span id="busuanzi_value_page_pv">N</span> 人看过
+            </div>
+            
+
+        </div>
+
+        <div class="article-entry post-inner-html hairline" itemprop="articleBody">
+            <h1 id="实验一-五人表决器"><a href="#实验一-五人表决器" class="headerlink" title="实验一 五人表决器"></a>实验一 五人表决器</h1><h2 id="设计思路"><a href="#设计思路" class="headerlink" title="设计思路"></a>设计思路</h2><p>实验要求设计一个五人表决器，只要在规定的时间内，同意人数大于或等于3，则表决通过。</p>
+<p>分析题意，可知此次仿真需要5个输入端口，1个输出端口，分别设置A,B,C,D,E为输入端口，F为输出端口。</p>
+<p>当表决器的5个输入变量中有3个以上（含3个）为“1”时，表决器输出“1”，否则输出“0”。</p>
+<p>因此可根据真值表得到输出的逻辑表达式为F=ABC+ABD+ABE+ACD+ACE+ADE+BCD+BCE+BDE+CDE。</p>
+<h2 id="顶层原理图"><a href="#顶层原理图" class="headerlink" title="顶层原理图"></a>顶层原理图</h2><img src="http://image.kmoon.fun//images/202211142021452.png" alt="1-1" style="zoom: 50%;">
+
+<h2 id="程序代码清单"><a href="#程序代码清单" class="headerlink" title="程序代码清单"></a>程序代码清单</h2><h4 id="1-芯片代码"><a href="#1-芯片代码" class="headerlink" title="1.芯片代码"></a>1.芯片代码</h4><pre class="line-numbers language-vhdl" data-language="vhdl"><code class="language-vhdl">MODULE BJQ
+
+A<span class="token punctuation">,</span>B<span class="token punctuation">,</span>C<span class="token punctuation">,</span>D<span class="token punctuation">,</span>E PIN<span class="token punctuation">;</span>
+F PIN ISTYPE 'COM'<span class="token punctuation">;</span>
+
+EQUATIONS
+F<span class="token operator">=</span><span class="token punctuation">(</span>A<span class="token operator">&amp;</span>B<span class="token operator">&amp;</span>C<span class="token punctuation">)</span>#<span class="token punctuation">(</span>A<span class="token operator">&amp;</span>B<span class="token operator">&amp;</span>D<span class="token punctuation">)</span>#<span class="token punctuation">(</span>A<span class="token operator">&amp;</span>B<span class="token operator">&amp;</span>E<span class="token punctuation">)</span>#<span class="token punctuation">(</span>A<span class="token operator">&amp;</span>C<span class="token operator">&amp;</span>D<span class="token punctuation">)</span>#<span class="token punctuation">(</span>A<span class="token operator">&amp;</span>C<span class="token operator">&amp;</span>E<span class="token punctuation">)</span>#<span class="token punctuation">(</span>A<span class="token operator">&amp;</span>D<span class="token operator">&amp;</span>E<span class="token punctuation">)</span>#<span class="token punctuation">(</span>B<span class="token operator">&amp;</span>C<span class="token operator">&amp;</span>D<span class="token punctuation">)</span>#<span class="token punctuation">(</span>B<span class="token operator">&amp;</span>C<span class="token operator">&amp;</span>E<span class="token punctuation">)</span>#<span class="token punctuation">(</span>B<span class="token operator">&amp;</span>D<span class="token operator">&amp;</span>E<span class="token punctuation">)</span>#<span class="token punctuation">(</span>C<span class="token operator">&amp;</span>D<span class="token operator">&amp;</span>E<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">END</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="2-仿真代码"><a href="#2-仿真代码" class="headerlink" title="2.仿真代码"></a>2.仿真代码</h4><pre class="line-numbers language-vhdl" data-language="vhdl"><code class="language-vhdl">MODULE BJQ
+A<span class="token punctuation">,</span>B<span class="token punctuation">,</span>C<span class="token punctuation">,</span>D<span class="token punctuation">,</span>E<span class="token punctuation">,</span>F PIN<span class="token punctuation">;</span>
+
+X<span class="token operator">=</span><span class="token punctuation">.</span>X<span class="token punctuation">.</span><span class="token punctuation">;</span>
+XIN<span class="token operator">=</span><span class="token punctuation">[</span>A<span class="token punctuation">,</span>B<span class="token punctuation">,</span>C<span class="token punctuation">,</span>D<span class="token punctuation">,</span>E<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+TEST_VECTORS
+<span class="token punctuation">(</span><span class="token punctuation">[</span>XIN<span class="token punctuation">]</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token punctuation">[</span>F<span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token punctuation">[</span>X<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token punctuation">[</span>X<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token punctuation">[</span>X<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">]</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token punctuation">[</span>X<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">[</span><span class="token number">24</span><span class="token punctuation">]</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token punctuation">[</span>X<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">[</span><span class="token number">30</span><span class="token punctuation">]</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token punctuation">[</span>X<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">END</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="仿真波形"><a href="#仿真波形" class="headerlink" title="仿真波形"></a>仿真波形</h2><p>波形图</p>
+<img src="http://image.kmoon.fun//images/202211142021056.png" alt="1-2" style="zoom: 50%;">
+
+<p>A,B,C,D,E分别表示五人投票结果的逻辑变量，高电平代表同意，低电平代表不同意。变量F表示表决结果，高电平代表通过，低电平代表不通过。本次实验仿真代码随机选取5次情况（ABCDE），分别为00001、00101、01010、01100、11000、11100，则投票结果（F）依次为0、0、0、0、0、1，根据波形图可以验证设计正确。</p>
+<h2 id="实验总结"><a href="#实验总结" class="headerlink" title="实验总结"></a>实验总结</h2><p>1.本次实验利用ABEL语言，通过绘制芯片BJQ原理图，编写芯片代码和仿真代码，实现并验证了组合逻辑电路五人表决器。<br>2.基本了解ISPLEVER软件的使用方法，掌握了用此软件完成电子设计的基本流程，并能够用ABEL语言完成对芯片模块的程序设计。<br>3.作为电子线路EDA的第一个实验，在软件使用和代码编写上存在不熟练等问题，导致编译不通过，后续不断查找资料成功解决了问题。</p>
+<h1 id="实验二-四位二进制乘法器"><a href="#实验二-四位二进制乘法器" class="headerlink" title="实验二 四位二进制乘法器"></a>实验二 四位二进制乘法器</h1><h2 id="设计思路-1"><a href="#设计思路-1" class="headerlink" title="设计思路"></a>设计思路</h2><p>设计一个乘法器，实现两个4位二进制数的乘法。两个二进制数分别是被乘数A3A2A1A0和乘数B3B2B1B0。</p>
+<p>将乘法运算分解为加法运算和移位运算，将每次相加的结果用部分积Ti表示，由于被乘数和乘数都是二进制，利用移位相加方法，所以利用乘数从第一位到最后一位每一位依次与被乘数相乘，从第二位开始每一位都要依次左移一位，形成一个阵列的式。</p>
+<h2 id="顶层原理图-1"><a href="#顶层原理图-1" class="headerlink" title="顶层原理图"></a>顶层原理图</h2><img src="http://image.kmoon.fun//images/202211142021095.png" style="zoom: 45%;">
+
+<div style="page-break-after:always;"></div>
+
+<h2 id="程序代码清单-1"><a href="#程序代码清单-1" class="headerlink" title="程序代码清单"></a>程序代码清单</h2><h4 id="1-芯片代码-1"><a href="#1-芯片代码-1" class="headerlink" title="1.芯片代码"></a>1.芯片代码</h4><pre class="line-numbers language-vhdl" data-language="vhdl"><code class="language-vhdl">MODULE M
+A1<span class="token punctuation">.</span><span class="token punctuation">.</span>A4<span class="token punctuation">,</span>B1<span class="token punctuation">.</span><span class="token punctuation">.</span>B4 PIN<span class="token punctuation">;</span>
+Q1<span class="token punctuation">.</span><span class="token punctuation">.</span>Q8 PIN ISTYPE 'COM'<span class="token punctuation">;</span>
+Q<span class="token operator">=</span><span class="token punctuation">[</span>Q8<span class="token punctuation">.</span><span class="token punctuation">.</span>Q1<span class="token punctuation">]</span><span class="token punctuation">;</span>
+T1<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>A4<span class="token operator">*</span>B1<span class="token punctuation">,</span>A3<span class="token operator">*</span>B1<span class="token punctuation">,</span>A2<span class="token operator">*</span>B1<span class="token punctuation">,</span>A1<span class="token operator">*</span>B1<span class="token punctuation">]</span><span class="token punctuation">;</span>
+T2<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>A4<span class="token operator">*</span>B2<span class="token punctuation">,</span>A3<span class="token operator">*</span>B2<span class="token punctuation">,</span>A2<span class="token operator">*</span>B2<span class="token punctuation">,</span>A1<span class="token operator">*</span>B2<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+T3<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>A4<span class="token operator">*</span>B3<span class="token punctuation">,</span>A3<span class="token operator">*</span>B3<span class="token punctuation">,</span>A2<span class="token operator">*</span>B3<span class="token punctuation">,</span>A1<span class="token operator">*</span>B3<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+T4<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span>A4<span class="token operator">*</span>B4<span class="token punctuation">,</span>A3<span class="token operator">*</span>B4<span class="token punctuation">,</span>A2<span class="token operator">*</span>B4<span class="token punctuation">,</span>A1<span class="token operator">*</span>B4<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+EQUATIONS
+Q<span class="token operator">=</span>T1<span class="token operator">+</span>T2<span class="token operator">+</span>T3<span class="token operator">+</span>T4<span class="token punctuation">;</span>
+<span class="token keyword">END</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<h4 id="2-仿真代码-1"><a href="#2-仿真代码-1" class="headerlink" title="2.仿真代码"></a>2.仿真代码</h4><pre class="line-numbers language-vhdl" data-language="vhdl"><code class="language-vhdl">MODULE MULT
+
+A3<span class="token punctuation">.</span><span class="token punctuation">.</span>A0<span class="token punctuation">,</span>B3<span class="token punctuation">.</span><span class="token punctuation">.</span>B0<span class="token punctuation">,</span>Q7<span class="token punctuation">.</span><span class="token punctuation">.</span>Q0 PIN<span class="token punctuation">;</span>
+V<span class="token operator">=</span><span class="token punctuation">.</span>X<span class="token punctuation">.</span><span class="token punctuation">;</span>
+A<span class="token operator">=</span><span class="token punctuation">[</span>A3<span class="token punctuation">.</span><span class="token punctuation">.</span>A0<span class="token punctuation">]</span><span class="token punctuation">;</span>
+B<span class="token operator">=</span><span class="token punctuation">[</span>B3<span class="token punctuation">.</span><span class="token punctuation">.</span>B0<span class="token punctuation">]</span><span class="token punctuation">;</span>
+Q<span class="token operator">=</span><span class="token punctuation">[</span>Q7<span class="token punctuation">.</span><span class="token punctuation">.</span>Q0<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+TEST_VECTORS
+
+<span class="token punctuation">(</span><span class="token punctuation">[</span>A<span class="token punctuation">,</span>B<span class="token punctuation">]</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token punctuation">[</span>Q<span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token punctuation">[</span>V<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token punctuation">[</span>V<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token punctuation">[</span>V<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token punctuation">[</span>V<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">]</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token punctuation">[</span>V<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">END</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<div style="page-break-after:always;"></div>
+
+<h2 id="仿真波形-1"><a href="#仿真波形-1" class="headerlink" title="仿真波形"></a>仿真波形</h2><img src="http://image.kmoon.fun//images/202211142021101.png" style="zoom: 48%;">
+
+<p>A3A2A1A0表示四位二进制逻辑变量A，B3B2B1B0表示四位二进制逻辑变量B；</p>
+<p>Q7Q6Q5Q4Q3Q2Q1Q0表示乘法结果逻辑变量Q，高电平为1，低电平为0。</p>
+<p>测试数据如下图所示，经验算结果正确，四位二进制乘法器设计仿真成功。</p>
+<table>
+<thead>
+<tr>
+<th align="center">序号</th>
+<th align="center">A</th>
+<th align="center">B</th>
+<th align="center">Q</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">2</td>
+<td align="center">9</td>
+<td align="center">18</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">10</td>
+<td align="center">5</td>
+<td align="center">50</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">6</td>
+<td align="center">3</td>
+<td align="center">18</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">7</td>
+<td align="center">3</td>
+<td align="center">21</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">3</td>
+<td align="center">8</td>
+<td align="center">24</td>
+</tr>
+</tbody></table>
+<h2 id="实验总结-1"><a href="#实验总结-1" class="headerlink" title="实验总结"></a>实验总结</h2><ol>
+<li>本次实验利用ABEL-HDL语言实现了4位二进制乘法器的设计与仿真，进一步熟悉了ISPLEVER的使用，掌握了利用ispLEVER设计组合型逻辑电路的方法，学会了操作仿真波形使其更加直观显示结果的方法。</li>
+<li>MODULE M依照竖式的计算过程实现，四位乘法器主要运用错位相加运算来实现乘法运算。</li>
+<li>通过本次实验，掌握了二进制数乘法的原理和运算方法，以及移位相加法的使用。</li>
+</ol>
+<h1 id="实验三-十字路口交通灯控制器"><a href="#实验三-十字路口交通灯控制器" class="headerlink" title="实验三 十字路口交通灯控制器"></a>实验三 十字路口交通灯控制器</h1><h2 id="设计思路-2"><a href="#设计思路-2" class="headerlink" title="设计思路"></a>设计思路</h2><ul>
+<li>设计与仿真十字路口交通灯控制器，十字路口模拟图如下：</li>
+</ul>
+<p><img src="http://image.kmoon.fun//images/202211142022017.png"></p>
+<center>图1
+
+
+<ul>
+<li><p>时间状态分布：</p>
+<table>
+<thead>
+<tr>
+<th align="center">状态</th>
+<th align="center">主干道</th>
+<th align="center">支干道</th>
+<th align="center">持续时间</th>
+<th align="center">下一状态</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">绿灯</td>
+<td align="center">红灯</td>
+<td align="center">40s</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">黄灯</td>
+<td align="center">红灯</td>
+<td align="center">5s</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">红灯</td>
+<td align="center">绿灯</td>
+<td align="center">20s</td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">红灯</td>
+<td align="center">黄灯</td>
+<td align="center">5s</td>
+<td align="center">1</td>
+</tr>
+</tbody></table>
+<center>表1
+</center></li>
+<li><p>交通信号灯剩余时间的倒计时显示，转换为8421BCD码驱动数码管显示；</p>
+</li>
+<li><p>程序启动时，主支干道都亮红灯，然后从状态1开始正常运行；</p>
+</li>
+<li><p>交通灯从绿变红时，有5秒黄灯亮的间隔时间，从红变绿是直接进行的，没有间隔时间。</p>
+</li>
+</ul>
+<div style="page-break-after:always;"></div>
+
+<h2 id="实验原理图"><a href="#实验原理图" class="headerlink" title="实验原理图"></a>实验原理图</h2><img src="http://image.kmoon.fun//images/202211142022015.png" alt="image-20221015112323123" style="zoom: 67%;">
+
+  <center>图2
+
+
+<h2 id="芯片代码"><a href="#芯片代码" class="headerlink" title="芯片代码"></a>芯片代码</h2><pre class="line-numbers language-VHDL" data-language="VHDL"><code class="language-VHDL">LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.STD_LOGIC_UNSIGNED.ALL;
+USE IEEE.STD_LOGIC_ARITH.ALL;
+
+ENTITY Jiaotong_Lights IS
+	PORT(
+	mainroad_lights,branchroad_lights:OUT STD_LOGIC_VECTOR(2 DOWNTO 0); --红,黄,绿灯
+	mainroad_time_BCD,branchroad_time_BCD:OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+	clk,ctr:IN STD_LOGIC;
+	cnt:BUFFER INTEGER RANGE 69 DOWNTO 0:=0
+	);
+END Jiaotong_Lights;
+
+ARCHITECTURE bhv OF Jiaotong_Lights IS
+
+BEGIN
+	
+	PROCESS(clk,cnt)		--时钟进程
+	BEGIN
+		IF clk'EVENT AND clk='1' THEN
+			IF cnt=69 THEN cnt&lt;=0;		--70进制计数器
+			ELSIF(ctr='1') THEN cnt&lt;=0;
+			ELSE cnt&lt;=cnt+1;
+			END IF;
+		END IF;
+	END PROCESS;
+	
+   PROCESS(clk,cnt,ctr)			--交通灯控制进程
+	BEGIN
+		IF(ctr='1') THEN 		--主次干道全显示红灯特殊状态处理
+            mainroad_lights&lt;="100";
+				branchroad_lights&lt;="100";
+		ELSE 
+			IF(cnt&lt;=39) THEN
+				mainroad_lights&lt;="001";
+				branchroad_lights&lt;="100";
+			ELSIF(cnt&lt;=44) THEN 
+				mainroad_lights&lt;="010";
+				branchroad_lights&lt;="100";
+			ELSIF(cnt&lt;=64) THEN 
+				mainroad_lights&lt;="100";
+				branchroad_lights&lt;="001";
+			ELSIF(cnt&lt;=69) THEN 
+				mainroad_lights&lt;="100";
+				branchroad_lights&lt;="010";			
+			END IF;
+		END IF;
+	END PROCESS;
+	
+	PROCESS(clk,cnt,ctr)				--倒计时显示进程
+		VARIABLE mainroad_time:INTEGER;
+		VARIABLE branchroad_time:INTEGER;
+		
+			BEGIN
+			IF(ctr='1') THEN 
+			mainroad_time:=0; 
+			branchroad_time:=0;
+			ELSE 
+				IF(cnt&lt;=39) THEN mainroad_time:=39-cnt; 
+				ELSIF cnt&lt;=44 THEN mainroad_time:=44-cnt;
+				ELSIF cnt&lt;=69 THEN mainroad_time:=69-cnt;
+				END IF;
+	
+				IF(cnt&lt;=44) THEN branchroad_time:=44-cnt;
+				ELSIF(cnt&lt;=64) THEN branchroad_time:=64-cnt;
+				ELSIF(cnt&lt;=69) THEN branchroad_time:=69-cnt;
+				END IF;
+			END IF;
+				
+			mainroad_time_BCD(7 DOWNTO 4)&lt;=CONV_STD_LOGIC_VECTOR(mainroad_time/10 MOD 10,4);
+			mainroad_time_BCD(3 DOWNTO 0)&lt;=CONV_STD_LOGIC_VECTOR(mainroad_time REM 10,4);
+			branchroad_time_BCD(7 DOWNTO 4)&lt;=CONV_STD_LOGIC_VECTOR(branchroad_time/10 MOD 10,4);
+			branchroad_time_BCD(3 DOWNTO 0)&lt;=CONV_STD_LOGIC_VECTOR(branchroad_time REM 10,4);			
+	END PROCESS;
+	
+END bhv;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="仿真波形-2"><a href="#仿真波形-2" class="headerlink" title="仿真波形"></a>仿真波形</h2><p>首先添加输入输出端口，并设置各端口变量类型，其中主支干道交通灯倒计时设置为十六进制显示。</p>
+<p><img src="http://image.kmoon.fun//images/202211142022020.png"></p>
+  <center>图3
+
+
+<p>运行仿真程序，结果如图4，5所示：</p>
+<p><img src="http://image.kmoon.fun//images/202211142022026.png" alt="image-20221016115757150"></p>
+  <center>图4
+
+
+<img src="http://image.kmoon.fun//images/202211142022033.png" alt="3-2">
+
+  <center>图5
+
+
+<p>其中clk为外部时钟脉冲。cnt为计数变量，用以标志状态周期，从69至0为一个现实周期（图5）。</p>
+<p>ctr为控制端，如图4所示，作用时（即ctr为高电平使能）主干道和次干道都亮红灯，倒计时显示00，高电平有效。mainroad_lights和branchroad_lights都是宽度为3的总线，由高到低分别表示红灯、黄灯和绿灯，高电平有效。mainroad_time_BCD和branchroad_time_BCD都是宽度为8的总线，高4位与低4位分别为倒计时的8421BCD码，仿真时用十六进制显示。</p>
+<p>验证各状态波形，仿真结果符合实验设计要求。</p>
+<h2 id="实验总结-2"><a href="#实验总结-2" class="headerlink" title="实验总结"></a>实验总结</h2><ol>
+<li>通过本次实验初步掌握了VHDL语言的基本语法和编写流程。</li>
+<li>本设计利用三个进程并行工作的思想，分别解决了时钟、交通灯状态控制和交通灯倒计时显示三个问题。</li>
+<li>对整数取余运算，分别得到十位和个位的值。利用CONV_STD_LOGIC_VECTOR()将整数转换为长度为4的向量，生成8421BCD码。</li>
+</ol>
+<h1 id="武汉市地铁1号线汉西一路站自动售票系统的设计与仿真"><a href="#武汉市地铁1号线汉西一路站自动售票系统的设计与仿真" class="headerlink" title="武汉市地铁1号线汉西一路站自动售票系统的设计与仿真"></a>武汉市地铁1号线汉西一路站自动售票系统的设计与仿真</h1><h2 id="一、设计思路"><a href="#一、设计思路" class="headerlink" title="一、设计思路"></a>一、设计思路</h2><p>本设计用于模拟地铁售票机自动售票，完成地铁售票机的核心功能。</p>
+<p>当乘客按下开始购票按钮进行购票，此时只能选择一个出站口，根据选站的不同票价不同。共设有27站(如图1-1所示)，票价参考表1-1。乘客购票时可以一次购买几张票，本设计中最多可以支持4张。售票机投币口识别范围为1元、10元。投币时可以连续投币，当投入金额大于所需时，出票并找零，结束本次交易，系统恢复初始状态等待下次购票。在购票过程中乘客可以在出票之前按取消按钮来取消操作，系统会自动退出之前投入的钱币，并且系统自动恢复到初始化状态等待再次使用。</p>
+<img src="http://image.kmoon.fun//images/202211142023950.png" alt="image-20221016205848571" style="zoom: 67%;">
+
+<center>图 1-1
+<center>表 1-1
+
+
+
+<table>
+<thead>
+<tr>
+<th align="center">站数/站</th>
+<th align="center">票价/元</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">[1,5]</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">[6,10]</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">[11,15]</td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td align="center">[16,20]</td>
+<td align="center">5</td>
+</tr>
+</tbody></table>
+<h2 id="二、设计方法"><a href="#二、设计方法" class="headerlink" title="二、设计方法"></a>二、设计方法</h2><p>经过分析本自动售票机，其主要实现以下功能：出站点的选择、购票数量的选取、投币的处理、出票和余额找零的处理以及输入出错时的取消返回和恢复初始状态的处理。</p>
+<ul>
+<li>整体功能：在购买车票时，乘客按“开始选择”按钮，然后选择出站口接着选择购票的数量（一次购票的票数限制在最多4张）；然后按“开始投币”按钮，开始投币；当投入钱币到达所需钱币时系统会自动打开出票口进行出票。如果需要找零此时系统会自动找零，在找零时全部以1元硬币形式给出。</li>
+<li>取消购票：乘客进行购票操作在未出票前，乘客按取消按钮进行取消购票，此时系统会自动退回投入钱币并恢复系统等待下次操作，取消系统会回到原始等待购票状态。</li>
+<li>票价计算：乘客购票只能选择一个出站口，根据其选择的出站口来计算所需要的票价。本设计全程共有27个站点，本设计起始站为<strong>汉西一路</strong>，乘客最多可以乘坐18站到达<strong>滠口新城</strong>。总共27站使用5位二进制来表示，即1站五环大道用00001表示，27站滠口新城用11011表示，起始站汉西一路用01000表示。</li>
+<li>投币设计：本设计中售票机投币口只可以识别1元、10元的人民币。采用4位二进制表示，1元使用0001表示，10元采用1010表示。</li>
+</ul>
+<h2 id="三、程序流程图"><a href="#三、程序流程图" class="headerlink" title="三、程序流程图"></a>三、程序流程图</h2><p>首先当对自动售票机无操作时要在初始化状态下，即为等待购票时售票机的状<br>态，在初始化状态下按下“开始购票”后系统开始进入购票模式。在此模式下用户可使<br>用所有的购票功能。接着必须要选择出站口，再选择购票数。系统会根据选择的站点和购票数来判定所需要的投币金额，根据系统提示所需的投币金额进行投币。当投入的钱币达到所需的数目时,系统会自动从出票口出票，并将投入的钱币入库。当投入金额大于所需金额时，系统会自动出票并及时找零。购票过程中若有选择错误，可选择取消。如：在选择目的地、选择购票数时出错，可选择取消来恢复到初始化状态；当在投入钱币但不到所需金额时如有特殊情况可选择取消，系统会自动退回投入的钱币并恢复到初始化状态等待下一次购票。具体的购票流程图如图2-1。</p>
+<img src="http://image.kmoon.fun//images/202211142023998.png" alt="image-20221109104230719" style="zoom: 67%;">
+
+<h2 id="四、核心代码"><a href="#四、核心代码" class="headerlink" title="四、核心代码"></a>四、核心代码</h2><h2 id="五、波形仿真"><a href="#五、波形仿真" class="headerlink" title="五、波形仿真"></a>五、波形仿真</h2><p><img src="http://image.kmoon.fun//images/202211142028323.png" alt="image-20221114202852257"></p>
+<h2 id="六、心得体会"><a href="#六、心得体会" class="headerlink" title="六、心得体会"></a>六、心得体会</h2><h2 id="七、附录"><a href="#七、附录" class="headerlink" title="七、附录"></a>七、附录</h2><h3 id="1-原理图"><a href="#1-原理图" class="headerlink" title="1. 原理图"></a>1. 原理图</h3><img src="http://image.kmoon.fun//images/202211142024888.png" alt="image-20221109110225729" style="zoom:50%;">
+
+<h3 id="2-源代码"><a href="#2-源代码" class="headerlink" title="2. 源代码"></a>2. 源代码</h3><blockquote>
+<p>loading…</p>
+</blockquote>
+</center></center></center></center></center></center></center>
+        </div>
+
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+<nav class="article-nav">
+  
+    <a href="/2022/dbcreatereport/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-caption">下一篇</div>
+      <div class="article-nav-title">
+        
+          WUT-数据库应用系统开发实验报告
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/google/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-caption">上一篇</div>
+      <div class="article-nav-title">他山之石-GoogleHacking谷歌语法</div>
+    </a>
+  
+</nav>
+
+
+    <section class="share">
+        <div class="share-title">分享</div>
+        <a class="share-item" target="_blank"
+            href="https://twitter.com/share?text=WUT-电子线路EDA实验报告 - Kmoon&url=https%3A%2F%2Fwww.kmoon.fun%2F2022%2Fedareport%2F">
+            <ion-icon name="logo-twitter"></ion-icon>
+        </a>
+        <a class="share-item" target="_blank"
+            href="https://www.facebook.com/sharer.php?title=WUT-电子线路EDA实验报告 - Kmoon&u=https%3A%2F%2Fwww.kmoon.fun%2F2022%2Fedareport%2F">
+            <ion-icon name="logo-facebook"></ion-icon>
+        </a>
+        <!-- <a class="share-item" target="_blank"
+            href="https://service.weibo.com/share/share.php?title=WUT-电子线路EDA实验报告 - Kmoon&url=https://www.kmoon.fun/2022/edareport/&pic=">
+            <div class="n-icon n-icon-weibo"></div>
+        </a> -->
+    </section>
+
+</article>
+
+
+
+
+
+
+
+
+
+
+<section class="comments">
+    <div id="valine-container"></div>
+</section>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+
+
+
+
+
+
+<script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+</div>
+                </section>
+            </section>
+
+            
+            <aside class="sidebar sidebar-search-fix">
+                
+
+    <div class="search">
+    <div class="has-icon-right">
+        <input type="text" class="form-input" id="search" placeholder="SEARCH" autocomplete="off">
+        <div class="form-icon">
+            <ion-icon name="search"></ion-icon>
+        </div>
+    </div>
+    <div class="search-result" id="search-ps"></div>
+</div>
+
+
+<div class="widget" id="widget">
+    
+      
+  <div class="widget-wrap">
+    <div class="widget-inner">
+      <div class="toc post-toc-html"></div>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap widget-cate">
+    <div class="widget-title"><span>Categories</span></div>
+    <div class="widget-inner">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/XiaoHu-s-Daily/">XiaoHu's Daily</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BB%96%E5%B1%B1%E4%B9%8B%E7%9F%B3/">他山之石</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/">刷题笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E6%9C%AD%E8%AE%B0/">学习札记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/">实验报告</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%87%92%E4%BA%BA%E5%BF%85%E5%A4%87/">懒人必备</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%AA%E5%91%BD%E5%90%8D/">未命名</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B7%B1%E6%B8%8A/">深渊</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7/">渗透工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/">渗透测试</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9D%B6%E5%9C%BA%E6%97%A5%E8%AE%B0/">靶场日记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%A1%B9%E7%9B%AE%E8%AE%A1%E5%88%92/">项目计划</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap widget-tags">
+    <div class="widget-title"><span>Tags</span></div>
+    <div class="widget-inner">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/51%E5%8D%95%E7%89%87%E6%9C%BA/" rel="tag">51单片机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google/" rel="tag">Google</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RNN/" rel="tag">RNN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/" rel="tag">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SRC/" rel="tag">SRC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sec/" rel="tag">Sec</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WUT/" rel="tag">WUT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Whut/" rel="tag">Whut</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/" rel="tag">Windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XSS/" rel="tag">XSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/daily/" rel="tag">daily</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hacker/" rel="tag">hacker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdwon/" rel="tag">markdwon</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/me/" rel="tag">me</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nmap/" rel="tag">nmap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/upload/" rel="tag">upload</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web%E5%AE%89%E5%85%A8/" rel="tag">web安全</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/" rel="tag">信息收集</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%B3%E7%B3%BB%E4%BB%A3%E6%95%B0/" rel="tag">关系代数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/" rel="tag">单片机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%8D%E4%B9%A0%E9%A2%98/" rel="tag">复习题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/" rel="tag">实验报告</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/" rel="tag">数学建模</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">数据库系统原理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/" rel="tag">文件上传漏洞</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7/" rel="tag">渗透工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" rel="tag">渗透测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%84%E7%BD%91%E6%8A%80%E6%9C%AF/" rel="tag">组网技术</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%BD%91/" rel="tag">计网</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B7%A8%E7%AB%99%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0%E6%BC%8F%E6%B4%9E/" rel="tag">跨站请求伪造漏洞</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%B6%E5%9C%BA/" rel="tag">靶场</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap widget-recent-posts">
+    <div class="widget-title"><span>Recent Posts</span></div>
+    <div class="widget-inner">
+      <ul>
+        
+          <li>
+            <a href="/2022/dbcreatereport/">WUT-数据库应用系统开发实验报告</a>
+          </li>
+        
+          <li>
+            <a href="/2022/edareport/">WUT-电子线路EDA实验报告</a>
+          </li>
+        
+          <li>
+            <a href="/2022/google/">他山之石-GoogleHacking谷歌语法</a>
+          </li>
+        
+          <li>
+            <a href="/2022/action/">开门见山-欢迎来到Kmoon的小世界</a>
+          </li>
+        
+          <li>
+            <a href="/2022/c/">实验报告-WUT_C++程序设计实验报告</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap widget-archive">
+    <div class="widget-title"><span>Archive</span></div>
+    <div class="widget-inner">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a></li></ul>
+    </div>
+  </div>
+
+
+    
+</div>
+
+<div id="backtop"><i class="icon icon-arrow-up"></i></div>
+            </aside>
+            
+        </div>
+    </div>
+
+    <footer class="footer">
+    <div class="footer-wave">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#3c4859" fill-opacity="1" d="M0,160L60,181.3C120,203,240,245,360,240C480,235,600,181,720,186.7C840,192,960,256,1080,261.3C1200,267,1320,213,1380,186.7L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
+    </div>
+
+    <!-- Please do not remove this -->
+    <!-- 开源不易，请勿删除 -->
+    <div class="footer-wrap">
+        <div class="footer-inner"> 
+            Kmoon &copy; 2022<br>
+            Powered By Hexo · Theme By <a href="https://linhong.me/" target="_blank">Aomori</a> · <a href="https://github.com/lh1me/hexo-theme-aomori" target="_blank">Github</a>
+			<br><img src="https://www.beian.gov.cn/img/new/gongan.png">
+<a href="http://www.beian.gov.cn/" target="_blank">渝-2022011774</a>
+
+
+        </div>
+    </div>
+
+</footer>
+
+<script type="module" src="https://unpkg.com/ionicons@6.0.2/dist/ionicons/ionicons.esm.js"></script>
+
+
+
+
+
+
+<script src="/dist/build.js?1654266144177.js"></script>
+
+
+<script src="/dist/custom.js?1654266144177.js"></script>
+
+
+
+<!-- 百度链接提交 -->
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":220,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+</html>
