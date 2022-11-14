@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
     
-    <title>学习札记——51单片机(C语言版) | Kmoon</title>
+    <title>学习札记-51单片机(C语言版) | Kmoon</title>
 
     <meta name="description" content="&lt;blockquote&gt;
 &lt;p&gt;做技术必须要认真，很多人做事的时候喜欢糊弄，但做技术绝对不可以。&lt;br&gt;技术是逻辑性很强的东西，不应该有任何侥幸心理，你糊弄它它就糊弄你。																												——李冬明【前言&lt;/p&gt;
@@ -19,7 +19,7 @@
 
     <meta property="og:locale" content="cn" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content= "学习札记——51单片机(C语言版) | Kmoon"  />
+    <meta property="og:title" content= "学习札记-51单片机(C语言版) | Kmoon"  />
     <meta property="og:description" content= "&lt;blockquote&gt;
 &lt;p&gt;做技术必须要认真，很多人做事的时候喜欢糊弄，但做技术绝对不可以。&lt;br&gt;技术是逻辑性很强的东西，不应该有任何侥幸心理，你糊弄它它就糊弄你。																												——李冬明【前言&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -34,7 +34,7 @@
 &lt;/blockquote&gt;
 &lt;p&gt;Last Update：2022.10.6&lt;/p&gt;
 &lt;p&gt;Tips：仅个人理解，未对硬件原理深究,若发现错误敬请斧正。&lt;/p&gt;" />
-    <meta name="twitter:title" content="学习札记——51单片机(C语言版) | Kmoon"/>
+    <meta name="twitter:title" content="学习札记-51单片机(C语言版) | Kmoon"/>
     <meta name="twitter:description" content="&lt;blockquote&gt;
 &lt;p&gt;做技术必须要认真，很多人做事的时候喜欢糊弄，但做技术绝对不可以。&lt;br&gt;技术是逻辑性很强的东西，不应该有任何侥幸心理，你糊弄它它就糊弄你。																												——李冬明【前言&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -58,7 +58,7 @@
             },
             "name": "Kmoon"
             },
-            "headline": "学习札记——51单片机(C语言版) | Kmoon",
+            "headline": "学习札记-51单片机(C语言版) | Kmoon",
             "datePublished": "2022-09-27T10:52:12.000Z",
             "mainEntityOfPage": {
                 "@type": "WebPage",
@@ -224,7 +224,7 @@
             <section class="inner">
                 <section class="inner-main">
                     <div class="post">
-    <article id="post-cl9v054hm001vd0vm8nhc05iz" class="article article-type-post" itemscope
+    <article id="post-clagsdbku0021fsvm2akcf4g7" class="article article-type-post" itemscope
     itemprop="blogPost">
 
     <div class="article-inner">
@@ -240,7 +240,7 @@
             
   
     <h1 class="article-title" itemprop="name">
-      学习札记——51单片机(C语言版)
+      学习札记-51单片机(C语言版)
     </h1>
   
 
@@ -573,7 +573,7 @@ sfr P0 = 0x80;
 <p>静态static：全局变量+static修饰的局部变量	只赋一次初值 保持前一次执行结果</p>
 <p>寄存器register</p>
 <p>外部extern</p>
-<h2 id="四、模块学习"><a href="#四、模块学习" class="headerlink" title="四、模块学习"></a>四、模块学习</h2><p>REG52.H头文件快速对照</p>
+<h3 id="数组-1"><a href="#数组-1" class="headerlink" title="数组"></a>数组</h3><h3 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h3><h3 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h3><h2 id="四、模块学习"><a href="#四、模块学习" class="headerlink" title="四、模块学习"></a>四、模块学习</h2><p>REG52.H头文件快速对照</p>
 <pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">ifndef</span> <span class="token expression">__REG52_H__</span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">__REG52_H__</span></span>
 
@@ -721,7 +721,23 @@ sbit CP_RL2 <span class="token operator">=</span> T2CON<span class="token operat
 <h5 id="按键消抖"><a href="#按键消抖" class="headerlink" title="按键消抖"></a>按键消抖</h5><h3 id="电机"><a href="#电机" class="headerlink" title="电机"></a>电机</h3><img src="https://img.gejiba.com/images/d81a3297fc5b22355a9ec04c1d26d5de.png" alt="d81a3297fc5b22355a9ec04c1d26d5de.png" style="zoom:67%;">
 
 <p>转动</p>
-<h3 id="蜂鸣器-1"><a href="#蜂鸣器-1" class="headerlink" title="蜂鸣器"></a>蜂鸣器</h3><h2 id="五、代码思路"><a href="#五、代码思路" class="headerlink" title="五、代码思路"></a>五、代码思路</h2><blockquote>
+<h3 id="蜂鸣器-1"><a href="#蜂鸣器-1" class="headerlink" title="蜂鸣器"></a>蜂鸣器</h3><h3 id="UART串口通信"><a href="#UART串口通信" class="headerlink" title="UART串口通信"></a>UART串口通信</h3><h3 id="1602液晶"><a href="#1602液晶" class="headerlink" title="1602液晶"></a>1602液晶</h3><h3 id="I2C总线"><a href="#I2C总线" class="headerlink" title="I2C总线"></a>I2C总线</h3><h3 id="E²PROM"><a href="#E²PROM" class="headerlink" title="E²PROM"></a>E²PROM</h3><h3 id="实时时钟DS1302"><a href="#实时时钟DS1302" class="headerlink" title="实时时钟DS1302"></a>实时时钟DS1302</h3><ol>
+<li><p>BCD码</p>
+<p>0-9：0b0000-0b1001</p>
+</li>
+<li><p>SPI时序</p>
+<p>高速 全双工 同步通信总线</p>
+<img src="http://image.kmoon.fun//images/202211081412855.png" alt="image-20221108141216732" style="zoom:67%;">
+
+<p>SPI四种模式：时钟极性/相位–&gt;数据采样/输出</p>
+<img src="http://image.kmoon.fun//images/202211081414016.png" alt="image-20221108141441956" style="zoom: 67%;">
+
+<p>实时时钟芯片DS1302</p>
+<p>DS102.c文件</p>
+</li>
+</ol>
+<h3 id="红外通信"><a href="#红外通信" class="headerlink" title="红外通信"></a>红外通信</h3><p>1. </p>
+<h3 id="A-x2F-D-D-x2F-A"><a href="#A-x2F-D-D-x2F-A" class="headerlink" title="A/D D/A"></a>A/D D/A</h3><h3 id="RS-485通信与Modbus"><a href="#RS-485通信与Modbus" class="headerlink" title="RS-485通信与Modbus"></a>RS-485通信与Modbus</h3><h2 id="实践项目"><a href="#实践项目" class="headerlink" title="实践项目"></a>实践项目</h2><h3 id="多功能电子钟"><a href="#多功能电子钟" class="headerlink" title="多功能电子钟"></a>多功能电子钟</h3><h3 id="简易信号发生器"><a href="#简易信号发生器" class="headerlink" title="简易信号发生器"></a>简易信号发生器</h3><h3 id="温度传感器DS18B20"><a href="#温度传感器DS18B20" class="headerlink" title="温度传感器DS18B20"></a>温度传感器DS18B20</h3><h3 id="电子钟"><a href="#电子钟" class="headerlink" title="电子钟"></a>电子钟</h3><h3 id="计算器"><a href="#计算器" class="headerlink" title="计算器"></a>计算器</h3><h2 id="五、代码思路"><a href="#五、代码思路" class="headerlink" title="五、代码思路"></a>五、代码思路</h2><blockquote>
 <p><strong>&lt;Tips：前面程序解释说明过的后续不再写出&gt;</strong></p>
 </blockquote>
 <p>闲话少叙，开始吧~</p>
@@ -1659,15 +1675,15 @@ sbit KEY4 <span class="token operator">=</span> P2<span class="token operator">^
     <section class="share">
         <div class="share-title">分享</div>
         <a class="share-item" target="_blank"
-            href="https://twitter.com/share?text=学习札记——51单片机(C语言版) - Kmoon&url=https%3A%2F%2Fwww.kmoon.fun%2F2022%2F51dpj%2F">
+            href="https://twitter.com/share?text=学习札记-51单片机(C语言版) - Kmoon&url=https%3A%2F%2Fwww.kmoon.fun%2F2022%2F51dpj%2F">
             <ion-icon name="logo-twitter"></ion-icon>
         </a>
         <a class="share-item" target="_blank"
-            href="https://www.facebook.com/sharer.php?title=学习札记——51单片机(C语言版) - Kmoon&u=https%3A%2F%2Fwww.kmoon.fun%2F2022%2F51dpj%2F">
+            href="https://www.facebook.com/sharer.php?title=学习札记-51单片机(C语言版) - Kmoon&u=https%3A%2F%2Fwww.kmoon.fun%2F2022%2F51dpj%2F">
             <ion-icon name="logo-facebook"></ion-icon>
         </a>
         <!-- <a class="share-item" target="_blank"
-            href="https://service.weibo.com/share/share.php?title=学习札记——51单片机(C语言版) - Kmoon&url=https://www.kmoon.fun/2022/51dpj/&pic=">
+            href="https://service.weibo.com/share/share.php?title=学习札记-51单片机(C语言版) - Kmoon&url=https://www.kmoon.fun/2022/51dpj/&pic=">
             <div class="n-icon n-icon-weibo"></div>
         </a> -->
     </section>
@@ -1752,6 +1768,14 @@ sbit KEY4 <span class="token operator">=</span> P2<span class="token operator">^
       <ul>
         
           <li>
+            <a href="/2022/dbcreatereport/">WUT-数据库应用系统开发实验报告</a>
+          </li>
+        
+          <li>
+            <a href="/2022/edareport/">WUT-电子线路EDA实验报告</a>
+          </li>
+        
+          <li>
             <a href="/2022/google/">他山之石-GoogleHacking谷歌语法</a>
           </li>
         
@@ -1761,14 +1785,6 @@ sbit KEY4 <span class="token operator">=</span> P2<span class="token operator">^
         
           <li>
             <a href="/2022/c/">实验报告-WUT_C++程序设计实验报告</a>
-          </li>
-        
-          <li>
-            <a href="/2022/project1/">项目计划-[推推]:小说更新就通知(测试)</a>
-          </li>
-        
-          <li>
-            <a href="/2022/jw/">学习札记-计算机网络</a>
           </li>
         
       </ul>
