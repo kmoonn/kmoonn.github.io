@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    
+    <title>记录手敲Python爬虫案例练习“ | Kmoon | 个人学习记录</title>
+
+    <meta name="description" content="&lt;p&gt;10000小时法则&lt;/p&gt;
+&lt;p&gt;目前争取每周写一个爬虫小实例&lt;/p&gt;
+&lt;p&gt;找接口-&amp;gt;模拟请求-&amp;gt;解析-&amp;gt;下载-&amp;gt;入库&lt;/p&gt;">
+    <meta name="keywords" content="">
+
+    
+
+    <meta property="og:locale" content="cn" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content= "记录手敲Python爬虫案例练习“ | Kmoon | 个人学习记录"  />
+    <meta property="og:description" content= "&lt;p&gt;10000小时法则&lt;/p&gt;
+&lt;p&gt;目前争取每周写一个爬虫小实例&lt;/p&gt;
+&lt;p&gt;找接口-&amp;gt;模拟请求-&amp;gt;解析-&amp;gt;下载-&amp;gt;入库&lt;/p&gt;" />
+    <meta property="og:url" content="https://www.kmoon.fun/2022/spider-example/index.html" />
+    <meta property="og:site_name" content="" />
+    <meta property="article:author" content="Kmoon" />
+    <meta property="article:publisher" content="" />
+    <meta property="og:description" content="&lt;p&gt;10000小时法则&lt;/p&gt;
+&lt;p&gt;目前争取每周写一个爬虫小实例&lt;/p&gt;
+&lt;p&gt;找接口-&amp;gt;模拟请求-&amp;gt;解析-&amp;gt;下载-&amp;gt;入库&lt;/p&gt;" />
+    <meta name="twitter:title" content="记录手敲Python爬虫案例练习“ | Kmoon | 个人学习记录"/>
+    <meta name="twitter:description" content="&lt;p&gt;10000小时法则&lt;/p&gt;
+&lt;p&gt;目前争取每周写一个爬虫小实例&lt;/p&gt;
+&lt;p&gt;找接口-&amp;gt;模拟请求-&amp;gt;解析-&amp;gt;下载-&amp;gt;入库&lt;/p&gt;"/>
+    <script type="application/ld+json">
+        {
+            "description": "&lt;p&gt;10000小时法则&lt;/p&gt;
+&lt;p&gt;目前争取每周写一个爬虫小实例&lt;/p&gt;
+&lt;p&gt;找接口-&amp;gt;模拟请求-&amp;gt;解析-&amp;gt;下载-&amp;gt;入库&lt;/p&gt;",
+            "author": { "@type": "Person", "name": "Kmoon" },
+            "@type": "BlogPosting",
+            "url": "https://www.kmoon.fun/2022/spider-example/index.html",
+            "publisher": {
+            "@type": "Organization",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.kmoon.fun/image/avatar.png"
+            },
+            "name": "Kmoon"
+            },
+            "headline": "记录手敲Python爬虫案例练习“ | Kmoon | 个人学习记录",
+            "datePublished": "2022-12-24T06:56:28.000Z",
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://www.kmoon.fun/2022/spider-example/index.html"
+            },
+            "@context": "http://schema.org"
+        }
+    </script>
+
+
+
+
+    
+
+    
+    <meta property="algolia:search" data-application-id="8Z51BHYAUH" data-api-key="dbc9dafd607e95ea5aa312369120eabd" data-index-name="kmoon_blog">
+    
+
+    
+
+    
+
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌜️</text></svg>">
+    
+
+    
+
+    
+
+    
+<link rel="stylesheet" href="/dist/build.css?v=1654266144177.css">
+
+
+    
+<link rel="stylesheet" href="/dist/custom.css?v=1654266144177.css">
+
+
+    <script>
+        window.isPost = true
+        window.aomori = {
+            
+            
+            valine: {
+                enable: true,
+                appId: "i7G1tHcsR13KVa00grUUf6mr-gzGzoHsz",
+                appKey: "94N35fphXFiN5BGMNS9V5mHe",
+                placeholder: "Hello World!",
+                avatar: "",
+                pageSize: "10",
+                lang: "zh-CN",
+                visitor: false,
+                highlight: false,
+                recordIP: false,
+                emojiCDN: "",
+                enableQQ: false,
+                requiredFields: []
+            },
+            
+            
+        }
+        window.aomori_logo_typed_animated = true
+        window.aomori_search_algolia = true
+
+    </script>
+
+<meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Kmoon | 个人学习记录" type="application/atom+xml">
+</head>
+
+<body>
+
+    <div class="container">
+    <header class="header">
+        <div class="header-type">
+            
+            <div class="header-type-avatar avatar avatar-sm">
+                <img src="/image/avatar.png" alt="Kmoon">
+            </div>
+            
+            <div class="header-type-inner">
+                
+                    <div id="typed-strings" style="display:none">
+                        <p>Kmoon | 个人学习记录</p>
+                    </div>
+                    <a class="header-type-title" id="typed" href="/"></a>
+                
+    
+                
+            </div>
+        </div>
+        <div class="header-menu">
+            <div class="header-menu-inner">
+                
+                <a href="/">主页</a>
+                
+                <a href="/archives">归档</a>
+                
+                <a href="/2022/10/about/">关于</a>
+                
+                <a href="/friends">友链</a>
+                
+                <a href="/photography">摄影</a>
+                
+                <a href="/categories/%E6%B7%B1%E6%B8%8A/">深渊</a>
+                
+                <a href="/wiki/">Wiki</a>
+                
+            </div>
+            <div class="header-menu-social">
+                
+    <a class="social" target="_blank" href="https://github.com/kmoonn/">
+        <ion-icon name="logo-github"></ion-icon>
+    </a>
+
+    <a class="social" target="_blank" href="">
+        <ion-icon name="logo-wechat"></ion-icon>
+    </a>
+
+            </div>
+        </div>
+
+        <div class="header-menu-mobile">
+            <div class="header-menu-mobile-inner" id="mobile-menu-open">
+                <i class="icon icon-menu"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="header-menu-mobile-menu">
+        <div class="header-menu-mobile-menu-bg"></div>
+        <div class="header-menu-mobile-menu-wrap">
+            <div class="header-menu-mobile-menu-inner">
+                <div class="header-menu-mobile-menu-close" id="mobile-menu-close">
+                    <i class="icon icon-cross"></i>
+                </div>
+                <div class="header-menu-mobile-menu-list">
+                    
+                    <a href="/">主页</a>
+                    
+                    <a href="/archives">归档</a>
+                    
+                    <a href="/2022/10/about/">关于</a>
+                    
+                    <a href="/friends">友链</a>
+                    
+                    <a href="/photography">摄影</a>
+                    
+                    <a href="/categories/%E6%B7%B1%E6%B8%8A/">深渊</a>
+                    
+                    <a href="/wiki/">Wiki</a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <div class="container">
+        <div class="main">
+            <section class="inner">
+                <section class="inner-main">
+                    <div class="post">
+    <article id="post-cld1b87e3005do8vm48ut8ggl" class="article article-type-post" itemscope
+    itemprop="blogPost">
+
+    <div class="article-inner">
+
+        
+          
+        
+        
+        
+
+        
+        <header class="article-header">
+            
+  
+    <h1 class="article-title" itemprop="name">
+      记录手敲Python爬虫案例练习“
+    </h1>
+  
+
+        </header>
+        
+
+        <div class="article-more-info article-more-info-post hairline">
+
+            <div class="article-date">
+  <time datetime="2022-12-24T06:56:28.000Z" itemprop="datePublished">2022-12-24</time>
+</div>
+
+            
+
+            
+            <div class="article-tag">
+                <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%88%AC%E8%99%AB%E6%A1%88%E4%BE%8B/" rel="tag">爬虫案例</a></li></ul>
+            </div>
+            
+
+            
+            <div class="article-busuanzi">
+                <span id="busuanzi_value_page_pv">N</span> 人看过
+            </div>
+            
+
+        </div>
+
+        <div class="article-entry post-inner-html hairline" itemprop="articleBody">
+            <p>10000小时法则</p>
+<p>目前争取每周写一个爬虫小实例</p>
+<p>找接口-&gt;模拟请求-&gt;解析-&gt;下载-&gt;入库</p>
+<span id="more"></span>
+
+<h1 id="Urllib爬虫模板"><a href="#Urllib爬虫模板" class="headerlink" title="Urllib爬虫模板"></a>Urllib爬虫模板</h1><p>自己写的一个利用urllib库的爬虫模板</p>
+<p>只满足简单的get和post请求 特殊情况需要修改函数代码</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># _*_ coding : utf-8 _*_</span>
+<span class="token comment"># @Time : 2022-12-24 11:40</span>
+<span class="token comment"># @Author : Kmoon_Hs</span>
+<span class="token comment"># @File : urllib爬虫模板</span>
+
+<span class="token keyword">import</span> json
+<span class="token keyword">import</span> os
+<span class="token keyword">import</span> urllib<span class="token punctuation">.</span>request
+<span class="token keyword">import</span> urllib<span class="token punctuation">.</span>parse
+
+<span class="token comment"># 找到接口url</span>
+<span class="token keyword">def</span> <span class="token function">request_url</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># 若出现多个请求地址 可以循环</span>
+    url<span class="token operator">=</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"请输入请求的URL地址："</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> url
+
+<span class="token comment"># 请求对象定制</span>
+<span class="token keyword">def</span> <span class="token function">create_request</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># 修改请求头 可能出现需要cookie、token情况</span>
+    headers <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token string">'Cookie'</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+        <span class="token string">'User-Agent'</span><span class="token punctuation">:</span> <span class="token string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36'</span>
+
+    <span class="token punctuation">}</span>
+    <span class="token comment"># post 请求</span>
+    method<span class="token operator">=</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"请输入请求方式："</span><span class="token punctuation">)</span>
+
+    <span class="token comment"># 表单数据少的情况下 例如百度翻译只有一个参数，可以选择手动输入</span>
+    <span class="token comment"># 表单数据多的情况下 建议直接创建data字典对象</span>
+    <span class="token keyword">if</span> method<span class="token operator">==</span><span class="token string">'post'</span><span class="token punctuation">:</span>
+        <span class="token comment"># post 请求表单数据</span>
+        data <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"请分别输入data的字段和值:(输入# #结束)"</span><span class="token punctuation">)</span>
+        flag<span class="token operator">=</span><span class="token boolean">True</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            key<span class="token punctuation">,</span>value<span class="token operator">=</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            data<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token operator">=</span>value
+            <span class="token keyword">if</span><span class="token punctuation">(</span>key<span class="token operator">==</span><span class="token string">'#'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                flag<span class="token operator">=</span><span class="token boolean">False</span>
+        <span class="token comment"># 编码</span>
+        data <span class="token operator">=</span> urllib<span class="token punctuation">.</span>parse<span class="token punctuation">.</span>urlencode<span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+        request<span class="token operator">=</span>urllib<span class="token punctuation">.</span>request<span class="token punctuation">.</span>Request<span class="token punctuation">(</span>url<span class="token operator">=</span>url<span class="token punctuation">,</span>headers<span class="token operator">=</span>headers<span class="token punctuation">,</span>data<span class="token operator">=</span>data<span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token comment"># get 请求</span>
+        request <span class="token operator">=</span> urllib<span class="token punctuation">.</span>request<span class="token punctuation">.</span>Request<span class="token punctuation">(</span>url<span class="token operator">=</span>url<span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> request
+
+<span class="token comment"># 模拟浏览器发送请求</span>
+<span class="token keyword">def</span> <span class="token function">get_content</span><span class="token punctuation">(</span>request<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    response<span class="token operator">=</span>urllib<span class="token punctuation">.</span>request<span class="token punctuation">.</span>urlopen<span class="token punctuation">(</span>request<span class="token punctuation">)</span>
+    content<span class="token operator">=</span>response<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> content
+
+<span class="token comment"># 下载数据到本地</span>
+<span class="token keyword">def</span> <span class="token function">down_load</span><span class="token punctuation">(</span>content<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    filename<span class="token operator">=</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">'请输入下载文件的文件名（包含后缀名）:'</span><span class="token punctuation">)</span>
+    <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span>filename<span class="token punctuation">,</span><span class="token string">'w'</span><span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> fp<span class="token punctuation">:</span>
+        <span class="token comment"># 若数据为json对象</span>
+        <span class="token comment"># content=str(json.loads(content))</span>
+        <span class="token comment"># 若直接下载网页</span>
+        fp<span class="token punctuation">.</span>write<span class="token punctuation">(</span>content<span class="token punctuation">)</span>
+
+<span class="token comment"># 下载图片到本地</span>
+<span class="token keyword">def</span> <span class="token function">download_img</span><span class="token punctuation">(</span>content<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    obj<span class="token operator">=</span>json<span class="token punctuation">.</span>loads<span class="token punctuation">(</span>content<span class="token punctuation">)</span>
+
+    <span class="token comment"># 创建一层目录</span>
+    <span class="token builtin">dir</span><span class="token operator">=</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"请输入文件夹名:"</span><span class="token punctuation">)</span>
+    os<span class="token punctuation">.</span>mkdir<span class="token punctuation">(</span>os<span class="token punctuation">.</span>getcwd<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">"\\%s"</span> <span class="token operator">%</span><span class="token builtin">dir</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">for</span> data <span class="token keyword">in</span> obj<span class="token punctuation">:</span>
+        url<span class="token operator">=</span>data<span class="token punctuation">[</span><span class="token string">'cover_url'</span><span class="token punctuation">]</span>
+        name<span class="token operator">=</span>data<span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">]</span>
+        urllib<span class="token punctuation">.</span>request<span class="token punctuation">.</span>urlretrieve<span class="token punctuation">(</span>url<span class="token punctuation">,</span><span class="token string">'./'</span><span class="token operator">+</span><span class="token builtin">dir</span><span class="token operator">+</span><span class="token string">'/'</span><span class="token operator">+</span>name<span class="token operator">+</span><span class="token string">'.jpg'</span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">if</span> __name__<span class="token operator">==</span><span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    <span class="token comment"># 获取请求地址</span>
+    url<span class="token operator">=</span>request_url<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token comment"># 请求对象定制</span>
+    request<span class="token operator">=</span>create_request<span class="token punctuation">(</span>url<span class="token punctuation">)</span>
+    <span class="token comment"># 发送请求获取数据</span>
+    content<span class="token operator">=</span>get_content<span class="token punctuation">(</span>request<span class="token punctuation">)</span>
+    <span class="token comment"># 解析数据 下载文件</span>
+    down_load<span class="token punctuation">(</span>content<span class="token punctuation">)</span>
+    <span class="token comment"># 下载图片</span>
+    download_img<span class="token punctuation">(</span>content<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h1 id="百度翻译"><a href="#百度翻译" class="headerlink" title="百度翻译"></a>百度翻译</h1><p>获取翻译(详细)结果</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># _*_ coding : utf-8 _*_</span>
+<span class="token comment"># @Time : 2022-12-24 9:59</span>
+<span class="token comment"># @Author : Kmoon_Hs</span>
+<span class="token comment"># @File : post请求百度翻译</span>
+
+<span class="token keyword">import</span> json
+<span class="token keyword">import</span> urllib<span class="token punctuation">.</span>request
+<span class="token keyword">import</span> urllib<span class="token punctuation">.</span>parse
+
+<span class="token keyword">def</span> <span class="token function">Fanyi</span><span class="token punctuation">(</span>kw<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    url <span class="token operator">=</span> <span class="token string">'https://fanyi.baidu.com/sug'</span>
+
+    data <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token string">'kw'</span><span class="token punctuation">:</span> <span class="token string">'%s'</span> <span class="token operator">%</span>kw
+    <span class="token punctuation">}</span>
+    headers <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token string">'User-Agent'</span><span class="token punctuation">:</span> <span class="token string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.139 Safari/537.36'</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment"># post请求的参数 必须要进行utf-8编码</span>
+    data <span class="token operator">=</span> urllib<span class="token punctuation">.</span>parse<span class="token punctuation">.</span>urlencode<span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+
+    request <span class="token operator">=</span> urllib<span class="token punctuation">.</span>request<span class="token punctuation">.</span>Request<span class="token punctuation">(</span>url<span class="token operator">=</span>url<span class="token punctuation">,</span> data<span class="token operator">=</span>data<span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">)</span>
+    response <span class="token operator">=</span> urllib<span class="token punctuation">.</span>request<span class="token punctuation">.</span>urlopen<span class="token punctuation">(</span>request<span class="token punctuation">)</span>
+    content <span class="token operator">=</span> response<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+    <span class="token comment"># 返回结果为json数据，content实际为&lt;class 'str'&gt;类型,需要转为json对象</span>
+    obj <span class="token operator">=</span> json<span class="token punctuation">.</span>loads<span class="token punctuation">(</span>content<span class="token punctuation">)</span>
+    <span class="token comment"># print(type(obj))  obj为&lt;class 'dict'&gt;类型</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> obj<span class="token punctuation">[</span><span class="token string">'data'</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+
+<span class="token comment"># Python的程序入口</span>
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span><span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    kw <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"请输入你要查询的单词："</span><span class="token punctuation">)</span>
+    Fanyi<span class="token punctuation">(</span>kw<span class="token punctuation">)</span>
+    
+    
+<span class="token comment"># 百度翻译详细翻译</span>
+<span class="token comment"># _*_ coding : utf-8 _*_</span>
+<span class="token comment"># @Time : 2022-12-24 10:53</span>
+<span class="token comment"># @Author : Kmoon_Hs</span>
+<span class="token comment"># @File : post请求百度详细翻译</span>
+<span class="token keyword">import</span> json
+<span class="token keyword">import</span> urllib<span class="token punctuation">.</span>parse
+<span class="token keyword">import</span> urllib<span class="token punctuation">.</span>request
+
+url<span class="token operator">=</span><span class="token string">'https://fanyi.baidu.com/v2transapi?from=en&amp;to=zh'</span>
+
+data<span class="token operator">=</span><span class="token punctuation">{</span>
+    <span class="token string">'from'</span><span class="token punctuation">:</span><span class="token string">'en'</span><span class="token punctuation">,</span>
+    <span class="token string">'to'</span><span class="token punctuation">:</span> <span class="token string">'zh'</span><span class="token punctuation">,</span>
+    <span class="token string">'query'</span><span class="token punctuation">:</span> <span class="token string">'moon'</span><span class="token punctuation">,</span>
+    <span class="token string">'transtype'</span><span class="token punctuation">:</span> <span class="token string">'realtime'</span><span class="token punctuation">,</span>
+    <span class="token string">'simple_means_flag'</span><span class="token punctuation">:</span> <span class="token string">'3'</span><span class="token punctuation">,</span>
+    <span class="token string">'sign'</span><span class="token punctuation">:</span> <span class="token string">'22215.308726'</span><span class="token punctuation">,</span>
+    <span class="token string">'token'</span><span class="token punctuation">:</span> <span class="token string">'567bef1dcb84140e79fed79f4d4888dd'</span><span class="token punctuation">,</span>
+    <span class="token string">'domain'</span><span class="token punctuation">:</span> <span class="token string">'common'</span>
+<span class="token punctuation">}</span>
+
+headers<span class="token operator">=</span><span class="token punctuation">{</span>
+    <span class="token comment"># 详细翻译需要定制cookie</span>
+    <span class="token string">'Cookie'</span><span class="token punctuation">:</span> <span class="token string">'xxx'</span>
+<span class="token punctuation">}</span>
+
+data<span class="token operator">=</span>urllib<span class="token punctuation">.</span>parse<span class="token punctuation">.</span>urlencode<span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+
+request<span class="token operator">=</span>urllib<span class="token punctuation">.</span>request<span class="token punctuation">.</span>Request<span class="token punctuation">(</span>url<span class="token operator">=</span>url<span class="token punctuation">,</span>headers<span class="token operator">=</span>headers<span class="token punctuation">,</span>data<span class="token operator">=</span>data<span class="token punctuation">)</span>
+response<span class="token operator">=</span>urllib<span class="token punctuation">.</span>request<span class="token punctuation">.</span>urlopen<span class="token punctuation">(</span>request<span class="token punctuation">)</span>
+content<span class="token operator">=</span>response<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+
+obj<span class="token operator">=</span>json<span class="token punctuation">.</span>loads<span class="token punctuation">(</span>content<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h1 id="豆瓣电影"><a href="#豆瓣电影" class="headerlink" title="豆瓣电影"></a>豆瓣电影</h1><p>下载电影封面图片</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># _*_ coding : utf-8 _*_</span>
+<span class="token comment"># @Time : 2022-12-24 11:10</span>
+<span class="token comment"># @Author : Kmoon_Hs</span>
+<span class="token comment"># @File : get请求豆瓣电影</span>
+<span class="token keyword">import</span> json
+<span class="token keyword">import</span> urllib<span class="token punctuation">.</span>request
+<span class="token keyword">import</span> urllib<span class="token punctuation">.</span>parse
+
+<span class="token comment"># 下载多页数据有两种方法：1.修改start参数 2.修改limit参数</span>
+url<span class="token operator">=</span><span class="token string">'https://movie.douban.com/j/chart/top_list?type=13&amp;interval_id=100%3A90&amp;action=&amp;start=0&amp;limit=20'</span>
+<span class="token comment"># https://movie.douban.com/j/chart/top_list?type=13&amp;interval_id=100%3A90&amp;action=&amp;start=20&amp;limit=20</span>
+
+
+headers<span class="token operator">=</span><span class="token punctuation">{</span>
+    <span class="token string">'User-Agent'</span><span class="token punctuation">:</span><span class="token string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.139 Safari/537.36'</span>
+<span class="token punctuation">}</span>
+
+request<span class="token operator">=</span>urllib<span class="token punctuation">.</span>request<span class="token punctuation">.</span>Request<span class="token punctuation">(</span>url<span class="token operator">=</span>url<span class="token punctuation">,</span>headers<span class="token operator">=</span>headers<span class="token punctuation">)</span>
+response<span class="token operator">=</span>urllib<span class="token punctuation">.</span>request<span class="token punctuation">.</span>urlopen<span class="token punctuation">(</span>request<span class="token punctuation">)</span>
+content<span class="token operator">=</span>response<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+obj<span class="token operator">=</span>json<span class="token punctuation">.</span>loads<span class="token punctuation">(</span>content<span class="token punctuation">)</span>
+
+<span class="token comment"># open方法默认情况下使用的是gbk的编码  如果我们要想保存汉字 那么需要在open方法中指定编码格式为utf-8</span>
+<span class="token comment"># with open('doubanmovies.json','w',encoding='utf-8') as fp:</span>
+<span class="token comment">#     fp.write(content)</span>
+
+<span class="token comment"># 下载电影封面图片</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> obj<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>i<span class="token punctuation">[</span><span class="token string">'rating'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>i<span class="token punctuation">[</span><span class="token string">'cover_url'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    urllib<span class="token punctuation">.</span>request<span class="token punctuation">.</span>urlretrieve<span class="token punctuation">(</span>i<span class="token punctuation">[</span><span class="token string">'cover_url'</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token string">'./image/'</span><span class="token operator">+</span>i<span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">]</span><span class="token operator">+</span><span class="token string">'.jpg'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h1 id="麦当劳"><a href="#麦当劳" class="headerlink" title="麦当劳"></a>麦当劳</h1><p>获取麦当劳门店地址（使用urllib模板）</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># _*_ coding : utf-8 _*_</span>
+<span class="token comment"># @Time : 2022-12-24 12:30</span>
+<span class="token comment"># @Author : Kmoon_Hs</span>
+<span class="token comment"># @File : post请求麦当劳官网</span>
+
+<span class="token keyword">import</span> urllib爬虫模板 <span class="token keyword">as</span> lib
+
+<span class="token comment"># url = https://www.mcdonalds.com.cn/ajaxs/search_by_point</span>
+<span class="token comment"># POST</span>
+<span class="token comment"># 表单数据 point: 31.23136,121.47004 推测为经纬度坐标</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    <span class="token comment"># 获取请求地址</span>
+    url<span class="token operator">=</span>lib<span class="token punctuation">.</span>request_url<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token comment"># 请求对象定制</span>
+    request<span class="token operator">=</span>lib<span class="token punctuation">.</span>create_request<span class="token punctuation">(</span>url<span class="token punctuation">)</span>
+    <span class="token comment"># 发送请求获取数据</span>
+    content<span class="token operator">=</span>lib<span class="token punctuation">.</span>get_content<span class="token punctuation">(</span>request<span class="token punctuation">)</span>
+    <span class="token comment"># 解析数据 下载文件</span>
+    lib<span class="token punctuation">.</span>down_load<span class="token punctuation">(</span>content<span class="token punctuation">)</span>
+    <span class="token comment"># 下载图片</span>
+    <span class="token comment"># download_img(content)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h3 id="携程旅游"><a href="#携程旅游" class="headerlink" title="携程旅游"></a>携程旅游</h3><p>获取景点评论数据</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># _*_ coding : utf-8 _*_</span>
+<span class="token comment"># @Time : 2022-12-25 8:59</span>
+<span class="token comment"># @Author : Kmoon_Hs</span>
+<span class="token comment"># @File : 景区评论——携程</span>
+
+<span class="token keyword">import</span> json
+<span class="token keyword">import</span> urllib<span class="token punctuation">.</span>request
+<span class="token keyword">import</span> urllib<span class="token punctuation">.</span>parse
+<span class="token keyword">import</span> pymysql
+<span class="token keyword">global</span> count
+count<span class="token operator">=</span><span class="token number">0</span>
+
+<span class="token comment"># 查询景点对应poiID</span>
+<span class="token keyword">def</span> <span class="token function">get_poiID</span><span class="token punctuation">(</span>word<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    url<span class="token operator">=</span><span class="token string">'https://m.ctrip.com/restapi/h5api/globalsearch/search?'</span>
+    data<span class="token operator">=</span><span class="token punctuation">{</span>
+        <span class="token string">'action'</span><span class="token punctuation">:</span><span class="token string">'gsonline'</span><span class="token punctuation">,</span>
+        <span class="token string">'source'</span><span class="token punctuation">:</span><span class="token string">'globalonline'</span><span class="token punctuation">,</span>
+        <span class="token string">'keyword'</span><span class="token punctuation">:</span><span class="token string">'%s'</span> <span class="token operator">%</span> word<span class="token punctuation">,</span>
+        <span class="token string">'t'</span><span class="token punctuation">:</span><span class="token string">'1671936524797'</span>
+    <span class="token punctuation">}</span>
+    data <span class="token operator">=</span> urllib<span class="token punctuation">.</span>parse<span class="token punctuation">.</span>urlencode<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+    url<span class="token operator">=</span>url<span class="token operator">+</span>data
+    response<span class="token operator">=</span>urllib<span class="token punctuation">.</span>request<span class="token punctuation">.</span>urlopen<span class="token punctuation">(</span>url<span class="token punctuation">)</span>
+    content<span class="token operator">=</span>response<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+    obj<span class="token operator">=</span>json<span class="token punctuation">.</span>loads<span class="token punctuation">(</span>content<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> obj<span class="token punctuation">[</span><span class="token string">'data'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'poiId'</span><span class="token punctuation">]</span>
+
+
+<span class="token comment"># 请求对象定制</span>
+<span class="token keyword">def</span> <span class="token function">create_request</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span>poiId<span class="token punctuation">,</span>page<span class="token punctuation">,</span>pageSize<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># 修改请求头 可能出现需要cookie、token情况</span>
+    headers <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token string">'User-Agent'</span><span class="token punctuation">:</span> <span class="token string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4173.2 Safari/537.36'</span><span class="token punctuation">,</span>
+        <span class="token string">'cookie'</span><span class="token punctuation">:</span> <span class="token string">'xxxxxxx'</span><span class="token punctuation">,</span>
+        <span class="token string">'referer'</span><span class="token punctuation">:</span> <span class="token string">'https://detail.tmall.com/'</span><span class="token punctuation">,</span>
+        <span class="token string">'Content-Type'</span><span class="token punctuation">:</span> <span class="token string">'text/plain'</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment"># post 请求表单数据</span>
+    data <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token string">"arg"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            <span class="token string">"channelType"</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+            <span class="token string">"collapseType"</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+            <span class="token string">"commentTagId"</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>  <span class="token comment"># 评论标签ID 0-默认全部</span>
+            <span class="token string">"pageIndex"</span><span class="token punctuation">:</span> <span class="token string">'%s'</span> <span class="token operator">%</span> page<span class="token punctuation">,</span>     <span class="token comment"># 第几页</span>
+            <span class="token string">"pageSize"</span><span class="token punctuation">:</span> <span class="token string">'%s'</span> <span class="token operator">%</span> pageSize<span class="token punctuation">,</span>     <span class="token comment"># 每页显示多少条评论</span>
+            <span class="token string">"poiId"</span><span class="token punctuation">:</span> <span class="token string">'%s'</span> <span class="token operator">%</span> poiId<span class="token punctuation">,</span>    <span class="token comment"># 景点ID</span>
+            <span class="token string">"sourceType"</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+            <span class="token string">"sortType"</span><span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span>      <span class="token comment"># 排序类型 3-智能排序 1-时间排序</span>
+            <span class="token string">"starType"</span><span class="token punctuation">:</span> <span class="token number">0</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment"># 编码</span>
+    <span class="token comment"># 对于请求参数中嵌套了字典类型的数据，需对嵌套的字典数据进行序列化</span>
+    <span class="token comment"># 先将嵌套的data进行序列化</span>
+    data <span class="token operator">=</span> json<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+    request<span class="token operator">=</span>urllib<span class="token punctuation">.</span>request<span class="token punctuation">.</span>Request<span class="token punctuation">(</span>url<span class="token operator">=</span>url<span class="token punctuation">,</span>headers<span class="token operator">=</span>headers<span class="token punctuation">,</span>data<span class="token operator">=</span>data<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> request
+
+<span class="token comment"># 模拟浏览器发送请求</span>
+<span class="token keyword">def</span> <span class="token function">get_content</span><span class="token punctuation">(</span>request<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    response<span class="token operator">=</span>urllib<span class="token punctuation">.</span>request<span class="token punctuation">.</span>urlopen<span class="token punctuation">(</span>request<span class="token punctuation">)</span>
+    content<span class="token operator">=</span>response<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> content
+
+<span class="token comment"># 下载数据到本地</span>
+<span class="token keyword">def</span> <span class="token function">down_load</span><span class="token punctuation">(</span>content<span class="token punctuation">,</span>pageSize<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    content <span class="token operator">=</span> json<span class="token punctuation">.</span>loads<span class="token punctuation">(</span>content<span class="token punctuation">)</span>
+
+    datas<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token comment"># 遍历当前页每一条评论</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>pageSize<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        base <span class="token operator">=</span> content<span class="token punctuation">[</span><span class="token string">'result'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'items'</span><span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+        <span class="token keyword">if</span> base<span class="token punctuation">[</span><span class="token string">'userInfo'</span><span class="token punctuation">]</span><span class="token operator">==</span><span class="token boolean">None</span><span class="token punctuation">:</span>
+            userNick <span class="token operator">=</span> <span class="token string">'匿名用户'</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            userNick <span class="token operator">=</span> base<span class="token punctuation">[</span><span class="token string">'userInfo'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'userNick'</span><span class="token punctuation">]</span>
+
+        <span class="token comment"># 有些用户没有打分 暂时没有想到更好的写法</span>
+        <span class="token keyword">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>base<span class="token punctuation">[</span><span class="token string">'scores'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">==</span><span class="token number">3</span><span class="token punctuation">:</span>
+            scores_View<span class="token operator">=</span>base<span class="token punctuation">[</span><span class="token string">'scores'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'score'</span><span class="token punctuation">]</span>
+            scores_Interest <span class="token operator">=</span> base<span class="token punctuation">[</span><span class="token string">'scores'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'score'</span><span class="token punctuation">]</span>
+            scores_Cost <span class="token operator">=</span> base<span class="token punctuation">[</span><span class="token string">'scores'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'score'</span><span class="token punctuation">]</span>
+        <span class="token keyword">elif</span> <span class="token builtin">len</span><span class="token punctuation">(</span>base<span class="token punctuation">[</span><span class="token string">'scores'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">==</span><span class="token number">2</span><span class="token punctuation">:</span>
+            scores_View <span class="token operator">=</span> base<span class="token punctuation">[</span><span class="token string">'scores'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'score'</span><span class="token punctuation">]</span>
+            scores_Interest <span class="token operator">=</span> base<span class="token punctuation">[</span><span class="token string">'scores'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'score'</span><span class="token punctuation">]</span>
+        <span class="token keyword">elif</span> <span class="token builtin">len</span><span class="token punctuation">(</span>base<span class="token punctuation">[</span><span class="token string">'scores'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">:</span>
+            scores_View <span class="token operator">=</span> base<span class="token punctuation">[</span><span class="token string">'scores'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'score'</span><span class="token punctuation">]</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            scores_View<span class="token operator">=</span><span class="token operator">-</span><span class="token number">1</span>
+            scores_Interest<span class="token operator">=</span><span class="token operator">-</span><span class="token number">1</span>
+            scores_Cost<span class="token operator">=</span><span class="token operator">-</span><span class="token number">1</span>
+        scores<span class="token operator">=</span><span class="token punctuation">[</span>scores_View<span class="token punctuation">,</span>scores_Interest<span class="token punctuation">,</span>scores_Cost<span class="token punctuation">]</span>
+
+        comment<span class="token operator">=</span>base<span class="token punctuation">[</span><span class="token string">'content'</span><span class="token punctuation">]</span>
+        address<span class="token operator">=</span>base<span class="token punctuation">[</span><span class="token string">'ipLocatedName'</span><span class="token punctuation">]</span>
+        sendTime<span class="token operator">=</span><span class="token builtin">str</span><span class="token punctuation">(</span>base<span class="token punctuation">[</span><span class="token string">'publishTypeTag'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+        <span class="token keyword">global</span> count
+        count<span class="token operator">+=</span><span class="token number">1</span>
+        <span class="token comment"># print(userNick,scores,comment,address,sendTime)</span>
+        datas<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token punctuation">(</span>count<span class="token punctuation">,</span>userNick<span class="token punctuation">,</span>scores<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>scores<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>scores<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span>comment<span class="token punctuation">,</span>address<span class="token punctuation">,</span>sendTime<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> datas
+
+<span class="token keyword">def</span> <span class="token function">CreateDB</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># 建立数据库连接</span>
+    db <span class="token operator">=</span> pymysql<span class="token punctuation">.</span>connect<span class="token punctuation">(</span>host<span class="token operator">=</span><span class="token string">'localhost'</span><span class="token punctuation">,</span> user<span class="token operator">=</span><span class="token string">'root'</span><span class="token punctuation">,</span> password<span class="token operator">=</span><span class="token string">'123456'</span><span class="token punctuation">,</span> db<span class="token operator">=</span><span class="token string">'spider01'</span><span class="token punctuation">,</span> charset<span class="token operator">=</span><span class="token string">'utf8mb4'</span><span class="token punctuation">)</span>
+    <span class="token comment"># 获取游标对象</span>
+    cursor <span class="token operator">=</span> db<span class="token punctuation">.</span>cursor<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token comment"># 创建表，如果表已经存在，注意主键不要重复，否则出错</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span><span class="token string">'create table ScenicspotComments(id int primary key,Spotname varchar(256),userNick varchar(500),scores_View int,scores_Interest  int,scores_Cost  int,comment varchar(1000),address varchar(256),sendTime varchar(128)) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;'</span><span class="token punctuation">)</span>
+    <span class="token keyword">except</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'表已存在'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">InsertDatabase</span><span class="token punctuation">(</span><span class="token builtin">id</span><span class="token punctuation">,</span>Spotname<span class="token punctuation">,</span>userNick<span class="token punctuation">,</span>scores_View<span class="token punctuation">,</span>scores_Interest<span class="token punctuation">,</span>scores_Cost<span class="token punctuation">,</span>comment<span class="token punctuation">,</span>address<span class="token punctuation">,</span>sendTime<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># 建立数据库连接</span>
+    db <span class="token operator">=</span> pymysql<span class="token punctuation">.</span>connect<span class="token punctuation">(</span>host<span class="token operator">=</span><span class="token string">'localhost'</span><span class="token punctuation">,</span> user<span class="token operator">=</span><span class="token string">'root'</span><span class="token punctuation">,</span> password<span class="token operator">=</span><span class="token string">'123456'</span><span class="token punctuation">,</span> db<span class="token operator">=</span><span class="token string">'spider01'</span><span class="token punctuation">,</span> charset<span class="token operator">=</span><span class="token string">'utf8mb4'</span><span class="token punctuation">)</span>
+    <span class="token comment"># 获取游标对象</span>
+    cursor <span class="token operator">=</span> db<span class="token punctuation">.</span>cursor<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token comment"># 插入数据语句</span>
+    query <span class="token operator">=</span> <span class="token string">"insert into ScenicspotComments values(%d,'%s','%s',%d,%d,%d,'%s','%s','%s')"</span> <span class="token operator">%</span><span class="token punctuation">(</span><span class="token builtin">id</span><span class="token punctuation">,</span>Spotname<span class="token punctuation">,</span>userNick<span class="token punctuation">,</span>scores_View<span class="token punctuation">,</span>scores_Interest<span class="token punctuation">,</span>scores_Cost<span class="token punctuation">,</span>comment<span class="token punctuation">,</span>address<span class="token punctuation">,</span>sendTime<span class="token punctuation">)</span>
+
+    cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>query<span class="token punctuation">)</span>
+    <span class="token comment"># 关闭游标，提交，关闭数据库连接</span>
+    <span class="token comment"># 如果没有这些关闭操作，执行后在数据库中查看不到数据</span>
+    cursor<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    db<span class="token punctuation">.</span>commit<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    db<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">SelectDatabase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># 重新建立数据库连接</span>
+    db <span class="token operator">=</span> pymysql<span class="token punctuation">.</span>connect<span class="token punctuation">(</span>host<span class="token operator">=</span><span class="token string">'localhost'</span><span class="token punctuation">,</span> user<span class="token operator">=</span><span class="token string">'root'</span><span class="token punctuation">,</span> password<span class="token operator">=</span><span class="token string">'123456'</span><span class="token punctuation">,</span> db<span class="token operator">=</span><span class="token string">'spider01'</span><span class="token punctuation">,</span>charset<span class="token operator">=</span><span class="token string">'utf8mb4'</span><span class="token punctuation">)</span>
+    cursor <span class="token operator">=</span> db<span class="token punctuation">.</span>cursor<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token comment"># 查询数据库并打印内容</span>
+    cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span><span class="token triple-quoted-string string">'''select * from ScenicspotComments'''</span><span class="token punctuation">)</span>
+    results <span class="token operator">=</span> cursor<span class="token punctuation">.</span>fetchall<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> row <span class="token keyword">in</span> results<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>row<span class="token punctuation">)</span>
+    <span class="token comment"># 关闭</span>
+    cursor<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    db<span class="token punctuation">.</span>commit<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    db<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># // ['result']['items']</span>
+<span class="token comment"># // 用户名 ['userInfo']['userNick']</span>
+<span class="token comment"># // 用户头像 ['userInfo']['userImage']</span>
+<span class="token comment"># // 评分  ['scores'] 景色[0]['score'] 趣味[1]['score'] 性价比[2]['score']</span>
+<span class="token comment"># // 评论 ['content']</span>
+<span class="token comment"># // 地区 ['ipLocatedName']</span>
+<span class="token comment"># // 发布时间 ['publishTypeTag']</span>
+
+word<span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token string">'桃花源古镇'</span><span class="token punctuation">,</span>
+    <span class="token string">'安仁古镇'</span><span class="token punctuation">,</span>
+    <span class="token string">'洛带古镇'</span>
+    <span class="token string">'黄龙溪古镇'</span><span class="token punctuation">,</span>
+    <span class="token string">'明月山旅游区(潭下村)'</span><span class="token punctuation">,</span>
+    <span class="token string">'里耶古城'</span><span class="token punctuation">,</span>
+    <span class="token string">'洪江古商城'</span><span class="token punctuation">,</span>
+    <span class="token string">'白石山风景区'</span><span class="token punctuation">,</span>
+    <span class="token string">'淘金小镇'</span><span class="token punctuation">,</span>
+    <span class="token string">'月牙泉小镇'</span>
+<span class="token punctuation">]</span>
+
+Spotlist<span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">'桃花源古镇'</span><span class="token punctuation">:</span><span class="token number">79536</span><span class="token punctuation">,</span>
+    <span class="token string">'安仁古镇'</span><span class="token punctuation">:</span><span class="token number">90181</span><span class="token punctuation">,</span>
+    <span class="token string">'洛带古镇'</span><span class="token punctuation">:</span><span class="token number">82946</span><span class="token punctuation">,</span>
+    <span class="token string">'黄龙溪古镇'</span><span class="token punctuation">:</span><span class="token number">81011</span><span class="token punctuation">,</span>
+    <span class="token string">'明月山旅游区(潭下村)'</span><span class="token punctuation">:</span><span class="token number">10758280</span><span class="token punctuation">,</span>
+    <span class="token string">'里耶古城'</span><span class="token punctuation">:</span><span class="token number">99742</span><span class="token punctuation">,</span>
+    <span class="token string">'洪江古商城'</span><span class="token punctuation">:</span><span class="token number">80764</span><span class="token punctuation">,</span>
+    <span class="token string">'白石山风景区'</span><span class="token punctuation">:</span><span class="token number">101017</span><span class="token punctuation">,</span>
+    <span class="token string">'淘金小镇'</span><span class="token punctuation">:</span><span class="token number">101436</span><span class="token punctuation">,</span>
+    <span class="token string">'月牙泉小镇'</span><span class="token punctuation">:</span><span class="token number">30096431</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">if</span> __name__<span class="token operator">==</span><span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    <span class="token comment"># 请求对象定制</span>
+    url<span class="token operator">=</span><span class="token string">'https://m.ctrip.com/restapi/soa2/13444/json/getCommentCollapseList'</span>
+    <span class="token comment"># 新建数据库</span>
+    CreateDB<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token comment"># 遍历景点</span>
+    <span class="token keyword">for</span> word<span class="token punctuation">,</span>poiId <span class="token keyword">in</span> Spotlist<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment"># print(word,poiId)</span>
+        spotname<span class="token operator">=</span>word
+        <span class="token comment"># 每个景点页数不统一 增加异常处理 数组越界退出程序</span>
+        <span class="token keyword">try</span><span class="token punctuation">:</span>
+            <span class="token comment"># 遍历页数 重点修改range右值 目前爬取20页</span>
+            <span class="token keyword">for</span> page <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                request <span class="token operator">=</span> create_request<span class="token punctuation">(</span>url<span class="token punctuation">,</span> poiId<span class="token punctuation">,</span> page<span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span>
+                <span class="token comment"># 发送请求获取数据</span>
+                content <span class="token operator">=</span> get_content<span class="token punctuation">(</span>request<span class="token punctuation">)</span>
+                <span class="token comment"># 解析数据 下载文件</span>
+                datas<span class="token operator">=</span>down_load<span class="token punctuation">(</span>content<span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span>
+                <span class="token comment"># print(datas)</span>
+                <span class="token comment"># 插入数据库</span>
+                <span class="token keyword">for</span> row <span class="token keyword">in</span> datas<span class="token punctuation">:</span>
+                    InsertDatabase<span class="token punctuation">(</span>row<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>spotname<span class="token punctuation">,</span>row<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>row<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span>row<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span>row<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">,</span>row<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">,</span>row<span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">,</span>row<span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token keyword">except</span><span class="token punctuation">(</span>IndexError<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"=======爬取完成 共{}条评论数据============"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">finally</span><span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"=======爬取完成 已入库 共{}条评论数据======"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    <span class="token comment"># 查询数据库内容 是否插入成功</span>
+    <span class="token comment"># SelectDatabase()</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+        </div>
+
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+<nav class="article-nav">
+  
+    <a href="/2022/js-basic/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-caption">下一篇</div>
+      <div class="article-nav-title">
+        
+          学习札记-JavaScript基础知识
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/spider/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-caption">上一篇</div>
+      <div class="article-nav-title">学习札记-Python爬虫基础入门</div>
+    </a>
+  
+</nav>
+
+
+    <section class="share">
+        <div class="share-title">分享</div>
+        <a class="share-item" target="_blank"
+            href="https://twitter.com/share?text=记录手敲Python爬虫案例练习“ - Kmoon | 个人学习记录&url=https%3A%2F%2Fwww.kmoon.fun%2F2022%2Fspider-example%2F">
+            <ion-icon name="logo-twitter"></ion-icon>
+        </a>
+        <a class="share-item" target="_blank"
+            href="https://www.facebook.com/sharer.php?title=记录手敲Python爬虫案例练习“ - Kmoon | 个人学习记录&u=https%3A%2F%2Fwww.kmoon.fun%2F2022%2Fspider-example%2F">
+            <ion-icon name="logo-facebook"></ion-icon>
+        </a>
+        <!-- <a class="share-item" target="_blank"
+            href="https://service.weibo.com/share/share.php?title=记录手敲Python爬虫案例练习“ - Kmoon | 个人学习记录&url=https://www.kmoon.fun/2022/spider-example/&pic=">
+            <div class="n-icon n-icon-weibo"></div>
+        </a> -->
+    </section>
+
+</article>
+
+
+
+
+
+
+
+
+
+
+<section class="comments">
+    <div id="valine-container"></div>
+</section>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+
+
+
+
+
+
+<script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+</div>
+                </section>
+            </section>
+
+            
+            <aside class="sidebar sidebar-search-fix">
+                
+
+    <div class="search">
+    <div class="has-icon-right">
+        <input type="text" class="form-input" id="search" placeholder="SEARCH" autocomplete="off">
+        <div class="form-icon">
+            <ion-icon name="search"></ion-icon>
+        </div>
+    </div>
+    <div class="search-result" id="search-ps"></div>
+</div>
+
+
+<div class="widget" id="widget">
+    
+      
+  <div class="widget-wrap">
+    <div class="widget-inner">
+      <div class="toc post-toc-html"></div>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap widget-cate">
+    <div class="widget-title"><span>Categories</span></div>
+    <div class="widget-inner">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/XiaoHu-s-Daily/">XiaoHu's Daily</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BB%96%E5%B1%B1%E4%B9%8B%E7%9F%B3/">他山之石</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/">刷题笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E4%B8%89%E4%BB%B6%E5%A5%97/">前端三件套</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E6%9C%AD%E8%AE%B0/">学习札记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/">实验报告</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%87%92%E4%BA%BA%E5%BF%85%E5%A4%87/">懒人必备</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%AA%E5%91%BD%E5%90%8D/">未命名</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B7%B1%E6%B8%8A/">深渊</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7/">渗透工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/">渗透测试</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9D%B6%E5%9C%BA%E6%97%A5%E8%AE%B0/">靶场日记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%A1%B9%E7%9B%AE%E8%AE%A1%E5%88%92/">项目计划</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap widget-tags">
+    <div class="widget-title"><span>Tags</span></div>
+    <div class="widget-inner">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/51%E5%8D%95%E7%89%87%E6%9C%BA/" rel="tag">51单片机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google/" rel="tag">Google</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RNN/" rel="tag">RNN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/" rel="tag">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SRC/" rel="tag">SRC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sec/" rel="tag">Sec</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Swing/" rel="tag">Swing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WUT/" rel="tag">WUT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Whut/" rel="tag">Whut</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/" rel="tag">Windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XSS/" rel="tag">XSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/daily/" rel="tag">daily</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hacker/" rel="tag">hacker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdwon/" rel="tag">markdwon</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/me/" rel="tag">me</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nmap/" rel="tag">nmap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/upload/" rel="tag">upload</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web%E5%AE%89%E5%85%A8/" rel="tag">web安全</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/" rel="tag">信息收集</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%B3%E7%B3%BB%E4%BB%A3%E6%95%B0/" rel="tag">关系代数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/" rel="tag">单片机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%8D%E4%B9%A0%E9%A2%98/" rel="tag">复习题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/" rel="tag">实验报告</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/" rel="tag">数学建模</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">数据库系统原理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/" rel="tag">文件上传漏洞</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7/" rel="tag">渗透工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" rel="tag">渗透测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%88%AC%E8%99%AB/" rel="tag">爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%88%AC%E8%99%AB%E6%A1%88%E4%BE%8B/" rel="tag">爬虫案例</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%84%E7%BD%91%E6%8A%80%E6%9C%AF/" rel="tag">组网技术</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%BD%91/" rel="tag">计网</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B7%A8%E7%AB%99%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0%E6%BC%8F%E6%B4%9E/" rel="tag">跨站请求伪造漏洞</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%B6%E5%9C%BA/" rel="tag">靶场</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap widget-recent-posts">
+    <div class="widget-title"><span>Recent Posts</span></div>
+    <div class="widget-inner">
+      <ul>
+        
+          <li>
+            <a href="/2023/null/">学习札记-JavaScript自查文档</a>
+          </li>
+        
+          <li>
+            <a href="/2023/null/">学习札记-CSS自查文档</a>
+          </li>
+        
+          <li>
+            <a href="/2023/html/">学习札记-HTML自查文档</a>
+          </li>
+        
+          <li>
+            <a href="/2022/code/">他山之石-代码随想录知识星球文库</a>
+          </li>
+        
+          <li>
+            <a href="/2022/js-basic/">学习札记-JavaScript基础知识</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap widget-archive">
+    <div class="widget-title"><span>Archive</span></div>
+    <div class="widget-inner">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a></li></ul>
+    </div>
+  </div>
+
+
+    
+</div>
+
+<div id="backtop"><i class="icon icon-arrow-up"></i></div>
+            </aside>
+            
+        </div>
+    </div>
+
+    <footer class="footer">
+    <div class="footer-wave">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#3c4859" fill-opacity="1" d="M0,160L60,181.3C120,203,240,245,360,240C480,235,600,181,720,186.7C840,192,960,256,1080,261.3C1200,267,1320,213,1380,186.7L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
+    </div>
+
+    <!-- Please do not remove this -->
+    <!-- 开源不易，请勿删除 -->
+    <div class="footer-wrap">
+        <div class="footer-inner"> 
+            Kmoon | 个人学习记录 &copy; 2023<br>
+            Powered By Hexo · Theme By <a href="https://linhong.me/" target="_blank">Aomori</a> · <a href="https://github.com/lh1me/hexo-theme-aomori" target="_blank">Github</a>
+			<br><img src="https://www.beian.gov.cn/img/new/gongan.png">
+<a href="https://beian.miit.gov.cn/" target="_blank">渝ICP备2022011774号-1</a>
+
+
+        </div>
+    </div>
+
+</footer>
+
+<script type="module" src="https://unpkg.com/ionicons@6.0.2/dist/ionicons/ionicons.esm.js"></script>
+
+
+
+
+
+
+<script src="/dist/build.js?1654266144177.js"></script>
+
+
+<script src="/dist/custom.js?1654266144177.js"></script>
+
+
+
+<!-- 百度链接提交 -->
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":220,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+</html>

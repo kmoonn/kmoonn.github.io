@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    
+    <title>学习札记-JavaScript基础知识 | Kmoon | 个人学习记录</title>
+
+    <meta name="description" content="&lt;p&gt;前端三件套——JavaScript基础知识&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;两周速通 14 Days&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;[TOC]&lt;/p&gt;">
+    <meta name="keywords" content="">
+
+    
+
+    <meta property="og:locale" content="cn" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content= "学习札记-JavaScript基础知识 | Kmoon | 个人学习记录"  />
+    <meta property="og:description" content= "&lt;p&gt;前端三件套——JavaScript基础知识&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;两周速通 14 Days&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;[TOC]&lt;/p&gt;" />
+    <meta property="og:url" content="https://www.kmoon.fun/2022/js-basic/index.html" />
+    <meta property="og:site_name" content="" />
+    <meta property="article:author" content="Kmoon" />
+    <meta property="article:publisher" content="" />
+    <meta property="og:description" content="&lt;p&gt;前端三件套——JavaScript基础知识&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;两周速通 14 Days&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;[TOC]&lt;/p&gt;" />
+    <meta name="twitter:title" content="学习札记-JavaScript基础知识 | Kmoon | 个人学习记录"/>
+    <meta name="twitter:description" content="&lt;p&gt;前端三件套——JavaScript基础知识&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;两周速通 14 Days&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;[TOC]&lt;/p&gt;"/>
+    <script type="application/ld+json">
+        {
+            "description": "&lt;p&gt;前端三件套——JavaScript基础知识&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;两周速通 14 Days&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;[TOC]&lt;/p&gt;",
+            "author": { "@type": "Person", "name": "Kmoon" },
+            "@type": "BlogPosting",
+            "url": "https://www.kmoon.fun/2022/js-basic/index.html",
+            "publisher": {
+            "@type": "Organization",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.kmoon.fun/image/avatar.png"
+            },
+            "name": "Kmoon"
+            },
+            "headline": "学习札记-JavaScript基础知识 | Kmoon | 个人学习记录",
+            "datePublished": "2022-12-24T06:58:10.000Z",
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://www.kmoon.fun/2022/js-basic/index.html"
+            },
+            "@context": "http://schema.org"
+        }
+    </script>
+
+
+
+
+    
+
+    
+    <meta property="algolia:search" data-application-id="8Z51BHYAUH" data-api-key="dbc9dafd607e95ea5aa312369120eabd" data-index-name="kmoon_blog">
+    
+
+    
+
+    
+
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌜️</text></svg>">
+    
+
+    
+
+    
+
+    
+<link rel="stylesheet" href="/dist/build.css?v=1654266144177.css">
+
+
+    
+<link rel="stylesheet" href="/dist/custom.css?v=1654266144177.css">
+
+
+    <script>
+        window.isPost = true
+        window.aomori = {
+            
+            
+            valine: {
+                enable: true,
+                appId: "i7G1tHcsR13KVa00grUUf6mr-gzGzoHsz",
+                appKey: "94N35fphXFiN5BGMNS9V5mHe",
+                placeholder: "Hello World!",
+                avatar: "",
+                pageSize: "10",
+                lang: "zh-CN",
+                visitor: false,
+                highlight: false,
+                recordIP: false,
+                emojiCDN: "",
+                enableQQ: false,
+                requiredFields: []
+            },
+            
+            
+        }
+        window.aomori_logo_typed_animated = true
+        window.aomori_search_algolia = true
+
+    </script>
+
+<meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Kmoon | 个人学习记录" type="application/atom+xml">
+</head>
+
+<body>
+
+    <div class="container">
+    <header class="header">
+        <div class="header-type">
+            
+            <div class="header-type-avatar avatar avatar-sm">
+                <img src="/image/avatar.png" alt="Kmoon">
+            </div>
+            
+            <div class="header-type-inner">
+                
+                    <div id="typed-strings" style="display:none">
+                        <p>Kmoon | 个人学习记录</p>
+                    </div>
+                    <a class="header-type-title" id="typed" href="/"></a>
+                
+    
+                
+            </div>
+        </div>
+        <div class="header-menu">
+            <div class="header-menu-inner">
+                
+                <a href="/">主页</a>
+                
+                <a href="/archives">归档</a>
+                
+                <a href="/2022/10/about/">关于</a>
+                
+                <a href="/friends">友链</a>
+                
+                <a href="/photography">摄影</a>
+                
+                <a href="/categories/%E6%B7%B1%E6%B8%8A/">深渊</a>
+                
+                <a href="/wiki/">Wiki</a>
+                
+            </div>
+            <div class="header-menu-social">
+                
+    <a class="social" target="_blank" href="https://github.com/kmoonn/">
+        <ion-icon name="logo-github"></ion-icon>
+    </a>
+
+    <a class="social" target="_blank" href="">
+        <ion-icon name="logo-wechat"></ion-icon>
+    </a>
+
+            </div>
+        </div>
+
+        <div class="header-menu-mobile">
+            <div class="header-menu-mobile-inner" id="mobile-menu-open">
+                <i class="icon icon-menu"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="header-menu-mobile-menu">
+        <div class="header-menu-mobile-menu-bg"></div>
+        <div class="header-menu-mobile-menu-wrap">
+            <div class="header-menu-mobile-menu-inner">
+                <div class="header-menu-mobile-menu-close" id="mobile-menu-close">
+                    <i class="icon icon-cross"></i>
+                </div>
+                <div class="header-menu-mobile-menu-list">
+                    
+                    <a href="/">主页</a>
+                    
+                    <a href="/archives">归档</a>
+                    
+                    <a href="/2022/10/about/">关于</a>
+                    
+                    <a href="/friends">友链</a>
+                    
+                    <a href="/photography">摄影</a>
+                    
+                    <a href="/categories/%E6%B7%B1%E6%B8%8A/">深渊</a>
+                    
+                    <a href="/wiki/">Wiki</a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <div class="container">
+        <div class="main">
+            <section class="inner">
+                <section class="inner-main">
+                    <div class="post">
+    <article id="post-cld1b87d6002no8vm6kku8hy3" class="article article-type-post" itemscope
+    itemprop="blogPost">
+
+    <div class="article-inner">
+
+        
+          
+        
+        
+        
+
+        
+        <header class="article-header">
+            
+  
+    <h1 class="article-title" itemprop="name">
+      学习札记-JavaScript基础知识
+    </h1>
+  
+
+        </header>
+        
+
+        <div class="article-more-info article-more-info-post hairline">
+
+            <div class="article-date">
+  <time datetime="2022-12-24T06:58:10.000Z" itemprop="datePublished">2022-12-24</time>
+</div>
+
+            
+            <div class="article-category">
+                <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E6%9C%AD%E8%AE%B0/">学习札记</a>
+            </div>
+            
+
+            
+            <div class="article-tag">
+                <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul>
+            </div>
+            
+
+            
+            <div class="article-busuanzi">
+                <span id="busuanzi_value_page_pv">N</span> 人看过
+            </div>
+            
+
+        </div>
+
+        <div class="article-entry post-inner-html hairline" itemprop="articleBody">
+            <p>前端三件套——JavaScript基础知识</p>
+<p><strong>两周速通 14 Days</strong></p>
+<p>[TOC]</p>
+<span id="more"></span>
+
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><h2 id="起源"><a href="#起源" class="headerlink" title="起源"></a>起源</h2><img src="http://image.kmoon.fun//images/202212271325905.png" alt="image-20221227132432781" style="zoom:50%;">
+
+<p>JavaScript诞生于1995年，主要用于处理网页中的前端验证。</p>
+<p>前端验证就是指检查用户输入的内容是否符合一定的规则。</p>
+<p>比如用户名的长度、密码的长度、邮箱的格式。</p>
+<p>一个完整的JavaScript实现应该由以下三部分组成：</p>
+<p><img src="C:/Users/34538/AppData/Roaming/Typora/typora-user-images/image-20221224152635950.png" alt="image-20221224152635950"></p>
+<h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ul>
+<li><p>解释型语言 </p>
+<p>不需要编译 直接执行</p>
+</li>
+<li><p>类似于C和Java的语法结构</p>
+</li>
+<li><p>动态语言</p>
+</li>
+<li><p>基于原型的面向对象</p>
+</li>
+</ul>
+<h2 id="初识"><a href="#初识" class="headerlink" title="初识"></a>初识</h2><p>js代码需要编写到<strong>script标签</strong>中</p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+    <span class="token comment">&lt;!--JS代码需要编写到script标签中--&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+      <span class="token comment">/*
+       * 控制浏览器弹出一个警告框
+       * alert("哥，你真帅啊！！");
+       */</span>
+      <span class="token comment">/*
+       * 让计算机在页面中输出一个内容
+       * document.write()可以向body中输出一个内容
+       * document.write("看我出不出来~~~");
+       */</span>
+      <span class="token comment">/*
+       * 向控制台输出一个内容
+       * console.log()的作用是向控制台输出一个内容
+       * console.log("你猜我在哪出来呢？");
+       */</span>
+      <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"哥，你真帅啊！！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"看我出不出来~~~"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"你猜我在哪出来呢？"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="编写位置"><a href="#编写位置" class="headerlink" title="编写位置"></a>编写位置</h2><p>目前学习的JS全部是客户端的JS，全部都需要在浏览器中运行，所以我们的JS代码全部需要在网页中编写。</p>
+<p>JS代码编写位置</p>
+<ul>
+<li><p>某些标签的属性中</p>
+<p>例如button的onclick属性中，当点击按钮时js代码才会执行；</p>
+<p>例如超链接a标签的href属性中，当点击超链接时才会执行js代码。</p>
+<p>（但是这种属于结构与行为耦合，不方面维护，不推荐使用。）</p>
+</li>
+<li><p>script标签中</p>
+<p>刷新网页即可运行js代码，script标签一旦用于引入外部文件就不能在标签中编写其他js代码，浏览器会忽略。</p>
+<p>如果需要则可以重新创建一个新的script标签用于编写内部代码。</p>
+<p>一般将script标签写在head中，和style标签类似。</p>
+<p>script标签的属性：</p>
+<ul>
+<li><strong>type</strong> 默认值text/javascript可以不写。</li>
+<li><strong>src</strong> 当需要引入一个外部的js文件时，使用该属性指向文件的地址。</li>
+</ul>
+</li>
+<li><p>外部js文件中</p>
+<p>通过script标签引入，写在外部文件中可以在不同的页面中同时引用，也可以利用浏览器的缓存机制，推荐使用。</p>
+</li>
+</ul>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>js/script.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+      
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+      <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"我是内部的JS代码"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+      
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+		<span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"我是script标签中的代码！！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token special-attr"><span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value javascript language-javascript"><span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'讨厌，你点我干嘛~~'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">&gt;</span></span>点我一下<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>javascript:alert('让你点你就点！！');<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>你也点我一下<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>javascript:;<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>你也点我一下<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h1 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h1><h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>单行注释 //</p>
+<p>多行注释/* */</p>
+<p>注释中的内容不会被执行，但是可以在源代码中查看。</p>
+<h2 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h2><ol>
+<li>JS中<strong>严格区分大小写</strong></li>
+<li>JS中每一条语句以分号(;)结尾</li>
+</ol>
+<blockquote>
+<p>如果不写分号，浏览器会自动添加，但是会消耗一些系统资源，而且有些时候，浏览器会加错分号，所以在开发中分号必须写。</p>
+</blockquote>
+<ol start="3">
+<li>JS中会忽略多个空格和换行，所以我们可以利用空格和换行对代码进行格式化</li>
+</ol>
+<h2 id="字面量-amp-变量"><a href="#字面量-amp-变量" class="headerlink" title="字面量&amp;变量"></a>字面量&amp;变量</h2><ul>
+<li>字面量</li>
+</ul>
+<p>不可改变的值，比如1 2 3 4 5 。</p>
+<p>字面量都是可以直接使用，但是一般都不会直接使用字面量。</p>
+<ul>
+<li>变量</li>
+</ul>
+<p>变量的作用是给某一个值或对象标注名称</p>
+<p>变量可以用来保存字面量，而且变量的值是可以任意改变的。</p>
+<p>在js中使用<strong>var</strong>关键字来声明一个变量。</p>
+<h2 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h2><p>变量、函数、属性、函数参数的名字</p>
+<p>在JS中所有的可以由我们自主命名的都可以称为是标识符</p>
+<ul>
+<li>规则</li>
+</ul>
+<ol>
+<li><p>标识符中可以含有<strong>字母、数字、_、$</strong></p>
+</li>
+<li><p>标识符不能以数字开头</p>
+</li>
+<li><p>标识符不能是ES中的<strong>关键字或保留字</strong></p>
+<img src="http://image.kmoon.fun//images/202212262123869.png" alt="image-20221226212347713" style="zoom: 67%;">
+</li>
+<li><p>标识符一般都采用<strong>驼峰命名法</strong></p>
+<p> (首字母小写，每个单词的开头字母大写，其余字母小写)</p>
+</li>
+</ol>
+<blockquote>
+<p>JS底层保存标识符时实际上是采用的Unicode编码</p>
+<p>所以理论上讲，所有的utf-8中含有的内容都可以作为标识符</p>
+</blockquote>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>字面量的类型</p>
+<p>在JS中一共有<strong>六种</strong>数据类型:</p>
+<ul>
+<li><p>Sring 字符串</p>
+</li>
+<li><p>Number 数值</p>
+</li>
+<li><p>Boolean 布尔值</p>
+</li>
+<li><p>Null 空值</p>
+</li>
+<li><p>Undefined 未定义</p>
+</li>
+<li><p>Object 对象</p>
+</li>
+</ul>
+<blockquote>
+<p>String Number Boolean Null Undefined属于基本数据类型 </p>
+<p>Object属于引用数据类型</p>
+</blockquote>
+<h3 id="typeof运算符"><a href="#typeof运算符" class="headerlink" title="typeof运算符"></a>typeof运算符</h3><p>检查一个变量的数据类型</p>
+<p><code>typeof 数据</code></p>
+<img src="http://image.kmoon.fun//images/202212271348449.png" alt="image-20221227134832386" style="zoom:50%;">
+
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p>String用于表示一个字符序列，即字符串。</p>
+<p>字符串需要使用引号引起来</p>
+<p>当表示一些特殊符号时可以使用\进行转义</p>
+<p><img src="http://image.kmoon.fun//images/202212271349327.png" alt="image-20221227134955272"></p>
+<h3 id="Number"><a href="#Number" class="headerlink" title="Number"></a>Number</h3><p>在JS中所有的数值都是Number类型，包括整数和浮点数。</p>
+<p>JS中可以表示的数字的最大值：</p>
+<p><strong>Number.MAX_VALUE</strong>：1.7976931348623157e+308</p>
+<p><strong>Number.MIN_VALUE</strong> 大于0的最小值：5e-324</p>
+<p>如果使用Number表示的数字超过了最大值，则会返回一个</p>
+<ul>
+<li><p>Infinity 表示正无穷</p>
+</li>
+<li><p>-Infinity 表示负无穷</p>
+</li>
+</ul>
+<p>使用typeof检查Infinity也会返回number</p>
+<p>NaN 是一个特殊的数字，表示Not A Number</p>
+<p>使用typeof检查一个NaN也会返回number</p>
+<p>在JS中整数的运算基本可以保证精确</p>
+<p>如果使用JS进行浮点运算，可能得到一个不精确的结果</p>
+<ul>
+<li>数值的转换</li>
+</ul>
+<p><img src="http://image.kmoon.fun//images/202212271350115.png" alt="image-20221227135052057"></p>
+<h3 id="布尔值"><a href="#布尔值" class="headerlink" title="布尔值"></a>布尔值</h3><p>Boolean 布尔值 逻辑值类型或者真假值类型</p>
+<p>只有两个 主要用于逻辑判断</p>
+<p>true false</p>
+<p><img src="http://image.kmoon.fun//images/202212271352056.png" alt="image-20221227135220985"></p>
+<h3 id="Null"><a href="#Null" class="headerlink" title="Null"></a>Null</h3><p>Null（空值）类型的值只有一个，就是特殊的null。</p>
+<p>null这个值专门用来表示一个为空的对象</p>
+<p>使用typeof检查一个null值时，会返回object。</p>
+<p>undefined值实际上是由null值衍生出来的，所以如果比较undefined和null是否相等，会返回true。</p>
+<h3 id="Undefined"><a href="#Undefined" class="headerlink" title="Undefined"></a>Undefined</h3><p>Undefined（未定义）类型的值只有一个，就是特殊的undefind。</p>
+<p>当声明一个变量，但是并不给变量赋值时，它的值就是undefined。</p>
+<p>使用typeof检查一个undefined时也会返回undefined</p>
+<h3 id="强制类型转换"><a href="#强制类型转换" class="headerlink" title="强制类型转换"></a>强制类型转换</h3><ol>
+<li>转换为String</li>
+</ol>
+<ul>
+<li>toString()方法</li>
+<li>String()函数</li>
+</ul>
+<ol start="2">
+<li><p>转换为Number</p>
+</li>
+<li><p>转换为Boolean</p>
+</li>
+</ol>
+<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><h4 id="算数运算符"><a href="#算数运算符" class="headerlink" title="算数运算符"></a>算数运算符</h4><p>一元运算符</p>
+<p>自增自减</p>
+<p><img src="http://image.kmoon.fun//images/202212271355472.png" alt="image-20221227135510415"></p>
+<h4 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h4><p>非布尔值的与或运算</p>
+<p><img src="http://image.kmoon.fun//images/202212271355897.png" alt="image-20221227135555839"></p>
+<h4 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h4><p>=</p>
+<p><img src="http://image.kmoon.fun//images/202212271357898.png" alt="image-20221227135750838"></p>
+<h4 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a>关系运算符</h4><p>Unicode编码表</p>
+<h4 id="相等运算符"><a href="#相等运算符" class="headerlink" title="相等运算符"></a>相等运算符</h4><p>==	!=</p>
+<p><img src="http://image.kmoon.fun//images/202212271358029.png" alt="image-20221227135845967"></p>
+<p>全等</p>
+<p>===</p>
+<p><img src="http://image.kmoon.fun//images/202212271359150.png" alt="image-20221227135925087"></p>
+<h4 id="条件运算符"><a href="#条件运算符" class="headerlink" title="条件运算符"></a>条件运算符</h4><p>三元运算符 ?:</p>
+<h4 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h4><img src="http://image.kmoon.fun//images/202212271400387.png" alt="image-20221227140035327" style="zoom:67%;">
+
+<h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h2><p>{} 将多条语句的集合视为一条语句来使用</p>
+<p>一般使用代码块将需要一起执行的语句进行分组</p>
+<p>需要注意的是，代码块结尾<strong>不需要加分号</strong></p>
+<h2 id="条件语句"><a href="#条件语句" class="headerlink" title="条件语句"></a>条件语句</h2><h3 id="if…else-if…else"><a href="#if…else-if…else" class="headerlink" title="if…else if…else"></a>if…else if…else</h3><h3 id="siwtch-case…break"><a href="#siwtch-case…break" class="headerlink" title="siwtch..case…break"></a>siwtch..case…break</h3><h2 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h2><h3 id="while"><a href="#while" class="headerlink" title="while"></a>while</h3><h3 id="do…while"><a href="#do…while" class="headerlink" title="do…while"></a>do…while</h3><h3 id="for"><a href="#for" class="headerlink" title="for"></a>for</h3><h2 id="break-amp-continue"><a href="#break-amp-continue" class="headerlink" title="break&amp;continue"></a>break&amp;continue</h2><p>break只在循环和switch语句中使用</p>
+<p>continue只在循环中使用</p>
+<h2 id="label"><a href="#label" class="headerlink" title="label"></a>label</h2><p>使用标签语句可以在代码中添加标签，以便将来使用。</p>
+<p>语法：</p>
+<ul>
+<li>label: statement</li>
+</ul>
+<p><img src="http://image.kmoon.fun//images/202212271407656.png" alt="image-20221227140738596"></p>
+<h1 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h1><h2 id="简介-1"><a href="#简介-1" class="headerlink" title="简介"></a>简介</h2><p>对象属于一种复合数据类型，可以保存多个不同数据类型的属性。</p>
+<h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><p>内建对象：ES标准中定义的对象</p>
+<p>宿主对象：浏览器提供的对象 BOM、DOM</p>
+<p>自建对象：开发人员自己创建的对象</p>
+<h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><p>使用new关键字调用的函数是构造函数，构造函数专门用来创建对象。</p>
+<p><code>var obj = new Object();</code></p>
+<p>在对象中保存的值称为属性</p>
+<p><code>obj.name = "孙悟空";</code></p>
+<p>删除对象的属性</p>
+<p><code>delete obj.name;</code></p>
+<p>检查对象是否还有某个属性</p>
+<p><code>属性名 in 对象名</code></p>
+<h2 id="属性名-amp-属性值"><a href="#属性名-amp-属性值" class="headerlink" title="属性名&amp;属性值"></a>属性名&amp;属性值</h2><img src="http://image.kmoon.fun//images/202301041906653.png" alt="image-20230101171551262" style="zoom:50%;">
+
+<h2 id="基本数据类型-amp-引用数据类型"><a href="#基本数据类型-amp-引用数据类型" class="headerlink" title="基本数据类型&amp;引用数据类型"></a>基本数据类型&amp;引用数据类型</h2><p>引用类型的值是保存在内存中的对象</p>
+<p>当一个变量是一个对象时，变量中保存的是对象的引用。</p>
+<p>基本数据类型保存在栈内存，引用数据类型保存在堆内存。</p>
+<p>比较基本数据类型是比较指，比较引用数据类型是比较对象的内存地址。</p>
+<h2 id="对象字面量"><a href="#对象字面量" class="headerlink" title="对象字面量"></a>对象字面量</h2><p>使用new关键字创建一个对象</p>
+<p>– var obj = new Object(); </p>
+<p>使用对象字面量创建一个对象</p>
+<p>– var obj = {属性名: “属性值”}</p>
+<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h2 id="简介-2"><a href="#简介-2" class="headerlink" title="简介"></a>简介</h2><p>对象的一种</p>
+<h2 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h2><p>实参可以是任何值</p>
+<h2 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h2><p>返回值类型</p>
+<p>立即执行函数</p>
+<h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><p>全局作用域</p>
+<p>函数作用域</p>
+<h2 id="debug"><a href="#debug" class="headerlink" title="debug"></a>debug</h2><h2 id="this"><a href="#this" class="headerlink" title="this"></a>this</h2><p>使用工厂方法创建对象</p>
+<h2 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h2><p>function关键字</p>
+<h2 id="调用"><a href="#调用" class="headerlink" title="调用"></a>调用</h2><h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>call()</p>
+<p>apply()</p>
+<p>call()和apply()都可以指定一个函数的运行 环境对象，换句话说就是设置函数执行时 的this值。</p>
+<p>– 函数对象.call(this对象,参数数组) </p>
+<p>– 函数对象.apply(this对象,参数1,参数2,参数N)</p>
+<h2 id="传参"><a href="#传参" class="headerlink" title="传参"></a>传参</h2><p>JS中的所有的参数传递都是按值传递的。</p>
+<h2 id="执行环境"><a href="#执行环境" class="headerlink" title="执行环境"></a>执行环境</h2><p>全局执行环境 window对象</p>
+<h2 id="内部属性"><a href="#内部属性" class="headerlink" title="内部属性"></a>内部属性</h2><h2 id="arguments"><a href="#arguments" class="headerlink" title="arguments"></a>arguments</h2><ul>
+<li>该对象实际上是一个数组，用于保存函数的参数</li>
+<li>该对象还有一个属性callee来表示当前函数</li>
+</ul>
+<h2 id="this-1"><a href="#this-1" class="headerlink" title="this"></a>this</h2><ul>
+<li>this引用的是一个对象 对于最外层代码与函数内部的情况，其引用目标是不同的</li>
+<li>this引用会根据代码的上下文语境自动改变其引用对象</li>
+</ul>
+<h3 id="this引用的规则"><a href="#this引用的规则" class="headerlink" title="this引用的规则"></a>this引用的规则</h3><p><img src="C:/Users/34538/AppData/Roaming/Typora/typora-user-images/image-20230101184005175.png" alt="image-20230101184005175"></p>
+<h2 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h2><p>用于生成对象的函数</p>
+<p><img src="C:/Users/34538/AppData/Roaming/Typora/typora-user-images/image-20230101184513682.png" alt="image-20230101184513682"></p>
+<h2 id="new关键字"><a href="#new关键字" class="headerlink" title="new关键字"></a>new关键字</h2><p><img src="C:/Users/34538/AppData/Roaming/Typora/typora-user-images/image-20230101184557712.png" alt="image-20230101184557712"></p>
+<h2 id="属性的访问"><a href="#属性的访问" class="headerlink" title="属性的访问"></a>属性的访问</h2><p><img src="C:/Users/34538/AppData/Roaming/Typora/typora-user-images/image-20230101184628394.png" alt="image-20230101184628394"></p>
+<h2 id="原型对象"><a href="#原型对象" class="headerlink" title="原型对象"></a>原型对象</h2><h2 id="设置原型"><a href="#设置原型" class="headerlink" title="设置原型"></a>设置原型</h2><p>原型就是一个对象，和其他对象没有任何区别，可以通过构造函数来获取原型对象。</p>
+<p>- 构造函数. prototype</p>
+<p>prototype属性只存在于函数对象中，其他对象 是没有prototype属性的</p>
+<p>每一个对象都有原型，包括原型对象也有原型。</p>
+<p>特殊的是 Object的原型对象没有原型</p>
+<h2 id="获取原型对象"><a href="#获取原型对象" class="headerlink" title="获取原型对象"></a>获取原型对象</h2><p>通过具体的对象来获取原型对象</p>
+<ul>
+<li>Object.getPrototypeOf(对象)</li>
+<li>对象._proto_</li>
+<li>对象.constructor.prototype</li>
+</ul>
+<p>我们可以获取到Object的原型对象，也可以对它的属性进行操作，但是不能修改Object原型对象的引用</p>
+<h2 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h2><p>对象 对象的原型  原型的原型 —&gt; 原型链</p>
+<p><img src="C:/Users/34538/AppData/Roaming/Typora/typora-user-images/image-20230103092021881.png" alt="image-20230103092021881"></p>
+<p>当从一个对象中获取属性时，会首先从当前对象中查找，如果没有则顺着向上查找原型对象，直到找到Object对象的原型位置，找到则返回，找不到则返回undefined</p>
+<h2 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a>instanceof</h2><p>检查对象的具体类型</p>
+<p>– var result = 变量 instanceof 类型</p>
+<h2 id="toString-NaN"><a href="#toString-NaN" class="headerlink" title="toString()"></a>toString()</h2><h2 id="垃圾回收"><a href="#垃圾回收" class="headerlink" title="垃圾回收"></a>垃圾回收</h2><h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><h2 id="简介-3"><a href="#简介-3" class="headerlink" title="简介"></a>简介</h2><h2 id="字面量"><a href="#字面量" class="headerlink" title="字面量"></a>字面量</h2><h2 id="方法-1"><a href="#方法-1" class="headerlink" title="方法"></a>方法</h2><h2 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h2><h2 id="forEach"><a href="#forEach" class="headerlink" title="forEach"></a>forEach</h2><h2 id="slice-amp-splice"><a href="#slice-amp-splice" class="headerlink" title="slice&amp;splice"></a>slice&amp;splice</h2><h2 id="call-amp-apply"><a href="#call-amp-apply" class="headerlink" title="call&amp;apply"></a>call&amp;apply</h2><h2 id="arguments-1"><a href="#arguments-1" class="headerlink" title="arguments"></a>arguments</h2><h1 id="DATE对象"><a href="#DATE对象" class="headerlink" title="DATE对象"></a>DATE对象</h1><h1 id="Math"><a href="#Math" class="headerlink" title="Math"></a>Math</h1><h1 id="包装类"><a href="#包装类" class="headerlink" title="包装类"></a>包装类</h1><h2 id="基本包装类型"><a href="#基本包装类型" class="headerlink" title="基本包装类型"></a>基本包装类型</h2><h3 id="Boolean"><a href="#Boolean" class="headerlink" title="Boolean"></a>Boolean</h3><h3 id="Number-1"><a href="#Number-1" class="headerlink" title="Number"></a>Number</h3><h3 id="String"><a href="#String" class="headerlink" title="String"></a>String</h3><h3 id="Math-1"><a href="#Math-1" class="headerlink" title="Math"></a>Math</h3><p><img src="C:/Users/34538/AppData/Roaming/Typora/typora-user-images/image-20230103094747061.png" alt="image-20230103094747061"></p>
+<p><img src="C:/Users/34538/AppData/Roaming/Typora/typora-user-images/image-20230103094801914.png" alt="image-20230103094801914"></p>
+<h1 id="字符串的方法"><a href="#字符串的方法" class="headerlink" title="字符串的方法"></a>字符串的方法</h1><h1 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h1><h2 id="简介-4"><a href="#简介-4" class="headerlink" title="简介"></a>简介</h2><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><p>字符串和正则相关的语法</p>
+<h3 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h3><p>有序数组</p>
+<p>可以保存任意类型的数据</p>
+<p>– 使用构造器： </p>
+<p>• var arr = new Array(数组的长度); </p>
+<p>• var arr = new Array(123,’hello’,true); </p>
+<p>– 使用[]</p>
+<p>• var arr = []; </p>
+<p>• var arr = [123,’hello’,false];</p>
+<h3 id="Date"><a href="#Date" class="headerlink" title="Date"></a>Date</h3><p>采取时间戳表示一个时间</p>
+<p>所谓的时间戳指的是从 1970年1月1日0时0秒0分开始经过的毫秒数来计算时间。</p>
+<p>直接使用new Date()就可以创建一个Date对象。</p>
+<p>创造对象时不传参数默认创建当前时间。可以传递一个毫秒数 用来创建具体的时间。也可以传递一个日期的字符串，来创建一个时间。</p>
+<p>– 格式为：月份/日/年 时:分:秒 </p>
+<p>– 例如：06/13/2004 12:12:12</p>
+<h3 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h3><p>每一个函数都是一个Function类型的对象</p>
+<p>– function sum(){} </p>
+<p>– var sum = function(){};</p>
+<p>由于存在函数声明提升的过程，第一种方式在函数声明之前就 可以调用函数，而第二种不行。</p>
+<h1 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h1><h2 id="简介-5"><a href="#简介-5" class="headerlink" title="简介"></a>简介</h2><p>Document Object Model文档对象模型</p>
+<p>JS中通过DOM来对HTML文档进行操作</p>
+<p>文档表示整个的HTML网页文档</p>
+<p>对象表示将网页中的每一个部分都转换为了一个对象</p>
+<p>使用模型来表示对象之间的关系，这样方便我们获取对象</p>
+<h2 id="文档的加载"><a href="#文档的加载" class="headerlink" title="文档的加载"></a>文档的加载</h2><h2 id="DOM查询"><a href="#DOM查询" class="headerlink" title="DOM查询"></a>DOM查询</h2><h2 id="DOM增删改"><a href="#DOM增删改" class="headerlink" title="DOM增删改"></a>DOM增删改</h2><p>a的索引问题</p>
+<p>操作内联样式</p>
+<p>获取元素的样式</p>
+<p>getstyle()方法</p>
+<p>其他样式的相关属性</p>
+<h2 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h2><p>div跟随鼠标移动</p>
+<h2 id="事件冒泡"><a href="#事件冒泡" class="headerlink" title="事件冒泡"></a>事件冒泡</h2><h2 id="事件委派"><a href="#事件委派" class="headerlink" title="事件委派"></a>事件委派</h2><h2 id="事件绑定"><a href="#事件绑定" class="headerlink" title="事件绑定"></a>事件绑定</h2><p>完成bind函数</p>
+<h2 id="事件传播"><a href="#事件传播" class="headerlink" title="事件传播"></a>事件传播</h2><p>拖拽</p>
+<p>滚轮事件</p>
+<p>键盘事件</p>
+<p>键盘移动div</p>
+<p>navigator</p>
+<p>history</p>
+<p>location</p>
+<h1 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h1><p>延时调用</p>
+<p>定时器的应用</p>
+<p>完成轮播图界面</p>
+<p>完成点击按钮切换图片</p>
+<p>完成轮播图</p>
+<p>类的操作</p>
+<p>二级菜单</p>
+<p>JSON</p>
+<h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><p><img src="C:/Users/34538/AppData/Roaming/Typora/typora-user-images/image-20230103095042509.png" alt="image-20230103095042509"></p>
+<h2 id="节点"><a href="#节点" class="headerlink" title="节点"></a>节点</h2><p>Node——构成HTML文档最基本的单元。</p>
+<p>常用节点分为四类 </p>
+<p>– 文档节点：整个HTML文档 </p>
+<p>– 元素节点：HTML文档中的HTML标签 </p>
+<p>– 属性节点：元素的属性 </p>
+<p>– 文本节点：HTML标签中的文本内容</p>
+<h3 id="文档节点"><a href="#文档节点" class="headerlink" title="文档节点"></a>文档节点</h3><p>document</p>
+<p>document对象作为window对象的属性存在 的，我们不用获取可以直接使用。</p>
+<h3 id="元素节点"><a href="#元素节点" class="headerlink" title="元素节点"></a>元素节点</h3><p>HTML中的各种标签都是元素节点</p>
+<p>可以通过document的方法来获取元素节点</p>
+<h3 id="文本节点"><a href="#文本节点" class="headerlink" title="文本节点"></a>文本节点</h3><p>文本节点表示的是HTML标签以外的文本内容，任意非HTML的文本 都是文本节点。</p>
+<p>获取文本节点时，一般先要获取元素节点。在通过元素节点获取文本 节点。</p>
+<h3 id="属性节点"><a href="#属性节点" class="headerlink" title="属性节点"></a>属性节点</h3><p>属性节点表示的是标签中的一个一个的属 性</p>
+<p>属性节点并非是元素 节点的子节点，而是元素节点的一部分</p>
+<p>可以通过元素节点来获取指定的属性节点</p>
+<h2 id="事件简介"><a href="#事件简介" class="headerlink" title="事件简介"></a>事件简介</h2><p>文档或浏览器窗口中发生的一 些特定的交互瞬间</p>
+<p>JavaScript 与 HTML 之间的交互是通过事 件实现的</p>
+<h3 id="获取元素节点"><a href="#获取元素节点" class="headerlink" title="获取元素节点"></a>获取元素节点</h3><p><img src="C:/Users/34538/AppData/Roaming/Typora/typora-user-images/image-20230103095633572.png" alt="image-20230103095633572"></p>
+<h3 id="获取元素节点的子节点"><a href="#获取元素节点的子节点" class="headerlink" title="获取元素节点的子节点"></a>获取元素节点的子节点</h3><p><img src="C:/Users/34538/AppData/Roaming/Typora/typora-user-images/image-20230103095806378.png" alt="image-20230103095806378"></p>
+<h3 id="获取父节点和兄弟节点"><a href="#获取父节点和兄弟节点" class="headerlink" title="获取父节点和兄弟节点"></a>获取父节点和兄弟节点</h3><p><img src="C:/Users/34538/AppData/Roaming/Typora/typora-user-images/image-20230103095856032.png" alt="image-20230103095856032"></p>
+<h3 id="元素节点的属性"><a href="#元素节点的属性" class="headerlink" title="元素节点的属性"></a>元素节点的属性</h3><p><img src="C:/Users/34538/AppData/Roaming/Typora/typora-user-images/image-20230103095928048.png" alt="image-20230103095928048"></p>
+<h3 id="其他属性"><a href="#其他属性" class="headerlink" title="其他属性"></a>其他属性</h3><p><img src="C:/Users/34538/AppData/Roaming/Typora/typora-user-images/image-20230103095947528.png" alt="image-20230103095947528"></p>
+<h3 id="CSS选择器"><a href="#CSS选择器" class="headerlink" title="CSS选择器"></a>CSS选择器</h3><p>• querySelector() </p>
+<p>• querySelectorAll()</p>
+<p>传递一个选择器字符串作为参数，方法会自动根据选择器 字符串去网页中查找元素。</p>
+<p>不同的地方是querySelector()只会返回找到的第一个元素</p>
+<p>而 querySelectorAll()会返回所有符合条件的元素。</p>
+<h3 id="节点的修改"><a href="#节点的修改" class="headerlink" title="节点的修改"></a>节点的修改</h3><p><img src="C:/Users/34538/AppData/Roaming/Typora/typora-user-images/image-20230103100108229.png" alt="image-20230103100108229"></p>
+<h1 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h1><h2 id="事件处理程序"><a href="#事件处理程序" class="headerlink" title="事件处理程序"></a>事件处理程序</h2><p>我们可以通过两种方式为一个元素绑定事件处理程序： </p>
+<p>– 通过HTML元素指定事件属性来绑定 </p>
+<p>– 通过DOM对象指定的属性来绑定</p>
+<p>-  设置事件监听器 – 元素对象.addEventListener()</p>
+<h3 id="通过HTML标签的属性设置"><a href="#通过HTML标签的属性设置" class="headerlink" title="通过HTML标签的属性设置"></a>通过HTML标签的属性设置</h3><h3 id="通过DOM对象的属性绑定"><a href="#通过DOM对象的属性绑定" class="headerlink" title="通过DOM对象的属性绑定"></a>通过DOM对象的属性绑定</h3><h3 id="设置事件监听器"><a href="#设置事件监听器" class="headerlink" title="设置事件监听器"></a>设置事件监听器</h3><p>addEventListener()</p>
+<p>这个方法需 要两个参数：一个是事件字符串，一个是响应函数。</p>
+<p>使用removeEventListener()和detachEvent()移除事件</p>
+<h2 id="事件对象-1"><a href="#事件对象-1" class="headerlink" title="事件对象"></a>事件对象</h2><p>在DOM对象上的某个事件被触发时，会产生一个 事件对象Event，这个对象中包含着所有事件有关 的信息。包括导致事件的元素、事件的类型以及其 他与特定事件相关的信息。</p>
+<h2 id="事件的触发"><a href="#事件的触发" class="headerlink" title="事件的触发"></a>事件的触发</h2><h2 id="事件的传播"><a href="#事件的传播" class="headerlink" title="事件的传播"></a>事件的传播</h2><p>事件的处理将会分为捕获阶段、目标阶段、事件冒泡这三个阶段。</p>
+<p>取消事件传播</p>
+<p>我们可以使用event对象的两个方法完成： </p>
+<p>– stopPropagation() </p>
+<p>– stopImmediatePropagation() </p>
+<p>•取消默认行为： – preventDefault()</p>
+<h1 id="BOM"><a href="#BOM" class="headerlink" title="BOM"></a>BOM</h1><p>浏览器对象模型</p>
+<h2 id="windows对象"><a href="#windows对象" class="headerlink" title="windows对象"></a>windows对象</h2><p>window对象是BOM的核心，它表示一个浏览器的实例</p>
+<p>window对象是浏览器中的全局对象，因此所有在全局作用 域中声明的变量、对象、函数都会变成window对象的属性 和方法</p>
+<h3 id="窗口大小"><a href="#窗口大小" class="headerlink" title="窗口大小"></a>窗口大小</h3><h3 id="打开窗口"><a href="#打开窗口" class="headerlink" title="打开窗口"></a>打开窗口</h3><p>使用 window.open() 方法既可以导航到一个 特定的 URL，也可以打开一个新的浏览器窗口</p>
+<p>– 需要加载的url地址 </p>
+<p>– 窗口的目标 </p>
+<p>– 一个特性的字符串 </p>
+<p>– 是否创建新的历史记录</p>
+<h3 id="超时调用"><a href="#超时调用" class="headerlink" title="超时调用"></a>超时调用</h3><h3 id="间歇调用"><a href="#间歇调用" class="headerlink" title="间歇调用"></a>间歇调用</h3><h3 id="系统对话框"><a href="#系统对话框" class="headerlink" title="系统对话框"></a>系统对话框</h3><p>浏览器通过 alert() 、 confirm() 和 prompt()  方法可以调用系统对话框向用户显示消息。</p>
+<h2 id="location对象"><a href="#location对象" class="headerlink" title="location对象"></a>location对象</h2><p>location对象提供了与当前窗口中加载的文档有关的信息，还提供了一些导 航功能。</p>
+<h2 id="navigator对象"><a href="#navigator对象" class="headerlink" title="navigator对象"></a>navigator对象</h2><p>navigator 对象包含了浏览器的版本、浏览 器所支持的插件、浏览器所使用的语言等 各种与浏览器相关的信息</p>
+<h2 id="screen对象"><a href="#screen对象" class="headerlink" title="screen对象"></a>screen对象</h2><p>screen 对象基本上只用来表明客户端的能 力，其中包括浏览器窗口外部的显示器的 信息，如像素宽度和高度等。</p>
+<h2 id="history对象"><a href="#history对象" class="headerlink" title="history对象"></a>history对象</h2><p>history 对象保存着用户上网的历史记录， 从窗口被打开的那一刻算起</p>
+<h2 id="document对象"><a href="#document对象" class="headerlink" title="document对象"></a>document对象</h2>
+        </div>
+
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+<nav class="article-nav">
+  
+    <a href="/2022/code/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-caption">下一篇</div>
+      <div class="article-nav-title">
+        
+          他山之石-代码随想录知识星球文库
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/spider-example/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-caption">上一篇</div>
+      <div class="article-nav-title">记录手敲Python爬虫案例练习“</div>
+    </a>
+  
+</nav>
+
+
+    <section class="share">
+        <div class="share-title">分享</div>
+        <a class="share-item" target="_blank"
+            href="https://twitter.com/share?text=学习札记-JavaScript基础知识 - Kmoon | 个人学习记录&url=https%3A%2F%2Fwww.kmoon.fun%2F2022%2Fjs-basic%2F">
+            <ion-icon name="logo-twitter"></ion-icon>
+        </a>
+        <a class="share-item" target="_blank"
+            href="https://www.facebook.com/sharer.php?title=学习札记-JavaScript基础知识 - Kmoon | 个人学习记录&u=https%3A%2F%2Fwww.kmoon.fun%2F2022%2Fjs-basic%2F">
+            <ion-icon name="logo-facebook"></ion-icon>
+        </a>
+        <!-- <a class="share-item" target="_blank"
+            href="https://service.weibo.com/share/share.php?title=学习札记-JavaScript基础知识 - Kmoon | 个人学习记录&url=https://www.kmoon.fun/2022/js-basic/&pic=">
+            <div class="n-icon n-icon-weibo"></div>
+        </a> -->
+    </section>
+
+</article>
+
+
+
+
+
+
+
+
+
+
+<section class="comments">
+    <div id="valine-container"></div>
+</section>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+
+
+
+
+
+
+<script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+</div>
+                </section>
+            </section>
+
+            
+            <aside class="sidebar sidebar-search-fix">
+                
+
+    <div class="search">
+    <div class="has-icon-right">
+        <input type="text" class="form-input" id="search" placeholder="SEARCH" autocomplete="off">
+        <div class="form-icon">
+            <ion-icon name="search"></ion-icon>
+        </div>
+    </div>
+    <div class="search-result" id="search-ps"></div>
+</div>
+
+
+<div class="widget" id="widget">
+    
+      
+  <div class="widget-wrap">
+    <div class="widget-inner">
+      <div class="toc post-toc-html"></div>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap widget-cate">
+    <div class="widget-title"><span>Categories</span></div>
+    <div class="widget-inner">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/XiaoHu-s-Daily/">XiaoHu's Daily</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BB%96%E5%B1%B1%E4%B9%8B%E7%9F%B3/">他山之石</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/">刷题笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E4%B8%89%E4%BB%B6%E5%A5%97/">前端三件套</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E6%9C%AD%E8%AE%B0/">学习札记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/">实验报告</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%87%92%E4%BA%BA%E5%BF%85%E5%A4%87/">懒人必备</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%AA%E5%91%BD%E5%90%8D/">未命名</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B7%B1%E6%B8%8A/">深渊</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7/">渗透工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/">渗透测试</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9D%B6%E5%9C%BA%E6%97%A5%E8%AE%B0/">靶场日记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%A1%B9%E7%9B%AE%E8%AE%A1%E5%88%92/">项目计划</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap widget-tags">
+    <div class="widget-title"><span>Tags</span></div>
+    <div class="widget-inner">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/51%E5%8D%95%E7%89%87%E6%9C%BA/" rel="tag">51单片机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google/" rel="tag">Google</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RNN/" rel="tag">RNN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/" rel="tag">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SRC/" rel="tag">SRC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sec/" rel="tag">Sec</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Swing/" rel="tag">Swing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WUT/" rel="tag">WUT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Whut/" rel="tag">Whut</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/" rel="tag">Windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XSS/" rel="tag">XSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/daily/" rel="tag">daily</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hacker/" rel="tag">hacker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdwon/" rel="tag">markdwon</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/me/" rel="tag">me</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nmap/" rel="tag">nmap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/upload/" rel="tag">upload</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web%E5%AE%89%E5%85%A8/" rel="tag">web安全</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/" rel="tag">信息收集</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%B3%E7%B3%BB%E4%BB%A3%E6%95%B0/" rel="tag">关系代数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/" rel="tag">单片机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%8D%E4%B9%A0%E9%A2%98/" rel="tag">复习题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/" rel="tag">实验报告</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/" rel="tag">数学建模</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">数据库系统原理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/" rel="tag">文件上传漏洞</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7/" rel="tag">渗透工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" rel="tag">渗透测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%88%AC%E8%99%AB/" rel="tag">爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%88%AC%E8%99%AB%E6%A1%88%E4%BE%8B/" rel="tag">爬虫案例</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%84%E7%BD%91%E6%8A%80%E6%9C%AF/" rel="tag">组网技术</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%BD%91/" rel="tag">计网</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B7%A8%E7%AB%99%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0%E6%BC%8F%E6%B4%9E/" rel="tag">跨站请求伪造漏洞</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%B6%E5%9C%BA/" rel="tag">靶场</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap widget-recent-posts">
+    <div class="widget-title"><span>Recent Posts</span></div>
+    <div class="widget-inner">
+      <ul>
+        
+          <li>
+            <a href="/2023/null/">学习札记-JavaScript自查文档</a>
+          </li>
+        
+          <li>
+            <a href="/2023/null/">学习札记-CSS自查文档</a>
+          </li>
+        
+          <li>
+            <a href="/2023/html/">学习札记-HTML自查文档</a>
+          </li>
+        
+          <li>
+            <a href="/2022/code/">他山之石-代码随想录知识星球文库</a>
+          </li>
+        
+          <li>
+            <a href="/2022/js-basic/">学习札记-JavaScript基础知识</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap widget-archive">
+    <div class="widget-title"><span>Archive</span></div>
+    <div class="widget-inner">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a></li></ul>
+    </div>
+  </div>
+
+
+    
+</div>
+
+<div id="backtop"><i class="icon icon-arrow-up"></i></div>
+            </aside>
+            
+        </div>
+    </div>
+
+    <footer class="footer">
+    <div class="footer-wave">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#3c4859" fill-opacity="1" d="M0,160L60,181.3C120,203,240,245,360,240C480,235,600,181,720,186.7C840,192,960,256,1080,261.3C1200,267,1320,213,1380,186.7L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
+    </div>
+
+    <!-- Please do not remove this -->
+    <!-- 开源不易，请勿删除 -->
+    <div class="footer-wrap">
+        <div class="footer-inner"> 
+            Kmoon | 个人学习记录 &copy; 2023<br>
+            Powered By Hexo · Theme By <a href="https://linhong.me/" target="_blank">Aomori</a> · <a href="https://github.com/lh1me/hexo-theme-aomori" target="_blank">Github</a>
+			<br><img src="https://www.beian.gov.cn/img/new/gongan.png">
+<a href="https://beian.miit.gov.cn/" target="_blank">渝ICP备2022011774号-1</a>
+
+
+        </div>
+    </div>
+
+</footer>
+
+<script type="module" src="https://unpkg.com/ionicons@6.0.2/dist/ionicons/ionicons.esm.js"></script>
+
+
+
+
+
+
+<script src="/dist/build.js?1654266144177.js"></script>
+
+
+<script src="/dist/custom.js?1654266144177.js"></script>
+
+
+
+<!-- 百度链接提交 -->
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":220,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+</html>
